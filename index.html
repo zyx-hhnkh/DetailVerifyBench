@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hallucination Detection Benchmark</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- Hero Section -->
+<header class="hero">
+  <div class="container">
+    <h1>Hallucination Detection Benchmark</h1>
+    <p class="subtitle">A comprehensive evaluation framework for detecting hallucinations in Vision-Language Models at the token level</p>
+    <div class="hero-buttons">
+      <a href="https://github.com/zyx-hhnkh/Hallucination-Detection-Benchmark" class="btn btn-primary">GitHub Repo</a>
+      <a href="#leaderboard" class="btn btn-secondary">Leaderboard</a>
+      <a href="https://modelscope.cn/datasets/TwinkleMoon/Hallucination-Benchmark" class="btn btn-secondary">Dataset</a>
+    </div>
+  </div>
+</header>
+
+<!-- About Section -->
+<section id="about" class="section">
+  <div class="container">
+    <h2>About</h2>
+    <p>This benchmark measures how accurately Vision-Language Models (VLMs) can identify false or incorrect descriptions in image captions. Evaluations are performed at the <strong>token level</strong>, providing fine-grained hallucination detection metrics including Precision, Recall, F1, and IoU.</p>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">&#x1F50D;</div>
+        <h3>Token-Level Metrics</h3>
+        <p>Precision, Recall, F1, and IoU computed at both token and span levels for fine-grained evaluation.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">&#x1F916;</div>
+        <h3>Multi-Model Support</h3>
+        <p>Evaluate Qwen3-VL, GPT-5.x, Gemini-3.x, Claude Opus, Step-3-VL, Kimi, Seed, and more.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">&#x1F4CA;</div>
+        <h3>4 Hallucination Categories</h3>
+        <p>Counterfactual, OCR, Spatial Relation, and Other &mdash; covering diverse hallucination types.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">&#x2699;&#xFE0F;</div>
+        <h3>Multiple Backends</h3>
+        <p>vLLM batch inference, Transformers, OpenAI API, Google Gemini API, and Anthropic API.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Pipeline Section -->
+<section id="pipeline" class="section section-alt">
+  <div class="container">
+    <h2>Pipeline</h2>
+    <div class="pipeline">
+      <div class="pipeline-step">
+        <div class="step-number">1</div>
+        <div class="step-content">
+          <h4>Data Preparation</h4>
+          <p>Load test_gt_withtag.jsonl and images from ModelScope dataset</p>
+        </div>
+      </div>
+      <div class="pipeline-arrow">&rarr;</div>
+      <div class="pipeline-step">
+        <div class="step-number">2</div>
+        <div class="step-content">
+          <h4>Format Conversion</h4>
+          <p>Convert JSONL to individual JSON files via alter_data_format.py</p>
+        </div>
+      </div>
+      <div class="pipeline-arrow">&rarr;</div>
+      <div class="pipeline-step">
+        <div class="step-number">3</div>
+        <div class="step-content">
+          <h4>Model Inference</h4>
+          <p>Run hallucination tagging with selected VLM backend</p>
+        </div>
+      </div>
+      <div class="pipeline-arrow">&rarr;</div>
+      <div class="pipeline-step">
+        <div class="step-number">4</div>
+        <div class="step-content">
+          <h4>Metric Computation</h4>
+          <p>Compute Precision, Recall, F1, IoU at token and span levels</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Leaderboard Section -->
+<section id="leaderboard" class="section">
+  <div class="container">
+    <h2>Leaderboard</h2>
+    <p class="section-desc">Token-level hallucination detection performance across evaluated models. Higher F1 is better.</p>
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>Rank</th>
+            <th>Model</th>
+            <th>Backend</th>
+            <th>Precision</th>
+            <th>Recall</th>
+            <th>F1</th>
+            <th>IoU</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td><strong>GPT-5.4</strong></td>
+            <td>OpenAI API</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td><strong>Gemini-3.1-Pro</strong></td>
+            <td>Google API</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td><strong>Claude Opus 4.6</strong></td>
+            <td>Anthropic API</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td><strong>Qwen3-VL-8B</strong></td>
+            <td>vLLM</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td><strong>Step-3-VL-10B</strong></td>
+            <td>vLLM</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td><strong>Kimi-K2.5</strong></td>
+            <td>OpenRouter API</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td><strong>Seed-2.0-Pro</strong></td>
+            <td>API</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>8</td>
+            <td><strong>Qwen3-VL-4B</strong></td>
+            <td>vLLM</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="table-note">Scores marked with "-" are placeholders. Replace with actual evaluation results.</p>
+  </div>
+</section>
+
+<!-- Getting Started Section -->
+<section id="getting-started" class="section section-alt">
+  <div class="container">
+    <h2>Getting Started</h2>
+    <div class="code-block">
+      <div class="code-header">Installation</div>
+      <pre><code># Clone the repository
+git clone https://github.com/zyx-hhnkh/Hallucination-Detection-Benchmark.git
+cd Hallucination-Detection-Benchmark
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Download dataset from ModelScope
+pip install modelscope
+modelscope download --dataset 'TwinkleMoon/Hallucination-Benchmark' --include 'test/*' --local_dir ./ms_data</code></pre>
+    </div>
+    <div class="code-block">
+      <div class="code-header">Run Evaluation</div>
+      <pre><code>python run_pipeline.py \
+    --mode offline \
+    --image_dir ./ms_data/test \
+    --input_json ./ms_data/test/test_gt_withtag.jsonl \
+    --model_select "Qwen3-VL-8B" \
+    --model_path "/path/to/model" \
+    --exp_name "my_experiment" \
+    --work_dir ./ \
+    --use_think</code></pre>
+    </div>
+  </div>
+</section>
+
+<!-- Citation Section -->
+<section id="citation" class="section">
+  <div class="container">
+    <h2>Citation</h2>
+    <div class="code-block">
+      <pre><code>@misc{hallucination-detection-benchmark,
+  title={Hallucination Detection Benchmark},
+  year={2025},
+  url={https://github.com/zyx-hhnkh/Hallucination-Detection-Benchmark}
+}</code></pre>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <p>&copy; 2025 Hallucination Detection Benchmark. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+# 实验结果
+processing_data/
+processing_data_zyx/
+processing_data_zyx_*/
+vis_att_test/
+
+# 缓存和临时文件
+gradio_cache/
+.gradio/
+torchinductor_*/
+wangxinran/
+__pycache__/
+*.pyc
+*.log
+linshi.txt
+=0.17.0
+
+# 大型依赖
+vllm/
+transformers-main.zip
+
+# 敏感文件
+.env
+
+# Socket文件
+*.sock
+????????-????-????-????-????????????
+
+# 从开源仓库排除的本地文件
+inference_yx.py
+vcd_inference.py
+eval.sh
+eval_V2_*.sh
+test_vllm_deploy.py
+
+# 系统文件
+*.jpg
+.claude/

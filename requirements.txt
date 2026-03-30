@@ -1,0 +1,13 @@
+vllm
+transformers
+torch
+torchvision
+Pillow
+numpy
+nltk
+gradio
+opencv-python
+openai
+anthropic
+google-genai
+python-dotenv
