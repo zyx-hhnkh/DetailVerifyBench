@@ -1,4 +1,4 @@
-# Hallucination Detection Benchmark
+# DetailVerifyBench
 
 A comprehensive evaluation framework for detecting hallucinations in Vision-Language Models (VLMs). This benchmark measures how accurately models can identify false or incorrect descriptions in image captions at the token level.
 
@@ -167,10 +167,10 @@ OPENROUTER_API_KEY=your_key
 If you use this benchmark in your research, please cite:
 
 ```bibtex
-@misc{hallucination-detection-benchmark,
-  title={Hallucination Detection Benchmark},
+@misc{detailverifybench,
+  title={DetailVerifyBench},
   year={2025},
-  url={https://github.com/your-org/Hallucination-Detection-Benchmark}
+  url={https://github.com/zyx-hhnkh/DetailVerifyBench}
 }
 ```
 
