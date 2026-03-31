@@ -1,0 +1,215 @@
+{
+  "_comment": "Leaderboard data for DetailVerifyBench. Sources: table3.txt (main results) and table_domain.txt (domain-level results). Domain columns store F1 scores. Dimension columns store token-level recall. Real hallucinations have 8 dimension types (no Scene/Camera). Synthetic hallucinations have 10 dimension types.",
+  "models": [
+    {
+      "model": "GLM-4.6V-Flash",
+      "type": "open",
+      "real": {
+        "p": 0.01, "r": 0.01, "f1": 0.01,
+        "dim": { "num": 0.00, "clr": 0.00, "cat": 0.01, "shp": 0.01, "mat": 0.00, "spat": 0.00, "ocr": 0.01, "other": 0.01 },
+        "domain": { "chart": 0.00, "movie": 0.00, "nature": 0.01, "poster": 0.00, "gui": 0.02 }
+      },
+      "synthetic": {
+        "p": 0.41, "r": 0.22, "f1": 0.26,
+        "dim": { "num": 0.17, "clr": 0.40, "cat": 0.27, "shp": 0.17, "mat": 0.40, "spat": 0.06, "ocr": 0.34, "scene": 0.31, "cam": 0.00, "other": 0.22 },
+        "domain": { "chart": 0.31, "movie": 0.25, "nature": 0.31, "poster": 0.17, "gui": 0.22 }
+      }
+    },
+    {
+      "model": "Step3-VL-10B",
+      "type": "open",
+      "real": {
+        "p": 0.03, "r": 0.04, "f1": 0.03,
+        "dim": { "num": 0.03, "clr": 0.04, "cat": 0.13, "shp": 0.07, "mat": 0.13, "spat": 0.04, "ocr": 0.15, "other": 0.04 },
+        "domain": { "chart": 0.02, "movie": 0.03, "nature": 0.01, "poster": 0.02, "gui": 0.06 }
+      },
+      "synthetic": {
+        "p": 0.36, "r": 0.48, "f1": 0.35,
+        "dim": { "num": 0.49, "clr": 0.66, "cat": 0.48, "shp": 0.43, "mat": 0.53, "spat": 0.37, "ocr": 0.77, "scene": 0.68, "cam": 0.04, "other": 0.39 },
+        "domain": { "chart": 0.45, "movie": 0.33, "nature": 0.30, "poster": 0.28, "gui": 0.38 }
+      }
+    },
+    {
+      "model": "Qwen3-VL-8B-Thinking",
+      "type": "open",
+      "real": {
+        "p": 0.04, "r": 0.03, "f1": 0.03,
+        "dim": { "num": 0.02, "clr": 0.04, "cat": 0.03, "shp": 0.15, "mat": 0.02, "spat": 0.01, "ocr": 0.10, "other": 0.03 },
+        "domain": { "chart": 0.02, "movie": 0.02, "nature": 0.02, "poster": 0.04, "gui": 0.06 }
+      },
+      "synthetic": {
+        "p": 0.45, "r": 0.47, "f1": 0.39,
+        "dim": { "num": 0.45, "clr": 0.68, "cat": 0.52, "shp": 0.41, "mat": 0.63, "spat": 0.25, "ocr": 0.76, "scene": 0.64, "cam": 0.05, "other": 0.49 },
+        "domain": { "chart": 0.47, "movie": 0.37, "nature": 0.30, "poster": 0.32, "gui": 0.46 }
+      }
+    },
+    {
+      "model": "Qwen3.5-9B",
+      "type": "open",
+      "real": {
+        "p": 0.10, "r": 0.09, "f1": 0.08,
+        "dim": { "num": 0.16, "clr": 0.10, "cat": 0.11, "shp": 0.12, "mat": 0.28, "spat": 0.05, "ocr": 0.24, "other": 0.11 },
+        "domain": { "chart": 0.07, "movie": 0.04, "nature": 0.06, "poster": 0.07, "gui": 0.14 }
+      },
+      "synthetic": {
+        "p": 0.66, "r": 0.60, "f1": 0.58,
+        "dim": { "num": 0.49, "clr": 0.74, "cat": 0.58, "shp": 0.48, "mat": 0.61, "spat": 0.50, "ocr": 0.86, "scene": 0.61, "cam": 0.22, "other": 0.63 },
+        "domain": { "chart": 0.70, "movie": 0.53, "nature": 0.46, "poster": 0.54, "gui": 0.64 }
+      }
+    },
+    {
+      "model": "Qwen3.5-35B-A3B",
+      "type": "open",
+      "real": {
+        "p": 0.12, "r": 0.11, "f1": 0.10,
+        "dim": { "num": 0.18, "clr": 0.16, "cat": 0.12, "shp": 0.12, "mat": 0.26, "spat": 0.09, "ocr": 0.34, "other": 0.13 },
+        "domain": { "chart": 0.08, "movie": 0.06, "nature": 0.07, "poster": 0.11, "gui": 0.18 }
+      },
+      "synthetic": {
+        "p": 0.55, "r": 0.64, "f1": 0.52,
+        "dim": { "num": 0.55, "clr": 0.75, "cat": 0.60, "shp": 0.53, "mat": 0.56, "spat": 0.60, "ocr": 0.86, "scene": 0.68, "cam": 0.15, "other": 0.57 },
+        "domain": { "chart": 0.60, "movie": 0.50, "nature": 0.42, "poster": 0.52, "gui": 0.58 }
+      }
+    },
+    {
+      "model": "Qwen3.5-397B-A17B",
+      "type": "open",
+      "real": {
+        "p": 0.15, "r": 0.16, "f1": 0.13,
+        "dim": { "num": 0.26, "clr": 0.22, "cat": 0.22, "shp": 0.21, "mat": 0.37, "spat": 0.14, "ocr": 0.38, "other": 0.21 },
+        "domain": { "chart": 0.09, "movie": 0.12, "nature": 0.08, "poster": 0.16, "gui": 0.21 }
+      },
+      "synthetic": {
+        "p": 0.62, "r": 0.70, "f1": 0.61,
+        "dim": { "num": 0.65, "clr": 0.79, "cat": 0.65, "shp": 0.57, "mat": 0.67, "spat": 0.69, "ocr": 0.89, "scene": 0.69, "cam": 0.22, "other": 0.69 },
+        "domain": { "chart": 0.70, "movie": 0.57, "nature": 0.49, "poster": 0.60, "gui": 0.69 }
+      }
+    },
+    {
+      "model": "KIMI-K2.5",
+      "type": "open",
+      "real": {
+        "p": 0.11, "r": 0.08, "f1": 0.08,
+        "dim": { "num": 0.05, "clr": 0.09, "cat": 0.09, "shp": 0.11, "mat": 0.10, "spat": 0.07, "ocr": 0.28, "other": 0.09 },
+        "domain": { "chart": 0.08, "movie": 0.05, "nature": 0.04, "poster": 0.10, "gui": 0.14 }
+      },
+      "synthetic": {
+        "p": 0.69, "r": 0.57, "f1": 0.58,
+        "dim": { "num": 0.52, "clr": 0.67, "cat": 0.52, "shp": 0.43, "mat": 0.50, "spat": 0.56, "ocr": 0.80, "scene": 0.63, "cam": 0.13, "other": 0.52 },
+        "domain": { "chart": 0.72, "movie": 0.50, "nature": 0.46, "poster": 0.53, "gui": 0.67 }
+      }
+    },
+    {
+      "model": "Qwen3-VL-8B+VCD",
+      "type": "open",
+      "real": {
+        "p": 0.02, "r": 0.02, "f1": 0.02,
+        "dim": { "num": 0.02, "clr": 0.04, "cat": 0.05, "shp": 0.01, "mat": 0.03, "spat": 0.01, "ocr": 0.01, "other": 0.03 },
+        "domain": { "chart": 0.00, "movie": 0.03, "nature": 0.00, "poster": 0.02, "gui": 0.01 }
+      },
+      "synthetic": {
+        "p": 0.25, "r": 0.09, "f1": 0.12,
+        "dim": { "num": 0.03, "clr": 0.13, "cat": 0.07, "shp": 0.10, "mat": 0.17, "spat": 0.03, "ocr": 0.04, "scene": 0.14, "cam": 0.07, "other": 0.10 },
+        "domain": { "chart": 0.04, "movie": 0.25, "nature": 0.10, "poster": 0.09, "gui": 0.10 }
+      }
+    },
+    {
+      "model": "Seed2.0-Pro",
+      "type": "closed",
+      "real": {
+        "p": 0.13, "r": 0.12, "f1": 0.11,
+        "dim": { "num": 0.21, "clr": 0.14, "cat": 0.23, "shp": 0.10, "mat": 0.46, "spat": 0.16, "ocr": 0.35, "other": 0.20 },
+        "domain": { "chart": 0.06, "movie": 0.12, "nature": 0.06, "poster": 0.13, "gui": 0.17 }
+      },
+      "synthetic": {
+        "p": 0.59, "r": 0.68, "f1": 0.57,
+        "dim": { "num": 0.65, "clr": 0.77, "cat": 0.63, "shp": 0.53, "mat": 0.68, "spat": 0.66, "ocr": 0.86, "scene": 0.77, "cam": 0.33, "other": 0.64 },
+        "domain": { "chart": 0.64, "movie": 0.56, "nature": 0.42, "poster": 0.59, "gui": 0.66 }
+      }
+    },
+    {
+      "model": "Mimo-v2-Pro",
+      "type": "closed",
+      "real": {
+        "p": 0.01, "r": 0.01, "f1": 0.01,
+        "dim": { "num": 0.03, "clr": 0.01, "cat": 0.00, "shp": 0.01, "mat": 0.00, "spat": 0.01, "ocr": 0.01, "other": 0.00 },
+        "domain": { "chart": 0.01, "movie": 0.00, "nature": 0.00, "poster": 0.01, "gui": 0.00 }
+      },
+      "synthetic": {
+        "p": 0.06, "r": 0.03, "f1": 0.03,
+        "dim": { "num": 0.05, "clr": 0.03, "cat": 0.03, "shp": 0.00, "mat": 0.02, "spat": 0.01, "ocr": 0.03, "scene": 0.05, "cam": 0.00, "other": 0.08 },
+        "domain": { "chart": 0.04, "movie": 0.02, "nature": 0.02, "poster": 0.03, "gui": 0.03 }
+      }
+    },
+    {
+      "model": "GPT-5.2",
+      "type": "closed",
+      "real": {
+        "p": 0.06, "r": 0.08, "f1": 0.05,
+        "dim": { "num": 0.09, "clr": 0.07, "cat": 0.10, "shp": 0.07, "mat": 0.19, "spat": 0.09, "ocr": 0.27, "other": 0.12 },
+        "domain": { "chart": 0.04, "movie": 0.05, "nature": 0.03, "poster": 0.05, "gui": 0.10 }
+      },
+      "synthetic": {
+        "p": 0.46, "r": 0.53, "f1": 0.43,
+        "dim": { "num": 0.57, "clr": 0.64, "cat": 0.51, "shp": 0.46, "mat": 0.58, "spat": 0.41, "ocr": 0.82, "scene": 0.75, "cam": 0.14, "other": 0.58 },
+        "domain": { "chart": 0.56, "movie": 0.33, "nature": 0.35, "poster": 0.34, "gui": 0.54 }
+      }
+    },
+    {
+      "model": "GPT-5.4",
+      "type": "closed",
+      "real": {
+        "p": 0.07, "r": 0.09, "f1": 0.07,
+        "dim": { "num": 0.13, "clr": 0.07, "cat": 0.11, "shp": 0.11, "mat": 0.09, "spat": 0.12, "ocr": 0.26, "other": 0.12 },
+        "domain": { "chart": 0.05, "movie": 0.06, "nature": 0.02, "poster": 0.08, "gui": 0.12 }
+      },
+      "synthetic": {
+        "p": 0.43, "r": 0.61, "f1": 0.45,
+        "dim": { "num": 0.63, "clr": 0.70, "cat": 0.58, "shp": 0.57, "mat": 0.63, "spat": 0.56, "ocr": 0.86, "scene": 0.74, "cam": 0.14, "other": 0.65 },
+        "domain": { "chart": 0.58, "movie": 0.35, "nature": 0.37, "poster": 0.41, "gui": 0.56 }
+      }
+    },
+    {
+      "model": "Gemini3-Pro-Preview",
+      "type": "closed",
+      "real": {
+        "p": 0.13, "r": 0.10, "f1": 0.10,
+        "dim": { "num": 0.12, "clr": 0.10, "cat": 0.13, "shp": 0.13, "mat": 0.17, "spat": 0.09, "ocr": 0.40, "other": 0.10 },
+        "domain": { "chart": 0.10, "movie": 0.06, "nature": 0.07, "poster": 0.07, "gui": 0.19 }
+      },
+      "synthetic": {
+        "p": 0.70, "r": 0.66, "f1": 0.64,
+        "dim": { "num": 0.55, "clr": 0.72, "cat": 0.61, "shp": 0.57, "mat": 0.66, "spat": 0.63, "ocr": 0.88, "scene": 0.68, "cam": 0.23, "other": 0.67 },
+        "domain": { "chart": 0.74, "movie": 0.60, "nature": 0.49, "poster": 0.63, "gui": 0.72 }
+      }
+    },
+    {
+      "model": "Gemini-3.1-Pro-Preview",
+      "type": "closed",
+      "real": {
+        "p": 0.16, "r": 0.12, "f1": 0.12,
+        "dim": { "num": 0.17, "clr": 0.11, "cat": 0.17, "shp": 0.21, "mat": 0.22, "spat": 0.13, "ocr": 0.37, "other": 0.15 },
+        "domain": { "chart": 0.10, "movie": 0.08, "nature": 0.07, "poster": 0.15, "gui": 0.18 }
+      },
+      "synthetic": {
+        "p": 0.76, "r": 0.66, "f1": 0.66,
+        "dim": { "num": 0.59, "clr": 0.73, "cat": 0.63, "shp": 0.62, "mat": 0.57, "spat": 0.62, "ocr": 0.87, "scene": 0.69, "cam": 0.17, "other": 0.66 },
+        "domain": { "chart": 0.78, "movie": 0.60, "nature": 0.52, "poster": 0.64, "gui": 0.76 }
+      }
+    },
+    {
+      "model": "Claude-Opus-4.6",
+      "type": "closed",
+      "real": {
+        "p": 0.09, "r": 0.07, "f1": 0.07,
+        "dim": { "num": 0.06, "clr": 0.08, "cat": 0.12, "shp": 0.06, "mat": 0.03, "spat": 0.06, "ocr": 0.30, "other": 0.08 },
+        "domain": { "chart": 0.07, "movie": 0.05, "nature": 0.03, "poster": 0.07, "gui": 0.13 }
+      },
+      "synthetic": {
+        "p": 0.22, "r": 0.07, "f1": 0.09,
+        "dim": { "num": 0.09, "clr": 0.06, "cat": 0.07, "shp": 0.07, "mat": 0.05, "spat": 0.06, "ocr": 0.10, "scene": 0.05, "cam": 0.05, "other": 0.10 },
+        "domain": { "chart": 0.07, "movie": 0.12, "nature": 0.03, "poster": 0.11, "gui": 0.13 }
+      }
+    }
+  ]
+}

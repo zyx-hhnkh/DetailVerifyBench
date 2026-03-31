@@ -214,7 +214,7 @@
         <tbody id="lb-tbody"></tbody>
       </table>
     </div>
-    <p class="lb-note">Domain-level scores (GUI / Nature / Chart / Movie / Poster) will be updated soon. Click any column header to sort.</p>
+    <p class="lb-note">Click any column header to sort. Domain scores show token-level F1 per domain.</p>
   </div>
 </section>
 
@@ -243,92 +243,54 @@
 
 <!-- ===== Leaderboard JS ===== -->
 <script>
-// ─── Data ────────────────────────────────────────────────────────────────────
-
-const REAL_DATA = [
-  // [model, type, p, r, f1, num, clr, cat, shp, mat, spat, ocr, other, gui, nature, chart, movie, poster]
-  ['GLM-4.6V-Flash',         'open',   0.01,0.01,0.01, 0.00,0.00,0.01,0.01,0.00,0.00,0.01,0.01, null,null,null,null,null],
-  ['Step3-VL-10B',           'open',   0.03,0.04,0.03, 0.03,0.04,0.13,0.07,0.13,0.04,0.15,0.04, null,null,null,null,null],
-  ['Qwen3-VL-8B-Thinking',   'open',   0.04,0.03,0.03, 0.02,0.04,0.03,0.15,0.02,0.01,0.10,0.03, null,null,null,null,null],
-  ['Qwen3.5-9B',             'open',   0.10,0.09,0.08, 0.16,0.10,0.11,0.12,0.28,0.05,0.24,0.11, null,null,null,null,null],
-  ['Qwen3.5-35B-A3B',        'open',   0.12,0.11,0.10, 0.18,0.16,0.12,0.13,0.26,0.09,0.34,0.13, null,null,null,null,null],
-  ['Qwen3.5-397B-A17B',      'open',   0.15,0.16,0.13, 0.26,0.22,0.22,0.21,0.37,0.14,0.38,0.21, null,null,null,null,null],
-  ['KIMI-K2.5',              'open',   0.11,0.08,0.08, 0.05,0.09,0.09,0.11,0.10,0.07,0.28,0.09, null,null,null,null,null],
-  ['Qwen3-VL-8B+VCD',        'open',   0.02,0.02,0.02, 0.02,0.04,0.05,0.01,0.03,0.01,0.01,0.03, null,null,null,null,null],
-  ['Seed2.0-Pro',            'closed', 0.13,0.12,0.11, 0.21,0.14,0.23,0.10,0.46,0.16,0.35,0.20, null,null,null,null,null],
-  ['Mimo-v2-Pro',            'closed', 0.01,0.01,0.01, 0.03,0.01,0.00,0.01,0.00,0.01,0.01,0.00, null,null,null,null,null],
-  ['GPT-5.2',                'closed', 0.06,0.08,0.05, 0.09,0.07,0.10,0.07,0.19,0.09,0.27,0.12, null,null,null,null,null],
-  ['GPT-5.4',                'closed', 0.07,0.09,0.07, 0.13,0.07,0.11,0.11,0.09,0.12,0.26,0.12, null,null,null,null,null],
-  ['Gemini3-Pro-Preview',    'closed', 0.13,0.10,0.10, 0.12,0.10,0.13,0.13,0.17,0.09,0.40,0.10, null,null,null,null,null],
-  ['Gemini-3.1-Pro-Preview', 'closed', 0.16,0.12,0.12, 0.17,0.11,0.17,0.21,0.22,0.13,0.37,0.15, null,null,null,null,null],
-  ['Claude-Opus-4.6',        'closed', 0.09,0.07,0.07, 0.06,0.08,0.12,0.06,0.03,0.06,0.30,0.08, null,null,null,null,null],
-];
-
-const SYNTH_DATA = [
-  // [model, type, p, r, f1, num, clr, cat, shp, mat, spat, ocr, scene, cam, other, gui, nature, chart, movie, poster]
-  ['GLM-4.6V-Flash',         'open',   0.41,0.22,0.26, 0.17,0.40,0.27,0.17,0.40,0.06,0.34,0.31,0.00,0.22, null,null,null,null,null],
-  ['Step3-VL-10B',           'open',   0.36,0.48,0.35, 0.49,0.66,0.48,0.43,0.53,0.37,0.77,0.68,0.04,0.39, null,null,null,null,null],
-  ['Qwen3-VL-8B-Thinking',   'open',   0.45,0.47,0.39, 0.45,0.68,0.52,0.41,0.63,0.25,0.76,0.64,0.05,0.49, null,null,null,null,null],
-  ['Qwen3.5-9B',             'open',   0.66,0.60,0.58, 0.49,0.74,0.58,0.48,0.61,0.50,0.86,0.61,0.22,0.63, null,null,null,null,null],
-  ['Qwen3.5-35B-A3B',        'open',   0.55,0.64,0.52, 0.55,0.75,0.60,0.53,0.56,0.60,0.86,0.68,0.15,0.57, null,null,null,null,null],
-  ['Qwen3.5-397B-A17B',      'open',   0.62,0.70,0.61, 0.65,0.79,0.65,0.57,0.67,0.69,0.89,0.69,0.22,0.69, null,null,null,null,null],
-  ['KIMI-K2.5',              'open',   0.69,0.57,0.58, 0.52,0.67,0.52,0.43,0.50,0.56,0.80,0.63,0.13,0.52, null,null,null,null,null],
-  ['Qwen3-VL-8B+VCD',        'open',   0.25,0.09,0.12, 0.03,0.13,0.07,0.10,0.17,0.03,0.04,0.14,0.07,0.10, null,null,null,null,null],
-  ['Seed2.0-Pro',            'closed', 0.59,0.68,0.57, 0.65,0.77,0.63,0.53,0.68,0.66,0.86,0.77,0.33,0.64, null,null,null,null,null],
-  ['Mimo-v2-Pro',            'closed', 0.06,0.03,0.03, 0.05,0.03,0.03,0.00,0.02,0.01,0.03,0.05,0.00,0.08, null,null,null,null,null],
-  ['GPT-5.2',                'closed', 0.46,0.53,0.43, 0.57,0.64,0.51,0.46,0.58,0.41,0.82,0.75,0.14,0.58, null,null,null,null,null],
-  ['GPT-5.4',                'closed', 0.43,0.61,0.45, 0.63,0.70,0.58,0.57,0.63,0.56,0.86,0.74,0.14,0.65, null,null,null,null,null],
-  ['Gemini3-Pro-Preview',    'closed', 0.70,0.66,0.64, 0.55,0.72,0.61,0.57,0.66,0.63,0.88,0.68,0.23,0.67, null,null,null,null,null],
-  ['Gemini-3.1-Pro-Preview', 'closed', 0.76,0.66,0.66, 0.59,0.73,0.63,0.62,0.57,0.62,0.87,0.69,0.17,0.66, null,null,null,null,null],
-  ['Claude-Opus-4.6',        'closed', 0.22,0.07,0.09, 0.09,0.06,0.07,0.07,0.05,0.06,0.10,0.05,0.05,0.10, null,null,null,null,null],
-];
-
-// Column definitions
-// {key: index into data row, label, group, sep (left border)}
+// ─── Column definitions ───────────────────────────────────────────────────────
+// Real: 8 dimension types (no Scene/Camera)
 const REAL_COLS = [
-  {idx:2,  label:'P<sub>tok</sub>',  group:'Overall', sep:true},
-  {idx:3,  label:'R<sub>tok</sub>',  group:'Overall'},
-  {idx:4,  label:'F1<sub>tok</sub>', group:'Overall'},
-  {idx:5,  label:'Num',   group:'Dimension R<sub>tok</sub>', sep:true},
-  {idx:6,  label:'Clr',   group:'Dimension R<sub>tok</sub>'},
-  {idx:7,  label:'Cat',   group:'Dimension R<sub>tok</sub>'},
-  {idx:8,  label:'Shp',   group:'Dimension R<sub>tok</sub>'},
-  {idx:9,  label:'Mat',   group:'Dimension R<sub>tok</sub>'},
-  {idx:10, label:'Spat',  group:'Dimension R<sub>tok</sub>'},
-  {idx:11, label:'OCR',   group:'Dimension R<sub>tok</sub>'},
-  {idx:12, label:'Other', group:'Dimension R<sub>tok</sub>'},
-  {idx:13, label:'GUI',    group:'Domain F1', sep:true},
-  {idx:14, label:'Nature', group:'Domain F1'},
-  {idx:15, label:'Chart',  group:'Domain F1'},
-  {idx:16, label:'Movie',  group:'Domain F1'},
-  {idx:17, label:'Poster', group:'Domain F1'},
+  {key:'p',     label:'P<sub>tok</sub>',  group:'Overall', sep:true,  src:'overall'},
+  {key:'r',     label:'R<sub>tok</sub>',  group:'Overall',            src:'overall'},
+  {key:'f1',    label:'F1<sub>tok</sub>', group:'Overall',            src:'overall'},
+  {key:'num',   label:'Num',   group:'Dimension R<sub>tok</sub>', sep:true, src:'dim'},
+  {key:'clr',   label:'Clr',   group:'Dimension R<sub>tok</sub>',           src:'dim'},
+  {key:'cat',   label:'Cat',   group:'Dimension R<sub>tok</sub>',           src:'dim'},
+  {key:'shp',   label:'Shp',   group:'Dimension R<sub>tok</sub>',           src:'dim'},
+  {key:'mat',   label:'Mat',   group:'Dimension R<sub>tok</sub>',           src:'dim'},
+  {key:'spat',  label:'Spat',  group:'Dimension R<sub>tok</sub>',           src:'dim'},
+  {key:'ocr',   label:'OCR',   group:'Dimension R<sub>tok</sub>',           src:'dim'},
+  {key:'other', label:'Other', group:'Dimension R<sub>tok</sub>',           src:'dim'},
+  {key:'chart',  label:'Chart',  group:'Domain F1', sep:true, src:'domain'},
+  {key:'movie',  label:'Movie',  group:'Domain F1',           src:'domain'},
+  {key:'nature', label:'Nature', group:'Domain F1',           src:'domain'},
+  {key:'poster', label:'Poster', group:'Domain F1',           src:'domain'},
+  {key:'gui',    label:'GUI',    group:'Domain F1',           src:'domain'},
 ];
 
+// Synthetic: 10 dimension types (+ Scene, Camera)
 const SYNTH_COLS = [
-  {idx:2,  label:'P<sub>tok</sub>',  group:'Overall', sep:true},
-  {idx:3,  label:'R<sub>tok</sub>',  group:'Overall'},
-  {idx:4,  label:'F1<sub>tok</sub>', group:'Overall'},
-  {idx:5,  label:'Num',   group:'Dimension R<sub>tok</sub>', sep:true},
-  {idx:6,  label:'Clr',   group:'Dimension R<sub>tok</sub>'},
-  {idx:7,  label:'Cat',   group:'Dimension R<sub>tok</sub>'},
-  {idx:8,  label:'Shp',   group:'Dimension R<sub>tok</sub>'},
-  {idx:9,  label:'Mat',   group:'Dimension R<sub>tok</sub>'},
-  {idx:10, label:'Spat',  group:'Dimension R<sub>tok</sub>'},
-  {idx:11, label:'OCR',   group:'Dimension R<sub>tok</sub>'},
-  {idx:12, label:'Scene', group:'Dimension R<sub>tok</sub>'},
-  {idx:13, label:'Cam',   group:'Dimension R<sub>tok</sub>'},
-  {idx:14, label:'Other', group:'Dimension R<sub>tok</sub>'},
-  {idx:15, label:'GUI',    group:'Domain F1', sep:true},
-  {idx:16, label:'Nature', group:'Domain F1'},
-  {idx:17, label:'Chart',  group:'Domain F1'},
-  {idx:18, label:'Movie',  group:'Domain F1'},
-  {idx:19, label:'Poster', group:'Domain F1'},
+  {key:'p',     label:'P<sub>tok</sub>',  group:'Overall', sep:true,  src:'overall'},
+  {key:'r',     label:'R<sub>tok</sub>',  group:'Overall',            src:'overall'},
+  {key:'f1',    label:'F1<sub>tok</sub>', group:'Overall',            src:'overall'},
+  {key:'num',   label:'Num',   group:'Dimension R<sub>tok</sub>', sep:true, src:'dim'},
+  {key:'clr',   label:'Clr',   group:'Dimension R<sub>tok</sub>',           src:'dim'},
+  {key:'cat',   label:'Cat',   group:'Dimension R<sub>tok</sub>',           src:'dim'},
+  {key:'shp',   label:'Shp',   group:'Dimension R<sub>tok</sub>',           src:'dim'},
+  {key:'mat',   label:'Mat',   group:'Dimension R<sub>tok</sub>',           src:'dim'},
+  {key:'spat',  label:'Spat',  group:'Dimension R<sub>tok</sub>',           src:'dim'},
+  {key:'ocr',   label:'OCR',   group:'Dimension R<sub>tok</sub>',           src:'dim'},
+  {key:'scene', label:'Scene', group:'Dimension R<sub>tok</sub>',           src:'dim'},
+  {key:'cam',   label:'Cam',   group:'Dimension R<sub>tok</sub>',           src:'dim'},
+  {key:'other', label:'Other', group:'Dimension R<sub>tok</sub>',           src:'dim'},
+  {key:'chart',  label:'Chart',  group:'Domain F1', sep:true, src:'domain'},
+  {key:'movie',  label:'Movie',  group:'Domain F1',           src:'domain'},
+  {key:'nature', label:'Nature', group:'Domain F1',           src:'domain'},
+  {key:'poster', label:'Poster', group:'Domain F1',           src:'domain'},
+  {key:'gui',    label:'GUI',    group:'Domain F1',           src:'domain'},
 ];
 
 // ─── State ───────────────────────────────────────────────────────────────────
+let lbModels   = [];   // raw data from leaderboard.json
 let currentTab    = 'real';
 let currentFilter = 'all';
-let sortColIdx    = null; // index in COLS array (not data index)
+let sortColIdx    = null;
 let sortDir       = 'desc';
 
 // ─── Helpers ─────────────────────────────────────────────────────────────────
@@ -337,58 +299,64 @@ function fmt(v) {
   return v.toFixed(2);
 }
 
+function getVal(model, col) {
+  const src = currentTab === 'real' ? model.real : model.synthetic;
+  if (col.src === 'overall') return src[col.key];
+  if (col.src === 'dim')     return src.dim[col.key] ?? null;
+  if (col.src === 'domain')  return src.domain[col.key] ?? null;
+  return null;
+}
+
 function getBestValues(rows, cols) {
-  // For each col, find max non-null value
   const best = {};
-  cols.forEach(col => {
+  cols.forEach((col, i) => {
     let max = -Infinity;
-    rows.forEach(row => {
-      const v = row[col.idx];
+    rows.forEach(m => {
+      const v = getVal(m, col);
       if (v !== null && v !== undefined && v > max) max = v;
     });
-    best[col.idx] = max;
+    best[i] = max;
   });
   return best;
 }
 
 // ─── Render ──────────────────────────────────────────────────────────────────
 function render() {
-  const data = currentTab === 'real' ? REAL_DATA : SYNTH_DATA;
-  const cols = currentTab === 'real' ? REAL_COLS  : SYNTH_COLS;
+  if (!lbModels.length) return;
+  const cols = currentTab === 'real' ? REAL_COLS : SYNTH_COLS;
 
   // Filter
-  let rows = data;
-  if (currentFilter === 'open')   rows = data.filter(r => r[1] === 'open');
-  if (currentFilter === 'closed') rows = data.filter(r => r[1] === 'closed');
+  let rows = lbModels;
+  if (currentFilter === 'open')   rows = lbModels.filter(m => m.type === 'open');
+  if (currentFilter === 'closed') rows = lbModels.filter(m => m.type === 'closed');
 
   // Sort
   if (sortColIdx !== null) {
     const col = cols[sortColIdx];
     rows = [...rows].sort((a, b) => {
-      const va = a[col.idx] ?? -Infinity;
-      const vb = b[col.idx] ?? -Infinity;
+      const va = getVal(a, col) ?? -Infinity;
+      const vb = getVal(b, col) ?? -Infinity;
       return sortDir === 'desc' ? vb - va : va - vb;
     });
   } else {
-    // Default sort by F1 (idx 4) desc
-    rows = [...rows].sort((a, b) => (b[4] ?? -Infinity) - (a[4] ?? -Infinity));
+    rows = [...rows].sort((a, b) => {
+      const src = currentTab === 'real';
+      const fa = (src ? a.real : a.synthetic).f1 ?? -Infinity;
+      const fb = (src ? b.real : b.synthetic).f1 ?? -Infinity;
+      return fb - fa;
+    });
   }
 
   const best = getBestValues(rows, cols);
 
   // ── Build thead ──
-  // Row 1: group headers (Rank, Model, Type + groups)
   const groups = [];
   let curGroup = null, curCount = 0, curSep = false;
   cols.forEach(col => {
     if (col.group !== curGroup) {
       if (curGroup !== null) groups.push({label: curGroup, count: curCount, sep: curSep});
-      curGroup = col.group;
-      curCount = 1;
-      curSep = !!col.sep;
-    } else {
-      curCount++;
-    }
+      curGroup = col.group; curCount = 1; curSep = !!col.sep;
+    } else { curCount++; }
   });
   if (curGroup !== null) groups.push({label: curGroup, count: curCount, sep: curSep});
 
@@ -399,7 +367,6 @@ function render() {
     row1 += `<th colspan="${g.count}"${g.sep ? ' class="col-sep"' : ''}>${g.label}</th>`;
   });
 
-  // Row 2: individual column headers (sortable)
   let row2 = '';
   cols.forEach((col, i) => {
     const isSorted = sortColIdx === i;
@@ -407,28 +374,27 @@ function render() {
       isSorted ? (sortDir === 'desc' ? 'sort-desc' : 'sort-asc') : '',
       col.sep ? 'col-sep' : ''
     ].filter(Boolean).join(' ');
-    row2 += `<th class="${cls}" onclick="sortBy(${i})">${col.label}</th>`;
+    row2 += `<th${cls ? ` class="${cls}"` : ''} onclick="sortBy(${i})">${col.label}</th>`;
   });
 
-  document.getElementById('lb-thead').innerHTML =
-    `<tr>${row1}</tr><tr>${row2}</tr>`;
+  document.getElementById('lb-thead').innerHTML = `<tr>${row1}</tr><tr>${row2}</tr>`;
 
   // ── Build tbody ──
   let tbody = '';
-  rows.forEach((row, ri) => {
+  rows.forEach((model, ri) => {
     const rank = ri + 1;
     const rankClass = rank <= 3 ? `rank-${rank}` : '';
     const medal = rank === 1 ? '🥇' : rank === 2 ? '🥈' : rank === 3 ? '🥉' : rank;
-    const badgeClass = row[1] === 'open' ? 'badge-open' : 'badge-closed';
-    const badgeLabel = row[1] === 'open' ? 'Open' : 'Closed';
+    const badgeClass = model.type === 'open' ? 'badge-open' : 'badge-closed';
+    const badgeLabel = model.type === 'open' ? 'Open' : 'Closed';
 
     let cells = `<td class="sticky-1 rank-medal ${rankClass}">${medal}</td>`;
-    cells += `<td class="sticky-2 align-left">${row[0]}</td>`;
+    cells += `<td class="sticky-2 align-left">${model.model}</td>`;
     cells += `<td class="sticky-3"><span class="badge ${badgeClass}">${badgeLabel}</span></td>`;
 
-    cols.forEach((col, ci) => {
-      const v = row[col.idx];
-      const isBest = v !== null && v !== undefined && v === best[col.idx] && v > 0;
+    cols.forEach((col, i) => {
+      const v = getVal(model, col);
+      const isBest = v !== null && v !== undefined && v === best[i] && v > 0;
       const sepClass = col.sep ? 'col-sep-body' : '';
       const bestClass = isBest ? 'best' : '';
       const cls = [sepClass, bestClass].filter(Boolean).join(' ');
@@ -454,18 +420,16 @@ function switchTab(tab) {
 function setFilter(f) {
   currentFilter = f;
   document.querySelectorAll('.filter-btn').forEach(el => {
-    el.classList.toggle('active', el.textContent.toLowerCase().startsWith(f === 'all' ? 'all' : f === 'open' ? 'open' : 'closed'));
+    el.classList.toggle('active', el.textContent.trim().toLowerCase().startsWith(
+      f === 'all' ? 'all' : f === 'open' ? 'open' : 'closed'
+    ));
   });
   render();
 }
 
 function sortBy(colIdx) {
-  if (sortColIdx === colIdx) {
-    sortDir = sortDir === 'desc' ? 'asc' : 'desc';
-  } else {
-    sortColIdx = colIdx;
-    sortDir = 'desc';
-  }
+  sortDir = sortColIdx === colIdx ? (sortDir === 'desc' ? 'asc' : 'desc') : 'desc';
+  sortColIdx = colIdx;
   render();
 }
 
@@ -480,8 +444,18 @@ function downloadTable() {
   });
 }
 
-// ─── Init ─────────────────────────────────────────────────────────────────────
-render();
+// ─── Init: load data from JSON ────────────────────────────────────────────────
+fetch('./data/leaderboard.json')
+  .then(r => r.json())
+  .then(data => {
+    lbModels = data.models;
+    render();
+  })
+  .catch(err => {
+    document.getElementById('lb-tbody').innerHTML =
+      `<tr><td colspan="20" style="text-align:center;padding:24px;color:#ef4444;">Failed to load leaderboard data.</td></tr>`;
+    console.error('Leaderboard load error:', err);
+  });
 </script>
 
 </body>

@@ -1,0 +1,44 @@
+{
+  "domains": [
+    {
+      "name": "GUI",
+      "source": "Screenspot Pro",
+      "images": 200,
+      "avg_length": 196,
+      "hallucination_words": 425,
+      "hallucination_rate": "68%"
+    },
+    {
+      "name": "Nature",
+      "source": "DOCCI",
+      "images": 200,
+      "avg_length": 148,
+      "hallucination_words": 173,
+      "hallucination_rate": "26%"
+    },
+    {
+      "name": "Chart",
+      "source": "Echarts Examples",
+      "images": 200,
+      "avg_length": 197,
+      "hallucination_words": 322,
+      "hallucination_rate": "41%"
+    },
+    {
+      "name": "Movie",
+      "source": "CineTechBench + ShotBench",
+      "images": 200,
+      "avg_length": 214,
+      "hallucination_words": 1094,
+      "hallucination_rate": "88%"
+    },
+    {
+      "name": "Poster",
+      "source": "IMDB + Movie Poster 100k",
+      "images": 200,
+      "avg_length": 257,
+      "hallucination_words": 1235,
+      "hallucination_rate": "90%"
+    }
+  ]
+}
