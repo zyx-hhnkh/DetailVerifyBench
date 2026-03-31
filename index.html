@@ -147,15 +147,16 @@
         </tbody>
       </table>
     </div>
-    <!-- Examples Viewer -->
+  </div>
+  <!-- Examples Viewer — full width -->
+  <div class="ex-viewer-outer">
     <div class="ex-controls">
       <div class="ex-selects">
         <select id="ex-domain-sel" class="ex-select" onchange="setExDomain(this.value)">
-          <option value="all">All Domains</option>
-          <option value="Chart">Chart</option>
           <option value="Movie">Movie</option>
-          <option value="Nature">Nature</option>
           <option value="Poster">Poster</option>
+          <option value="Nature">Nature</option>
+          <option value="Chart">Chart</option>
           <option value="UI">GUI</option>
         </select>
         <select id="ex-image-sel" class="ex-select" onchange="setExImage(this.value)"></select>
@@ -461,7 +462,7 @@ function downloadTable() {
 
 // ─── Examples ────────────────────────────────────────────────────────────────
 let exData    = [];
-let exDomain  = 'all';
+let exDomain  = 'Movie';
 let exMode    = 'natural';
 let exCurrent = null;
 let exShowGT  = false;
@@ -490,10 +491,10 @@ function stripHalTags(tag) {
 }
 
 function populateImageSelect(domain) {
-  const filtered = domain === 'all' ? exData : exData.filter(e => e.category === domain);
+  const filtered = exData.filter(e => e.category === domain);
   const sel = document.getElementById('ex-image-sel');
   sel.innerHTML = filtered.map(e =>
-    `<option value="${e.filename}">${e.category === 'UI' ? 'GUI' : e.category} — ${e.filename}</option>`
+    `<option value="${e.filename}">${e.filename}</option>`
   ).join('');
   exCurrent = filtered[0] || null;
   exShowGT = false;
@@ -511,8 +512,8 @@ function renderViewer() {
   const domainLabel = exCurrent.category === 'UI' ? 'GUI' : exCurrent.category;
 
   const captionHTML = exShowGT
-    ? `<span style="color:#6b7280;font-size:0.78rem;display:block;margin-bottom:6px">Ground Truth (no hallucination markup)</span>`
-      + stripHalTags(src.description_tag)
+    ? `<span style="color:#6b7280;font-size:0.78rem;display:block;margin-bottom:6px">Ground Truth</span>`
+      + (src.GT_description || stripHalTags(src.description_tag))
     : renderTagHTMLWithLabels(src.description_tag, src.hallucination_labels);
 
   viewer.innerHTML = `
@@ -539,8 +540,8 @@ function toggleGT() {
   const dataKey = exMode === 'synthetic' ? 'injected' : 'natural';
   const src = exCurrent[dataKey];
   const captionHTML = exShowGT
-    ? `<span style="color:#6b7280;font-size:0.78rem;display:block;margin-bottom:6px">Ground Truth (no hallucination markup)</span>`
-      + stripHalTags(src.description_tag)
+    ? `<span style="color:#6b7280;font-size:0.78rem;display:block;margin-bottom:6px">Ground Truth</span>`
+      + (src.GT_description || stripHalTags(src.description_tag))
     : renderTagHTMLWithLabels(src.description_tag, src.hallucination_labels);
   document.getElementById('ex-caption').innerHTML = captionHTML;
   const btn = document.querySelector('.ex-gt-btn');
@@ -554,7 +555,7 @@ function setExDomain(domain) {
 }
 
 function setExImage(filename) {
-  const pool = exDomain === 'all' ? exData : exData.filter(e => e.category === exDomain);
+  const pool = exData.filter(e => e.category === exDomain);
   exCurrent = pool.find(e => e.filename === filename) || null;
   exShowGT = false;
   renderViewer();
@@ -570,7 +571,7 @@ function setExMode(mode) {
 
 fetch('./data/examples/examples.json')
   .then(r => r.json())
-  .then(data => { exData = data.examples; populateImageSelect('all'); })
+  .then(data => { exData = data.examples; populateImageSelect('Movie'); })
   .catch(err => {
     document.getElementById('ex-viewer').innerHTML =
       '<p style="color:#ef4444;padding:16px">Failed to load examples.</p>';

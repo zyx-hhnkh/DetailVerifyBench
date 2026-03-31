@@ -549,6 +549,10 @@ tbody tr:hover td { background: #f8faff; }
 }
 
 /* Single-image viewer */
+.ex-viewer-outer {
+  padding: 0 28px 48px;
+}
+
 #ex-viewer { width: 100%; }
 
 .ex-viewer-card {
