@@ -574,7 +574,7 @@ function renderViewer() {
     +     '<span class="ex-filename">' + escHtml(exCurrent.filename) + '</span>'
     +     methodSliderHTML()
     +   '</div>'
-    +   '<button class="ex-gt-btn' + (exShowGT?' active':'') + '" onclick="toggleGT()">Show GT</button>'
+    +   '<button id="btn-show-gt" class="ex-gt-btn' + (exShowGT?' active':'') + '" onclick="toggleGT()">Show GT</button>'
     +   '<div class="ex-caption" id="ex-caption">' + buildCaption(src) + '</div>'
     + '</div>'
     + '</div>';
@@ -585,7 +585,7 @@ function refreshCaption() {
   const src = getExSrc();
   document.getElementById('ex-caption').innerHTML = buildCaption(src);
   // Show GT button: only active state changes, text stays "Show GT"
-  document.querySelector('.ex-gt-btn')?.classList.toggle('active', exShowGT);
+  document.getElementById('btn-show-gt')?.classList.toggle('active', exShowGT);
   // Method slider active state
   document.querySelectorAll('.ex-method-slider button').forEach(b =>
     b.classList.toggle('active', b.dataset.method === exMethod)
