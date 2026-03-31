@@ -149,20 +149,23 @@
     </div>
     <!-- Examples Viewer -->
     <div class="ex-controls">
-      <div class="ex-domain-tabs" id="ex-domain-tabs">
-        <button class="ex-tab active" data-domain="all">All</button>
-        <button class="ex-tab" data-domain="Chart">Chart</button>
-        <button class="ex-tab" data-domain="Movie">Movie</button>
-        <button class="ex-tab" data-domain="Nature">Nature</button>
-        <button class="ex-tab" data-domain="Poster">Poster</button>
-        <button class="ex-tab" data-domain="UI">GUI</button>
+      <div class="ex-selects">
+        <select id="ex-domain-sel" class="ex-select" onchange="setExDomain(this.value)">
+          <option value="all">All Domains</option>
+          <option value="Chart">Chart</option>
+          <option value="Movie">Movie</option>
+          <option value="Nature">Nature</option>
+          <option value="Poster">Poster</option>
+          <option value="UI">GUI</option>
+        </select>
+        <select id="ex-image-sel" class="ex-select" onchange="setExImage(this.value)"></select>
       </div>
       <div class="ex-mode-toggle">
         <button class="ex-mode active" id="btn-natural" onclick="setExMode('natural')">Natural</button>
-        <button class="ex-mode" id="btn-injected" onclick="setExMode('injected')">Injected</button>
+        <button class="ex-mode" id="btn-synthetic" onclick="setExMode('synthetic')">Synthetic</button>
       </div>
     </div>
-    <div id="ex-grid"></div>
+    <div id="ex-viewer"></div>
   </div>
 </section>
 
@@ -460,96 +463,116 @@ function downloadTable() {
 let exData    = [];
 let exDomain  = 'all';
 let exMode    = 'natural';
+let exCurrent = null;
+let exShowGT  = false;
 
-const LABEL_COLORS = {
-  'Object Color Hallucination':    '#ef4444',
-  'Object Number Hallucination':   '#f97316',
-  'Spatial Relation Hallucination':'#8b5cf6',
-  'Object Category Hallucination': '#3b82f6',
-  'Object Material Hallucination': '#14b8a6',
-  'Object Shape Hallucination':    '#ec4899',
-  'OCR Hallucination':             '#eab308',
-  'Camera Hallucination':          '#6366f1',
-  'Scene Hallucination':           '#22c55e',
-  'Other Hallucination':           '#94a3b8',
-};
+const domainColors = {Chart:'#0ea5e9',Movie:'#8b5cf6',Nature:'#22c55e',Poster:'#f97316',UI:'#ec4899'};
 
-function labelColor(l) {
-  return LABEL_COLORS[l] || '#94a3b8';
-}
-
-function renderTagHTML(tag) {
-  // Escape any raw HTML first, then replace HALLUCINATION tags
-  const escaped = tag
+function renderTagHTMLWithLabels(tag, hallucination_labels) {
+  // Build map: trimmed text → labels[]
+  const labelMap = {};
+  for (const h of (hallucination_labels || [])) {
+    labelMap[h.text.trim()] = h.labels;
+  }
+  // Escape HTML, then replace HALLUCINATION spans with data-labels marks
+  return tag
     .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
-    // Now restore our tags
-    .replace(/&lt;HALLUCINATION&gt;/g, '<mark class="hal">')
-    .replace(/&lt;\/HALLUCINATION&gt;/g, '</mark>');
-  return escaped;
+    .replace(/&lt;HALLUCINATION&gt;([\s\S]*?)&lt;\/HALLUCINATION&gt;/g, (_, inner) => {
+      const rawText = inner.replace(/&amp;/g,'&').replace(/&lt;/g,'<').replace(/&gt;/g,'>');
+      const labels = labelMap[rawText.trim()] || [];
+      const labelStr = labels.join('; ');
+      return `<mark class="hal" data-labels="${labelStr}">${inner}</mark>`;
+    });
 }
 
-function renderExamples() {
-  const grid = document.getElementById('ex-grid');
-  if (!exData.length) { grid.innerHTML = ''; return; }
+function stripHalTags(tag) {
+  return tag.replace(/<HALLUCINATION>/g,'').replace(/<\/HALLUCINATION>/g,'');
+}
 
-  const filtered = exDomain === 'all' ? exData : exData.filter(e => e.category === exDomain);
+function populateImageSelect(domain) {
+  const filtered = domain === 'all' ? exData : exData.filter(e => e.category === domain);
+  const sel = document.getElementById('ex-image-sel');
+  sel.innerHTML = filtered.map(e =>
+    `<option value="${e.filename}">${e.category === 'UI' ? 'GUI' : e.category} — ${e.filename}</option>`
+  ).join('');
+  exCurrent = filtered[0] || null;
+  exShowGT = false;
+  renderViewer();
+}
 
-  grid.innerHTML = filtered.map(ex => {
-    const src = ex[exMode];
-    const tagHTML = renderTagHTML(src.description_tag);
-    const labels  = src.hallucination_labels || [];
+function renderViewer() {
+  const viewer = document.getElementById('ex-viewer');
+  if (!exCurrent) { viewer.innerHTML = ''; return; }
 
-    // Unique label types
-    const uniqueLabels = [...new Set(labels.flatMap(l => l.labels))];
-    const badgesHTML = uniqueLabels.map(l =>
-      `<span class="ex-label-badge" style="background:${labelColor(l)}20;color:${labelColor(l)};border-color:${labelColor(l)}40">${l}</span>`
-    ).join('');
+  // Map 'synthetic' mode to 'injected' key in JSON
+  const dataKey = exMode === 'synthetic' ? 'injected' : 'natural';
+  const src = exCurrent[dataKey];
+  const dc = domainColors[exCurrent.category] || '#6b7280';
+  const domainLabel = exCurrent.category === 'UI' ? 'GUI' : exCurrent.category;
 
-    const domainColors = {Chart:'#0ea5e9',Movie:'#8b5cf6',Nature:'#22c55e',Poster:'#f97316',UI:'#ec4899'};
-    const dc = domainColors[ex.category] || '#6b7280';
+  const captionHTML = exShowGT
+    ? `<span style="color:#6b7280;font-size:0.78rem;display:block;margin-bottom:6px">Ground Truth (no hallucination markup)</span>`
+      + stripHalTags(src.description_tag)
+    : renderTagHTMLWithLabels(src.description_tag, src.hallucination_labels);
 
-    return `
-    <div class="ex-card" data-domain="${ex.category}">
-      <div class="ex-card-img">
-        <img src="${ex.image}" alt="${ex.filename}" loading="lazy">
+  viewer.innerHTML = `
+  <div class="ex-viewer-card">
+    <div class="ex-viewer-img">
+      <img src="${exCurrent.image}" alt="${exCurrent.filename}" loading="lazy">
+    </div>
+    <div class="ex-viewer-body">
+      <div class="ex-viewer-header">
+        <span class="ex-domain-badge" style="background:${dc}20;color:${dc}">${domainLabel}</span>
+        <span class="ex-filename">${exCurrent.filename}</span>
       </div>
-      <div class="ex-card-body">
-        <div class="ex-card-header">
-          <span class="ex-domain-badge" style="background:${dc}20;color:${dc}">${ex.category === 'UI' ? 'GUI' : ex.category}</span>
-          <span class="ex-filename">${ex.filename}</span>
-          <span class="ex-count">${labels.length} hallucination${labels.length !== 1 ? 's' : ''}</span>
-        </div>
-        <div class="ex-caption">${tagHTML}</div>
-        <div class="ex-badges">${badgesHTML || '<span style="color:#9ca3af;font-size:0.8rem">No hallucinations annotated</span>'}</div>
-      </div>
-    </div>`;
-  }).join('');
+      <button class="ex-gt-btn${exShowGT ? ' active' : ''}" onclick="toggleGT()">
+        ${exShowGT ? 'Show Hallucinations' : 'Show GT'}
+      </button>
+      <div class="ex-caption" id="ex-caption">${captionHTML}</div>
+    </div>
+  </div>`;
+}
+
+function toggleGT() {
+  exShowGT = !exShowGT;
+  // Re-render only caption + button
+  const dataKey = exMode === 'synthetic' ? 'injected' : 'natural';
+  const src = exCurrent[dataKey];
+  const captionHTML = exShowGT
+    ? `<span style="color:#6b7280;font-size:0.78rem;display:block;margin-bottom:6px">Ground Truth (no hallucination markup)</span>`
+      + stripHalTags(src.description_tag)
+    : renderTagHTMLWithLabels(src.description_tag, src.hallucination_labels);
+  document.getElementById('ex-caption').innerHTML = captionHTML;
+  const btn = document.querySelector('.ex-gt-btn');
+  btn.textContent = exShowGT ? 'Show Hallucinations' : 'Show GT';
+  btn.classList.toggle('active', exShowGT);
 }
 
 function setExDomain(domain) {
   exDomain = domain;
-  document.querySelectorAll('.ex-tab').forEach(el =>
-    el.classList.toggle('active', el.dataset.domain === domain));
-  renderExamples();
+  populateImageSelect(domain);
+}
+
+function setExImage(filename) {
+  const pool = exDomain === 'all' ? exData : exData.filter(e => e.category === exDomain);
+  exCurrent = pool.find(e => e.filename === filename) || null;
+  exShowGT = false;
+  renderViewer();
 }
 
 function setExMode(mode) {
   exMode = mode;
   document.getElementById('btn-natural').classList.toggle('active', mode === 'natural');
-  document.getElementById('btn-injected').classList.toggle('active', mode === 'injected');
-  renderExamples();
+  document.getElementById('btn-synthetic').classList.toggle('active', mode === 'synthetic');
+  exShowGT = false;
+  renderViewer();
 }
-
-// Bind domain tabs
-document.getElementById('ex-domain-tabs').addEventListener('click', e => {
-  if (e.target.classList.contains('ex-tab')) setExDomain(e.target.dataset.domain);
-});
 
 fetch('./data/examples/examples.json')
   .then(r => r.json())
-  .then(data => { exData = data.examples; renderExamples(); })
+  .then(data => { exData = data.examples; populateImageSelect('all'); })
   .catch(err => {
-    document.getElementById('ex-grid').innerHTML =
+    document.getElementById('ex-viewer').innerHTML =
       '<p style="color:#ef4444;padding:16px">Failed to load examples.</p>';
     console.error('Examples load error:', err);
   });

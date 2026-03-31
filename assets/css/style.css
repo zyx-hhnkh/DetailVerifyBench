@@ -499,32 +499,30 @@ tbody tr:hover td { background: #f8faff; }
   margin-bottom: 20px;
 }
 
-.ex-domain-tabs {
+.ex-selects {
   display: flex;
-  gap: 6px;
+  gap: 10px;
   flex-wrap: wrap;
 }
 
-.ex-tab {
-  padding: 6px 14px;
+.ex-select {
+  padding: 7px 32px 7px 12px;
   border: 1.5px solid #e2e8f0;
-  border-radius: 20px;
-  font-size: 0.83rem;
-  font-weight: 500;
-  cursor: pointer;
-  background: #fff;
-  color: #374151;
-  transition: all 0.15s;
+  border-radius: 8px;
+  font-size: 0.85rem;
   font-family: inherit;
+  color: #374151;
+  background: #fff;
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236b7280' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  cursor: pointer;
+  min-width: 140px;
+  transition: border-color 0.15s;
 }
-
-.ex-tab.active {
-  background: #1e293b;
-  color: #fff;
-  border-color: #1e293b;
-}
-
-.ex-tab:hover:not(.active) { background: #f1f5f9; }
+.ex-select:focus { outline: none; border-color: #2563eb; }
 
 .ex-mode-toggle {
   display: flex;
@@ -550,57 +548,52 @@ tbody tr:hover td { background: #f8faff; }
   color: #fff;
 }
 
-/* Example Cards Grid */
-#ex-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(640px, 1fr));
-  gap: 20px;
-}
+/* Single-image viewer */
+#ex-viewer { width: 100%; }
 
-.ex-card {
+.ex-viewer-card {
   display: flex;
-  gap: 0;
   border: 1px solid #e2e8f0;
-  border-radius: 10px;
+  border-radius: 12px;
   overflow: hidden;
   background: #fff;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
-  transition: box-shadow 0.2s;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  min-height: 400px;
 }
 
-.ex-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.10); }
-
-.ex-card-img {
+.ex-viewer-img {
+  width: 50%;
   flex-shrink: 0;
-  width: 220px;
-  background: #f1f5f9;
+  background: #f8faff;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  max-height: 70vh;
 }
 
-.ex-card-img img {
+.ex-viewer-img img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  max-height: 70vh;
+  object-fit: contain;
   display: block;
 }
 
-.ex-card-body {
+.ex-viewer-body {
   flex: 1;
-  padding: 16px;
+  padding: 24px 28px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  min-width: 0;
-  overflow: hidden;
+  gap: 14px;
+  overflow-y: auto;
+  max-height: 70vh;
 }
 
-.ex-card-header {
+.ex-viewer-header {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   flex-wrap: wrap;
 }
 
@@ -625,46 +618,62 @@ tbody tr:hover td { background: #f8faff; }
   min-width: 0;
 }
 
-.ex-count {
-  font-size: 0.75rem;
-  color: #ef4444;
+.ex-gt-btn {
+  align-self: flex-start;
+  padding: 5px 14px;
+  border: 1.5px solid #2563eb;
+  border-radius: 6px;
+  background: #fff;
+  color: #2563eb;
+  font-size: 0.82rem;
   font-weight: 600;
-  white-space: nowrap;
-  flex-shrink: 0;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.15s, color 0.15s;
 }
+.ex-gt-btn:hover { background: #eff6ff; }
+.ex-gt-btn.active { background: #2563eb; color: #fff; }
 
 .ex-caption {
-  font-size: 0.82rem;
-  line-height: 1.65;
+  font-size: 0.9rem;
+  line-height: 1.8;
   color: #374151;
-  max-height: 180px;
+  flex: 1;
   overflow-y: auto;
-  padding-right: 4px;
 }
 
-.ex-caption mark.hal {
+/* Hallucination highlight + tooltip */
+mark.hal {
   background: #fee2e2;
   color: #b91c1c;
-  border-radius: 2px;
-  padding: 0 1px;
+  border-radius: 3px;
+  padding: 1px 2px;
+  font-style: normal;
+  position: relative;
+  cursor: help;
+}
+
+mark.hal::after {
+  content: attr(data-labels);
+  position: absolute;
+  bottom: calc(100% + 5px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: #1e293b;
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 500;
+  padding: 4px 9px;
+  border-radius: 5px;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.15s;
+  z-index: 20;
   font-style: normal;
 }
 
-.ex-badges {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 5px;
-  margin-top: auto;
-}
-
-.ex-label-badge {
-  font-size: 0.7rem;
-  font-weight: 600;
-  padding: 2px 8px;
-  border-radius: 20px;
-  border: 1px solid;
-  white-space: nowrap;
-}
+mark.hal:hover::after { opacity: 1; }
 
 /* ===== Footer ===== */
 footer {
