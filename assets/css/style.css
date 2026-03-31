@@ -502,6 +502,19 @@ tbody tr:hover td { background: #f8faff; }
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
+  align-items: center;
+}
+
+.ex-right-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Unhighlight btn — same height as mode toggle */
+#btn-highlight {
+  align-self: auto;
+  padding: 7px 14px;
 }
 
 .ex-select {

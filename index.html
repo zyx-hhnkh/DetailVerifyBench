@@ -160,11 +160,13 @@
           <option value="UI">GUI</option>
         </select>
         <select id="ex-image-sel" class="ex-select" onchange="setExImage(this.value)"></select>
-        <button id="btn-highlight" class="ex-gt-btn" onclick="toggleHighlight()">Highlight Hallucinations</button>
       </div>
-      <div class="ex-mode-toggle">
-        <button class="ex-mode active" id="btn-natural" onclick="setExMode('natural')">Natural</button>
-        <button class="ex-mode" id="btn-synthetic" onclick="setExMode('synthetic')">Synthetic</button>
+      <div class="ex-right-controls">
+        <button id="btn-highlight" class="ex-gt-btn" onclick="toggleHighlight()">Unhighlight</button>
+        <div class="ex-mode-toggle">
+          <button class="ex-mode active" id="btn-natural" onclick="setExMode('natural')">Natural</button>
+          <button class="ex-mode" id="btn-synthetic" onclick="setExMode('synthetic')">Synthetic</button>
+        </div>
       </div>
     </div>
     <div id="ex-viewer"></div>
@@ -468,7 +470,7 @@ let exMode      = 'natural';
 let exCurrent   = null;
 let exShowGT    = false;
 let exMethod    = 'adversarial';
-let exHighlight = false;
+let exHighlight = true;   // default: highlights ON
 
 const domainColors = {Chart:'#0ea5e9',Movie:'#8b5cf6',Nature:'#22c55e',Poster:'#f97316',UI:'#ec4899'};
 
@@ -496,11 +498,11 @@ function renderHalHTML(tag, hallucination_labels) {
     .replace(/__HALSTART__([\s\S]*?)__HALEND__/g, (_, inner) => {
       const raw = inner.replace(/&amp;/g,'&').replace(/&lt;/g,'<').replace(/&gt;/g,'>');
       const labels = labelMap[raw.trim()] || [];
-      return `<mark class="hal" data-labels="${labels.join('; ')}">${inner}</mark>`;
+      return '<mark class="hal" data-labels="' + labels.join('; ') + '">' + inner + '</mark>';
     });
 }
 
-// Word-level diff: render GT with words not in original highlighted green
+// Word-level LCS diff: render GT with words not in original highlighted green
 function wordDiffGT(stripped, gt) {
   const norm = w => w.toLowerCase().replace(/[^a-z0-9']/g,'');
   const a = stripped.trim().split(/\s+/);
@@ -549,7 +551,8 @@ function methodSliderHTML() {
   const methods = [['adversarial','Adversarial (Ours)'],['tldr','TLDR'],['halloc','Halloc']];
   return '<div class="ex-method-slider">'
     + methods.map(([k,l]) =>
-        '<button class="' + (exMethod===k?'active':'') + '" data-method="' + k + '" onclick="setExMethod(\'' + k + '\')">' + l + '</button>'
+        '<button class="' + (exMethod===k?'active':'') + '" data-method="' + k
+        + '" onclick="setExMethod(\'' + k + '\')">' + l + '</button>'
       ).join('')
     + '</div>';
 }
@@ -560,7 +563,8 @@ function renderViewer() {
   const src = getExSrc();
   const dc = domainColors[exCurrent.category] || '#6b7280';
   const domainLabel = exCurrent.category === 'UI' ? 'GUI' : exCurrent.category;
-  viewer.innerHTML = '<div class="ex-viewer-card">'
+  viewer.innerHTML =
+    '<div class="ex-viewer-card">'
     + '<div class="ex-viewer-img">'
     +   '<img src="' + exCurrent.image + '" alt="' + escHtml(exCurrent.filename) + '" loading="lazy">'
     + '</div>'
@@ -576,22 +580,37 @@ function renderViewer() {
     + '</div>';
 }
 
-// Partial update: avoids reloading the image
+// Partial update — avoids reloading the image
 function refreshCaption() {
   const src = getExSrc();
   document.getElementById('ex-caption').innerHTML = buildCaption(src);
-  document.getElementById('btn-highlight')?.classList.toggle('active', exHighlight);
+  // Show GT button: only active state changes, text stays "Show GT"
   document.querySelector('.ex-gt-btn')?.classList.toggle('active', exShowGT);
+  // Method slider active state
   document.querySelectorAll('.ex-method-slider button').forEach(b =>
     b.classList.toggle('active', b.dataset.method === exMethod)
   );
 }
 
-function toggleGT()        { exShowGT    = !exShowGT;    refreshCaption(); }
-function toggleHighlight() { exHighlight = !exHighlight; refreshCaption(); }
+// Unhighlight button: active = currently UN-highlighted (exHighlight=false)
+function syncUnhighlightBtn() {
+  const btn = document.getElementById('btn-highlight');
+  if (btn) btn.classList.toggle('active', !exHighlight);
+}
+
+function toggleHighlight() {
+  exHighlight = !exHighlight;
+  syncUnhighlightBtn();
+  refreshCaption();
+}
+
+function toggleGT() {
+  exShowGT = !exShowGT;
+  refreshCaption();
+}
 
 function setExMethod(method) {
-  exMethod = method; exShowGT = false; exHighlight = false;
+  exMethod = method;
   refreshCaption();
 }
 
@@ -603,7 +622,7 @@ function setExDomain(domain) {
 function setExImage(filename) {
   const pool = exData.filter(e => e.category === exDomain);
   exCurrent = pool.find(e => e.filename === filename) || null;
-  exShowGT = false; exHighlight = false;
+  exShowGT = false;
   renderViewer();
 }
 
@@ -611,7 +630,7 @@ function setExMode(mode) {
   exMode = mode;
   document.getElementById('btn-natural').classList.toggle('active', mode === 'natural');
   document.getElementById('btn-synthetic').classList.toggle('active', mode === 'synthetic');
-  exShowGT = false; exHighlight = false; exMethod = 'adversarial';
+  exShowGT = false; exMethod = 'adversarial';
   renderViewer();
 }
 
@@ -620,7 +639,7 @@ function populateImageSelect(domain) {
   const sel = document.getElementById('ex-image-sel');
   sel.innerHTML = filtered.map(e => '<option value="' + e.filename + '">' + e.filename + '</option>').join('');
   exCurrent = filtered[0] || null;
-  exShowGT = false; exHighlight = false;
+  exShowGT = false; exMethod = 'adversarial';
   renderViewer();
 }
 
