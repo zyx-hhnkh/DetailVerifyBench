@@ -461,92 +461,137 @@ function downloadTable() {
 }
 
 // ─── Examples ────────────────────────────────────────────────────────────────
-let exData    = [];
-let exDomain  = 'Movie';
-let exMode    = 'natural';
-let exCurrent = null;
-let exShowGT  = false;
+let exData      = [];
+let exDomain    = 'Movie';
+let exMode      = 'natural';
+let exCurrent   = null;
+let exShowGT    = false;
+let exMethod    = 'adversarial';   // 'adversarial' | 'tldr' | 'halloc' (synthetic only)
+let exHighlight = false;
 
 const domainColors = {Chart:'#0ea5e9',Movie:'#8b5cf6',Nature:'#22c55e',Poster:'#f97316',UI:'#ec4899'};
 
-function renderTagHTMLWithLabels(tag, hallucination_labels) {
-  // Build map: trimmed text → labels[]
-  const labelMap = {};
-  for (const h of (hallucination_labels || [])) {
-    labelMap[h.text.trim()] = h.labels;
-  }
-  // Escape HTML, then replace HALLUCINATION spans with data-labels marks
-  return tag
-    .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
-    .replace(/&lt;HALLUCINATION&gt;([\s\S]*?)&lt;\/HALLUCINATION&gt;/gi, (_, inner) => {
-      const rawText = inner.replace(/&amp;/g,'&').replace(/&lt;/g,'<').replace(/&gt;/g,'>');
-      const labels = labelMap[rawText.trim()] || [];
-      const labelStr = labels.join('; ');
-      return `<mark class="hal" data-labels="${labelStr}">${inner}</mark>`;
-    });
+function escHtml(s) {
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+function getExSrc() {
+  if (exMode === 'natural') return exCurrent.natural;
+  return exCurrent.injected[exMethod];
 }
 
 function stripHalTags(tag) {
   return tag.replace(/<HALLUCINATION>/gi,'').replace(/<\/HALLUCINATION>/gi,'');
 }
 
-function populateImageSelect(domain) {
-  const filtered = exData.filter(e => e.category === domain);
-  const sel = document.getElementById('ex-image-sel');
-  sel.innerHTML = filtered.map(e =>
-    `<option value="${e.filename}">${e.filename}</option>`
-  ).join('');
-  exCurrent = filtered[0] || null;
-  exShowGT = false;
-  renderViewer();
+function renderHalHTML(tag, hallucination_labels) {
+  const labelMap = {};
+  for (const h of (hallucination_labels || [])) labelMap[h.text.trim()] = h.labels;
+  return tag
+    .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
+    .replace(/&lt;HALLUCINATION&gt;([\s\S]*?)&lt;\/HALLUCINATION&gt;/gi, (_, inner) => {
+      const raw = inner.replace(/&amp;/g,'&').replace(/&lt;/g,'<').replace(/&gt;/g,'>');
+      const labels = labelMap[raw.trim()] || [];
+      return `<mark class="hal" data-labels="${labels.join('; ')}">${inner}</mark>`;
+    });
+}
+
+// Word-level diff: render GT with words not in original highlighted green
+function wordDiffGT(stripped, gt) {
+  const norm = w => w.toLowerCase().replace(/[^a-z0-9']/g,'');
+  const a = stripped.trim().split(/\s+/);
+  const b = gt.trim().split(/\s+/);
+  const m = a.length, n = b.length;
+  const dp = Array.from({length:m+1}, () => new Array(n+1).fill(0));
+  for (let i = 1; i <= m; i++)
+    for (let j = 1; j <= n; j++)
+      dp[i][j] = norm(a[i-1]) === norm(b[j-1])
+        ? dp[i-1][j-1] + 1 : Math.max(dp[i-1][j], dp[i][j-1]);
+  const ops = [];
+  let i = m, j = n;
+  while (i > 0 || j > 0) {
+    if (i > 0 && j > 0 && norm(a[i-1]) === norm(b[j-1])) { ops.unshift('same'); i--; j--; }
+    else if (j > 0 && (i === 0 || dp[i][j-1] >= dp[i-1][j])) { ops.unshift('add'); j--; }
+    else { ops.unshift('del'); i--; }
+  }
+  let bi = 0, ai = 0;
+  const parts = [];
+  for (const op of ops) {
+    if (op === 'same')     { parts.push(escHtml(b[bi++])); ai++; }
+    else if (op === 'add') { parts.push(`<mark class="gt-cor">${escHtml(b[bi++])}</mark>`); }
+    else                   { ai++; }
+  }
+  return parts.join(' ');
+}
+
+function buildCaption(src) {
+  if (!exHighlight) {
+    return exShowGT
+      ? escHtml(src.GT_description || stripHalTags(src.description_tag))
+      : escHtml(stripHalTags(src.description_tag));
+  }
+  if (exShowGT) {
+    return wordDiffGT(
+      stripHalTags(src.description_tag),
+      src.GT_description || stripHalTags(src.description_tag)
+    );
+  }
+  return renderHalHTML(src.description_tag, src.hallucination_labels);
+}
+
+function methodBtnsHTML() {
+  if (exMode !== 'synthetic') return '';
+  return `<div class="ex-method-btns">
+    ${[['adversarial','Adversarial (Ours)'],['tldr','TLDR'],['halloc','Halloc']].map(([k,l]) =>
+      `<button class="ex-method-btn${exMethod===k?' active':''}" data-method="${k}" onclick="setExMethod('${k}')">${l}</button>`
+    ).join('')}
+  </div>`;
 }
 
 function renderViewer() {
   const viewer = document.getElementById('ex-viewer');
   if (!exCurrent) { viewer.innerHTML = ''; return; }
-
-  // Map 'synthetic' mode to 'injected' key in JSON
-  const dataKey = exMode === 'synthetic' ? 'injected' : 'natural';
-  const src = exCurrent[dataKey];
+  const src = getExSrc();
   const dc = domainColors[exCurrent.category] || '#6b7280';
   const domainLabel = exCurrent.category === 'UI' ? 'GUI' : exCurrent.category;
-
-  const captionHTML = exShowGT
-    ? `<span style="color:#6b7280;font-size:0.78rem;display:block;margin-bottom:6px">Ground Truth</span>`
-      + (src.GT_description || stripHalTags(src.description_tag))
-    : renderTagHTMLWithLabels(src.description_tag, src.hallucination_labels);
-
   viewer.innerHTML = `
   <div class="ex-viewer-card">
     <div class="ex-viewer-img">
-      <img src="${exCurrent.image}" alt="${exCurrent.filename}" loading="lazy">
+      <img src="${exCurrent.image}" alt="${escHtml(exCurrent.filename)}" loading="lazy">
     </div>
     <div class="ex-viewer-body">
       <div class="ex-viewer-header">
         <span class="ex-domain-badge" style="background:${dc}20;color:${dc}">${domainLabel}</span>
-        <span class="ex-filename">${exCurrent.filename}</span>
+        <span class="ex-filename">${escHtml(exCurrent.filename)}</span>
       </div>
-      <button class="ex-gt-btn${exShowGT ? ' active' : ''}" onclick="toggleGT()">
-        ${exShowGT ? 'Show Hallucinations' : 'Show GT'}
-      </button>
-      <div class="ex-caption" id="ex-caption">${captionHTML}</div>
+      ${methodBtnsHTML()}
+      <div class="ex-btn-row">
+        <button class="ex-highlight-btn${exHighlight?' active':''}" onclick="toggleHighlight()">Highlight Hallucinations</button>
+        <button class="ex-gt-btn${exShowGT?' active':''}" onclick="toggleGT()">
+          ${exShowGT ? 'Show Hallucinations' : 'Show GT'}
+        </button>
+      </div>
+      <div class="ex-caption" id="ex-caption">${buildCaption(src)}</div>
     </div>
   </div>`;
 }
 
-function toggleGT() {
-  exShowGT = !exShowGT;
-  // Re-render only caption + button
-  const dataKey = exMode === 'synthetic' ? 'injected' : 'natural';
-  const src = exCurrent[dataKey];
-  const captionHTML = exShowGT
-    ? `<span style="color:#6b7280;font-size:0.78rem;display:block;margin-bottom:6px">Ground Truth</span>`
-      + (src.GT_description || stripHalTags(src.description_tag))
-    : renderTagHTMLWithLabels(src.description_tag, src.hallucination_labels);
-  document.getElementById('ex-caption').innerHTML = captionHTML;
-  const btn = document.querySelector('.ex-gt-btn');
-  btn.textContent = exShowGT ? 'Show Hallucinations' : 'Show GT';
-  btn.classList.toggle('active', exShowGT);
+// Partial update: avoids reloading the image
+function refreshCaption() {
+  const src = getExSrc();
+  document.getElementById('ex-caption').innerHTML = buildCaption(src);
+  document.querySelector('.ex-highlight-btn')?.classList.toggle('active', exHighlight);
+  const gtBtn = document.querySelector('.ex-gt-btn');
+  if (gtBtn) { gtBtn.textContent = exShowGT ? 'Show Hallucinations' : 'Show GT'; gtBtn.classList.toggle('active', exShowGT); }
+  document.querySelectorAll('.ex-method-btn').forEach(b => b.classList.toggle('active', b.dataset.method === exMethod));
+}
+
+function toggleGT()        { exShowGT    = !exShowGT;    refreshCaption(); }
+function toggleHighlight() { exHighlight = !exHighlight; refreshCaption(); }
+
+function setExMethod(method) {
+  exMethod = method; exShowGT = false; exHighlight = false;
+  refreshCaption();
 }
 
 function setExDomain(domain) {
@@ -557,7 +602,7 @@ function setExDomain(domain) {
 function setExImage(filename) {
   const pool = exData.filter(e => e.category === exDomain);
   exCurrent = pool.find(e => e.filename === filename) || null;
-  exShowGT = false;
+  exShowGT = false; exHighlight = false;
   renderViewer();
 }
 
@@ -565,7 +610,16 @@ function setExMode(mode) {
   exMode = mode;
   document.getElementById('btn-natural').classList.toggle('active', mode === 'natural');
   document.getElementById('btn-synthetic').classList.toggle('active', mode === 'synthetic');
-  exShowGT = false;
+  exShowGT = false; exHighlight = false; exMethod = 'adversarial';
+  renderViewer();
+}
+
+function populateImageSelect(domain) {
+  const filtered = exData.filter(e => e.category === domain);
+  const sel = document.getElementById('ex-image-sel');
+  sel.innerHTML = filtered.map(e => `<option value="${e.filename}">${e.filename}</option>`).join('');
+  exCurrent = filtered[0] || null;
+  exShowGT = false; exHighlight = false;
   renderViewer();
 }
 
