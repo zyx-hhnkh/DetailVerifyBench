@@ -645,7 +645,7 @@ function populateImageSelect(domain) {
 
 fetch('./data/examples/examples.json')
   .then(r => r.json())
-  .then(data => { exData = data.examples; populateImageSelect('Movie'); })
+  .then(data => { exData = Array.isArray(data) ? data : data.examples; populateImageSelect('Movie'); })
   .catch(err => {
     document.getElementById('ex-viewer').innerHTML =
       '<p style="color:#ef4444;padding:16px">Failed to load examples.</p>';
