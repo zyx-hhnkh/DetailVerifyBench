@@ -571,7 +571,7 @@ function renderViewer() {
     + '<div class="ex-viewer-body">'
     +   '<div class="ex-viewer-header">'
     +     '<span class="ex-domain-badge" style="background:' + dc + '20;color:' + dc + '">' + domainLabel + '</span>'
-    +     '<span class="ex-filename">' + escHtml(exCurrent.filename) + '</span>'
+    +     '<span class="ex-filename">' + document.getElementById('ex-image-sel').selectedOptions[0].text + '</span>'
     +     methodSliderHTML()
     +   '</div>'
     +   '<button id="btn-show-gt" class="ex-gt-btn' + (exShowGT?' active':'') + '" onclick="toggleGT()">Show GT</button>'
@@ -637,7 +637,7 @@ function setExMode(mode) {
 function populateImageSelect(domain) {
   const filtered = exData.filter(e => e.category === domain);
   const sel = document.getElementById('ex-image-sel');
-  sel.innerHTML = filtered.map(e => '<option value="' + e.filename + '">' + e.filename + '</option>').join('');
+  sel.innerHTML = filtered.map((e, i) => '<option value="' + e.filename + '">Example ' + (i + 1) + '</option>').join('');
   exCurrent = filtered[0] || null;
   exShowGT = false; exMethod = 'adversarial';
   renderViewer();
