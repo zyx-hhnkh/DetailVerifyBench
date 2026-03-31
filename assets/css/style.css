@@ -634,49 +634,39 @@ tbody tr:hover td { background: #f8faff; }
 .ex-gt-btn:hover { background: #eff6ff; }
 .ex-gt-btn.active { background: #2563eb; color: #fff; }
 
-/* Method selector (synthetic mode) */
-.ex-method-btns {
+/* Method slider (synthetic mode) — top-right of card header */
+.ex-method-slider {
+  margin-left: auto;
+  flex-shrink: 0;
   display: flex;
-  gap: 6px;
-  flex-wrap: wrap;
+  background: #f1f5f9;
+  border-radius: 8px;
+  padding: 3px;
+  gap: 2px;
 }
 
-.ex-method-btn {
-  padding: 4px 12px;
-  border: 1.5px solid #8b5cf6;
-  border-radius: 20px;
-  font-size: 0.78rem;
-  font-weight: 600;
-  cursor: pointer;
-  background: #fff;
-  color: #8b5cf6;
-  font-family: inherit;
-  transition: background 0.15s, color 0.15s;
-}
-.ex-method-btn:hover { background: #f5f3ff; }
-.ex-method-btn.active { background: #8b5cf6; color: #fff; }
-
-/* Highlight + GT buttons row */
-.ex-btn-row {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-}
-
-.ex-highlight-btn {
-  padding: 5px 14px;
-  border: 1.5px solid #64748b;
+.ex-method-slider button {
+  padding: 4px 10px;
+  border: none;
   border-radius: 6px;
-  background: #fff;
-  color: #64748b;
-  font-size: 0.82rem;
-  font-weight: 600;
+  background: transparent;
+  font-size: 0.74rem;
+  font-weight: 500;
+  color: #6b7280;
   cursor: pointer;
   font-family: inherit;
-  transition: background 0.15s, color 0.15s;
+  white-space: nowrap;
+  transition: background 0.15s, color 0.15s, box-shadow 0.15s;
 }
-.ex-highlight-btn:hover { background: #f8fafc; }
-.ex-highlight-btn.active { background: #1e293b; color: #fff; border-color: #1e293b; }
+
+.ex-method-slider button:hover { color: #374151; }
+
+.ex-method-slider button.active {
+  background: #fff;
+  color: #7c3aed;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.12);
+  font-weight: 600;
+}
 
 .ex-caption {
   font-size: 0.9rem;
@@ -687,6 +677,8 @@ tbody tr:hover td { background: #f8faff; }
 }
 
 /* Hallucination highlight + tooltip */
+mark { background: transparent; }
+
 mark.hal {
   background: #fee2e2;
   color: #b91c1c;
@@ -721,8 +713,8 @@ mark.hal:hover::after { opacity: 1; }
 
 /* GT correction highlight */
 mark.gt-cor {
-  background: #dcfce7;
-  color: #15803d;
+  background: #bbf7d0;
+  color: #14532d;
   border-radius: 3px;
   padding: 1px 2px;
   font-style: normal;

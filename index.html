@@ -160,6 +160,7 @@
           <option value="UI">GUI</option>
         </select>
         <select id="ex-image-sel" class="ex-select" onchange="setExImage(this.value)"></select>
+        <button id="btn-highlight" class="ex-gt-btn" onclick="toggleHighlight()">Highlight Hallucinations</button>
       </div>
       <div class="ex-mode-toggle">
         <button class="ex-mode active" id="btn-natural" onclick="setExMode('natural')">Natural</button>
@@ -466,7 +467,7 @@ let exDomain    = 'Movie';
 let exMode      = 'natural';
 let exCurrent   = null;
 let exShowGT    = false;
-let exMethod    = 'adversarial';   // 'adversarial' | 'tldr' | 'halloc' (synthetic only)
+let exMethod    = 'adversarial';
 let exHighlight = false;
 
 const domainColors = {Chart:'#0ea5e9',Movie:'#8b5cf6',Nature:'#22c55e',Poster:'#f97316',UI:'#ec4899'};
@@ -481,7 +482,7 @@ function getExSrc() {
 }
 
 function stripHalTags(tag) {
-  return tag.replace(/<HALLUCINATION>/gi,'').replace(/<\/HALLUCINATION>/gi,'');
+  return tag.replace(/<[/]?HALLUCINATION>/gi,'');
 }
 
 function renderHalHTML(tag, hallucination_labels) {
@@ -489,7 +490,10 @@ function renderHalHTML(tag, hallucination_labels) {
   for (const h of (hallucination_labels || [])) labelMap[h.text.trim()] = h.labels;
   return tag
     .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
-    .replace(/&lt;HALLUCINATION&gt;([\s\S]*?)&lt;\/HALLUCINATION&gt;/gi, (_, inner) => {
+    .replace(/&lt;\/?HALLUCINATION&gt;/gi, m =>
+      m.toLowerCase().includes('/') ? '__HALEND__' : '__HALSTART__'
+    )
+    .replace(/__HALSTART__([\s\S]*?)__HALEND__/g, (_, inner) => {
       const raw = inner.replace(/&amp;/g,'&').replace(/&lt;/g,'<').replace(/&gt;/g,'>');
       const labels = labelMap[raw.trim()] || [];
       return `<mark class="hal" data-labels="${labels.join('; ')}">${inner}</mark>`;
@@ -518,7 +522,7 @@ function wordDiffGT(stripped, gt) {
   const parts = [];
   for (const op of ops) {
     if (op === 'same')     { parts.push(escHtml(b[bi++])); ai++; }
-    else if (op === 'add') { parts.push(`<mark class="gt-cor">${escHtml(b[bi++])}</mark>`); }
+    else if (op === 'add') { parts.push('<mark class="gt-cor">' + escHtml(b[bi++]) + '</mark>'); }
     else                   { ai++; }
   }
   return parts.join(' ');
@@ -526,9 +530,10 @@ function wordDiffGT(stripped, gt) {
 
 function buildCaption(src) {
   if (!exHighlight) {
-    return exShowGT
-      ? escHtml(src.GT_description || stripHalTags(src.description_tag))
-      : escHtml(stripHalTags(src.description_tag));
+    const plain = exShowGT
+      ? (src.GT_description || stripHalTags(src.description_tag))
+      : stripHalTags(src.description_tag);
+    return escHtml(plain);
   }
   if (exShowGT) {
     return wordDiffGT(
@@ -539,13 +544,14 @@ function buildCaption(src) {
   return renderHalHTML(src.description_tag, src.hallucination_labels);
 }
 
-function methodBtnsHTML() {
+function methodSliderHTML() {
   if (exMode !== 'synthetic') return '';
-  return `<div class="ex-method-btns">
-    ${[['adversarial','Adversarial (Ours)'],['tldr','TLDR'],['halloc','Halloc']].map(([k,l]) =>
-      `<button class="ex-method-btn${exMethod===k?' active':''}" data-method="${k}" onclick="setExMethod('${k}')">${l}</button>`
-    ).join('')}
-  </div>`;
+  const methods = [['adversarial','Adversarial (Ours)'],['tldr','TLDR'],['halloc','Halloc']];
+  return '<div class="ex-method-slider">'
+    + methods.map(([k,l]) =>
+        '<button class="' + (exMethod===k?'active':'') + '" data-method="' + k + '" onclick="setExMethod(\'' + k + '\')">' + l + '</button>'
+      ).join('')
+    + '</div>';
 }
 
 function renderViewer() {
@@ -554,36 +560,31 @@ function renderViewer() {
   const src = getExSrc();
   const dc = domainColors[exCurrent.category] || '#6b7280';
   const domainLabel = exCurrent.category === 'UI' ? 'GUI' : exCurrent.category;
-  viewer.innerHTML = `
-  <div class="ex-viewer-card">
-    <div class="ex-viewer-img">
-      <img src="${exCurrent.image}" alt="${escHtml(exCurrent.filename)}" loading="lazy">
-    </div>
-    <div class="ex-viewer-body">
-      <div class="ex-viewer-header">
-        <span class="ex-domain-badge" style="background:${dc}20;color:${dc}">${domainLabel}</span>
-        <span class="ex-filename">${escHtml(exCurrent.filename)}</span>
-      </div>
-      ${methodBtnsHTML()}
-      <div class="ex-btn-row">
-        <button class="ex-highlight-btn${exHighlight?' active':''}" onclick="toggleHighlight()">Highlight Hallucinations</button>
-        <button class="ex-gt-btn${exShowGT?' active':''}" onclick="toggleGT()">
-          ${exShowGT ? 'Show Hallucinations' : 'Show GT'}
-        </button>
-      </div>
-      <div class="ex-caption" id="ex-caption">${buildCaption(src)}</div>
-    </div>
-  </div>`;
+  viewer.innerHTML = '<div class="ex-viewer-card">'
+    + '<div class="ex-viewer-img">'
+    +   '<img src="' + exCurrent.image + '" alt="' + escHtml(exCurrent.filename) + '" loading="lazy">'
+    + '</div>'
+    + '<div class="ex-viewer-body">'
+    +   '<div class="ex-viewer-header">'
+    +     '<span class="ex-domain-badge" style="background:' + dc + '20;color:' + dc + '">' + domainLabel + '</span>'
+    +     '<span class="ex-filename">' + escHtml(exCurrent.filename) + '</span>'
+    +     methodSliderHTML()
+    +   '</div>'
+    +   '<button class="ex-gt-btn' + (exShowGT?' active':'') + '" onclick="toggleGT()">Show GT</button>'
+    +   '<div class="ex-caption" id="ex-caption">' + buildCaption(src) + '</div>'
+    + '</div>'
+    + '</div>';
 }
 
 // Partial update: avoids reloading the image
 function refreshCaption() {
   const src = getExSrc();
   document.getElementById('ex-caption').innerHTML = buildCaption(src);
-  document.querySelector('.ex-highlight-btn')?.classList.toggle('active', exHighlight);
-  const gtBtn = document.querySelector('.ex-gt-btn');
-  if (gtBtn) { gtBtn.textContent = exShowGT ? 'Show Hallucinations' : 'Show GT'; gtBtn.classList.toggle('active', exShowGT); }
-  document.querySelectorAll('.ex-method-btn').forEach(b => b.classList.toggle('active', b.dataset.method === exMethod));
+  document.getElementById('btn-highlight')?.classList.toggle('active', exHighlight);
+  document.querySelector('.ex-gt-btn')?.classList.toggle('active', exShowGT);
+  document.querySelectorAll('.ex-method-slider button').forEach(b =>
+    b.classList.toggle('active', b.dataset.method === exMethod)
+  );
 }
 
 function toggleGT()        { exShowGT    = !exShowGT;    refreshCaption(); }
@@ -617,7 +618,7 @@ function setExMode(mode) {
 function populateImageSelect(domain) {
   const filtered = exData.filter(e => e.category === domain);
   const sel = document.getElementById('ex-image-sel');
-  sel.innerHTML = filtered.map(e => `<option value="${e.filename}">${e.filename}</option>`).join('');
+  sel.innerHTML = filtered.map(e => '<option value="' + e.filename + '">' + e.filename + '</option>').join('');
   exCurrent = filtered[0] || null;
   exShowGT = false; exHighlight = false;
   renderViewer();
