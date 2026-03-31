@@ -35,4 +35,5 @@ test_vllm_deploy.py
 
 # 系统文件
 *.jpg
+!data/examples/images/**/*.jpg
 .claude/
