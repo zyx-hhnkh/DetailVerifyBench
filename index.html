@@ -477,7 +477,7 @@ function renderTagHTMLWithLabels(tag, hallucination_labels) {
   // Escape HTML, then replace HALLUCINATION spans with data-labels marks
   return tag
     .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
-    .replace(/&lt;HALLUCINATION&gt;([\s\S]*?)&lt;\/HALLUCINATION&gt;/g, (_, inner) => {
+    .replace(/&lt;HALLUCINATION&gt;([\s\S]*?)&lt;\/HALLUCINATION&gt;/gi, (_, inner) => {
       const rawText = inner.replace(/&amp;/g,'&').replace(/&lt;/g,'<').replace(/&gt;/g,'>');
       const labels = labelMap[rawText.trim()] || [];
       const labelStr = labels.join('; ');
@@ -486,7 +486,7 @@ function renderTagHTMLWithLabels(tag, hallucination_labels) {
 }
 
 function stripHalTags(tag) {
-  return tag.replace(/<HALLUCINATION>/g,'').replace(/<\/HALLUCINATION>/g,'');
+  return tag.replace(/<HALLUCINATION>/gi,'').replace(/<\/HALLUCINATION>/gi,'');
 }
 
 function populateImageSelect(domain) {
