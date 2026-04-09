@@ -62,8 +62,8 @@
         Accurately detecting and localizing hallucinations is a critical task to ensure the high accuracy of image captions. In the era of Multimodal Large Language Models (MLLMs), captions have evolved from brief sentences into comprehensive narratives, often exceeding hundreds of words. This shift exponentially increases the challenge: models must now pinpoint specific erroneous spans or words within extensive contexts, rather than merely flagging response-level inconsistencies. However, existing benchmarks lack the fine-grained granularity and domain diversity required to evaluate this capability. To bridge this gap, we introduce <strong>DetailVerifyBench</strong>, a rigorous benchmark comprising 1,000 high-quality images across five distinct domains. With an average caption length of over 200 words and dense, token-level annotations of multiple hallucination types, it stands as the most challenging benchmark for precise hallucination localization in the long image caption to date.
       </p>
       <div class="wordcloud-container">
-        <div class="wordcloud-title">Hallucination Word Cloud</div>
         <div class="wordcloud-wrap" id="wordcloud"></div>
+        <p class="wordcloud-note">*Word cloud of hallucinated tokens across all 1,000 captions, sized by frequency.</p>
       </div>
     </div>
   </div>
@@ -204,8 +204,6 @@
 <section id="injection-demo" class="section">
   <div class="container">
     <h2>Adversarial Injection Pipeline</h2>
-  </div>
-  <div class="inj-viewer-outer">
     <div class="inj-controls">
       <select id="inj-example-sel" class="ex-select" onchange="setInjExample(this.value)"></select>
       <div class="inj-round-tabs">
@@ -219,14 +217,17 @@
       <span class="inj-legend-item"><mark class="hal">text</mark> Hallucination injected by the Injector</span>
       <span class="inj-legend-item"><mark class="hal-detected">text</mark> Hallucination located by the Detector (not included in the final synthetic dataset)</span>
     </div>
-    <div id="inj-stats" class="inj-stats"></div>
+    <div class="inj-stats-row">
+      <div id="inj-stats" class="inj-stats"></div>
+      <div id="inj-note" class="inj-note"></div>
+    </div>
   </div>
 </section>
 
 <!-- ===== Detection Visualization ===== -->
 <section id="detection-vis" class="section section-alt">
   <div class="container">
-    <h2>Model Detection Visualization</h2>
+    <h2>Model Localization Result</h2>
     <div class="det-controls">
       <div class="det-mode-toggle">
         <button class="ex-mode active" id="det-btn-real" onclick="setDetMode('real')">Real</button>
@@ -650,6 +651,11 @@ function renderInjViewer() {
     '<span class="inj-stat"><strong>' + s.num_injected + '</strong> injected</span>'
     + '<span class="inj-stat inj-stat-detected"><strong>' + s.num_detected + '</strong> detected (' + Math.round(s.detection_rate * 100) + '%)</span>'
     + '<span class="inj-stat inj-stat-survived"><strong>' + survived + '</strong> survived</span>';
+
+  const noteEl = document.getElementById('inj-note');
+  if (noteEl) {
+    noteEl.textContent = 'Note: Only hallucinations that survive detection are included in the final synthetic dataset.';
+  }
 }
 
 function setInjRound(r) {
@@ -755,7 +761,7 @@ function renderDetViewer() {
   if (!detCurrent) { viewer.innerHTML = ''; legend.innerHTML = ''; return; }
 
   const src = detCurrent[detMode];
-  if (!src || !src.gt_description) {
+  if (!src || !src.gt_tagged) {
     viewer.innerHTML = '<div style="padding:24px;color:#94a3b8;">No data available for this mode.</div>';
     legend.innerHTML = '';
     return;
@@ -771,7 +777,7 @@ function renderDetViewer() {
     + '<div class="det-panel-text">' + html + '</div>';
 
   // Legend
-  const items = ['<span class="det-legend-item"><span class="det-legend-swatch" style="background:#fef9c3;border:1px solid #d4aa00"></span> GT</span>'];
+  const items = ['<span class="det-legend-item"><span class="det-legend-swatch" style="background:#fee2e2;border:1px solid #f87171"></span> GT</span>'];
   for (const m of detChecked) {
     const idx = DET_MODELS.indexOf(m);
     const c = DET_COLORS[idx] || '#888';
@@ -781,23 +787,42 @@ function renderDetViewer() {
 }
 
 function buildDetText(src) {
-  // Start with plain GT description (strip tags)
-  const plain = src.gt_description.replace(/<\/?HALLUCINATION>/gi, '');
+  // Parse GT tagged text to extract plain text and GT span positions
+  const tagged = src.gt_tagged;
+  const gtSpans = [];  // {start, end} in plain text
+  let plain = '';
+  const tagRe = /<\/?HALLUCINATION>/gi;
+  let lastIdx = 0, inHal = false, halStart = 0;
+  let match;
+  // Reset lastIndex
+  tagRe.lastIndex = 0;
+  while ((match = tagRe.exec(tagged)) !== null) {
+    // Add text before this tag to plain
+    plain += tagged.substring(lastIdx, match.index);
+    if (match[0].toLowerCase().includes('/')) {
+      // Closing tag
+      if (inHal) {
+        gtSpans.push({start: halStart, end: plain.length});
+        inHal = false;
+      }
+    } else {
+      // Opening tag
+      halStart = plain.length;
+      inHal = true;
+    }
+    lastIdx = match.index + match[0].length;
+  }
+  plain += tagged.substring(lastIdx);
 
-  // Collect all annotations: {start, end, type, color/label}
+  // Collect all annotations
   const annotations = [];
 
-  // GT spans
-  for (const span of src.gt_spans) {
-    if (!span) continue;
-    const trimmed = span.replace(/[,.\s]+$/, '');
-    const idx = plain.toLowerCase().indexOf(trimmed.toLowerCase());
-    if (idx >= 0) {
-      annotations.push({start: idx, end: idx + trimmed.length, type: 'gt', label: 'GT'});
-    }
+  // GT annotations from parsed positions
+  for (const gs of gtSpans) {
+    annotations.push({start: gs.start, end: gs.end, type: 'gt', label: 'GT'});
   }
 
-  // Model spans
+  // Model spans — find each in plain text
   const checkedModels = [...detChecked];
   for (const m of checkedModels) {
     const spans = src.models[m] || [];
@@ -805,10 +830,17 @@ function buildDetText(src) {
     const color = DET_COLORS[ci] || '#888';
     for (const span of spans) {
       if (!span) continue;
-      const trimmed = span.replace(/[,.\s]+$/, '');
-      const idx = plain.toLowerCase().indexOf(trimmed.toLowerCase());
-      if (idx >= 0) {
+      const trimmed = span.trim();
+      if (!trimmed) continue;
+      // Find all occurrences
+      const lower = plain.toLowerCase();
+      const needle = trimmed.toLowerCase();
+      let searchFrom = 0;
+      while (true) {
+        const idx = lower.indexOf(needle, searchFrom);
+        if (idx < 0) break;
         annotations.push({start: idx, end: idx + trimmed.length, type: 'model', label: m, color: color});
+        searchFrom = idx + 1;
       }
     }
   }
@@ -826,7 +858,6 @@ function buildDetText(src) {
     const s = sorted[i], e = sorted[i + 1];
     const chunk = escHtml(plain.substring(s, e));
 
-    // Which annotations cover this range?
     const gtHere = annotations.some(a => a.type === 'gt' && a.start <= s && a.end >= e);
     const modelsHere = annotations.filter(a => a.type === 'model' && a.start <= s && a.end >= e);
 
@@ -835,7 +866,6 @@ function buildDetText(src) {
       out = '<span class="det-gt">' + out + '</span>';
     }
     for (const m of modelsHere) {
-      // Only add opening bracket at the actual start of this model annotation
       const isStart = m.start === s;
       const isEnd = m.end === e;
       const pre = isStart ? '<span class="det-bracket" style="color:' + m.color + '">[</span>' : '';

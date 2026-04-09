@@ -141,13 +141,12 @@ body {
   gap: 8px;
 }
 
-.wordcloud-title {
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: #64748b;
+.wordcloud-note {
+  font-size: 0.8rem;
+  color: #94a3b8;
   text-align: center;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
+  font-style: italic;
+  margin-top: 4px;
 }
 
 .wordcloud-wrap {
@@ -290,8 +289,11 @@ tbody tr:hover td { background: #f8faff; }
 }
 
 /* ===== Injection Demo ===== */
-.inj-viewer-outer {
-  padding: 0 28px 48px;
+.inj-stats-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 10px;
 }
 
 .inj-controls {
@@ -391,13 +393,13 @@ tbody tr:hover td { background: #f8faff; }
 .inj-stats {
   display: flex;
   gap: 24px;
-  margin-top: 10px;
   padding: 10px 16px;
   background: #f8fafc;
   border-radius: 8px;
   border: 1px solid #e2e8f0;
   font-size: 0.85rem;
   color: #475569;
+  flex-shrink: 0;
 }
 
 .inj-stat strong {
@@ -406,6 +408,12 @@ tbody tr:hover td { background: #f8faff; }
 
 .inj-stat-detected strong { color: #ca8a04; }
 .inj-stat-survived strong { color: #dc2626; }
+
+.inj-note {
+  font-size: 0.82rem;
+  color: #94a3b8;
+  font-style: italic;
+}
 
 mark.hal-detected {
   background: #fef9c3;
@@ -489,14 +497,15 @@ mark.hal-detected {
 }
 
 .det-gt {
-  background: #fef9c3;
+  background: #fee2e2;
+  color: #b91c1c;
   border-radius: 3px;
   padding: 1px 2px;
 }
 
 .det-bracket {
-  font-weight: 700;
-  font-size: 0.9em;
+  font-weight: 800;
+  font-size: 1.15em;
 }
 
 .det-legend {
