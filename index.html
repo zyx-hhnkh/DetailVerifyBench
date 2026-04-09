@@ -223,6 +223,30 @@
   </div>
 </section>
 
+<!-- ===== Detection Visualization ===== -->
+<section id="detection-vis" class="section section-alt">
+  <div class="container">
+    <h2>Model Detection Visualization</h2>
+    <div class="det-controls">
+      <div class="det-mode-toggle">
+        <button class="ex-mode active" id="det-btn-real" onclick="setDetMode('real')">Real</button>
+        <button class="ex-mode" id="det-btn-synth" onclick="setDetMode('synthetic')">Synthetic</button>
+      </div>
+      <select id="det-domain-sel" class="ex-select" onchange="setDetDomain(this.value)">
+        <option value="Movie">Movie</option>
+        <option value="Poster">Poster</option>
+        <option value="Nature">Nature</option>
+        <option value="Chart">Chart</option>
+        <option value="UI">GUI</option>
+      </select>
+      <select id="det-example-sel" class="ex-select" onchange="setDetExample(this.value)"></select>
+    </div>
+    <div class="det-models" id="det-model-checkboxes"></div>
+    <div id="det-viewer" class="det-viewer-card"></div>
+    <div id="det-legend" class="det-legend"></div>
+  </div>
+</section>
+
 <!-- ===== Leaderboard ===== -->
 <section id="leaderboard" class="section">
   <div class="container">
@@ -661,6 +685,169 @@ function initInjDemo(data) {
   renderInjViewer();
 }
 
+// ─── Detection Visualization ─────────────────────────────────────────────────
+const DET_MODELS = [
+  'GPT-5.2','GPT-5.4','Gemini3-Pro','Gemini-3.1-Pro','Claude-Opus-4.6',
+  'Step3-VL-10B','Qwen3-VL-8B-Think','VCD+Qwen3-VL-8B',
+  'GLM-4.6V-Flash','Qwen3.5-9B','Qwen3.5-35B-A3B','Qwen3.5-397B-A17B',
+  'KIMI-K2.5','Seed2.0-pro','Mimo-v2-pro'
+];
+const DET_COLORS = [
+  '#2563eb','#7c3aed','#0ea5e9','#ec4899','#f97316',
+  '#22c55e','#ef4444','#6366f1','#14b8a6','#e11d48',
+  '#84cc16','#a855f7','#06b6d4','#d946ef','#f59e0b'
+];
+
+let detData = [];
+let detMode = 'real';
+let detDomain = 'Movie';
+let detCurrent = null;
+let detChecked = new Set();
+
+function initDetVis(data) {
+  detData = data;
+  // Build checkboxes
+  const wrap = document.getElementById('det-model-checkboxes');
+  wrap.innerHTML = DET_MODELS.map((m, i) =>
+    '<label style="--det-color:' + DET_COLORS[i] + '">'
+    + '<input type="checkbox" value="' + m + '" onchange="toggleDetModel(this)">'
+    + '<span style="color:' + DET_COLORS[i] + '">' + escHtml(m) + '</span></label>'
+  ).join('');
+  populateDetExamples();
+}
+
+function populateDetExamples() {
+  const filtered = detData.filter(e => e.category === detDomain);
+  const sel = document.getElementById('det-example-sel');
+  sel.innerHTML = filtered.map((e, i) =>
+    '<option value="' + e.filename + '">Example ' + (i+1) + '</option>'
+  ).join('');
+  detCurrent = filtered[0] || null;
+  renderDetViewer();
+}
+
+function setDetMode(mode) {
+  detMode = mode;
+  document.getElementById('det-btn-real').classList.toggle('active', mode === 'real');
+  document.getElementById('det-btn-synth').classList.toggle('active', mode === 'synthetic');
+  renderDetViewer();
+}
+
+function setDetDomain(domain) {
+  detDomain = domain;
+  populateDetExamples();
+}
+
+function setDetExample(filename) {
+  detCurrent = detData.find(e => e.filename === filename) || null;
+  renderDetViewer();
+}
+
+function toggleDetModel(cb) {
+  if (cb.checked) detChecked.add(cb.value);
+  else detChecked.delete(cb.value);
+  renderDetViewer();
+}
+
+function renderDetViewer() {
+  const viewer = document.getElementById('det-viewer');
+  const legend = document.getElementById('det-legend');
+  if (!detCurrent) { viewer.innerHTML = ''; legend.innerHTML = ''; return; }
+
+  const src = detCurrent[detMode];
+  if (!src || !src.gt_description) {
+    viewer.innerHTML = '<div style="padding:24px;color:#94a3b8;">No data available for this mode.</div>';
+    legend.innerHTML = '';
+    return;
+  }
+
+  // Build annotated text
+  const html = buildDetText(src);
+
+  viewer.innerHTML =
+    '<div class="det-panel-img">'
+    + '<img src="' + detCurrent.image + '" alt="' + escHtml(detCurrent.filename) + '" loading="lazy">'
+    + '</div>'
+    + '<div class="det-panel-text">' + html + '</div>';
+
+  // Legend
+  const items = ['<span class="det-legend-item"><span class="det-legend-swatch" style="background:#fef9c3;border:1px solid #d4aa00"></span> GT</span>'];
+  for (const m of detChecked) {
+    const idx = DET_MODELS.indexOf(m);
+    const c = DET_COLORS[idx] || '#888';
+    items.push('<span class="det-legend-item"><span class="det-legend-swatch" style="background:' + c + '"></span> ' + escHtml(m) + '</span>');
+  }
+  legend.innerHTML = items.join('');
+}
+
+function buildDetText(src) {
+  // Start with plain GT description (strip tags)
+  const plain = src.gt_description.replace(/<\/?HALLUCINATION>/gi, '');
+
+  // Collect all annotations: {start, end, type, color/label}
+  const annotations = [];
+
+  // GT spans
+  for (const span of src.gt_spans) {
+    if (!span) continue;
+    const trimmed = span.replace(/[,.\s]+$/, '');
+    const idx = plain.toLowerCase().indexOf(trimmed.toLowerCase());
+    if (idx >= 0) {
+      annotations.push({start: idx, end: idx + trimmed.length, type: 'gt', label: 'GT'});
+    }
+  }
+
+  // Model spans
+  const checkedModels = [...detChecked];
+  for (const m of checkedModels) {
+    const spans = src.models[m] || [];
+    const ci = DET_MODELS.indexOf(m);
+    const color = DET_COLORS[ci] || '#888';
+    for (const span of spans) {
+      if (!span) continue;
+      const trimmed = span.replace(/[,.\s]+$/, '');
+      const idx = plain.toLowerCase().indexOf(trimmed.toLowerCase());
+      if (idx >= 0) {
+        annotations.push({start: idx, end: idx + trimmed.length, type: 'model', label: m, color: color});
+      }
+    }
+  }
+
+  // Sort by start position
+  annotations.sort((a, b) => a.start - b.start || a.end - b.end);
+
+  // Build HTML: collect all boundary points
+  const points = new Set([0, plain.length]);
+  for (const a of annotations) { points.add(a.start); points.add(a.end); }
+  const sorted = [...points].sort((a, b) => a - b);
+
+  let html = '';
+  for (let i = 0; i < sorted.length - 1; i++) {
+    const s = sorted[i], e = sorted[i + 1];
+    const chunk = escHtml(plain.substring(s, e));
+
+    // Which annotations cover this range?
+    const gtHere = annotations.some(a => a.type === 'gt' && a.start <= s && a.end >= e);
+    const modelsHere = annotations.filter(a => a.type === 'model' && a.start <= s && a.end >= e);
+
+    let out = chunk;
+    if (gtHere) {
+      out = '<span class="det-gt">' + out + '</span>';
+    }
+    for (const m of modelsHere) {
+      // Only add opening bracket at the actual start of this model annotation
+      const isStart = m.start === s;
+      const isEnd = m.end === e;
+      const pre = isStart ? '<span class="det-bracket" style="color:' + m.color + '">[</span>' : '';
+      const post = isEnd ? '<span class="det-bracket" style="color:' + m.color + '">]</span>' : '';
+      out = pre + out + post;
+    }
+    html += out;
+  }
+
+  return html;
+}
+
 // ─── Pipeline step slider ─────────────────────────────────────────────────────
 const pipeImages = ['data/images/Pipeline_step1.png','data/images/Pipeline_step2.png','data/images/Pipeline_step3.png'];
 function setPipeStep(i) {
@@ -892,6 +1079,15 @@ fetch('./data/examples/injection_demo.json')
     document.getElementById('inj-viewer').innerHTML =
       '<p style="color:#ef4444;padding:16px">Failed to load injection demo data.</p>';
     console.error('Injection demo load error:', err);
+  });
+
+fetch('./data/examples/detection_results.json')
+  .then(r => r.json())
+  .then(data => initDetVis(data))
+  .catch(err => {
+    document.getElementById('det-viewer').innerHTML =
+      '<p style="color:#ef4444;padding:16px">Failed to load detection results.</p>';
+    console.error('Detection results load error:', err);
   });
 
 // ─── Floating tooltip for .hal marks ──────────────────────────────────────────

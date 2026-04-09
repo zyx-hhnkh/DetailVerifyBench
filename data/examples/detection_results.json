@@ -1,0 +1,2721 @@
+[
+  {
+    "filename": "5YV7F9PJ.jpg",
+    "category": "Movie",
+    "image": "data/examples/images/Movie/5YV7F9PJ.jpg",
+    "real": {
+      "gt_description": "Based on the provided image, here is a detailed, objective description: The image displays a wide-angle, low-perspective shot of an outdoor stone terrace scene featuring numerous uniformed figures. The setting is dominated by a highly reflective black-and-white checkered marble floor that stretches from the foreground into the background. To the left, the facade of a large building is visible, constructed of grey stone and featuring tall, dark wood double doors with glass panels and intricate carvings on the lower sections. To the right, a stone balustrade with turned balusters runs along the edge of the terrace, overlooking a distant, hazy landscape with trees and buildings. Several figures dressed in military-style uniforms are standing and in motion, while many others are lying prone on the ground. The standing figures are primarily positioned in the center and mid-ground. One figure on the left, wearing a dark blue jacket <HALLUCINATION>with red cuffs,</HALLUCINATION> light blue trousers with a yellow side stripe, and a dark shako hat, is lunging forward with a long rifle <HALLUCINATION>equipped with a bayonet.</HALLUCINATION> Beside this figure, another soldier in a similar uniform <HALLUCINATION>stands</HALLUCINATION> with a rifle, looking <HALLUCINATION>back over their shoulder;</HALLUCINATION> a sword in a metal scabbard hangs at their hip. Further back and to the right, three other soldiers are visible wearing lighter blue uniforms with white cross-belts; one is aiming a rifle upwards, while another <HALLUCINATION>leans against</HALLUCINATION> the balustrade. The floor is cluttered with numerous figures lying in various positions, mostly in the foreground and along the base of the wall. These prone figures wear dark <HALLUCINATION>blue</HALLUCINATION> uniforms with red piping and dark boots. Their limbs are sprawled, and several long rifles are scattered on the tiles among them. The lighting is bright and natural, with the sun positioned low in the sky behind the figures in the center-right background, creating a strong lens flare and backlighting the scene. The sky is overcast with soft, diffused clouds. The reflective floor mirrors the figures, the sky, and the architectural details, adding depth to the composition.",
+      "gt_spans": [
+        "with red cuffs,",
+        "equipped with a bayonet.",
+        "stands",
+        "back over their shoulder;",
+        "leans against",
+        "blue"
+      ],
+      "models": {
+        "GPT-5.2": [
+          "with red cuffs,",
+          "equipped with a bayonet.",
+          "stands",
+          "back over their shoulder;",
+          "leans against",
+          "blue"
+        ],
+        "GPT-5.4": [
+          "with red cuffs,",
+          "equipped with a bayonet.",
+          "stands",
+          "back over their shoulder;",
+          "leans against",
+          "blue"
+        ],
+        "Gemini3-Pro": [
+          "with red cuffs,",
+          "equipped with a bayonet.",
+          "stands",
+          "back over their shoulder;",
+          "leans against",
+          "blue"
+        ],
+        "Gemini-3.1-Pro": [
+          "with red cuffs,",
+          "equipped with a bayonet.",
+          "stands",
+          "back over their shoulder;",
+          "leans against",
+          "blue"
+        ],
+        "Claude-Opus-4.6": [
+          "with red cuffs,",
+          "equipped with a bayonet.",
+          "stands",
+          "back over their shoulder;",
+          "leans against",
+          "blue"
+        ],
+        "Step3-VL-10B": [
+          "with red cuffs,",
+          "equipped with a bayonet.",
+          "stands",
+          "back over their shoulder;",
+          "leans against",
+          "blue"
+        ],
+        "Qwen3-VL-8B-Think": [
+          "with red cuffs,",
+          "equipped with a bayonet.",
+          "stands",
+          "back over their shoulder;",
+          "leans against",
+          "blue"
+        ],
+        "VCD+Qwen3-VL-8B": [
+          "with red cuffs,",
+          "equipped with a bayonet.",
+          "stands",
+          "back over their shoulder;",
+          "leans against",
+          "blue"
+        ],
+        "GLM-4.6V-Flash": [
+          "with red cuffs,",
+          "equipped with a bayonet.",
+          "stands",
+          "back over their shoulder;",
+          "leans against",
+          "blue"
+        ],
+        "Qwen3.5-9B": [],
+        "Qwen3.5-35B-A3B": [
+          "with red cuffs,",
+          "equipped with a bayonet.",
+          "stands",
+          "back over their shoulder;",
+          "leans against",
+          "blue"
+        ],
+        "Qwen3.5-397B-A17B": [
+          "with red cuffs,",
+          "equipped with a bayonet.",
+          "stands",
+          "back over their shoulder;",
+          "leans against",
+          "blue"
+        ],
+        "KIMI-K2.5": [
+          "with red cuffs,",
+          "equipped with a bayonet.",
+          "stands",
+          "back over their shoulder;",
+          "leans against",
+          "blue"
+        ],
+        "Seed2.0-pro": [
+          "with red cuffs,",
+          "equipped with a bayonet.",
+          "stands",
+          "back over their shoulder;",
+          "leans against",
+          "blue"
+        ],
+        "Mimo-v2-pro": [
+          "with red cuffs,",
+          "equipped with a bayonet.",
+          "stands",
+          "back over their shoulder;",
+          "leans against",
+          "blue"
+        ]
+      }
+    },
+    "synthetic": {
+      "gt_description": "Based on the provided image, here is a detailed, objective description:\n\nThe image displays a wide-angle, <HALLUCINATION>high-angle</HALLUCINATION> shot of an outdoor stone terrace scene featuring numerous uniformed figures. The setting is dominated by a highly reflective black-and-white checkered marble floor that stretches from the foreground into the background. <HALLUCINATION>To the right</HALLUCINATION>, the facade of a large building is visible, constructed of grey stone and featuring tall, dark wood double doors with glass panels and intricate carvings on the lower sections. <HALLUCINATION>To the left</HALLUCINATION>, a stone balustrade with turned balusters runs along the edge of the terrace, overlooking a distant, hazy landscape with trees and buildings.\n\nSeveral figures dressed in military-style uniforms are standing and in motion, while many others are lying prone on the ground. The standing figures are primarily positioned in the center and mid-ground. One figure on the left, wearing a dark blue jacket, light blue trousers with a <HALLUCINATION>white side stripe</HALLUCINATION>, and a dark shako hat, is lunging forward with a long rifle. Beside this figure, another soldier in a similar uniform stoops with a rifle, looking down at the soldier on the ground; a sword in a metal scabbard hangs at their hip. Further back and <HALLUCINATION>to the left</HALLUCINATION>, <HALLUCINATION>five other soldiers</HALLUCINATION> are visible wearing lighter blue uniforms with white cross-belts; one is aiming a rifle upwards, while another is near the balustrade.\n\nThe floor is cluttered with numerous figures lying in various positions, mostly in the foreground and along the base of the wall. These prone figures wear dark uniforms with red piping and dark boots. Their limbs are sprawled, and several long rifles are scattered on the tiles among them. The lighting is bright and natural, with the sun positioned low in the sky behind the figures in the center-right background, creating a strong lens flare and backlighting the scene. The sky is overcast with soft, diffused clouds. The reflective floor mirrors the figures, the sky, and the architectural details, adding depth to the composition.",
+      "gt_spans": [
+        "high-angle",
+        "blue-and-grey",
+        "To the right",
+        "To the left",
+        "white side stripe",
+        "dark forage cap",
+        "cavalry saber",
+        "leather scabbard",
+        "five other soldiers",
+        "to the left"
+      ],
+      "models": {
+        "GPT-5.2": [
+          "high-angle",
+          "To the right",
+          "To the left",
+          "white side stripe",
+          "to the left",
+          "five other soldiers"
+        ],
+        "GPT-5.4": [
+          "high-angle",
+          "To the right",
+          "To the left",
+          "white side stripe",
+          "to the left",
+          "five other soldiers"
+        ],
+        "Gemini3-Pro": [
+          "high-angle",
+          "To the right",
+          "To the left",
+          "white side stripe",
+          "to the left",
+          "five other soldiers"
+        ],
+        "Gemini-3.1-Pro": [
+          "high-angle",
+          "To the right",
+          "To the left",
+          "white side stripe",
+          "to the left",
+          "five other soldiers"
+        ],
+        "Claude-Opus-4.6": [
+          "high-angle",
+          "To the right",
+          "To the left",
+          "white side stripe",
+          "to the left",
+          "five other soldiers"
+        ],
+        "Step3-VL-10B": [
+          "high-angle",
+          "To the right",
+          "To the left",
+          "white side stripe",
+          "to the left",
+          "five other soldiers"
+        ],
+        "Qwen3-VL-8B-Think": [
+          "high-angle",
+          "To the right",
+          "To the left",
+          "white side stripe",
+          "to the left",
+          "five other soldiers"
+        ],
+        "VCD+Qwen3-VL-8B": [
+          "high-angle",
+          "To the right",
+          "To the left",
+          "white side stripe",
+          "to the left",
+          "five other soldiers"
+        ],
+        "GLM-4.6V-Flash": [
+          "high-angle",
+          "To the right",
+          "To the left",
+          "white side stripe",
+          "to the left",
+          "five other soldiers"
+        ],
+        "Qwen3.5-9B": [
+          "high-angle",
+          "To the right",
+          "To the left",
+          "white side stripe",
+          "to the left",
+          "five other soldiers"
+        ],
+        "Qwen3.5-35B-A3B": [
+          "high-angle",
+          "To the right",
+          "To the left",
+          "white side stripe",
+          "to the left",
+          "five other soldiers"
+        ],
+        "Qwen3.5-397B-A17B": [
+          "high-angle",
+          "To the right",
+          "To the left",
+          "white side stripe",
+          "to the left",
+          "five other soldiers"
+        ],
+        "KIMI-K2.5": [
+          "high-angle",
+          "To the right",
+          "To the left",
+          "white side stripe",
+          "to the left",
+          "five other soldiers"
+        ],
+        "Seed2.0-pro": [
+          "high-angle",
+          "To the right",
+          "To the left",
+          "white side stripe",
+          "to the left",
+          "five other soldiers"
+        ],
+        "Mimo-v2-pro": [
+          "high-angle",
+          "To the right",
+          "To the left",
+          "white side stripe",
+          "to the left",
+          "five other soldiers"
+        ]
+      }
+    }
+  },
+  {
+    "filename": "8N5P5C13.jpg",
+    "category": "Movie",
+    "image": "data/examples/images/Movie/8N5P5C13.jpg",
+    "real": {
+      "gt_description": "This image presents a close-up, medium shot focusing on the hands and torso of a male figure seated in the driver's seat of a vintage automobile. The framing crops the subject's head just below the eyes, showing only the <HALLUCINATION>nose,</HALLUCINATION> mouth, chin, and neck in profile. The man has <HALLUCINATION>fair</HALLUCINATION> skin, with visible veins and wrinkles on his hands, suggesting age. He is dressed in a light beige or off-white long-sleeved button-down shirt featuring thin, <HALLUCINATION>vertical</HALLUCINATION> pinstripes. The cuffs are buttoned at the wrists. A portion of a reddish-orange suspender strap is visible over his <HALLUCINATION>left</HALLUCINATION> shoulder. On the ring finger of his left hand, a simple silver band is visible. The subject's hands are the central focus of the composition. The left hand is positioned near the top center of the steering wheel, with the palm open and fingers extended, resting near the metal hub. The right hand grips the lower right section of the steering wheel's rim. The steering wheel itself is large, featuring a polished brown wooden rim and metal spokes. It is attached to a black, cylindrical steering column. Mounted on the <HALLUCINATION>right</HALLUCINATION> side of the column is a black mechanical housing with a silver lever protruding upwards. A label with small, partially illegible <HALLUCINATION>white</HALLUCINATION> text is attached to this housing. To the left, on the dark interior door panel, a chrome handle—likely a window crank or door latch—is mounted vertically. The dashboard area to the right is finished in a glossy black material. The lighting is natural and directional, coming from the <HALLUCINATION>left</HALLUCINATION> side of the frame, creating bright highlights on the folds of the shirt sleeve and the back of the left hand. The interior of the car is cast in shadow, contrasting with the bright, out-of-focus background visible through the <HALLUCINATION>windshield,</HALLUCINATION> which suggests an outdoor daytime setting.",
+      "gt_spans": [
+        "nose,",
+        "fair",
+        "vertical",
+        "left",
+        "right",
+        "white",
+        "left",
+        "windshield,"
+      ],
+      "models": {
+        "GPT-5.2": [
+          "nose,",
+          "fair",
+          "vertical",
+          "left",
+          "right",
+          "white",
+          "left",
+          "windshield,"
+        ],
+        "GPT-5.4": [
+          "nose,",
+          "fair",
+          "vertical",
+          "left",
+          "right",
+          "white",
+          "left",
+          "windshield,"
+        ],
+        "Gemini3-Pro": [
+          "nose,",
+          "fair",
+          "vertical",
+          "left",
+          "right",
+          "white",
+          "left",
+          "windshield,"
+        ],
+        "Gemini-3.1-Pro": [
+          "nose,",
+          "fair",
+          "vertical",
+          "left",
+          "right",
+          "white",
+          "left",
+          "windshield,"
+        ],
+        "Claude-Opus-4.6": [
+          "nose,",
+          "fair",
+          "vertical",
+          "left",
+          "right",
+          "white",
+          "left",
+          "windshield,"
+        ],
+        "Step3-VL-10B": [
+          "nose,",
+          "fair",
+          "vertical",
+          "left",
+          "right",
+          "white",
+          "left",
+          "windshield,"
+        ],
+        "Qwen3-VL-8B-Think": [
+          "nose,",
+          "fair",
+          "vertical",
+          "left",
+          "right",
+          "white",
+          "left",
+          "windshield,"
+        ],
+        "VCD+Qwen3-VL-8B": [
+          "nose,",
+          "fair",
+          "vertical",
+          "left",
+          "right",
+          "white",
+          "left",
+          "windshield,"
+        ],
+        "GLM-4.6V-Flash": [
+          "nose,",
+          "fair",
+          "vertical",
+          "left",
+          "right",
+          "white",
+          "left",
+          "windshield,"
+        ],
+        "Qwen3.5-9B": [
+          "left shoulder",
+          "metal spokes"
+        ],
+        "Qwen3.5-35B-A3B": [
+          "nose,",
+          "fair",
+          "vertical",
+          "left",
+          "right",
+          "white",
+          "left",
+          "windshield,"
+        ],
+        "Qwen3.5-397B-A17B": [
+          "nose,",
+          "fair",
+          "vertical",
+          "left",
+          "right",
+          "white",
+          "left",
+          "windshield,"
+        ],
+        "KIMI-K2.5": [
+          "nose,",
+          "fair",
+          "vertical",
+          "left",
+          "right",
+          "white",
+          "left",
+          "windshield,"
+        ],
+        "Seed2.0-pro": [
+          "nose,",
+          "fair",
+          "vertical",
+          "left",
+          "right",
+          "white",
+          "left",
+          "windshield,"
+        ],
+        "Mimo-v2-pro": [
+          "nose,",
+          "fair",
+          "vertical",
+          "left",
+          "right",
+          "white",
+          "left",
+          "windshield,"
+        ]
+      }
+    },
+    "synthetic": {
+      "gt_description": "This image presents a <HALLUCINATION>low-angle, waist-up shot</HALLUCINATION> focusing on the hands and torso of a male figure seated in the driver's seat of a vintage automobile. The framing crops the subject's head just below the eyes, showing only the mouth, chin, and neck in profile. The man has wheatish skin, with visible veins and wrinkles on his hands, suggesting age. He is dressed in a <HALLUCINATION>pale sky blue</HALLUCINATION> long-sleeved button-down shirt featuring thin pinstripes. The cuffs are buttoned at the wrists. A portion of a reddish-orange suspender strap is visible over his right shoulder. On the ring finger of his left hand, a simple <HALLUCINATION>gold</HALLUCINATION> band is visible.\n\nThe subject's hands are the central focus of the composition. The left hand is positioned near the <HALLUCINATION>lower left section</HALLUCINATION> of the steering wheel, with the palm open and fingers extended, resting near the metal hub. The right hand grips the lower right section of the steering wheel's rim. The steering wheel itself is large, featuring a polished brown wooden rim and metal spokes. It is attached to a black, cylindrical steering column. Mounted on the <HALLUCINATION>right side</HALLUCINATION> of the column is a black mechanical housing with a silver lever protruding upwards. A label carving with small, partially illegible text is attached to this housing.\n\nTo the left, on the dark interior door panel, a chrome handle—likely a window crank or door latch—is mounted vertically. The dashboard area to the right is finished in a glossy black material. The lighting is natural and directional, coming from the right side of the frame, creating bright highlights on the folds of the shirt sleeve and the back of the left hand. The interior of the car is cast in shadow, contrasting with the bright, out-of-focus background visible through the car window, which suggests an outdoor daytime setting.",
+      "gt_spans": [
+        "low-angle, waist-up shot",
+        "pale sky blue",
+        "deep forest green",
+        "gold",
+        "lower left section",
+        "ivory",
+        "right side",
+        "the word 'CAUTION' engraved in block letters",
+        "horizontally",
+        "indoor studio environment"
+      ],
+      "models": {
+        "GPT-5.2": [
+          "low-angle, waist-up shot",
+          "pale sky blue",
+          "gold",
+          "lower left section",
+          "right side"
+        ],
+        "GPT-5.4": [
+          "low-angle, waist-up shot",
+          "pale sky blue",
+          "gold",
+          "lower left section",
+          "right side"
+        ],
+        "Gemini3-Pro": [
+          "low-angle, waist-up shot",
+          "pale sky blue",
+          "gold",
+          "lower left section",
+          "right side"
+        ],
+        "Gemini-3.1-Pro": [
+          "low-angle, waist-up shot",
+          "pale sky blue",
+          "gold",
+          "lower left section",
+          "right side"
+        ],
+        "Claude-Opus-4.6": [
+          "low-angle, waist-up shot",
+          "pale sky blue",
+          "gold",
+          "lower left section",
+          "right side"
+        ],
+        "Step3-VL-10B": [
+          "low-angle, waist-up shot",
+          "pale sky blue",
+          "gold",
+          "lower left section",
+          "right side"
+        ],
+        "Qwen3-VL-8B-Think": [
+          "low-angle, waist-up shot",
+          "pale sky blue",
+          "gold",
+          "lower left section",
+          "right side"
+        ],
+        "VCD+Qwen3-VL-8B": [
+          "low-angle, waist-up shot",
+          "pale sky blue",
+          "gold",
+          "lower left section",
+          "right side"
+        ],
+        "GLM-4.6V-Flash": [
+          "low-angle, waist-up shot",
+          "pale sky blue",
+          "gold",
+          "lower left section",
+          "right side"
+        ],
+        "Qwen3.5-9B": [
+          "low-angle, waist-up shot",
+          "pale sky blue",
+          "gold",
+          "lower left section",
+          "right side"
+        ],
+        "Qwen3.5-35B-A3B": [
+          "low-angle, waist-up shot",
+          "pale sky blue",
+          "gold",
+          "lower left section",
+          "right side"
+        ],
+        "Qwen3.5-397B-A17B": [
+          "low-angle, waist-up shot",
+          "pale sky blue",
+          "gold",
+          "lower left section",
+          "right side"
+        ],
+        "KIMI-K2.5": [
+          "low-angle, waist-up shot",
+          "pale sky blue",
+          "gold",
+          "lower left section",
+          "right side"
+        ],
+        "Seed2.0-pro": [
+          "low-angle, waist-up shot",
+          "pale sky blue",
+          "gold",
+          "lower left section",
+          "right side"
+        ],
+        "Mimo-v2-pro": [
+          "low-angle, waist-up shot",
+          "pale sky blue",
+          "gold",
+          "lower left section",
+          "right side"
+        ]
+      }
+    }
+  },
+  {
+    "filename": "BJTXU03U.JPG",
+    "category": "Movie",
+    "image": "data/examples/images/Movie/BJTXU03U.JPG",
+    "real": {
+      "gt_description": "This image displays a medium shot of a young boy standing indoors, framed centrally between two dark, out-of-focus vertical elements that suggest a doorway or narrow opening. The boy has a fair complexion and short, curly blonde hair that is partially covered by a black peaked cap. The cap features a strap across the front, secured by a small silver buckle or button <HALLUCINATION>on the side.</HALLUCINATION> His facial expression is <HALLUCINATION>neutral,</HALLUCINATION> with his mouth slightly ajar and his gaze directed forward. The boy is dressed in layered clothing suitable for cooler weather. He wears a heavy, dark olive-drab or charcoal wool coat with wide lapels and a visible button closure. Underneath the coat, a beige or tan knitted garment with a metal zipper running vertically down the center is visible. Beneath that layer, he wears a teal-green collared shirt, the points of which rest against the beige garment. To the left of the frame, a tall, dark wooden plant stand with a spiral, twisted column design supports a green ceramic pot with vertical ridges. A lush green plant with broad leaves grows from the pot, catching highlights from the light source. The background consists of a wall painted in a muted, yellowish-ochre tone. Directly behind the boy is a dark, rectangular object, possibly a framed picture or wooden panel, which is slightly out of focus. To the far right, a small section of a wooden table or surface is visible, holding an indistinct red object. The lighting in the scene is soft and directional, appearing to originate from the left, casting shadows on the <HALLUCINATION>right</HALLUCINATION> side of the boy's face and the wall behind him. The depth of field is shallow, keeping the boy in sharp focus while blurring the background and extreme foreground elements.",
+      "gt_spans": [
+        "on the side.",
+        "neutral,",
+        "right"
+      ],
+      "models": {
+        "GPT-5.2": [
+          "on the side.",
+          "neutral,",
+          "right"
+        ],
+        "GPT-5.4": [
+          "on the side.",
+          "neutral,",
+          "right"
+        ],
+        "Gemini3-Pro": [
+          "on the side.",
+          "neutral,",
+          "right"
+        ],
+        "Gemini-3.1-Pro": [
+          "on the side.",
+          "neutral,",
+          "right"
+        ],
+        "Claude-Opus-4.6": [
+          "on the side.",
+          "neutral,",
+          "right"
+        ],
+        "Step3-VL-10B": [
+          "on the side.",
+          "neutral,",
+          "right"
+        ],
+        "Qwen3-VL-8B-Think": [
+          "on the side.",
+          "neutral,",
+          "right"
+        ],
+        "VCD+Qwen3-VL-8B": [
+          "on the side.",
+          "neutral,",
+          "right"
+        ],
+        "GLM-4.6V-Flash": [
+          "on the side.",
+          "neutral,",
+          "right"
+        ],
+        "Qwen3.5-9B": [],
+        "Qwen3.5-35B-A3B": [
+          "on the side.",
+          "neutral,",
+          "right"
+        ],
+        "Qwen3.5-397B-A17B": [
+          "on the side.",
+          "neutral,",
+          "right"
+        ],
+        "KIMI-K2.5": [
+          "on the side.",
+          "neutral,",
+          "right"
+        ],
+        "Seed2.0-pro": [
+          "on the side.",
+          "neutral,",
+          "right"
+        ],
+        "Mimo-v2-pro": [
+          "on the side.",
+          "neutral,",
+          "right"
+        ]
+      }
+    },
+    "synthetic": {
+      "gt_description": "This image displays a medium shot of a young boy standing indoors, framed centrally between two dark, out-of-focus vertical elements that suggest a doorway or narrow opening. The boy has a fair complexion and short, curly blonde hair that is partially covered by a black peaked cap. The cap features a strap across the front, secured by a small silver buckle or button in the front. His facial expression is nervous, with his mouth slightly ajar and his gaze directed forward.\n\nThe boy is dressed in layered clothing suitable for cooler weather. He wears a heavy, dark olive-drab or charcoal wool coat with wide lapels and a visible button closure. Underneath the coat, a beige or tan knitted garment with a <HALLUCINATION>row of dark buttons</HALLUCINATION> running vertically down the center is visible. Beneath that layer, he wears a teal-green collared shirt, the points of which rest against the beige garment.\n\nTo the <HALLUCINATION>right</HALLUCINATION> of the frame, a tall, dark wooden plant stand with a <HALLUCINATION>smooth, square-edged</HALLUCINATION> column design supports a green ceramic pot with vertical ridges. A lush green plant with broad leaves grows from the pot, catching highlights from the light source. The background consists of a wall painted in a muted, <HALLUCINATION>greyish-blue</HALLUCINATION> tone. Directly behind the boy is a dark, rectangular object, possibly a framed picture or wooden panel, which is slightly out of focus. To the far right, a small section of a wooden table or surface is visible, holding an indistinct red object. The lighting in the scene is soft and directional, appearing to originate from the <HALLUCINATION>right</HALLUCINATION>, casting shadows on the left side of the boy's face and the wall behind him. The depth of field is shallow, keeping the boy in sharp focus while blurring the background and extreme foreground elements.",
+      "gt_spans": [
+        "wide shot",
+        "wooden beams",
+        "dark navy",
+        "brass",
+        "corduroy",
+        "row of dark buttons",
+        "right",
+        "smooth, square-edged",
+        "greyish-blue",
+        "right"
+      ],
+      "models": {
+        "GPT-5.2": [
+          "row of dark buttons",
+          "right",
+          "smooth, square-edged",
+          "greyish-blue",
+          "right"
+        ],
+        "GPT-5.4": [
+          "row of dark buttons",
+          "right",
+          "smooth, square-edged",
+          "greyish-blue",
+          "right"
+        ],
+        "Gemini3-Pro": [
+          "row of dark buttons",
+          "right",
+          "smooth, square-edged",
+          "greyish-blue",
+          "right"
+        ],
+        "Gemini-3.1-Pro": [
+          "row of dark buttons",
+          "right",
+          "smooth, square-edged",
+          "greyish-blue",
+          "right"
+        ],
+        "Claude-Opus-4.6": [
+          "row of dark buttons",
+          "right",
+          "smooth, square-edged",
+          "greyish-blue",
+          "right"
+        ],
+        "Step3-VL-10B": [
+          "row of dark buttons",
+          "right",
+          "smooth, square-edged",
+          "greyish-blue",
+          "right"
+        ],
+        "Qwen3-VL-8B-Think": [
+          "row of dark buttons",
+          "right",
+          "smooth, square-edged",
+          "greyish-blue",
+          "right"
+        ],
+        "VCD+Qwen3-VL-8B": [
+          "row of dark buttons",
+          "right",
+          "smooth, square-edged",
+          "greyish-blue",
+          "right"
+        ],
+        "GLM-4.6V-Flash": [
+          "row of dark buttons",
+          "right",
+          "smooth, square-edged",
+          "greyish-blue",
+          "right"
+        ],
+        "Qwen3.5-9B": [
+          "row of dark buttons",
+          "right",
+          "smooth, square-edged",
+          "greyish-blue",
+          "right"
+        ],
+        "Qwen3.5-35B-A3B": [
+          "row of dark buttons",
+          "right",
+          "smooth, square-edged",
+          "greyish-blue",
+          "right"
+        ],
+        "Qwen3.5-397B-A17B": [
+          "row of dark buttons",
+          "right",
+          "smooth, square-edged",
+          "greyish-blue",
+          "right"
+        ],
+        "KIMI-K2.5": [
+          "row of dark buttons",
+          "right",
+          "smooth, square-edged",
+          "greyish-blue",
+          "right"
+        ],
+        "Seed2.0-pro": [
+          "row of dark buttons",
+          "right",
+          "smooth, square-edged",
+          "greyish-blue",
+          "right"
+        ],
+        "Mimo-v2-pro": [
+          "row of dark buttons",
+          "right",
+          "smooth, square-edged",
+          "greyish-blue",
+          "right"
+        ]
+      }
+    }
+  },
+  {
+    "filename": "DMYH6YIZ.jpg",
+    "category": "Movie",
+    "image": "data/examples/images/Movie/DMYH6YIZ.jpg",
+    "real": {
+      "gt_description": "This image presents a medium shot of an interior scene, framed through a dark, rectangular doorway or opening that obscures the far left and right edges of the composition. The view focuses on two individuals seated across from one another at a small, square dining table. On the left side of the table, a man sits facing slightly toward <HALLUCINATION>the right.</HALLUCINATION> He has pale skin and short, dark brown hair that is combed neatly to the side. He is dressed in a formal dark suit jacket, a light blue button-down shirt, and a red tie adorned with small white polka dots. His hands are resting in his lap, below the level of the table. His gaze <HALLUCINATION>is directed forward</HALLUCINATION> toward the <HALLUCINATION>person opposite him.</HALLUCINATION> On the right side of the table, a woman is seated with her back to the camera, obscuring her face entirely. She has shoulder-length, <HALLUCINATION>strawberry-blonde</HALLUCINATION> hair styled in a bob. She wears a dark brown or maroon jacket. The back of her wooden chair, featuring vertical slats, is visible. Between them, the table is covered with a beige tablecloth featuring a subtle, intricate lace or floral pattern. A single teacup and saucer sit on the table near the center. Behind the figures, a large window is covered by sheer, cream-colored curtains that diffuse the natural daylight entering the room, creating a soft backlight. Heavier, greyish-brown drapes hang at the sides of the window. To the right of the window, in the background, a floor lamp with a beige shade stands in the corner. The foreground is dominated by the dark, shadowed frames of the doorway through which the scene is viewed. On the far right edge of the foreground, a section of wall is visible, covered in wallpaper with a geometric pattern of small reddish-brown diamonds on a light background. The lighting is natural and soft, emanating from the window, which leaves the foreground elements in silhouette while illuminating the profiles of the figures at the table.",
+      "gt_spans": [
+        "the right.",
+        "is directed forward",
+        "person opposite him.",
+        "strawberry-blonde"
+      ],
+      "models": {
+        "GPT-5.2": [
+          "the right.",
+          "is directed forward",
+          "person opposite him.",
+          "strawberry-blonde"
+        ],
+        "GPT-5.4": [
+          "the right.",
+          "is directed forward",
+          "person opposite him.",
+          "strawberry-blonde"
+        ],
+        "Gemini3-Pro": [
+          "the right.",
+          "is directed forward",
+          "person opposite him.",
+          "strawberry-blonde"
+        ],
+        "Gemini-3.1-Pro": [
+          "the right.",
+          "is directed forward",
+          "person opposite him.",
+          "strawberry-blonde"
+        ],
+        "Claude-Opus-4.6": [
+          "the right.",
+          "is directed forward",
+          "person opposite him.",
+          "strawberry-blonde"
+        ],
+        "Step3-VL-10B": [
+          "the right.",
+          "is directed forward",
+          "person opposite him.",
+          "strawberry-blonde"
+        ],
+        "Qwen3-VL-8B-Think": [
+          "the right.",
+          "is directed forward",
+          "person opposite him.",
+          "strawberry-blonde"
+        ],
+        "VCD+Qwen3-VL-8B": [
+          "the right.",
+          "is directed forward",
+          "person opposite him.",
+          "strawberry-blonde"
+        ],
+        "GLM-4.6V-Flash": [
+          "the right.",
+          "is directed forward",
+          "person opposite him.",
+          "strawberry-blonde"
+        ],
+        "Qwen3.5-9B": [],
+        "Qwen3.5-35B-A3B": [
+          "the right.",
+          "is directed forward",
+          "person opposite him.",
+          "strawberry-blonde"
+        ],
+        "Qwen3.5-397B-A17B": [
+          "the right.",
+          "is directed forward",
+          "person opposite him.",
+          "strawberry-blonde"
+        ],
+        "KIMI-K2.5": [
+          "the right.",
+          "is directed forward",
+          "person opposite him.",
+          "strawberry-blonde"
+        ],
+        "Seed2.0-pro": [
+          "the right.",
+          "is directed forward",
+          "person opposite him.",
+          "strawberry-blonde"
+        ],
+        "Mimo-v2-pro": [
+          "the right.",
+          "is directed forward",
+          "person opposite him.",
+          "strawberry-blonde"
+        ]
+      }
+    },
+    "synthetic": {
+      "gt_description": "This image presents a medium shot of an interior scene, framed through a dark, rectangular doorway or opening that obscures the far left and right edges of the composition. The view focuses on two individuals seated across from one another at a small, <HALLUCINATION>round</HALLUCINATION> dining table.\n\nOn the left side of the table, a man sits facing slightly toward his left. He has pale skin and short, dark brown hair that is combed neatly to the side. He is dressed in a formal dark suit jacket, a light blue button-down shirt, and a red tie adorned with small white polka dots. His hands are resting in his lap, below the level of the table. His gaze flicks toward the viewer.\n\nOn the right side of the table, a woman is seated with her back to the camera, obscuring her face entirely. She has shoulder-length, <HALLUCINATION>black</HALLUCINATION> hair styled in a bob. She wears a <HALLUCINATION>light grey jacket</HALLUCINATION>. The back of her wooden chair, featuring vertical slats, is visible.\n\nBetween them, the table is covered with a beige tablecloth featuring a subtle, intricate lace or floral pattern. A <HALLUCINATION>glass of water sits</HALLUCINATION> on the table near the center. Behind the figures, a large window is covered by sheer, cream-colored curtains that diffuse the natural daylight entering the room, creating a soft backlight. Heavier, greyish-brown drapes hang at the sides of the window. To the <HALLUCINATION>left</HALLUCINATION> of the window, in the background, a floor lamp with a beige shade stands in the corner.\n\nThe foreground is dominated by the dark, shadowed frames of the doorway through which the scene is viewed. On the far right edge of the foreground, a section of wall is visible, covered in wallpaper with a geometric pattern of small reddish-brown diamonds on a light background. The lighting is natural and soft, emanating from the window, which leaves the foreground elements in silhouette while illuminating the profiles of the figures at the table.",
+      "gt_spans": [
+        "long shot",
+        "round",
+        "solid blue tie",
+        "black",
+        "light grey jacket",
+        "metal",
+        "glass of water sits",
+        "left",
+        "squares"
+      ],
+      "models": {
+        "GPT-5.2": [
+          "round",
+          "black",
+          "light grey jacket",
+          "glass of water sits",
+          "left"
+        ],
+        "GPT-5.4": [
+          "round",
+          "black",
+          "light grey jacket",
+          "glass of water sits",
+          "left"
+        ],
+        "Gemini3-Pro": [
+          "round",
+          "black",
+          "light grey jacket",
+          "glass of water sits",
+          "left"
+        ],
+        "Gemini-3.1-Pro": [
+          "round",
+          "black",
+          "light grey jacket",
+          "glass of water sits",
+          "left"
+        ],
+        "Claude-Opus-4.6": [
+          "round",
+          "black",
+          "light grey jacket",
+          "glass of water sits",
+          "left"
+        ],
+        "Step3-VL-10B": [
+          "round",
+          "black",
+          "light grey jacket",
+          "glass of water sits",
+          "left"
+        ],
+        "Qwen3-VL-8B-Think": [
+          "round",
+          "black",
+          "light grey jacket",
+          "glass of water sits",
+          "left"
+        ],
+        "VCD+Qwen3-VL-8B": [
+          "round",
+          "black",
+          "light grey jacket",
+          "glass of water sits",
+          "left"
+        ],
+        "GLM-4.6V-Flash": [
+          "round",
+          "black",
+          "light grey jacket",
+          "glass of water sits",
+          "left"
+        ],
+        "Qwen3.5-9B": [
+          "round",
+          "black",
+          "light grey jacket",
+          "glass of water sits",
+          "left"
+        ],
+        "Qwen3.5-35B-A3B": [
+          "round",
+          "black",
+          "light grey jacket",
+          "glass of water sits",
+          "left"
+        ],
+        "Qwen3.5-397B-A17B": [
+          "round",
+          "black",
+          "light grey jacket",
+          "glass of water sits",
+          "left"
+        ],
+        "KIMI-K2.5": [
+          "round",
+          "black",
+          "light grey jacket",
+          "glass of water sits",
+          "left"
+        ],
+        "Seed2.0-pro": [
+          "round",
+          "black",
+          "light grey jacket",
+          "glass of water sits",
+          "left"
+        ],
+        "Mimo-v2-pro": [
+          "round",
+          "black",
+          "light grey jacket",
+          "glass of water sits",
+          "left"
+        ]
+      }
+    }
+  },
+  {
+    "filename": "MV5BMjIyOTM5OTIzNV5BMl5BanBnXkFtZTgwMDkzODE2NjE@._V1_.jpg",
+    "category": "Poster",
+    "image": "data/examples/images/Poster/MV5BMjIyOTM5OTIzNV5BMl5BanBnXkFtZTgwMDkzODE2NjE@._V1_.jpg",
+    "real": {
+      "gt_description": "This vertical movie poster is divided into three primary visual sections: a text-heavy top third against a white background, a central photographic scene, and a dark bottom section containing credits and release information. The top section features a bright, slightly out-of-focus background resembling an office ceiling with fluorescent light fixtures. Overlaid on this background is a list of actor names in a black, uppercase, sans-serif font, <HALLUCINATION>centered</HALLUCINATION> and stacked vertically. The names read: \"MARK RUFFALO,\" \"MICHAEL KEATON,\" \"RACHEL McADAMS,\" \"LIEV SCHREIBER,\" \"JOHN SLATTERY,\" and \"and STANLEY TUCCI.\" Below the names, the title \"SPOTLIGHT\" appears in a large, bold, serif typeface colored in a golden-orange hue. Underneath the title is a tagline in smaller, black, uppercase sans-serif letters: \"BREAK THE STORY. BREAK THE SILENCE.\" The middle section depicts a realistic office environment featuring five individuals gathered around a cluster of desks. The scene is cluttered with numerous stacks of paper files, manila folders, notebooks, and office supplies. On the left, a woman with blonde hair wearing a black top sits in a teal office chair, <HALLUCINATION>facing</HALLUCINATION> a man in a light checkered shirt and glasses who is also seated. In the center, a man in a grey shirt <HALLUCINATION>stands and leans over</HALLUCINATION> the desk, looking <HALLUCINATION>at documents.</HALLUCINATION> To the right, a man in a light blue shirt and tie stands behind a seated man with curly dark hair, who wears a white shirt and tie and holds a pen. In the foreground, a grey plastic bin sits on the dark <HALLUCINATION>blue</HALLUCINATION> carpet; the text \"PROPERTY OF THE BOSTON GLOBE\" is stenciled in black on its side. In the background, a safety poster is visible on a <HALLUCINATION>pillar,</HALLUCINATION> and boxes labeled \"W.B. MASON\" are stacked <HALLUCINATION>on a desk.</HALLUCINATION> The bottom section transitions to a black background. A second tagline appears in white, uppercase, sans-serif text: \"THE TRUE STORY BEHIND THE SCANDAL THAT SHOOK THE WORLD.\" Below this is a dense \"billing block\" of credits in a narrow, condensed grey font, listing production companies such as Open Road, Participant Media, and First Look, along with cast and crew details. A \"R\" rating box is visible within the credits. At the very bottom, large white text reads \"IN THEATERS THIS NOVEMBER.\" This text is flanked by two white laurel wreath logos. The left logo reads \"OFFICIAL SELECTION VENICE FILM FESTIVAL,\" and the right logo reads \"OFFICIAL SELECTION TORONTO FILM FESTIVAL.\"",
+      "gt_spans": [
+        "centered",
+        "facing",
+        "stands and leans over",
+        "at documents.",
+        "blue",
+        "pillar,",
+        "on a desk."
+      ],
+      "models": {
+        "GPT-5.2": [
+          "centered",
+          "facing",
+          "stands and leans over",
+          "at documents.",
+          "blue",
+          "pillar,",
+          "on a desk."
+        ],
+        "GPT-5.4": [
+          "centered",
+          "facing",
+          "stands and leans over",
+          "at documents.",
+          "blue",
+          "pillar,",
+          "on a desk."
+        ],
+        "Gemini3-Pro": [
+          "centered",
+          "facing",
+          "stands and leans over",
+          "at documents.",
+          "blue",
+          "pillar,",
+          "on a desk."
+        ],
+        "Gemini-3.1-Pro": [
+          "centered",
+          "facing",
+          "stands and leans over",
+          "at documents.",
+          "blue",
+          "pillar,",
+          "on a desk."
+        ],
+        "Claude-Opus-4.6": [
+          "centered",
+          "facing",
+          "stands and leans over",
+          "at documents.",
+          "blue",
+          "pillar,",
+          "on a desk."
+        ],
+        "Step3-VL-10B": [
+          "centered",
+          "facing",
+          "stands and leans over",
+          "at documents.",
+          "blue",
+          "pillar,",
+          "on a desk."
+        ],
+        "Qwen3-VL-8B-Think": [
+          "centered",
+          "facing",
+          "stands and leans over",
+          "at documents.",
+          "blue",
+          "pillar,",
+          "on a desk."
+        ],
+        "VCD+Qwen3-VL-8B": [
+          "centered",
+          "facing",
+          "stands and leans over",
+          "at documents.",
+          "blue",
+          "pillar,",
+          "on a desk."
+        ],
+        "GLM-4.6V-Flash": [
+          "centered",
+          "facing",
+          "stands and leans over",
+          "at documents.",
+          "blue",
+          "pillar,",
+          "on a desk."
+        ],
+        "Qwen3.5-9B": [],
+        "Qwen3.5-35B-A3B": [
+          "centered",
+          "facing",
+          "stands and leans over",
+          "at documents.",
+          "blue",
+          "pillar,",
+          "on a desk."
+        ],
+        "Qwen3.5-397B-A17B": [
+          "centered",
+          "facing",
+          "stands and leans over",
+          "at documents.",
+          "blue",
+          "pillar,",
+          "on a desk."
+        ],
+        "KIMI-K2.5": [
+          "centered",
+          "facing",
+          "stands and leans over",
+          "at documents.",
+          "blue",
+          "pillar,",
+          "on a desk."
+        ],
+        "Seed2.0-pro": [
+          "centered",
+          "facing",
+          "stands and leans over",
+          "at documents.",
+          "blue",
+          "pillar,",
+          "on a desk."
+        ],
+        "Mimo-v2-pro": [
+          "centered",
+          "facing",
+          "stands and leans over",
+          "at documents.",
+          "blue",
+          "pillar,",
+          "on a desk."
+        ]
+      }
+    },
+    "synthetic": {
+      "gt_description": "",
+      "gt_spans": [],
+      "models": {
+        "GPT-5.2": [],
+        "GPT-5.4": [],
+        "Gemini3-Pro": [],
+        "Gemini-3.1-Pro": [],
+        "Claude-Opus-4.6": [],
+        "Step3-VL-10B": [],
+        "Qwen3-VL-8B-Think": [],
+        "VCD+Qwen3-VL-8B": [],
+        "GLM-4.6V-Flash": [],
+        "Qwen3.5-9B": [],
+        "Qwen3.5-35B-A3B": [],
+        "Qwen3.5-397B-A17B": [],
+        "KIMI-K2.5": [],
+        "Seed2.0-pro": [],
+        "Mimo-v2-pro": []
+      }
+    }
+  },
+  {
+    "filename": "MV5BNjVmMTlkNGYtYTM2OC00Yjc2LWIyYmQtMDY4ZmU1MWRlMjA3XkEyXkFqcGc@._V1_.jpg",
+    "category": "Poster",
+    "image": "data/examples/images/Poster/MV5BNjVmMTlkNGYtYTM2OC00Yjc2LWIyYmQtMDY4ZmU1MWRlMjA3XkEyXkFqcGc@._V1_.jpg",
+    "real": {
+      "gt_description": "This movie poster features a textured yellow background resembling a watercolor wash on white paper. At the top left, small red text reads \"pvr pictures presents,\" followed by \"aamir khan productions'\" <HALLUCINATION>centered</HALLUCINATION> below. The title <HALLUCINATION>\"tAaRe</HALLUCINATION> zameeN Par\" dominates the upper center in a large, uneven, hand-written black font with mixed capitalization. Surrounding the title are small, childlike drawings, including a green bird perched on the letter \"r,\" a pencil sketch of an airplane, stars, a purple octopus, <HALLUCINATION>a kite,</HALLUCINATION> and a red fish. To the right of the title, the tagline \"EVERY CHILD IS SPECIAL\" is written in blue hand-drawn capital letters. Below the title, red text states \"produced & directed by aamir khan.\" The lower half of the poster depicts a young boy and an adult man leaning on <HALLUCINATION>a</HALLUCINATION> wooden <HALLUCINATION>desk.</HALLUCINATION> On the left, the boy has short dark hair and wears a grey shirt, resting his crossed arms on the wood while looking slightly to <HALLUCINATION>the</HALLUCINATION> left with a faint smile. On the right, the man has short dark hair and wears a brown t-shirt, resting his chin on his crossed arms and looking <HALLUCINATION>directly forward;</HALLUCINATION> a silver watch is visible on his wrist. White text printed on the wooden surface lists credits, including \"writer & creative director amole gupte,\" \"concept, research & editing deepa bhatia,\" \"lyrics prasoon joshi,\" \"music shankar ehsaan loy,\" and \"co-producers ajay bijli & sanjeev k. bijli.\" The bottom edge displays the Aamir Khan Productions logo on the left, the website \"www.taarezameenpar.com\" in the center beneath small colorful icons, and the T-Series and PVR Pictures logos on the right.",
+      "gt_spans": [
+        "centered",
+        "\"tAaRe",
+        "a kite,",
+        "a",
+        "desk.",
+        "the",
+        "directly forward;"
+      ],
+      "models": {
+        "GPT-5.2": [
+          "centered",
+          "\"tAaRe",
+          "a kite,",
+          "a",
+          "desk.",
+          "the",
+          "directly forward;"
+        ],
+        "GPT-5.4": [
+          "centered",
+          "\"tAaRe",
+          "a kite,",
+          "a",
+          "desk.",
+          "the",
+          "directly forward;"
+        ],
+        "Gemini3-Pro": [
+          "centered",
+          "\"tAaRe",
+          "a kite,",
+          "a",
+          "desk.",
+          "the",
+          "directly forward;"
+        ],
+        "Gemini-3.1-Pro": [
+          "centered",
+          "\"tAaRe",
+          "a kite,",
+          "a",
+          "desk.",
+          "the",
+          "directly forward;"
+        ],
+        "Claude-Opus-4.6": [
+          "centered",
+          "\"tAaRe",
+          "a kite,",
+          "a",
+          "desk.",
+          "the",
+          "directly forward;"
+        ],
+        "Step3-VL-10B": [
+          "centered",
+          "\"tAaRe",
+          "a kite,",
+          "a",
+          "desk.",
+          "the",
+          "directly forward;"
+        ],
+        "Qwen3-VL-8B-Think": [
+          "centered",
+          "\"tAaRe",
+          "a kite,",
+          "a",
+          "desk.",
+          "the",
+          "directly forward;"
+        ],
+        "VCD+Qwen3-VL-8B": [
+          "centered",
+          "\"tAaRe",
+          "a kite,",
+          "a",
+          "desk.",
+          "the",
+          "directly forward;"
+        ],
+        "GLM-4.6V-Flash": [
+          "centered",
+          "\"tAaRe",
+          "a kite,",
+          "a",
+          "desk.",
+          "the",
+          "directly forward;"
+        ],
+        "Qwen3.5-9B": [
+          "perched on the letter 'r'",
+          "a kite"
+        ],
+        "Qwen3.5-35B-A3B": [
+          "centered",
+          "\"tAaRe",
+          "a kite,",
+          "a",
+          "desk.",
+          "the",
+          "directly forward;"
+        ],
+        "Qwen3.5-397B-A17B": [
+          "centered",
+          "\"tAaRe",
+          "a kite,",
+          "a",
+          "desk.",
+          "the",
+          "directly forward;"
+        ],
+        "KIMI-K2.5": [
+          "centered",
+          "\"tAaRe",
+          "a kite,",
+          "a",
+          "desk.",
+          "the",
+          "directly forward;"
+        ],
+        "Seed2.0-pro": [
+          "centered",
+          "\"tAaRe",
+          "a kite,",
+          "a",
+          "desk.",
+          "the",
+          "directly forward;"
+        ],
+        "Mimo-v2-pro": [
+          "centered",
+          "\"tAaRe",
+          "a kite,",
+          "a",
+          "desk.",
+          "the",
+          "directly forward;"
+        ]
+      }
+    },
+    "synthetic": {
+      "gt_description": "This movie poster features a textured <HALLUCINATION>pale blue</HALLUCINATION> background resembling a watercolor wash on white paper. At the top left, small red text reads \"<HALLUCINATION>reliance entertainment presents</HALLUCINATION>,\" followed by \"aamir khan productions'\" below. The title \"tAAre zameeN Par\" dominates the upper center in a large, uneven, hand-written black font with mixed capitalization. Surrounding the title are small, childlike drawings, including a <HALLUCINATION>blue butterfly</HALLUCINATION> perched on the letter \"r,\" a pencil sketch of an airplane, stars, a purple octopus, and a red fish. To the <HALLUCINATION>upper right</HALLUCINATION> of the title, the tagline \"EVERY CHILD IS SPECIAL\" is written in blue hand-drawn capital letters. Below the title, red text states \"produced & directed by aamir khan.\" The lower half of the poster depicts a young boy and an adult man leaning on two wooden desks. On the <HALLUCINATION>right</HALLUCINATION>, the boy has short dark hair and wears a <HALLUCINATION>white</HALLUCINATION> shirt, resting his crossed arms on the wood while looking slightly to his left with a faint smile. On the <HALLUCINATION>left</HALLUCINATION>, the man has short dark hair and wears a brown t-shirt, resting his chin on his crossed arms and looking at the boy; a silver watch is visible on his wrist. White text printed on the wooden surface lists credits, including \"writer & creative director amole gupte,\" \"concept, research & editing deepa bhatia,\" \"lyrics prasoon joshi,\" \"music shankar ehsaan loy,\" and \"co-producers ajay bijli & sanjeev k. bijli.\" The bottom edge displays the Aamir Khan Productions logo on the left, the website \"www.taarezameenpar.com\" in the center beneath small colorful icons, and the T-Series and PVR Pictures logos on the right.",
+      "gt_spans": [
+        "pale blue",
+        "reliance entertainment presents",
+        "blue butterfly",
+        "yellow kite",
+        "upper right",
+        "three",
+        "right",
+        "white",
+        "left",
+        "black"
+      ],
+      "models": {
+        "GPT-5.2": [
+          "pale blue",
+          "reliance entertainment presents",
+          "blue butterfly",
+          "upper right",
+          "right",
+          "white",
+          "left"
+        ],
+        "GPT-5.4": [
+          "pale blue",
+          "reliance entertainment presents",
+          "blue butterfly",
+          "upper right",
+          "right",
+          "white",
+          "left"
+        ],
+        "Gemini3-Pro": [
+          "pale blue",
+          "reliance entertainment presents",
+          "blue butterfly",
+          "upper right",
+          "right",
+          "white",
+          "left"
+        ],
+        "Gemini-3.1-Pro": [
+          "pale blue",
+          "reliance entertainment presents",
+          "blue butterfly",
+          "upper right",
+          "right",
+          "white",
+          "left"
+        ],
+        "Claude-Opus-4.6": [
+          "pale blue",
+          "reliance entertainment presents",
+          "blue butterfly",
+          "upper right",
+          "right",
+          "white",
+          "left"
+        ],
+        "Step3-VL-10B": [
+          "pale blue",
+          "reliance entertainment presents",
+          "blue butterfly",
+          "upper right",
+          "right",
+          "white",
+          "left"
+        ],
+        "Qwen3-VL-8B-Think": [
+          "pale blue",
+          "reliance entertainment presents",
+          "blue butterfly",
+          "upper right",
+          "right",
+          "white",
+          "left"
+        ],
+        "VCD+Qwen3-VL-8B": [
+          "pale blue",
+          "reliance entertainment presents",
+          "blue butterfly",
+          "upper right",
+          "right",
+          "white",
+          "left"
+        ],
+        "GLM-4.6V-Flash": [
+          "pale blue",
+          "reliance entertainment presents",
+          "blue butterfly",
+          "upper right",
+          "right",
+          "white",
+          "left"
+        ],
+        "Qwen3.5-9B": [
+          "pale blue",
+          "reliance entertainment presents",
+          "blue butterfly",
+          "upper right",
+          "right",
+          "white",
+          "left"
+        ],
+        "Qwen3.5-35B-A3B": [
+          "pale blue",
+          "reliance entertainment presents",
+          "blue butterfly",
+          "upper right",
+          "right",
+          "white",
+          "left"
+        ],
+        "Qwen3.5-397B-A17B": [
+          "pale blue",
+          "reliance entertainment presents",
+          "blue butterfly",
+          "upper right",
+          "right",
+          "white",
+          "left"
+        ],
+        "KIMI-K2.5": [
+          "pale blue",
+          "reliance entertainment presents",
+          "blue butterfly",
+          "upper right",
+          "right",
+          "white",
+          "left"
+        ],
+        "Seed2.0-pro": [
+          "pale blue",
+          "reliance entertainment presents",
+          "blue butterfly",
+          "upper right",
+          "right",
+          "white",
+          "left"
+        ],
+        "Mimo-v2-pro": [
+          "pale blue",
+          "reliance entertainment presents",
+          "blue butterfly",
+          "upper right",
+          "right",
+          "white",
+          "left"
+        ]
+      }
+    }
+  },
+  {
+    "filename": "bar1_1.png",
+    "category": "Chart",
+    "image": "data/examples/images/Chart/bar1_1.png",
+    "real": {
+      "gt_description": "This vertical clustered bar chart, titled \"E-commerce Shopping Cart Abandonment Rate\" with the subtitle \"Simulated Weekly Funnel Signals,\" displays data across a timeline labeled \"Wk 01\" through \"Wk 12\" on the x-axis. The y-axis measures percentages ranging from 0% to 100%. The chart compares two metrics: \"Abandonment Rate,\" represented by blue bars, and \"Checkout Conversion Rate,\" represented by purple bars. The Abandonment Rate is consistently higher than the conversion rate for every week shown. A dotted blue horizontal line runs across the chart, indicating an average Abandonment Rate of 67.21%. Specific values are annotated on the bars, with circular markers highlighting the maximum value of 73.2% in Week 03 and the minimum value of 61.3% in Week 12. Conversely, the Checkout Conversion Rate is represented by shorter purple bars. A dashed purple horizontal line marks the average Checkout Conversion Rate at 32.79%. This metric shows an inverse trend to the abandonment rate, reaching its lowest point of 26.8% in Week 03 and peaking at 38.7% in Week 12, both of which are also highlighted with <HALLUCINATION>circular</HALLUCINATION> markers. The sum of the two values for any given week <HALLUCINATION>approximates</HALLUCINATION> 100%.",
+      "gt_spans": [
+        "circular",
+        "approximates"
+      ],
+      "models": {
+        "GPT-5.2": [
+          "circular",
+          "approximates"
+        ],
+        "GPT-5.4": [
+          "circular",
+          "approximates"
+        ],
+        "Gemini3-Pro": [
+          "circular",
+          "approximates"
+        ],
+        "Gemini-3.1-Pro": [
+          "circular",
+          "approximates"
+        ],
+        "Claude-Opus-4.6": [
+          "circular",
+          "approximates"
+        ],
+        "Step3-VL-10B": [
+          "circular",
+          "approximates"
+        ],
+        "Qwen3-VL-8B-Think": [
+          "circular",
+          "approximates"
+        ],
+        "VCD+Qwen3-VL-8B": [
+          "circular",
+          "approximates"
+        ],
+        "GLM-4.6V-Flash": [
+          "circular",
+          "approximates"
+        ],
+        "Qwen3.5-9B": [],
+        "Qwen3.5-35B-A3B": [
+          "circular",
+          "approximates"
+        ],
+        "Qwen3.5-397B-A17B": [
+          "circular",
+          "approximates"
+        ],
+        "KIMI-K2.5": [
+          "circular",
+          "approximates"
+        ],
+        "Seed2.0-pro": [
+          "circular",
+          "approximates"
+        ],
+        "Mimo-v2-pro": [
+          "circular",
+          "approximates"
+        ]
+      }
+    },
+    "synthetic": {
+      "gt_description": "This vertical clustered bar chart, titled \"E-commerce Shopping Cart Abandonment Rate\" with the subtitle \"Simulated Weekly Funnel Signals,\" displays data across a timeline labeled \"Wk 01\" through \"Wk 12\" on the x-axis. The y-axis measures percentages ranging from 0% to 100%. The chart compares two metrics: \"Abandonment Rate,\" represented by blue bars, and \"Checkout Conversion Rate,\" represented by purple bars.\n\nThe Abandonment Rate is consistently higher than the conversion rate for every week shown. A dotted blue horizontal line runs across the chart, indicating an average Abandonment Rate of 67.21%. Specific values are annotated <HALLUCINATION>directly above</HALLUCINATION> the bars, with circular markers highlighting the maximum value of 73.2% in Week 03 and the minimum value of 61.3% in Week 12.\n\nConversely, the Checkout Conversion Rate is represented by shorter purple bars. A dashed purple horizontal line marks the average Checkout Conversion Rate at 32.79%. This metric shows an inverse trend to the abandonment rate, reaching its lowest point of 26.8% in Week 03 and peaking at 38.7% in Week 12, both of which are also highlighted with diamond markers. The sum of the two values for any given week equals 100%.",
+      "gt_spans": [
+        "Global User Engagement and Exit Trends",
+        "green",
+        "red",
+        "solid green",
+        "directly above",
+        "square",
+        "red",
+        "dotted red",
+        "triangular"
+      ],
+      "models": {
+        "GPT-5.2": [
+          "directly above"
+        ],
+        "GPT-5.4": [
+          "directly above"
+        ],
+        "Gemini3-Pro": [
+          "directly above"
+        ],
+        "Gemini-3.1-Pro": [
+          "directly above"
+        ],
+        "Claude-Opus-4.6": [
+          "directly above"
+        ],
+        "Step3-VL-10B": [
+          "directly above"
+        ],
+        "Qwen3-VL-8B-Think": [
+          "directly above"
+        ],
+        "VCD+Qwen3-VL-8B": [
+          "directly above"
+        ],
+        "GLM-4.6V-Flash": [
+          "directly above"
+        ],
+        "Qwen3.5-9B": [
+          "directly above"
+        ],
+        "Qwen3.5-35B-A3B": [
+          "directly above"
+        ],
+        "Qwen3.5-397B-A17B": [
+          "directly above"
+        ],
+        "KIMI-K2.5": [
+          "directly above"
+        ],
+        "Seed2.0-pro": [
+          "directly above"
+        ],
+        "Mimo-v2-pro": [
+          "directly above"
+        ]
+      }
+    }
+  },
+  {
+    "filename": "geo-svg-lines_9.png",
+    "category": "Chart",
+    "image": "data/examples/images/Chart/geo-svg-lines_9.png",
+    "real": {
+      "gt_description": "This dual-axis combination chart, titled \"Product Return Rates by Category,\" displays data across twelve product categories listed on the x-axis: Electronics, Apparel, Home & Kitchen, Beauty, Sports, Toys, Groceries, Books, Footwear, Furniture, Pet Supplies, and Automotive. The chart utilizes two vertical axes: the left axis measures \"Return Rate (%)\" from 0% to 20%, while the right axis measures \"Avg Days / Return Orders\" from 0 to 10,000. Cyan vertical bars represent the volume of \"Return Orders,\" with specific values labeled inside each bar. Apparel has the highest order volume at 8,200, followed by Footwear at 6,300, while Books has the lowest at 900. A dashed blue line with a light blue shaded area underneath tracks the \"Return Rate,\" with percentage values labeled above each data point. Apparel records the highest return rate at 12.4%, followed by Footwear at 11.7% and Toys at 10.2%. Books shows the lowest return rate at 2.1%. Additionally, small <HALLUCINATION>white</HALLUCINATION> numbers appear at the base of each bar, corresponding to the \"Avg Days to Return\" legend item; these values range from a low of 9 for Groceries to a high of 21 for Furniture. The legend at the top center identifies the three data series: \"Return Rate\" (line), \"Avg Days to Return\" (purple dot), and \"Return Orders\" (cyan bar). Visually, categories with high return volumes, such as Apparel and Footwear, also exhibit the highest return rates.",
+      "gt_spans": [
+        "white"
+      ],
+      "models": {
+        "GPT-5.2": [
+          "white"
+        ],
+        "GPT-5.4": [
+          "white"
+        ],
+        "Gemini3-Pro": [
+          "white"
+        ],
+        "Gemini-3.1-Pro": [
+          "white"
+        ],
+        "Claude-Opus-4.6": [
+          "white"
+        ],
+        "Step3-VL-10B": [
+          "white"
+        ],
+        "Qwen3-VL-8B-Think": [
+          "white"
+        ],
+        "VCD+Qwen3-VL-8B": [
+          "white"
+        ],
+        "GLM-4.6V-Flash": [
+          "white"
+        ],
+        "Qwen3.5-9B": [],
+        "Qwen3.5-35B-A3B": [
+          "white"
+        ],
+        "Qwen3.5-397B-A17B": [
+          "white"
+        ],
+        "KIMI-K2.5": [
+          "white"
+        ],
+        "Seed2.0-pro": [
+          "white"
+        ],
+        "Mimo-v2-pro": [
+          "white"
+        ]
+      }
+    },
+    "synthetic": {
+      "gt_description": "This dual-axis combination chart, titled \"Product Return Rates by Category,\" displays data across <HALLUCINATION>ten</HALLUCINATION> product categories listed on the x-axis: Electronics, Apparel, Home & Kitchen, Beauty, Sports, Toys, Groceries, Books, Footwear, <HALLUCINATION>and Furniture</HALLUCINATION>. The chart utilizes two vertical axes: the left axis measures \"Return Rate (%)\" from 0% to 20%, while the right axis measures \"Avg Days / Return Orders\" from 0 to 10,000. Cyan vertical bars represent the volume of \"Return Orders,\" with specific values labeled <HALLUCINATION>above</HALLUCINATION> each bar. Apparel has the highest order volume at 8,200, followed by Footwear at 6,300, while Books has the lowest at 900. A dashed blue line with a light blue shaded area underneath tracks the \"Return Rate,\" with percentage values labeled above each data point. Apparel records the highest return rate at 12.4%, followed by Footwear at 11.7% and Toys at 10.2%. Books shows the lowest return rate at 2.1%. Additionally, small black numbers with white outline appear at the base of each bar, corresponding to the \"Avg Days to Return\" legend item; these values range from a low of 9 for Groceries to a high of 21 for Furniture. The legend at the top center identifies the three data series: \"Return Rate\" (line), \"Avg Days to Return\" (purple dot), and \"Return Orders\" (<HALLUCINATION>magenta bar</HALLUCINATION>). Visually, categories with high return volumes, such as Apparel and Footwear, also exhibit the highest return rates.",
+      "gt_spans": [
+        "ten",
+        "and Furniture",
+        "Magenta",
+        "above",
+        "dotted",
+        "below",
+        "yellow",
+        "top right",
+        "purple diamond",
+        "magenta bar"
+      ],
+      "models": {
+        "GPT-5.2": [
+          "ten",
+          "and Furniture",
+          "above",
+          "magenta bar"
+        ],
+        "GPT-5.4": [
+          "ten",
+          "and Furniture",
+          "above",
+          "magenta bar"
+        ],
+        "Gemini3-Pro": [
+          "ten",
+          "and Furniture",
+          "above",
+          "magenta bar"
+        ],
+        "Gemini-3.1-Pro": [
+          "ten",
+          "and Furniture",
+          "above",
+          "magenta bar"
+        ],
+        "Claude-Opus-4.6": [
+          "ten",
+          "and Furniture",
+          "above",
+          "magenta bar"
+        ],
+        "Step3-VL-10B": [
+          "ten",
+          "and Furniture",
+          "above",
+          "magenta bar"
+        ],
+        "Qwen3-VL-8B-Think": [
+          "ten",
+          "and Furniture",
+          "above",
+          "magenta bar"
+        ],
+        "VCD+Qwen3-VL-8B": [
+          "ten",
+          "and Furniture",
+          "above",
+          "magenta bar"
+        ],
+        "GLM-4.6V-Flash": [
+          "ten",
+          "and Furniture",
+          "above",
+          "magenta bar"
+        ],
+        "Qwen3.5-9B": [
+          "ten",
+          "and Furniture",
+          "above",
+          "magenta bar"
+        ],
+        "Qwen3.5-35B-A3B": [
+          "ten",
+          "and Furniture",
+          "above",
+          "magenta bar"
+        ],
+        "Qwen3.5-397B-A17B": [
+          "ten",
+          "and Furniture",
+          "above",
+          "magenta bar"
+        ],
+        "KIMI-K2.5": [
+          "ten",
+          "and Furniture",
+          "above",
+          "magenta bar"
+        ],
+        "Seed2.0-pro": [
+          "ten",
+          "and Furniture",
+          "above",
+          "magenta bar"
+        ],
+        "Mimo-v2-pro": [
+          "ten",
+          "and Furniture",
+          "above",
+          "magenta bar"
+        ]
+      }
+    }
+  },
+  {
+    "filename": "line-sections_15.png",
+    "category": "Chart",
+    "image": "data/examples/images/Chart/line-sections_15.png",
+    "real": {
+      "gt_description": "This image displays a line chart titled \"Online Conversion Funnel Analysis\" with a subtitle reading \"Simulated session-to-purchase performance.\" The vertical axis represents percentages from 0% to 100% in 20% increments, while the horizontal axis lists sequential stages: Landing View, Product View, Add to Cart, Checkout Start, Shipping Info, Payment Info, Order Review, and Purchase. A dashed line connects data points indicating the retention rate at each stage. Starting at 100% for Landing View, the line drops to 62.8% at Product View and further to 18.9% at Add to Cart. The decline stabilizes somewhat as the line proceeds to 12.6% at Checkout Start, 10.2% at Shipping Info, 8.7% at Payment Info, 7.4% at Order Review, and finally 6.1% at Purchase. The chart background is divided into shaded vertical sections. The area between Product View and <HALLUCINATION>Checkout Start</HALLUCINATION> is shaded orange and labeled \"Biggest Drop-Off\" at the top. The section from Checkout Start to Payment Info <HALLUCINATION>is also</HALLUCINATION> shaded orange and labeled \"Checkout Friction.\" The initial and final sections of the chart are shaded in light green.",
+      "gt_spans": [
+        "Checkout Start",
+        "is also"
+      ],
+      "models": {
+        "GPT-5.2": [
+          "Checkout Start",
+          "is also"
+        ],
+        "GPT-5.4": [
+          "Checkout Start",
+          "is also"
+        ],
+        "Gemini3-Pro": [
+          "Checkout Start",
+          "is also"
+        ],
+        "Gemini-3.1-Pro": [
+          "Checkout Start",
+          "is also"
+        ],
+        "Claude-Opus-4.6": [
+          "Checkout Start",
+          "is also"
+        ],
+        "Step3-VL-10B": [
+          "Checkout Start",
+          "is also"
+        ],
+        "Qwen3-VL-8B-Think": [
+          "Checkout Start",
+          "is also"
+        ],
+        "VCD+Qwen3-VL-8B": [
+          "Checkout Start",
+          "is also"
+        ],
+        "GLM-4.6V-Flash": [
+          "Checkout Start",
+          "is also"
+        ],
+        "Qwen3.5-9B": [],
+        "Qwen3.5-35B-A3B": [
+          "Checkout Start",
+          "is also"
+        ],
+        "Qwen3.5-397B-A17B": [
+          "Checkout Start",
+          "is also"
+        ],
+        "KIMI-K2.5": [
+          "Checkout Start",
+          "is also"
+        ],
+        "Seed2.0-pro": [
+          "Checkout Start",
+          "is also"
+        ],
+        "Mimo-v2-pro": [
+          "Checkout Start",
+          "is also"
+        ]
+      }
+    },
+    "synthetic": {
+      "gt_description": "This image displays a line chart titled \"Online Conversion Funnel Analysis\" with a subtitle reading \"Simulated session-to-purchase performance.\" The vertical axis represents percentages from 0% to 100% in 20% increments, while the horizontal axis lists sequential stages: Landing View, Product View, Add to Cart, Checkout Start, Shipping Info, Payment Info, Order Review, and Purchase. A <HALLUCINATION>dotted line</HALLUCINATION> connects data points indicating the retention rate at each stage. Starting at 100% for Landing View, the line drops to 62.8% at Product View and further to 18.9% at Add to Cart. The decline stabilizes somewhat as the line proceeds to 12.6% at Checkout Start, 10.2% at Shipping Info, 8.7% at Payment Info, 7.4% at Order Review, and finally 6.1% at Purchase. The chart background is divided into shaded vertical sections. The area between Product View and Add to Cart is <HALLUCINATION>shaded yellow</HALLUCINATION> and labeled <HALLUCINATION>\"Major Churn Stage\"</HALLUCINATION> at the top. The section from <HALLUCINATION>Checkout Start to Order Review</HALLUCINATION> has the area above the line shaded orange and labeled <HALLUCINATION>\"Process Friction\"</HALLUCINATION>. The initial and final sections of the chart are shaded in <HALLUCINATION>light blue</HALLUCINATION>.",
+      "gt_spans": [
+        "\"E-commerce Site Conversion Audit\"",
+        "25% increments",
+        "dotted line",
+        "21.3%",
+        "5.2%",
+        "shaded yellow",
+        "\"Major Churn Stage\"",
+        "Checkout Start to Order Review",
+        "\"Process Friction\"",
+        "light blue"
+      ],
+      "models": {
+        "GPT-5.2": [
+          "dotted line",
+          "shaded yellow",
+          "\"Major Churn Stage\"",
+          "Checkout Start to Order Review",
+          "\"Process Friction\"",
+          "light blue"
+        ],
+        "GPT-5.4": [
+          "dotted line",
+          "shaded yellow",
+          "\"Major Churn Stage\"",
+          "Checkout Start to Order Review",
+          "\"Process Friction\"",
+          "light blue"
+        ],
+        "Gemini3-Pro": [
+          "dotted line",
+          "shaded yellow",
+          "\"Major Churn Stage\"",
+          "Checkout Start to Order Review",
+          "\"Process Friction\"",
+          "light blue"
+        ],
+        "Gemini-3.1-Pro": [
+          "dotted line",
+          "shaded yellow",
+          "\"Major Churn Stage\"",
+          "Checkout Start to Order Review",
+          "\"Process Friction\"",
+          "light blue"
+        ],
+        "Claude-Opus-4.6": [
+          "dotted line",
+          "shaded yellow",
+          "\"Major Churn Stage\"",
+          "Checkout Start to Order Review",
+          "\"Process Friction\"",
+          "light blue"
+        ],
+        "Step3-VL-10B": [
+          "dotted line",
+          "shaded yellow",
+          "\"Major Churn Stage\"",
+          "Checkout Start to Order Review",
+          "\"Process Friction\"",
+          "light blue"
+        ],
+        "Qwen3-VL-8B-Think": [
+          "dotted line",
+          "shaded yellow",
+          "\"Major Churn Stage\"",
+          "Checkout Start to Order Review",
+          "\"Process Friction\"",
+          "light blue"
+        ],
+        "VCD+Qwen3-VL-8B": [
+          "dotted line",
+          "shaded yellow",
+          "\"Major Churn Stage\"",
+          "Checkout Start to Order Review",
+          "\"Process Friction\"",
+          "light blue"
+        ],
+        "GLM-4.6V-Flash": [
+          "dotted line",
+          "shaded yellow",
+          "\"Major Churn Stage\"",
+          "Checkout Start to Order Review",
+          "\"Process Friction\"",
+          "light blue"
+        ],
+        "Qwen3.5-9B": [
+          "dotted line",
+          "shaded yellow",
+          "\"Major Churn Stage\"",
+          "Checkout Start to Order Review",
+          "\"Process Friction\"",
+          "light blue"
+        ],
+        "Qwen3.5-35B-A3B": [
+          "dotted line",
+          "shaded yellow",
+          "\"Major Churn Stage\"",
+          "Checkout Start to Order Review",
+          "\"Process Friction\"",
+          "light blue"
+        ],
+        "Qwen3.5-397B-A17B": [
+          "dotted line",
+          "shaded yellow",
+          "\"Major Churn Stage\"",
+          "Checkout Start to Order Review",
+          "\"Process Friction\"",
+          "light blue"
+        ],
+        "KIMI-K2.5": [
+          "dotted line",
+          "shaded yellow",
+          "\"Major Churn Stage\"",
+          "Checkout Start to Order Review",
+          "\"Process Friction\"",
+          "light blue"
+        ],
+        "Seed2.0-pro": [
+          "dotted line",
+          "shaded yellow",
+          "\"Major Churn Stage\"",
+          "Checkout Start to Order Review",
+          "\"Process Friction\"",
+          "light blue"
+        ],
+        "Mimo-v2-pro": [
+          "dotted line",
+          "shaded yellow",
+          "\"Major Churn Stage\"",
+          "Checkout Start to Order Review",
+          "\"Process Friction\"",
+          "light blue"
+        ]
+      }
+    }
+  },
+  {
+    "filename": "test_01784.jpg",
+    "category": "Nature",
+    "image": "data/examples/images/Nature/test_01784.jpg",
+    "real": {
+      "gt_description": "A large, stylized sculpture of a chest of drawers rests on a roofline against a uniform grey sky. The structure features a dark blue frame holding six pinkish-tan drawers arranged in <HALLUCINATION>two columns</HALLUCINATION>, each with a yellow circular knob. A red <HALLUCINATION>wind-up key</HALLUCINATION> protrudes from the right side. Three sculpted items sit on top: a blue book, a green and yellow rectangular device, and a round bowl painted with fish. Below the sculpture runs a white horizontal fascia board with vertical seams. The wall beneath is constructed of green painted bricks. A small rectangular window is embedded in the green wall, displaying reversed text that appears to read \"Wallcraft.\" The lighting is flat and diffuse, creating soft shadows on the green brick texture.",
+      "gt_spans": [
+        "two columns",
+        "wind-up key"
+      ],
+      "models": {
+        "GPT-5.2": [
+          "two columns",
+          "wind-up key"
+        ],
+        "GPT-5.4": [
+          "two columns",
+          "wind-up key"
+        ],
+        "Gemini3-Pro": [
+          "two columns",
+          "wind-up key"
+        ],
+        "Gemini-3.1-Pro": [
+          "two columns",
+          "wind-up key"
+        ],
+        "Claude-Opus-4.6": [
+          "two columns",
+          "wind-up key"
+        ],
+        "Step3-VL-10B": [
+          "two columns",
+          "wind-up key"
+        ],
+        "Qwen3-VL-8B-Think": [
+          "two columns",
+          "wind-up key"
+        ],
+        "VCD+Qwen3-VL-8B": [
+          "two columns",
+          "wind-up key"
+        ],
+        "GLM-4.6V-Flash": [
+          "two columns",
+          "wind-up key"
+        ],
+        "Qwen3.5-9B": [
+          "two",
+          "wind-up key"
+        ],
+        "Qwen3.5-35B-A3B": [
+          "two columns",
+          "wind-up key"
+        ],
+        "Qwen3.5-397B-A17B": [
+          "two columns",
+          "wind-up key"
+        ],
+        "KIMI-K2.5": [
+          "two columns",
+          "wind-up key"
+        ],
+        "Seed2.0-pro": [
+          "two columns",
+          "wind-up key"
+        ],
+        "Mimo-v2-pro": [
+          "two columns",
+          "wind-up key"
+        ]
+      }
+    },
+    "synthetic": {
+      "gt_description": "An outdoor, <HALLUCINATION>eye-level</HALLUCINATION> view of a fake, oversized cabinet sculpture, on top of a building, with a stormy sky behind. The cabinet is made with a childish look, shown with bright tan and blue colors, and painted marks of a cartoon fishbowl, with a red cartoon mouse peeking out from behind on the <HALLUCINATION>left side</HALLUCINATION>. The cabinet has <HALLUCINATION>four</HALLUCINATION> square, tan drawers with yellow handle knobs, arranged in a <HALLUCINATION>2 by 2</HALLUCINATION> order, with the one on the <HALLUCINATION>bottom right</HALLUCINATION> slightly open and from left to right, a blue book, a sculpted electronic object, and a drawn fishbowl are on top of the cabinet, partially visible. The building is a light green <HALLUCINATION>concrete</HALLUCINATION> wall with a silver roof, and a <HALLUCINATION>circular</HALLUCINATION> window to the middle-left of the wall, showing a green muntin in the center, arranged <HALLUCINATION>horizontally</HALLUCINATION>, and dark glass panels with yellow words placed up from the inside, the words are reversed from this view. The background is a gray, cloudy sky, filled in the top frame behind the cabinet.",
+      "gt_spans": [],
+      "models": {
+        "GPT-5.2": [
+          "eye-level",
+          "left side",
+          "four",
+          "2 by 2",
+          "bottom right",
+          "concrete",
+          "circular",
+          "horizontally"
+        ],
+        "GPT-5.4": [
+          "eye-level",
+          "left side",
+          "four",
+          "2 by 2",
+          "bottom right",
+          "concrete",
+          "circular",
+          "horizontally"
+        ],
+        "Gemini3-Pro": [
+          "eye-level",
+          "left side",
+          "four",
+          "2 by 2",
+          "bottom right",
+          "concrete",
+          "circular",
+          "horizontally"
+        ],
+        "Gemini-3.1-Pro": [
+          "eye-level",
+          "left side",
+          "four",
+          "2 by 2",
+          "bottom right",
+          "concrete",
+          "circular",
+          "horizontally"
+        ],
+        "Claude-Opus-4.6": [
+          "eye-level",
+          "left side",
+          "four",
+          "2 by 2",
+          "bottom right",
+          "concrete",
+          "circular",
+          "horizontally"
+        ],
+        "Step3-VL-10B": [
+          "eye-level",
+          "left side",
+          "four",
+          "2 by 2",
+          "bottom right",
+          "concrete",
+          "circular",
+          "horizontally"
+        ],
+        "Qwen3-VL-8B-Think": [
+          "eye-level",
+          "left side",
+          "four",
+          "2 by 2",
+          "bottom right",
+          "concrete",
+          "circular",
+          "horizontally"
+        ],
+        "VCD+Qwen3-VL-8B": [
+          "eye-level",
+          "left side",
+          "four",
+          "2 by 2",
+          "bottom right",
+          "concrete",
+          "circular",
+          "horizontally"
+        ],
+        "GLM-4.6V-Flash": [
+          "eye-level",
+          "left side",
+          "four",
+          "2 by 2",
+          "bottom right",
+          "concrete",
+          "circular",
+          "horizontally"
+        ],
+        "Qwen3.5-9B": [
+          "eye-level",
+          "left side",
+          "four",
+          "2 by 2",
+          "bottom right",
+          "concrete",
+          "circular",
+          "horizontally"
+        ],
+        "Qwen3.5-35B-A3B": [
+          "eye-level",
+          "left side",
+          "four",
+          "2 by 2",
+          "bottom right",
+          "concrete",
+          "circular",
+          "horizontally"
+        ],
+        "Qwen3.5-397B-A17B": [
+          "eye-level",
+          "left side",
+          "four",
+          "2 by 2",
+          "bottom right",
+          "concrete",
+          "circular",
+          "horizontally"
+        ],
+        "KIMI-K2.5": [
+          "eye-level",
+          "left side",
+          "four",
+          "2 by 2",
+          "bottom right",
+          "concrete",
+          "circular",
+          "horizontally"
+        ],
+        "Seed2.0-pro": [
+          "eye-level",
+          "left side",
+          "four",
+          "2 by 2",
+          "bottom right",
+          "concrete",
+          "circular",
+          "horizontally"
+        ],
+        "Mimo-v2-pro": [
+          "eye-level",
+          "left side",
+          "four",
+          "2 by 2",
+          "bottom right",
+          "concrete",
+          "circular",
+          "horizontally"
+        ]
+      }
+    }
+  },
+  {
+    "filename": "test_00883.jpg",
+    "category": "Nature",
+    "image": "data/examples/images/Nature/test_00883.jpg",
+    "real": {
+      "gt_description": "A wooden dock extends into dark, reflective water, illuminated by artificial light against a night backdrop. Numerous recreational vessels are arranged on and around the platform. Floating on the left are blue, red, and green kayaks, while <HALLUCINATION>two</HALLUCINATION> blue kayaks float on the right near metal ladders. The dock surface holds a white and blue paddleboard, alongside red, black, and white kayaks. An orange kayak rests near the foreground edge next to a wooden picnic table equipped with benches. Paddles and orange life vests are scattered near the table, and a rectangular green mat lies on the decking. The water appears black, mirroring the steep, earthen bank and overhanging foliage on the far side. In the foreground, a grassy slope descends toward the water, featuring a set of stairs with a metal handrail leading to the dock. The lighting creates distinct highlights on the grass and plastic hulls while casting shadows across the wooden planks.",
+      "gt_spans": [
+        "two"
+      ],
+      "models": {
+        "GPT-5.2": [
+          "two"
+        ],
+        "GPT-5.4": [
+          "two"
+        ],
+        "Gemini3-Pro": [
+          "two"
+        ],
+        "Gemini-3.1-Pro": [
+          "two"
+        ],
+        "Claude-Opus-4.6": [
+          "two"
+        ],
+        "Step3-VL-10B": [
+          "two"
+        ],
+        "Qwen3-VL-8B-Think": [
+          "two"
+        ],
+        "VCD+Qwen3-VL-8B": [
+          "two"
+        ],
+        "GLM-4.6V-Flash": [
+          "two"
+        ],
+        "Qwen3.5-9B": [],
+        "Qwen3.5-35B-A3B": [
+          "two"
+        ],
+        "Qwen3.5-397B-A17B": [
+          "two"
+        ],
+        "KIMI-K2.5": [
+          "two"
+        ],
+        "Seed2.0-pro": [
+          "two"
+        ],
+        "Mimo-v2-pro": [
+          "two"
+        ]
+      }
+    },
+    "synthetic": {
+      "gt_description": "A <HALLUCINATION>daytime</HALLUCINATION>, high-angle shot of a wooden dock flush against a bank of land that inclines. The land is covered in grass from the bottom left corner diagonally across to mid-way up the right side, with a set of six concrete stairs on the <HALLUCINATION>left side</HALLUCINATION> that leads down to the dock. Ten kayaks, one paddle board, paddles and a picnic table are visible on and around the dock. There is one orange swirl kayak in the water on the left side, with the long side flush against the dock. The picnic table sits <HALLUCINATION>in the center</HALLUCINATION> of the dock, and a paddle board lies in the top left corner of the dock, with paddles visible between them. Three kayaks float on the surface of the water, attached at the bows to the dock in the top left corner. Three kayaks lay on the dock in the top right corner, and three float on the surface attached to the right side of the dock. Dark water is in the background, with a rock wall edge and green foliage visible across the top of the shot. A bright light shines from the land over the dock and water. Reflections of the surroundings are visible on the water surface.",
+      "gt_spans": [
+        "daytime",
+        "ground-level shot",
+        "metal",
+        "four",
+        "left side",
+        "park bench",
+        "bright blue",
+        "park bench",
+        "in the center",
+        "wooden fence"
+      ],
+      "models": {
+        "GPT-5.2": [
+          "daytime",
+          "left side",
+          "in the center"
+        ],
+        "GPT-5.4": [
+          "daytime",
+          "left side",
+          "in the center"
+        ],
+        "Gemini3-Pro": [
+          "daytime",
+          "left side",
+          "in the center"
+        ],
+        "Gemini-3.1-Pro": [
+          "daytime",
+          "left side",
+          "in the center"
+        ],
+        "Claude-Opus-4.6": [
+          "daytime",
+          "left side",
+          "in the center"
+        ],
+        "Step3-VL-10B": [
+          "daytime",
+          "left side",
+          "in the center"
+        ],
+        "Qwen3-VL-8B-Think": [
+          "daytime",
+          "left side",
+          "in the center"
+        ],
+        "VCD+Qwen3-VL-8B": [
+          "daytime",
+          "left side",
+          "in the center"
+        ],
+        "GLM-4.6V-Flash": [
+          "daytime",
+          "left side",
+          "in the center"
+        ],
+        "Qwen3.5-9B": [
+          "daytime",
+          "left side",
+          "in the center"
+        ],
+        "Qwen3.5-35B-A3B": [
+          "daytime",
+          "left side",
+          "in the center"
+        ],
+        "Qwen3.5-397B-A17B": [
+          "daytime",
+          "left side",
+          "in the center"
+        ],
+        "KIMI-K2.5": [
+          "daytime",
+          "left side",
+          "in the center"
+        ],
+        "Seed2.0-pro": [
+          "daytime",
+          "left side",
+          "in the center"
+        ],
+        "Mimo-v2-pro": [
+          "daytime",
+          "left side",
+          "in the center"
+        ]
+      }
+    }
+  },
+  {
+    "filename": "screenshot_2024-10-23_10-41-08.png",
+    "category": "UI",
+    "image": "data/examples/images/UI/screenshot_2024-10-23_10-41-08.png",
+    "real": {
+      "gt_description": "This screenshot displays a macOS desktop environment featuring a green and purple abstract wallpaper. The top menu bar indicates \"Python\" is the active application and shows the date as Wednesday, October 23. The bottom dock contains various icons including Finder, <HALLUCINATION>Safari,</HALLUCINATION> and System Settings. Multiple overlapping windows cover the desktop. In the top left, a small window titled <HALLUCINATION>\"Python\"</HALLUCINATION> shows log text. A central browser window displays <HALLUCINATION>Google search</HALLUCINATION> results for \"how to connect to ssh in vscode?\" with numbered steps. To the right, a document window presents Chinese text with headings such as \"结果提交\" and \"注意事项\". The bottom right corner features a Visual Studio Code window with a dark theme displaying JSON data. On the bottom left, a System Settings window lists display resolutions like \"3456 x 2234\". A Finder window in the center-left displays image thumbnails, and a file information window appears near the bottom center. A modal dialog box in the center of the screen asks whether to replace a file named \"标注指南: 桌面使用自动化工具\", offering options to \"Keep Both\", \"Stop\", or \"Replace\".",
+      "gt_spans": [
+        "Safari,",
+        "\"Python\"",
+        "Google search"
+      ],
+      "models": {
+        "GPT-5.2": [
+          "Safari,",
+          "\"Python\"",
+          "Google search"
+        ],
+        "GPT-5.4": [
+          "Safari,",
+          "\"Python\"",
+          "Google search"
+        ],
+        "Gemini3-Pro": [
+          "Safari,",
+          "\"Python\"",
+          "Google search"
+        ],
+        "Gemini-3.1-Pro": [
+          "Safari,",
+          "\"Python\"",
+          "Google search"
+        ],
+        "Claude-Opus-4.6": [
+          "Safari,",
+          "\"Python\"",
+          "Google search"
+        ],
+        "Step3-VL-10B": [
+          "Safari,",
+          "\"Python\"",
+          "Google search"
+        ],
+        "Qwen3-VL-8B-Think": [
+          "Safari,",
+          "\"Python\"",
+          "Google search"
+        ],
+        "VCD+Qwen3-VL-8B": [
+          "Safari,",
+          "\"Python\"",
+          "Google search"
+        ],
+        "GLM-4.6V-Flash": [
+          "Safari,",
+          "\"Python\"",
+          "Google search"
+        ],
+        "Qwen3.5-9B": [],
+        "Qwen3.5-35B-A3B": [
+          "Safari,",
+          "\"Python\"",
+          "Google search"
+        ],
+        "Qwen3.5-397B-A17B": [
+          "Safari,",
+          "\"Python\"",
+          "Google search"
+        ],
+        "KIMI-K2.5": [
+          "Safari,",
+          "\"Python\"",
+          "Google search"
+        ],
+        "Seed2.0-pro": [
+          "Safari,",
+          "\"Python\"",
+          "Google search"
+        ],
+        "Mimo-v2-pro": [
+          "Safari,",
+          "\"Python\"",
+          "Google search"
+        ]
+      }
+    },
+    "synthetic": {
+      "gt_description": "This screenshot displays a macOS desktop environment featuring a green and purple abstract wallpaper. The top menu bar indicates \"Python\" is the active application and shows the date as Wednesday, October 23. The <HALLUCINATION>left</HALLUCINATION> dock contains various icons including Finder, Feishu, and System Settings. Multiple overlapping windows cover the desktop. In the top left, a small window titled \"annotator – python annotation.py – 105x46\" shows log text. A central browser window displays ChatGPT consulting results for <HALLUCINATION>\"how to debug python in vscode?\"</HALLUCINATION> with numbered steps. To the right, a document window presents Chinese text with headings such as \"结果提交\" and \"注意事项\". The bottom right corner features a Visual Studio Code window with a dark theme displaying JSON data. On the bottom left, a System Settings window lists display resolutions like <HALLUCINATION>\"2880 x 1800\"</HALLUCINATION>. A <HALLUCINATION>Preview window</HALLUCINATION> in the center-left displays image thumbnails, and a file information window appears near the bottom center. A <HALLUCINATION>dropdown sheet</HALLUCINATION> in the <HALLUCINATION>top of the browser window</HALLUCINATION> asks whether to replace a file named \"标注指南: 桌面使用自动化工具\", offering options to \"Keep Both\", \"Stop\", or \"Replace\".",
+      "gt_spans": [
+        "blue and gray",
+        "\"Terminal\"",
+        "Tuesday, October 22",
+        "left",
+        "\"how to debug python in vscode?\"",
+        "light theme",
+        "\"2880 x 1800\"",
+        "Preview window",
+        "dropdown sheet",
+        "top of the browser window"
+      ],
+      "models": {
+        "GPT-5.2": [
+          "left",
+          "\"how to debug python in vscode?\"",
+          "\"2880 x 1800\"",
+          "Preview window",
+          "dropdown sheet",
+          "top of the browser window"
+        ],
+        "GPT-5.4": [
+          "left",
+          "\"how to debug python in vscode?\"",
+          "\"2880 x 1800\"",
+          "Preview window",
+          "dropdown sheet",
+          "top of the browser window"
+        ],
+        "Gemini3-Pro": [
+          "left",
+          "\"how to debug python in vscode?\"",
+          "\"2880 x 1800\"",
+          "Preview window",
+          "dropdown sheet",
+          "top of the browser window"
+        ],
+        "Gemini-3.1-Pro": [
+          "left",
+          "\"how to debug python in vscode?\"",
+          "\"2880 x 1800\"",
+          "Preview window",
+          "dropdown sheet",
+          "top of the browser window"
+        ],
+        "Claude-Opus-4.6": [
+          "left",
+          "\"how to debug python in vscode?\"",
+          "\"2880 x 1800\"",
+          "Preview window",
+          "dropdown sheet",
+          "top of the browser window"
+        ],
+        "Step3-VL-10B": [
+          "left",
+          "\"how to debug python in vscode?\"",
+          "\"2880 x 1800\"",
+          "Preview window",
+          "dropdown sheet",
+          "top of the browser window"
+        ],
+        "Qwen3-VL-8B-Think": [
+          "left",
+          "\"how to debug python in vscode?\"",
+          "\"2880 x 1800\"",
+          "Preview window",
+          "dropdown sheet",
+          "top of the browser window"
+        ],
+        "VCD+Qwen3-VL-8B": [
+          "left",
+          "\"how to debug python in vscode?\"",
+          "\"2880 x 1800\"",
+          "Preview window",
+          "dropdown sheet",
+          "top of the browser window"
+        ],
+        "GLM-4.6V-Flash": [
+          "left",
+          "\"how to debug python in vscode?\"",
+          "\"2880 x 1800\"",
+          "Preview window",
+          "dropdown sheet",
+          "top of the browser window"
+        ],
+        "Qwen3.5-9B": [
+          "left",
+          "\"how to debug python in vscode?\"",
+          "\"2880 x 1800\"",
+          "Preview window",
+          "dropdown sheet",
+          "top of the browser window"
+        ],
+        "Qwen3.5-35B-A3B": [
+          "left",
+          "\"how to debug python in vscode?\"",
+          "\"2880 x 1800\"",
+          "Preview window",
+          "dropdown sheet",
+          "top of the browser window"
+        ],
+        "Qwen3.5-397B-A17B": [
+          "left",
+          "\"how to debug python in vscode?\"",
+          "\"2880 x 1800\"",
+          "Preview window",
+          "dropdown sheet",
+          "top of the browser window"
+        ],
+        "KIMI-K2.5": [
+          "left",
+          "\"how to debug python in vscode?\"",
+          "\"2880 x 1800\"",
+          "Preview window",
+          "dropdown sheet",
+          "top of the browser window"
+        ],
+        "Seed2.0-pro": [
+          "left",
+          "\"how to debug python in vscode?\"",
+          "\"2880 x 1800\"",
+          "Preview window",
+          "dropdown sheet",
+          "top of the browser window"
+        ],
+        "Mimo-v2-pro": [
+          "left",
+          "\"how to debug python in vscode?\"",
+          "\"2880 x 1800\"",
+          "Preview window",
+          "dropdown sheet",
+          "top of the browser window"
+        ]
+      }
+    }
+  },
+  {
+    "filename": "screenshot_2024-12-10_13-01-55.png",
+    "category": "UI",
+    "image": "data/examples/images/UI/screenshot_2024-12-10_13-01-55.png",
+    "real": {
+      "gt_description": "The screenshot captures a Windows desktop interface populated with several overlapping windows against a dark background. A vertical taskbar on the left edge holds various application icons, while a horizontal system tray sits at the bottom. In the <HALLUCINATION>center</HALLUCINATION> foreground, a File Explorer window in dark mode displays \"Quick access\" folders including Desktop, Downloads, and Documents, followed by a detailed list of recent files with names, dates, and paths. Behind the File Explorer, the Windows Settings \"Home\" screen is visible. It features a user profile for \"Charles Wang,\" a \"Recommended settings\" section listing Display and Language options, and a \"Cloud storage\" panel indicating 8.5 GB usage. To the upper left, a web browser window shows the iCloud landing page with Chinese text reading \"iCloud 照片、文件、备忘录、邮件和更多内容的网页版之家\" and a login button. On the right side, a large code editor window dominates, featuring a dark theme, a vertical minimap, and a status bar showing line numbers and \"Python.\" Partially obscured behind this editor at the top right is another application window displaying a grid pattern. The overall visual theme is dark across the system and applications.",
+      "gt_spans": [
+        "center"
+      ],
+      "models": {
+        "GPT-5.2": [
+          "center"
+        ],
+        "GPT-5.4": [
+          "center"
+        ],
+        "Gemini3-Pro": [
+          "center"
+        ],
+        "Gemini-3.1-Pro": [
+          "center"
+        ],
+        "Claude-Opus-4.6": [
+          "center"
+        ],
+        "Step3-VL-10B": [
+          "center"
+        ],
+        "Qwen3-VL-8B-Think": [
+          "center"
+        ],
+        "VCD+Qwen3-VL-8B": [
+          "center"
+        ],
+        "GLM-4.6V-Flash": [
+          "center"
+        ],
+        "Qwen3.5-9B": [],
+        "Qwen3.5-35B-A3B": [
+          "center"
+        ],
+        "Qwen3.5-397B-A17B": [
+          "center"
+        ],
+        "KIMI-K2.5": [
+          "center"
+        ],
+        "Seed2.0-pro": [
+          "center"
+        ],
+        "Mimo-v2-pro": [
+          "center"
+        ]
+      }
+    },
+    "synthetic": {
+      "gt_description": "The screenshot captures a Windows desktop interface populated with several overlapping windows against a <HALLUCINATION>blurred city skyline</HALLUCINATION>. A vertical taskbar on the left edge holds various application icons, while a horizontal system tray sits at the bottom. In the lower left foreground, a File Explorer window in dark mode displays \"Quick access\" folders including <HALLUCINATION>Pictures, Videos, and Music</HALLUCINATION>, followed by a detailed list of recent files with names, dates, and paths.\n\nBehind the File Explorer, the Windows Settings \"Home\" screen is visible. It features a user profile for \"Charles Wang,\" a \"Recommended settings\" section listing Display and Language options, and a \"Cloud storage\" panel indicating 8.5 GB usage. To the upper left, a web browser window shows the iCloud landing page with Chinese text reading \"iCloud 照片、文件、备忘录、邮件和更多内容的网页版之家\" and a login button.\n\nOn the right side, a large code editor window dominates, featuring a dark theme, a vertical minimap, and a status bar showing <HALLUCINATION>UTF-8 encoding</HALLUCINATION> and \"<HALLUCINATION>JavaScript</HALLUCINATION>.\" Partially obscured behind this editor at the top right is another application window displaying a grid pattern. The overall visual theme is dark across the system and applications.",
+      "gt_spans": [
+        "blurred city skyline",
+        "right edge",
+        "top",
+        "Pictures, Videos, and Music",
+        "Steven Zhang",
+        "Bluetooth and Personalization",
+        "142 GB",
+        "UTF-8 encoding",
+        "JavaScript",
+        "world map"
+      ],
+      "models": {
+        "GPT-5.2": [
+          "blurred city skyline",
+          "Pictures, Videos, and Music",
+          "UTF-8 encoding",
+          "JavaScript"
+        ],
+        "GPT-5.4": [
+          "blurred city skyline",
+          "Pictures, Videos, and Music",
+          "UTF-8 encoding",
+          "JavaScript"
+        ],
+        "Gemini3-Pro": [
+          "blurred city skyline",
+          "Pictures, Videos, and Music",
+          "UTF-8 encoding",
+          "JavaScript"
+        ],
+        "Gemini-3.1-Pro": [
+          "blurred city skyline",
+          "Pictures, Videos, and Music",
+          "UTF-8 encoding",
+          "JavaScript"
+        ],
+        "Claude-Opus-4.6": [
+          "blurred city skyline",
+          "Pictures, Videos, and Music",
+          "UTF-8 encoding",
+          "JavaScript"
+        ],
+        "Step3-VL-10B": [
+          "blurred city skyline",
+          "Pictures, Videos, and Music",
+          "UTF-8 encoding",
+          "JavaScript"
+        ],
+        "Qwen3-VL-8B-Think": [
+          "blurred city skyline",
+          "Pictures, Videos, and Music",
+          "UTF-8 encoding",
+          "JavaScript"
+        ],
+        "VCD+Qwen3-VL-8B": [
+          "blurred city skyline",
+          "Pictures, Videos, and Music",
+          "UTF-8 encoding",
+          "JavaScript"
+        ],
+        "GLM-4.6V-Flash": [
+          "blurred city skyline",
+          "Pictures, Videos, and Music",
+          "UTF-8 encoding",
+          "JavaScript"
+        ],
+        "Qwen3.5-9B": [
+          "blurred city skyline",
+          "Pictures, Videos, and Music",
+          "UTF-8 encoding",
+          "JavaScript"
+        ],
+        "Qwen3.5-35B-A3B": [
+          "blurred city skyline",
+          "Pictures, Videos, and Music",
+          "UTF-8 encoding",
+          "JavaScript"
+        ],
+        "Qwen3.5-397B-A17B": [
+          "blurred city skyline",
+          "Pictures, Videos, and Music",
+          "UTF-8 encoding",
+          "JavaScript"
+        ],
+        "KIMI-K2.5": [
+          "blurred city skyline",
+          "Pictures, Videos, and Music",
+          "UTF-8 encoding",
+          "JavaScript"
+        ],
+        "Seed2.0-pro": [
+          "blurred city skyline",
+          "Pictures, Videos, and Music",
+          "UTF-8 encoding",
+          "JavaScript"
+        ],
+        "Mimo-v2-pro": [
+          "blurred city skyline",
+          "Pictures, Videos, and Music",
+          "UTF-8 encoding",
+          "JavaScript"
+        ]
+      }
+    }
+  }
+]
