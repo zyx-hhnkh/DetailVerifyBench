@@ -205,10 +205,13 @@ OPENROUTER_API_KEY=your_key
 If you use this benchmark in your research, please cite:
 
 ```bibtex
-@misc{detailverifybench,
-  title={DetailVerifyBench},
-  year={2026},
-  url={https://github.com/zyx-hhnkh/DetailVerifyBench}
+@misc{wang2026detailverifybench,
+      title={DetailVerifyBench: A Benchmark for Dense Hallucination Localization in Long Image Captions}, 
+      author={Xinran Wang and Yuxuan Zhang and Xiao Zhang and Haolong Yan and Muxi Diao and Songyu Xu and Zhonghao Yan and Hongbing Li and Kongming Liang and Zhanyu Ma},
+      year={2026},
+      eprint={2604.05623},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV}
 }
 ```
 
