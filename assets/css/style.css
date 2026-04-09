@@ -434,34 +434,70 @@ mark.hal-detected {
   display: flex;
   align-items: center;
   gap: 12px;
-  margin-bottom: 12px;
+  margin-bottom: 16px;
   flex-wrap: wrap;
 }
 
-.det-models {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px 14px;
-  margin-bottom: 14px;
-  font-size: 0.82rem;
+/* Model multi-select dropdown */
+.det-model-dropdown {
+  position: relative;
 }
 
-.det-models label {
+.det-model-btn {
+  cursor: pointer;
+  text-align: left;
+  min-width: 180px;
+}
+
+.det-model-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 100;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+  max-height: 320px;
+  overflow-y: auto;
+  min-width: 220px;
+  margin-top: 4px;
+}
+
+.det-model-menu.open { display: block; }
+
+.det-model-option {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 8px;
+  padding: 7px 14px;
   cursor: pointer;
+  font-size: 0.84rem;
   color: #374151;
-  white-space: nowrap;
+  transition: background 0.1s;
 }
 
-.det-models input[type="checkbox"] {
-  accent-color: var(--det-color, #2563eb);
+.det-model-option:hover { background: #f1f5f9; }
+.det-model-option.selected { background: #eff6ff; }
+
+.det-model-swatch {
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.det-model-check {
+  margin-left: auto;
+  font-size: 0.8rem;
+  color: #2563eb;
+  font-weight: 700;
 }
 
 .det-viewer-card {
   display: flex;
-  height: 60vh;
+  height: 68vh;
   border: 1px solid #e2e8f0;
   border-radius: 12px;
   overflow: hidden;
@@ -488,11 +524,17 @@ mark.hal-detected {
 
 .det-panel-text {
   flex: 1;
+  display: flex;
+  flex-direction: column;
   padding: 20px 24px;
-  font-size: 0.88rem;
-  line-height: 1.85;
   color: #374151;
   overflow-y: auto;
+}
+
+.det-text-body {
+  flex: 1;
+  font-size: 0.88rem;
+  line-height: 1.85;
 }
 
 .det-gt {
@@ -510,23 +552,27 @@ mark.hal-detected {
 .det-legend {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px 20px;
-  margin-top: 10px;
-  font-size: 0.8rem;
-  color: #475569;
+  gap: 10px 18px;
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid #e2e8f0;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #374151;
   align-items: center;
+  flex-shrink: 0;
 }
 
 .det-legend-item {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 5px;
 }
 
 .det-legend-swatch {
-  width: 12px;
-  height: 12px;
-  border-radius: 2px;
+  width: 14px;
+  height: 14px;
+  border-radius: 3px;
   display: inline-block;
 }
 

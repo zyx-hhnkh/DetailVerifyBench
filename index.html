@@ -230,22 +230,17 @@
   </div>
   <div class="ex-viewer-outer">
     <div class="det-controls">
+      <select id="det-example-sel" class="ex-select" onchange="setDetExample(this.value)"></select>
+      <div class="det-model-dropdown" id="det-model-dropdown">
+        <button class="ex-select det-model-btn" id="det-model-btn" onclick="toggleDetDropdown()">Models: <span id="det-model-count">1</span> selected</button>
+        <div class="det-model-menu" id="det-model-menu"></div>
+      </div>
       <div class="ex-mode-toggle">
         <button class="ex-mode active" id="det-btn-real" onclick="setDetMode('real')">Real</button>
         <button class="ex-mode" id="det-btn-synth" onclick="setDetMode('synthetic')">Synthetic</button>
       </div>
-      <select id="det-domain-sel" class="ex-select" onchange="setDetDomain(this.value)">
-        <option value="Movie">Movie</option>
-        <option value="Poster">Poster</option>
-        <option value="Nature">Nature</option>
-        <option value="Chart">Chart</option>
-        <option value="UI">GUI</option>
-      </select>
-      <select id="det-example-sel" class="ex-select" onchange="setDetExample(this.value)"></select>
     </div>
-    <div class="det-models" id="det-model-checkboxes"></div>
     <div id="det-viewer" class="det-viewer-card"></div>
-    <div id="det-legend" class="det-legend"></div>
   </div>
 </section>
 
@@ -714,31 +709,49 @@ const DET_COLORS = [
 
 let detData = [];
 let detMode = 'real';
-let detDomain = 'Movie';
 let detCurrent = null;
-let detChecked = new Set();
+let detChecked = new Set(['GPT-5.4']);
+let detDropdownOpen = false;
 
 function initDetVis(data) {
   detData = data;
-  // Build checkboxes
-  const wrap = document.getElementById('det-model-checkboxes');
-  wrap.innerHTML = DET_MODELS.map((m, i) =>
-    '<label style="--det-color:' + DET_COLORS[i] + '">'
-    + '<input type="checkbox" value="' + m + '" onchange="toggleDetModel(this)">'
-    + '<span style="color:' + DET_COLORS[i] + '">' + escHtml(m) + '</span></label>'
-  ).join('');
-  populateDetExamples();
-}
-
-function populateDetExamples() {
-  const filtered = detData.filter(e => e.category === detDomain);
+  // Populate example dropdown (same style as injection demo)
   const sel = document.getElementById('det-example-sel');
-  sel.innerHTML = filtered.map((e, i) =>
-    '<option value="' + e.filename + '">Example ' + (i+1) + '</option>'
-  ).join('');
-  detCurrent = filtered[0] || null;
+  const catCount = {};
+  sel.innerHTML = data.map(e => {
+    catCount[e.category] = (catCount[e.category] || 0) + 1;
+    const label = e.category + ' - Example ' + catCount[e.category];
+    return '<option value="' + e.filename + '">' + label + '</option>';
+  }).join('');
+  detCurrent = data[0] || null;
+
+  // Build model dropdown menu
+  const menu = document.getElementById('det-model-menu');
+  menu.innerHTML = DET_MODELS.map((m, i) => {
+    const checked = detChecked.has(m);
+    return '<div class="det-model-option' + (checked ? ' selected' : '') + '" data-model="' + m + '" onclick="toggleDetModel(\'' + m + '\')">'
+      + '<span class="det-model-swatch" style="background:' + DET_COLORS[i] + '"></span>'
+      + '<span>' + escHtml(m) + '</span>'
+      + '<span class="det-model-check">' + (checked ? '✓' : '') + '</span>'
+      + '</div>';
+  }).join('');
+
   renderDetViewer();
 }
+
+function toggleDetDropdown() {
+  detDropdownOpen = !detDropdownOpen;
+  document.getElementById('det-model-menu').classList.toggle('open', detDropdownOpen);
+}
+
+// Close dropdown when clicking outside
+document.addEventListener('click', function(e) {
+  if (!e.target.closest('#det-model-dropdown')) {
+    detDropdownOpen = false;
+    const menu = document.getElementById('det-model-menu');
+    if (menu) menu.classList.remove('open');
+  }
+});
 
 function setDetMode(mode) {
   detMode = mode;
@@ -747,51 +760,55 @@ function setDetMode(mode) {
   renderDetViewer();
 }
 
-function setDetDomain(domain) {
-  detDomain = domain;
-  populateDetExamples();
-}
-
 function setDetExample(filename) {
   detCurrent = detData.find(e => e.filename === filename) || null;
   renderDetViewer();
 }
 
-function toggleDetModel(cb) {
-  if (cb.checked) detChecked.add(cb.value);
-  else detChecked.delete(cb.value);
+function toggleDetModel(model) {
+  if (detChecked.has(model)) detChecked.delete(model);
+  else detChecked.add(model);
+  // Update dropdown item UI
+  document.querySelectorAll('.det-model-option').forEach(el => {
+    const m = el.dataset.model;
+    const on = detChecked.has(m);
+    el.classList.toggle('selected', on);
+    el.querySelector('.det-model-check').textContent = on ? '✓' : '';
+  });
+  document.getElementById('det-model-count').textContent = detChecked.size;
   renderDetViewer();
 }
 
 function renderDetViewer() {
   const viewer = document.getElementById('det-viewer');
-  const legend = document.getElementById('det-legend');
-  if (!detCurrent) { viewer.innerHTML = ''; legend.innerHTML = ''; return; }
+  if (!detCurrent) { viewer.innerHTML = ''; return; }
 
   const src = detCurrent[detMode];
   if (!src || !src.gt_tagged) {
     viewer.innerHTML = '<div style="padding:24px;color:#94a3b8;">No data available for this mode.</div>';
-    legend.innerHTML = '';
     return;
   }
 
   // Build annotated text
   const html = buildDetText(src);
 
+  // Build legend (below description, larger font)
+  const legendItems = ['<span class="det-legend-item"><span class="det-legend-swatch" style="background:#fee2e2;border:1px solid #f87171"></span> GT</span>'];
+  for (const m of detChecked) {
+    const idx = DET_MODELS.indexOf(m);
+    const c = DET_COLORS[idx] || '#888';
+    legendItems.push('<span class="det-legend-item"><span class="det-legend-swatch" style="background:' + c + '"></span> ' + escHtml(m) + '</span>');
+  }
+  const legendHtml = '<div class="det-legend">' + legendItems.join('') + '</div>';
+
   viewer.innerHTML =
     '<div class="det-panel-img">'
     + '<img src="' + detCurrent.image + '" alt="' + escHtml(detCurrent.filename) + '" loading="lazy">'
     + '</div>'
-    + '<div class="det-panel-text">' + html + '</div>';
-
-  // Legend
-  const items = ['<span class="det-legend-item"><span class="det-legend-swatch" style="background:#fee2e2;border:1px solid #f87171"></span> GT</span>'];
-  for (const m of detChecked) {
-    const idx = DET_MODELS.indexOf(m);
-    const c = DET_COLORS[idx] || '#888';
-    items.push('<span class="det-legend-item"><span class="det-legend-swatch" style="background:' + c + '"></span> ' + escHtml(m) + '</span>');
-  }
-  legend.innerHTML = items.join('');
+    + '<div class="det-panel-text">'
+    + '<div class="det-text-body">' + html + '</div>'
+    + legendHtml
+    + '</div>';
 }
 
 function buildDetText(src) {
