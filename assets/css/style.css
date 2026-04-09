@@ -307,6 +307,14 @@ tbody tr:hover td { background: #f8faff; }
   font-size: 0.8rem;
   color: #64748b;
   flex-shrink: 0;
+  align-items: center;
+}
+
+.inj-legend-note {
+  margin-left: auto;
+  font-size: 0.75rem;
+  color: #94a3b8;
+  font-style: italic;
 }
 
 .inj-controls {

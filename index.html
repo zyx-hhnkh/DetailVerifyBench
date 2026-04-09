@@ -647,7 +647,8 @@ function renderInjViewer() {
   const legendHtml =
     '<div class="inj-legend-inline">'
     + '<span class="inj-legend-item"><mark class="hal">text</mark>: Injected hallucination</span>'
-    + '<span class="inj-legend-item"><mark class="hal-detected">text</mark>: Detected by Detector</span>'
+    + '<span class="inj-legend-item"><mark class="hal-detected">text</mark>: Hallucination detected by the Detector</span>'
+    + '<span class="inj-legend-note">Note: Detected hallucinations are excluded from the final synthetic dataset.</span>'
     + '</div>';
 
   viewer.innerHTML =
