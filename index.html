@@ -630,6 +630,9 @@ function renderInjViewer() {
     b.style.opacity = i >= maxRound ? '0.4' : '1';
   });
 
+  // Left: all injected hallucinations marked red (before detection)
+  const allMarked = renderInjAllMarked(it.description_tag_nodetect);
+  // Right: after detection — matched=yellow, unmatched=red
   const afterDetect = renderInjDetected(it.description_tag_nodetect, it.matched_spans, it.unmatched_spans);
 
   const s = it.stats;
@@ -652,7 +655,11 @@ function renderInjViewer() {
     + '<img src="' + injCurrent.image + '" alt="' + escHtml(injCurrent.filename) + '" loading="lazy">'
     + '</div>'
     + '<div class="inj-panel inj-panel-text">'
-    + '<div class="inj-panel-title">Round ' + (round+1) + ' Result</div>'
+    + '<div class="inj-panel-title">Injected Description (Round ' + (round+1) + ')</div>'
+    + '<div class="inj-panel-body">' + allMarked + '</div>'
+    + '</div>'
+    + '<div class="inj-panel inj-panel-text">'
+    + '<div class="inj-panel-title">Detection Result (Round ' + (round+1) + ')</div>'
     + '<div class="inj-panel-body">' + afterDetect + '</div>'
     + statsHtml
     + legendHtml
