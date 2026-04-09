@@ -167,7 +167,7 @@
         <select id="ex-domain-sel" class="ex-select" onchange="setExDomain(this.value)">
           <option value="Movie">Movie</option>
           <option value="Poster">Poster</option>
-          <option value="Nature">Real</option>
+          <option value="Nature">Nature</option>
           <option value="Chart">Chart</option>
           <option value="UI">GUI</option>
         </select>
@@ -176,7 +176,7 @@
       <div class="ex-right-controls">
         <button id="btn-highlight" class="ex-gt-btn" onclick="toggleHighlight()">Unhighlight</button>
         <div class="ex-mode-toggle">
-          <button class="ex-mode active" id="btn-natural" onclick="setExMode('natural')">Natural</button>
+          <button class="ex-mode active" id="btn-natural" onclick="setExMode('natural')">Real</button>
           <button class="ex-mode" id="btn-synthetic" onclick="setExMode('synthetic')">Synthetic</button>
         </div>
       </div>
@@ -216,13 +216,10 @@
     </div>
     <div id="inj-viewer" class="inj-viewer-card"></div>
     <div class="inj-legend">
-      <span class="inj-legend-item"><mark class="hal">text</mark> Hallucination injected by the Injector</span>
-      <span class="inj-legend-item"><mark class="hal-detected">text</mark> Hallucination located by the Detector (not included in the final synthetic dataset)</span>
+      <span class="inj-legend-item"><mark class="hal">text</mark>: Hallucination injected by the Injector</span>
+      <span class="inj-legend-item"><mark class="hal-detected">text</mark>: Hallucination located by the Detector (not included in the final synthetic dataset)</span>
     </div>
-    <div class="inj-stats-row">
-      <div id="inj-stats" class="inj-stats"></div>
-      <div id="inj-note" class="inj-note"></div>
-    </div>
+    <div id="inj-stats" class="inj-stats"></div>
   </div>
 </section>
 
@@ -240,7 +237,7 @@
       <select id="det-domain-sel" class="ex-select" onchange="setDetDomain(this.value)">
         <option value="Movie">Movie</option>
         <option value="Poster">Poster</option>
-        <option value="Nature">Real</option>
+        <option value="Nature">Nature</option>
         <option value="Chart">Chart</option>
         <option value="UI">GUI</option>
       </select>
@@ -577,9 +574,17 @@ function sortBy(colIdx) {
     });
   }
 
-  layout();
+  // Ensure layout runs after the browser has computed dimensions
+  function tryLayout() {
+    const cw = container.offsetWidth, ch = container.offsetHeight;
+    if (cw > 0 && ch > 0) { layout(); return true; }
+    return false;
+  }
+  // Try immediately, then retry with various fallbacks
+  if (!tryLayout()) {
+    requestAnimationFrame(() => { if (!tryLayout()) setTimeout(tryLayout, 200); });
+  }
   window.addEventListener('resize', layout);
-  // Re-layout after fonts/images load in case initial dimensions were 0
   window.addEventListener('load', layout);
   if (document.fonts) document.fonts.ready.then(layout);
 })();
@@ -659,10 +664,6 @@ function renderInjViewer() {
     + '<span class="inj-stat inj-stat-detected"><strong>' + s.num_detected + '</strong> detected (' + Math.round(s.detection_rate * 100) + '%)</span>'
     + '<span class="inj-stat inj-stat-survived"><strong>' + survived + '</strong> survived</span>';
 
-  const noteEl = document.getElementById('inj-note');
-  if (noteEl) {
-    noteEl.textContent = 'Note: Only hallucinations that survive detection are included in the final synthetic dataset.';
-  }
 }
 
 function setInjRound(r) {
@@ -1016,7 +1017,7 @@ function renderViewer() {
   if (!exCurrent) { viewer.innerHTML = ''; return; }
   const src = getExSrc();
   const dc = domainColors[exCurrent.category] || '#6b7280';
-  const domainLabel = exCurrent.category === 'UI' ? 'GUI' : exCurrent.category === 'Nature' ? 'Real' : exCurrent.category;
+  const domainLabel = exCurrent.category === 'UI' ? 'GUI' : exCurrent.category;
   viewer.innerHTML =
     '<div class="ex-viewer-card">'
     + '<div class="ex-viewer-img">'

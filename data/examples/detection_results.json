@@ -497,59 +497,6 @@
     }
   },
   {
-    "filename": "MV5BMjIyOTM5OTIzNV5BMl5BanBnXkFtZTgwMDkzODE2NjE@._V1_.jpg",
-    "category": "Poster",
-    "image": "data/examples/images/Poster/MV5BMjIyOTM5OTIzNV5BMl5BanBnXkFtZTgwMDkzODE2NjE@._V1_.jpg",
-    "real": {
-      "gt_tagged": "This vertical movie poster is divided into three primary visual sections: a text-heavy top third against a white background, a central photographic scene, and a dark bottom section containing credits and release information. The top section features a bright, slightly out-of-focus background resembling an office ceiling with fluorescent light fixtures. Overlaid on this background is a list of actor names in a black, uppercase, sans-serif font, <HALLUCINATION>centered</HALLUCINATION> and stacked vertically. The names read: \"MARK RUFFALO,\" \"MICHAEL KEATON,\" \"RACHEL McADAMS,\" \"LIEV SCHREIBER,\" \"JOHN SLATTERY,\" and \"and STANLEY TUCCI.\" Below the names, the title \"SPOTLIGHT\" appears in a large, bold, serif typeface colored in a golden-orange hue. Underneath the title is a tagline in smaller, black, uppercase sans-serif letters: \"BREAK THE STORY. BREAK THE SILENCE.\" The middle section depicts a realistic office environment featuring five individuals gathered around a cluster of desks. The scene is cluttered with numerous stacks of paper files, manila folders, notebooks, and office supplies. On the left, a woman with blonde hair wearing a black top sits in a teal office chair, <HALLUCINATION>facing</HALLUCINATION> a man in a light checkered shirt and glasses who is also seated. In the center, a man in a grey shirt <HALLUCINATION>stands and leans over</HALLUCINATION> the desk, looking <HALLUCINATION>at documents.</HALLUCINATION> To the right, a man in a light blue shirt and tie stands behind a seated man with curly dark hair, who wears a white shirt and tie and holds a pen. In the foreground, a grey plastic bin sits on the dark <HALLUCINATION>blue</HALLUCINATION> carpet; the text \"PROPERTY OF THE BOSTON GLOBE\" is stenciled in black on its side. In the background, a safety poster is visible on a <HALLUCINATION>pillar,</HALLUCINATION> and boxes labeled \"W.B. MASON\" are stacked <HALLUCINATION>on a desk.</HALLUCINATION> The bottom section transitions to a black background. A second tagline appears in white, uppercase, sans-serif text: \"THE TRUE STORY BEHIND THE SCANDAL THAT SHOOK THE WORLD.\" Below this is a dense \"billing block\" of credits in a narrow, condensed grey font, listing production companies such as Open Road, Participant Media, and First Look, along with cast and crew details. A \"R\" rating box is visible within the credits. At the very bottom, large white text reads \"IN THEATERS THIS NOVEMBER.\" This text is flanked by two white laurel wreath logos. The left logo reads \"OFFICIAL SELECTION VENICE FILM FESTIVAL,\" and the right logo reads \"OFFICIAL SELECTION TORONTO FILM FESTIVAL.\"",
-      "models": {
-        "GPT-5.2": [],
-        "GPT-5.4": [
-          "and glasses",
-          "a safety poster",
-          "OFFICIAL SELECTION ",
-          "OFFICIAL SELECTION "
-        ],
-        "Gemini3-Pro": [],
-        "Gemini-3.1-Pro": [],
-        "Claude-Opus-4.6": [
-          "black",
-          "black"
-        ],
-        "Step3-VL-10B": [],
-        "Qwen3-VL-8B-Think": [],
-        "VCD+Qwen3-VL-8B": [],
-        "GLM-4.6V-Flash": [],
-        "Qwen3.5-9B": [],
-        "Qwen3.5-35B-A3B": [],
-        "Qwen3.5-397B-A17B": [],
-        "KIMI-K2.5": [],
-        "Seed2.0-pro": [],
-        "Mimo-v2-pro": []
-      }
-    },
-    "synthetic": {
-      "gt_tagged": "",
-      "models": {
-        "GPT-5.2": [],
-        "GPT-5.4": [],
-        "Gemini3-Pro": [],
-        "Gemini-3.1-Pro": [],
-        "Claude-Opus-4.6": [],
-        "Step3-VL-10B": [],
-        "Qwen3-VL-8B-Think": [],
-        "VCD+Qwen3-VL-8B": [],
-        "GLM-4.6V-Flash": [],
-        "Qwen3.5-9B": [],
-        "Qwen3.5-35B-A3B": [],
-        "Qwen3.5-397B-A17B": [],
-        "KIMI-K2.5": [],
-        "Seed2.0-pro": [],
-        "Mimo-v2-pro": []
-      }
-    }
-  },
-  {
     "filename": "MV5BNjVmMTlkNGYtYTM2OC00Yjc2LWIyYmQtMDY4ZmU1MWRlMjA3XkEyXkFqcGc@._V1_.jpg",
     "category": "Poster",
     "image": "data/examples/images/Poster/MV5BNjVmMTlkNGYtYTM2OC00Yjc2LWIyYmQtMDY4ZmU1MWRlMjA3XkEyXkFqcGc@._V1_.jpg",
