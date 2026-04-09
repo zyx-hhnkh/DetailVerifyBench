@@ -1,0 +1,933 @@
+[
+  {
+    "filename": "5YV7F9PJ.jpg",
+    "category": "Movie",
+    "image": "data/examples/images/Movie/5YV7F9PJ.jpg",
+    "iterations": [
+      {
+        "round": 1,
+        "description_tag_nodetect": "Based on the provided image, here is a detailed, objective description:\n\nThe image displays a wide-angle, <HALLUCINATION>high-angle</HALLUCINATION> shot of an outdoor stone terrace scene featuring numerous uniformed figures. The setting is dominated by a highly reflective <HALLUCINATION>red-and-green</HALLUCINATION> checkered <HALLUCINATION>wooden</HALLUCINATION> floor that stretches from the foreground into the background. <HALLUCINATION>Behind the soldiers</HALLUCINATION>, the facade of a large building is visible, constructed of grey stone and featuring tall, dark wood <HALLUCINATION>circular</HALLUCINATION> doors with glass panels and intricate carvings on the lower sections. To the right, a stone balustrade with turned balusters runs along the edge of the terrace, overlooking a distant, hazy landscape with trees and buildings.\n\nSeveral figures dressed in military-style uniforms are standing and in motion, while many others are lying prone on the ground. The standing figures are primarily positioned in the center and mid-ground. One figure on the left, wearing a dark blue jacket, light blue trousers with a yellow side stripe, and a <HALLUCINATION>bright orange turban</HALLUCINATION>, is lunging forward with a <HALLUCINATION>short pistol</HALLUCINATION>. Beside this figure, another soldier in a similar uniform stoops with a rifle, looking down at the soldier on the ground; a sword in a metal scabbard hangs at their hip. Further back and to the right, <HALLUCINATION>exactly twelve</HALLUCINATION> other soldiers are visible wearing lighter blue uniforms with white cross-belts; one is aiming a rifle upwards, while another is near the balustrade.\n\nThe floor is cluttered with numerous figures lying in various positions, mostly in the foreground and along the base of the wall. These prone figures wear dark uniforms with <HALLUCINATION>bright purple</HALLUCINATION> piping and dark boots. Their limbs are sprawled, and several long rifles are scattered on the <HALLUCINATION>planks</HALLUCINATION> among them. The lighting is bright and natural, with the sun positioned low in the sky behind the figures in the center-right background, creating a strong lens flare and backlighting the scene. The sky is overcast with soft, diffused clouds. The reflective floor mirrors the figures, the sky, and the architectural details, adding depth to the composition.",
+        "description_tag": "Based on the provided image, here is a detailed, objective description:\n\nThe image displays a wide-angle, <HALLUCINATION>high-angle</HALLUCINATION> shot of an outdoor stone terrace scene featuring numerous uniformed figures. The setting is dominated by a highly reflective black-and-white checkered marble floor that stretches from the foreground into the background. <HALLUCINATION>Behind the soldiers</HALLUCINATION>, the facade of a large building is visible, constructed of grey stone and featuring tall, dark wood double doors with glass panels and intricate carvings on the lower sections. To the right, a stone balustrade with turned balusters runs along the edge of the terrace, overlooking a distant, hazy landscape with trees and buildings.\n\nSeveral figures dressed in military-style uniforms are standing and in motion, while many others are lying prone on the ground. The standing figures are primarily positioned in the center and mid-ground. One figure on the left, wearing a dark blue jacket, light blue trousers with a yellow side stripe, and a dark shako hat, is lunging forward with a long rifle. Beside this figure, another soldier in a similar uniform stoops with a rifle, looking down at the soldier on the ground; a sword in a metal scabbard hangs at their hip. Further back and to the right, three other soldiers are visible wearing lighter blue uniforms with white cross-belts; one is aiming a rifle upwards, while another is near the balustrade.\n\nThe floor is cluttered with numerous figures lying in various positions, mostly in the foreground and along the base of the wall. These prone figures wear dark uniforms with red piping and dark boots. Their limbs are sprawled, and several long rifles are scattered on the <HALLUCINATION>planks</HALLUCINATION> among them. The lighting is bright and natural, with the sun positioned low in the sky behind the figures in the center-right background, creating a strong lens flare and backlighting the scene. The sky is overcast with soft, diffused clouds. The reflective floor mirrors the figures, the sky, and the architectural details, adding depth to the composition.",
+        "matched_spans": [
+          "red-and-green",
+          "wooden",
+          "circular",
+          "bright orange turban",
+          "short pistol",
+          "exactly twelve",
+          "bright purple"
+        ],
+        "unmatched_spans": [
+          "high-angle",
+          "Behind the soldiers",
+          "planks"
+        ],
+        "stats": {
+          "num_injected": 10,
+          "num_detected": 7,
+          "detection_rate": 0.7
+        }
+      },
+      {
+        "round": 2,
+        "description_tag_nodetect": "Based on the provided image, here is a detailed, objective description:\n\nThe image displays a wide-angle, <HALLUCINATION>high-angle</HALLUCINATION> shot of an outdoor stone terrace scene featuring numerous uniformed figures. The setting is dominated by a highly reflective <HALLUCINATION>blue-and-grey</HALLUCINATION> checkered marble floor that stretches from the foreground into the background. <HALLUCINATION>To the right</HALLUCINATION>, the facade of a large building is visible, constructed of grey stone and featuring tall, dark wood double doors with glass panels and intricate carvings on the lower sections. <HALLUCINATION>To the left</HALLUCINATION>, a stone balustrade with turned balusters runs along the edge of the terrace, overlooking a distant, hazy landscape with trees and buildings.\n\nSeveral figures dressed in military-style uniforms are standing and in motion, while many others are lying prone on the ground. The standing figures are primarily positioned in the center and mid-ground. One figure on the left, wearing a dark blue jacket, light blue trousers with a <HALLUCINATION>white side stripe</HALLUCINATION>, and a <HALLUCINATION>dark forage cap</HALLUCINATION>, is lunging forward with a <HALLUCINATION>cavalry saber</HALLUCINATION>. Beside this figure, another soldier in a similar uniform stoops with a rifle, looking down at the soldier on the ground; a sword in a <HALLUCINATION>leather scabbard</HALLUCINATION> hangs at their hip. Further back and <HALLUCINATION>to the left</HALLUCINATION>, <HALLUCINATION>five other soldiers</HALLUCINATION> are visible wearing lighter blue uniforms with white cross-belts; one is aiming a rifle upwards, while another is near the balustrade.\n\nThe floor is cluttered with numerous figures lying in various positions, mostly in the foreground and along the base of the wall. These prone figures wear dark uniforms with red piping and dark boots. Their limbs are sprawled, and several long rifles are scattered on the tiles among them. The lighting is bright and natural, with the sun positioned low in the sky behind the figures in the center-right background, creating a strong lens flare and backlighting the scene. The sky is overcast with soft, diffused clouds. The reflective floor mirrors the figures, the sky, and the architectural details, adding depth to the composition.",
+        "description_tag": "Based on the provided image, here is a detailed, objective description:\n\nThe image displays a wide-angle, <HALLUCINATION>high-angle</HALLUCINATION> shot of an outdoor stone terrace scene featuring numerous uniformed figures. The setting is dominated by a highly reflective black-and-white checkered marble floor that stretches from the foreground into the background. <HALLUCINATION>To the right</HALLUCINATION>, the facade of a large building is visible, constructed of grey stone and featuring tall, dark wood double doors with glass panels and intricate carvings on the lower sections. <HALLUCINATION>To the left</HALLUCINATION>, a stone balustrade with turned balusters runs along the edge of the terrace, overlooking a distant, hazy landscape with trees and buildings.\n\nSeveral figures dressed in military-style uniforms are standing and in motion, while many others are lying prone on the ground. The standing figures are primarily positioned in the center and mid-ground. One figure on the left, wearing a dark blue jacket, light blue trousers with a <HALLUCINATION>white side stripe</HALLUCINATION>, and a dark shako hat, is lunging forward with a long rifle. Beside this figure, another soldier in a similar uniform stoops with a rifle, looking down at the soldier on the ground; a sword in a metal scabbard hangs at their hip. Further back and <HALLUCINATION>to the left</HALLUCINATION>, <HALLUCINATION>five other soldiers</HALLUCINATION> are visible wearing lighter blue uniforms with white cross-belts; one is aiming a rifle upwards, while another is near the balustrade.\n\nThe floor is cluttered with numerous figures lying in various positions, mostly in the foreground and along the base of the wall. These prone figures wear dark uniforms with red piping and dark boots. Their limbs are sprawled, and several long rifles are scattered on the tiles among them. The lighting is bright and natural, with the sun positioned low in the sky behind the figures in the center-right background, creating a strong lens flare and backlighting the scene. The sky is overcast with soft, diffused clouds. The reflective floor mirrors the figures, the sky, and the architectural details, adding depth to the composition.",
+        "matched_spans": [
+          "blue-and-grey",
+          "dark forage cap",
+          "cavalry saber",
+          "leather scabbard"
+        ],
+        "unmatched_spans": [
+          "high-angle",
+          "To the right",
+          "To the left",
+          "white side stripe",
+          "to the left",
+          "five other soldiers"
+        ],
+        "stats": {
+          "num_injected": 10,
+          "num_detected": 4,
+          "detection_rate": 0.4
+        }
+      },
+      {
+        "round": 3,
+        "description_tag_nodetect": "Based on the provided image, here is a detailed, objective description:\n\nThe image displays a wide-angle, <HALLUCINATION>high-perspective</HALLUCINATION> shot of an outdoor stone terrace scene featuring numerous uniformed figures. The setting is dominated by a highly reflective <HALLUCINATION>red-and-white</HALLUCINATION> checkered marble floor that stretches from the foreground into the background. <HALLUCINATION>To the right</HALLUCINATION>, the facade of a large building is visible, constructed of grey stone and featuring tall, dark wood double doors with glass panels and intricate carvings on the lower sections. <HALLUCINATION>To the left</HALLUCINATION>, a stone balustrade with turned balusters runs along the edge of the terrace, overlooking a distant, hazy landscape with trees and buildings.\n\nSeveral figures dressed in military-style uniforms are standing and in motion, while many others are lying prone on the ground. The standing figures are primarily positioned in the center and mid-ground. One figure on the left, wearing a dark blue jacket, light blue trousers with a <HALLUCINATION>white side stripe</HALLUCINATION>, and a <HALLUCINATION>dark peaked cap</HALLUCINATION>, is lunging forward with a long rifle. Beside this figure, another soldier in a similar uniform stoops with a rifle, looking down at the soldier on the ground; a sword in a <HALLUCINATION>black scabbard</HALLUCINATION> hangs at their hip. Further back and to the right, <HALLUCINATION>eight other soldiers</HALLUCINATION> are visible wearing lighter blue uniforms with white cross-belts; one is aiming a rifle upwards, while another is near the balustrade.\n\nThe floor is cluttered with numerous figures lying in various positions, mostly in the foreground and along the base of the wall. These prone figures wear dark uniforms with <HALLUCINATION>yellow piping</HALLUCINATION> and dark boots. Their limbs are sprawled, and several long rifles are scattered on the tiles among them. The lighting is bright and natural, with the sun positioned low in the sky behind the figures in the center-right background, creating a strong lens flare and backlighting the scene. The sky is <HALLUCINATION>clear and bright blue</HALLUCINATION>. The reflective floor mirrors the figures, the sky, and the architectural details, adding depth to the composition.",
+        "description_tag": "Based on the provided image, here is a detailed, objective description:\n\nThe image displays a wide-angle, low-perspective shot of an outdoor stone terrace scene featuring numerous uniformed figures. The setting is dominated by a highly reflective black-and-white checkered marble floor that stretches from the foreground into the background. <HALLUCINATION>To the right</HALLUCINATION>, the facade of a large building is visible, constructed of grey stone and featuring tall, dark wood double doors with glass panels and intricate carvings on the lower sections. <HALLUCINATION>To the left</HALLUCINATION>, a stone balustrade with turned balusters runs along the edge of the terrace, overlooking a distant, hazy landscape with trees and buildings.\n\nSeveral figures dressed in military-style uniforms are standing and in motion, while many others are lying prone on the ground. The standing figures are primarily positioned in the center and mid-ground. One figure on the left, wearing a dark blue jacket, light blue trousers with a <HALLUCINATION>white side stripe</HALLUCINATION>, and a <HALLUCINATION>dark peaked cap</HALLUCINATION>, is lunging forward with a long rifle. Beside this figure, another soldier in a similar uniform stoops with a rifle, looking down at the soldier on the ground; a sword in a <HALLUCINATION>black scabbard</HALLUCINATION> hangs at their hip. Further back and to the right, three other soldiers are visible wearing lighter blue uniforms with white cross-belts; one is aiming a rifle upwards, while another is near the balustrade.\n\nThe floor is cluttered with numerous figures lying in various positions, mostly in the foreground and along the base of the wall. These prone figures wear dark uniforms with red piping and dark boots. Their limbs are sprawled, and several long rifles are scattered on the tiles among them. The lighting is bright and natural, with the sun positioned low in the sky behind the figures in the center-right background, creating a strong lens flare and backlighting the scene. The sky is <HALLUCINATION>clear and bright blue</HALLUCINATION>. The reflective floor mirrors the figures, the sky, and the architectural details, adding depth to the composition.",
+        "matched_spans": [
+          "high-perspective",
+          "red-and-white",
+          "eight other soldiers",
+          "yellow piping"
+        ],
+        "unmatched_spans": [
+          "To the right",
+          "To the left",
+          "white side stripe",
+          "dark peaked cap",
+          "black scabbard",
+          "clear and bright blue"
+        ],
+        "stats": {
+          "num_injected": 10,
+          "num_detected": 4,
+          "detection_rate": 0.4
+        }
+      }
+    ]
+  },
+  {
+    "filename": "8N5P5C13.jpg",
+    "category": "Movie",
+    "image": "data/examples/images/Movie/8N5P5C13.jpg",
+    "iterations": [
+      {
+        "round": 1,
+        "description_tag_nodetect": "This image presents a <HALLUCINATION>wide-angle, long shot</HALLUCINATION> focusing on the hands and torso of a male figure seated in the driver's seat of a vintage automobile. The framing crops the subject's head just below the eyes, showing only the mouth, chin, and neck in profile. The man has wheatish skin, with visible veins and wrinkles on his hands, suggesting age. He is dressed in a <HALLUCINATION>dark navy blue</HALLUCINATION> long-sleeved button-down shirt featuring thin pinstripes. The cuffs are buttoned at the wrists. A portion of a <HALLUCINATION>bright yellow</HALLUCINATION> suspender strap is visible over his right shoulder. On the ring finger of his left hand, a simple <HALLUCINATION>gold</HALLUCINATION> band is visible.\n\nThe subject's hands are the central focus of the composition. The left hand is positioned near the <HALLUCINATION>bottom edge</HALLUCINATION> of the steering wheel, with the palm open and fingers extended, resting near the metal hub. The right hand grips the lower right section of the steering wheel's rim. The steering wheel itself is large, featuring a polished brown <HALLUCINATION>plastic</HALLUCINATION> rim and metal spokes. It is attached to a black, cylindrical steering column. Mounted on the <HALLUCINATION>right side</HALLUCINATION> of the column is a black mechanical housing with a silver lever protruding upwards. A label carving with <HALLUCINATION>the word 'IGNITION' in large block letters</HALLUCINATION> is attached to this housing.\n\nTo the left, on the dark interior door panel, a chrome handle—likely a window crank or door latch—is mounted <HALLUCINATION>horizontally</HALLUCINATION>. The dashboard area to the right is finished in a glossy black material. The lighting is natural and directional, coming from the right side of the frame, creating bright highlights on the folds of the shirt sleeve and the back of the left hand. The interior of the car is cast in shadow, contrasting with the bright, out-of-focus background visible through the car window, which suggests an <HALLUCINATION>indoor parking garage</HALLUCINATION>.",
+        "description_tag": "This image presents a close-up, medium shot focusing on the hands and torso of a male figure seated in the driver's seat of a vintage automobile. The framing crops the subject's head just below the eyes, showing only the mouth, chin, and neck in profile. The man has wheatish skin, with visible veins and wrinkles on his hands, suggesting age. He is dressed in a <HALLUCINATION>dark navy blue</HALLUCINATION> long-sleeved button-down shirt featuring thin pinstripes. The cuffs are buttoned at the wrists. A portion of a reddish-orange suspender strap is visible over his right shoulder. On the ring finger of his left hand, a simple <HALLUCINATION>gold</HALLUCINATION> band is visible.\n\nThe subject's hands are the central focus of the composition. The left hand is positioned near the <HALLUCINATION>bottom edge</HALLUCINATION> of the steering wheel, with the palm open and fingers extended, resting near the metal hub. The right hand grips the lower right section of the steering wheel's rim. The steering wheel itself is large, featuring a polished brown wooden rim and metal spokes. It is attached to a black, cylindrical steering column. Mounted on the <HALLUCINATION>right side</HALLUCINATION> of the column is a black mechanical housing with a silver lever protruding upwards. A label carving with small, partially illegible text is attached to this housing.\n\nTo the left, on the dark interior door panel, a chrome handle—likely a window crank or door latch—is mounted <HALLUCINATION>horizontally</HALLUCINATION>. The dashboard area to the right is finished in a glossy black material. The lighting is natural and directional, coming from the right side of the frame, creating bright highlights on the folds of the shirt sleeve and the back of the left hand. The interior of the car is cast in shadow, contrasting with the bright, out-of-focus background visible through the car window, which suggests an outdoor daytime setting.",
+        "matched_spans": [
+          "wide-angle, long shot",
+          "bright yellow",
+          "plastic",
+          "the word 'IGNITION' in large block letters",
+          "indoor parking garage"
+        ],
+        "unmatched_spans": [
+          "dark navy blue",
+          "gold",
+          "bottom edge",
+          "right side",
+          "horizontally"
+        ],
+        "stats": {
+          "num_injected": 10,
+          "num_detected": 5,
+          "detection_rate": 0.5
+        }
+      },
+      {
+        "round": 2,
+        "description_tag_nodetect": "This image presents a <HALLUCINATION>low-angle, waist-up shot</HALLUCINATION> focusing on the hands and torso of a male figure seated in the driver's seat of a vintage automobile. The framing crops the subject's head just below the eyes, showing only the mouth, chin, and neck in profile. The man has wheatish skin, with visible veins and wrinkles on his hands, suggesting age. He is dressed in a <HALLUCINATION>pale sky blue</HALLUCINATION> long-sleeved button-down shirt featuring thin pinstripes. The cuffs are buttoned at the wrists. A portion of a <HALLUCINATION>deep forest green</HALLUCINATION> suspender strap is visible over his right shoulder. On the ring finger of his left hand, a simple <HALLUCINATION>gold</HALLUCINATION> band is visible.\n\nThe subject's hands are the central focus of the composition. The left hand is positioned near the <HALLUCINATION>lower left section</HALLUCINATION> of the steering wheel, with the palm open and fingers extended, resting near the metal hub. The right hand grips the lower right section of the steering wheel's rim. The steering wheel itself is large, featuring a polished <HALLUCINATION>ivory</HALLUCINATION> rim and metal spokes. It is attached to a black, cylindrical steering column. Mounted on the <HALLUCINATION>right side</HALLUCINATION> of the column is a black mechanical housing with a silver lever protruding upwards. A label carving with <HALLUCINATION>the word 'CAUTION' engraved in block letters</HALLUCINATION> is attached to this housing.\n\nTo the left, on the dark interior door panel, a chrome handle—likely a window crank or door latch—is mounted <HALLUCINATION>horizontally</HALLUCINATION>. The dashboard area to the right is finished in a glossy black material. The lighting is natural and directional, coming from the right side of the frame, creating bright highlights on the folds of the shirt sleeve and the back of the left hand. The interior of the car is cast in shadow, contrasting with the bright, out-of-focus background visible through the car window, which suggests an <HALLUCINATION>indoor studio environment</HALLUCINATION>.",
+        "description_tag": "This image presents a <HALLUCINATION>low-angle, waist-up shot</HALLUCINATION> focusing on the hands and torso of a male figure seated in the driver's seat of a vintage automobile. The framing crops the subject's head just below the eyes, showing only the mouth, chin, and neck in profile. The man has wheatish skin, with visible veins and wrinkles on his hands, suggesting age. He is dressed in a <HALLUCINATION>pale sky blue</HALLUCINATION> long-sleeved button-down shirt featuring thin pinstripes. The cuffs are buttoned at the wrists. A portion of a reddish-orange suspender strap is visible over his right shoulder. On the ring finger of his left hand, a simple <HALLUCINATION>gold</HALLUCINATION> band is visible.\n\nThe subject's hands are the central focus of the composition. The left hand is positioned near the <HALLUCINATION>lower left section</HALLUCINATION> of the steering wheel, with the palm open and fingers extended, resting near the metal hub. The right hand grips the lower right section of the steering wheel's rim. The steering wheel itself is large, featuring a polished brown wooden rim and metal spokes. It is attached to a black, cylindrical steering column. Mounted on the <HALLUCINATION>right side</HALLUCINATION> of the column is a black mechanical housing with a silver lever protruding upwards. A label carving with small, partially illegible text is attached to this housing.\n\nTo the left, on the dark interior door panel, a chrome handle—likely a window crank or door latch—is mounted vertically. The dashboard area to the right is finished in a glossy black material. The lighting is natural and directional, coming from the right side of the frame, creating bright highlights on the folds of the shirt sleeve and the back of the left hand. The interior of the car is cast in shadow, contrasting with the bright, out-of-focus background visible through the car window, which suggests an outdoor daytime setting.",
+        "matched_spans": [
+          "deep forest green",
+          "ivory",
+          "the word 'CAUTION' engraved in block letters",
+          "the word 'CAUTION' engraved in block letters",
+          "horizontally",
+          "indoor studio environment"
+        ],
+        "unmatched_spans": [
+          "low-angle, waist-up shot",
+          "pale sky blue",
+          "gold",
+          "lower left section",
+          "right side"
+        ],
+        "stats": {
+          "num_injected": 10,
+          "num_detected": 5,
+          "detection_rate": 0.5
+        }
+      },
+      {
+        "round": 3,
+        "description_tag_nodetect": "This image presents a <HALLUCINATION>high-angle, close-up shot</HALLUCINATION> focusing on the hands and torso of a male figure seated in the driver's seat of a vintage automobile. The framing crops the subject's head just below the eyes, showing only the mouth, chin, and neck in profile. The man has wheatish skin, with visible veins and wrinkles on his hands, suggesting age. He is dressed in a <HALLUCINATION>light grey</HALLUCINATION> long-sleeved button-down shirt featuring thin pinstripes. The cuffs are buttoned at the wrists. A portion of a <HALLUCINATION>dark blue</HALLUCINATION> suspender strap is visible over his right shoulder. On the ring finger of his left hand, a simple <HALLUCINATION>gold</HALLUCINATION> band is visible.\n\nThe subject's hands are the central focus of the composition. The left hand is positioned near the <HALLUCINATION>bottom center</HALLUCINATION> of the steering wheel, with the palm open and fingers extended, resting near the metal hub. The right hand grips the lower right section of the steering wheel's rim. The steering wheel itself is large, featuring a polished <HALLUCINATION>black plastic</HALLUCINATION> rim and metal spokes. It is attached to a black, cylindrical steering column. Mounted on the <HALLUCINATION>right side</HALLUCINATION> of the column is a black mechanical housing with a silver lever protruding upwards. A label carving with <HALLUCINATION>four distinct numbers</HALLUCINATION> is attached to this housing.\n\nTo the left, on the dark interior door panel, a <HALLUCINATION>large circular dial</HALLUCINATION>—likely a window crank or door latch—is mounted vertically. The dashboard area to the right is finished in a glossy black material. The lighting is natural and directional, coming from the right side of the frame, creating bright highlights on the folds of the shirt sleeve and the back of the left hand. The interior of the car is cast in shadow, contrasting with the bright, out-of-focus background visible through the car window, which suggests <HALLUCINATION>a busy city street</HALLUCINATION>.",
+        "description_tag": "This image presents a close-up, medium shot focusing on the hands and torso of a male figure seated in the driver's seat of a vintage automobile. The framing crops the subject's head just below the eyes, showing only the mouth, chin, and neck in profile. The man has wheatish skin, with visible veins and wrinkles on his hands, suggesting age. He is dressed in a <HALLUCINATION>light grey</HALLUCINATION> long-sleeved button-down shirt featuring thin pinstripes. The cuffs are buttoned at the wrists. A portion of a reddish-orange suspender strap is visible over his right shoulder. On the ring finger of his left hand, a simple <HALLUCINATION>gold</HALLUCINATION> band is visible.\n\nThe subject's hands are the central focus of the composition. The left hand is positioned near the <HALLUCINATION>bottom center</HALLUCINATION> of the steering wheel, with the palm open and fingers extended, resting near the metal hub. The right hand grips the lower right section of the steering wheel's rim. The steering wheel itself is large, featuring a polished brown wooden rim and metal spokes. It is attached to a black, cylindrical steering column. Mounted on the <HALLUCINATION>right side</HALLUCINATION> of the column is a black mechanical housing with a silver lever protruding upwards. A label carving with <HALLUCINATION>four distinct numbers</HALLUCINATION> is attached to this housing.\n\nTo the left, on the dark interior door panel, a chrome handle—likely a window crank or door latch—is mounted vertically. The dashboard area to the right is finished in a glossy black material. The lighting is natural and directional, coming from the right side of the frame, creating bright highlights on the folds of the shirt sleeve and the back of the left hand. The interior of the car is cast in shadow, contrasting with the bright, out-of-focus background visible through the car window, which suggests an outdoor daytime setting.",
+        "matched_spans": [
+          "high-angle, close-up shot",
+          "dark blue",
+          "black plastic",
+          "large circular dial",
+          "a busy city street"
+        ],
+        "unmatched_spans": [
+          "light grey",
+          "gold",
+          "bottom center",
+          "right side",
+          "four distinct numbers"
+        ],
+        "stats": {
+          "num_injected": 10,
+          "num_detected": 5,
+          "detection_rate": 0.5
+        }
+      }
+    ]
+  },
+  {
+    "filename": "BJTXU03U.JPG",
+    "category": "Movie",
+    "image": "data/examples/images/Movie/BJTXU03U.JPG",
+    "iterations": [
+      {
+        "round": 1,
+        "description_tag_nodetect": "This image displays a <HALLUCINATION>low-angle shot</HALLUCINATION> of a young boy standing <HALLUCINATION>outdoors</HALLUCINATION>, framed centrally between <HALLUCINATION>five</HALLUCINATION> dark, out-of-focus vertical elements that suggest a doorway or narrow opening. The boy has a fair complexion and short, curly blonde hair that is partially covered by a <HALLUCINATION>bright red</HALLUCINATION> peaked cap. The cap features a strap across the front, secured by a small <HALLUCINATION>plastic toggle</HALLUCINATION> in the front. His facial expression is nervous, with his mouth slightly ajar and his gaze directed forward.\n\nThe boy is dressed in layered clothing suitable for cooler weather. He wears a heavy, dark olive-drab or charcoal <HALLUCINATION>denim coat</HALLUCINATION> with wide lapels and a visible button closure. Underneath the coat, a beige or tan knitted garment with a <HALLUCINATION>plastic Velcro strip</HALLUCINATION> running vertically down the center is visible. Beneath that layer, he wears a teal-green collared shirt, the points of which rest against the beige garment.\n\nTo the <HALLUCINATION>right</HALLUCINATION> of the frame, a tall, dark wooden plant stand with a <HALLUCINATION>perfectly square pillar</HALLUCINATION> design supports a green ceramic pot with vertical ridges. A lush green plant with broad leaves grows from the pot, catching highlights from the light source. The background consists of a wall painted in a <HALLUCINATION>vibrant purple</HALLUCINATION> tone. Directly behind the boy is a dark, rectangular object, possibly a framed picture or wooden panel, which is slightly out of focus. To the far right, a small section of a wooden table or surface is visible, holding an indistinct red object. The lighting in the scene is soft and directional, appearing to originate from the left, casting shadows on the left side of the boy's face and the wall behind him. The depth of field is shallow, keeping the boy in sharp focus while blurring the background and extreme foreground elements.",
+        "description_tag": "This image displays a <HALLUCINATION>low-angle shot</HALLUCINATION> of a young boy standing <HALLUCINATION>outdoors</HALLUCINATION>, framed centrally between two dark, out-of-focus vertical elements that suggest a doorway or narrow opening. The boy has a fair complexion and short, curly blonde hair that is partially covered by a <HALLUCINATION>bright red</HALLUCINATION> peaked cap. The cap features a strap across the front, secured by a small silver buckle or button in the front. His facial expression is nervous, with his mouth slightly ajar and his gaze directed forward.\n\nThe boy is dressed in layered clothing suitable for cooler weather. He wears a heavy, dark olive-drab or charcoal wool coat with wide lapels and a visible button closure. Underneath the coat, a beige or tan knitted garment with a metal zipper running vertically down the center is visible. Beneath that layer, he wears a teal-green collared shirt, the points of which rest against the beige garment.\n\nTo the <HALLUCINATION>right</HALLUCINATION> of the frame, a tall, dark wooden plant stand with a spiral, twisted column design supports a green ceramic pot with vertical ridges. A lush green plant with broad leaves grows from the pot, catching highlights from the light source. The background consists of a wall painted in a muted, yellowish-ochre tone. Directly behind the boy is a dark, rectangular object, possibly a framed picture or wooden panel, which is slightly out of focus. To the far right, a small section of a wooden table or surface is visible, holding an indistinct red object. The lighting in the scene is soft and directional, appearing to originate from the left, casting shadows on the left side of the boy's face and the wall behind him. The depth of field is shallow, keeping the boy in sharp focus while blurring the background and extreme foreground elements.",
+        "matched_spans": [
+          "five",
+          "plastic toggle",
+          "denim coat",
+          "plastic Velcro strip",
+          "perfectly square pillar",
+          "vibrant purple"
+        ],
+        "unmatched_spans": [
+          "low-angle shot",
+          "outdoors",
+          "bright red",
+          "right"
+        ],
+        "stats": {
+          "num_injected": 10,
+          "num_detected": 6,
+          "detection_rate": 0.6
+        }
+      },
+      {
+        "round": 2,
+        "description_tag_nodetect": "This image displays a <HALLUCINATION>wide shot</HALLUCINATION> of a young boy standing indoors, framed centrally between two dark, out-of-focus <HALLUCINATION>wooden beams</HALLUCINATION> that suggest a doorway or narrow opening. The boy has a fair complexion and short, curly blonde hair that is partially covered by a <HALLUCINATION>dark navy</HALLUCINATION> peaked cap. The cap features a strap across the front, secured by a small <HALLUCINATION>brass</HALLUCINATION> buckle or button in the front. His facial expression is nervous, with his mouth slightly ajar and his gaze directed forward.\n\nThe boy is dressed in layered clothing suitable for cooler weather. He wears a heavy, dark olive-drab or charcoal <HALLUCINATION>corduroy</HALLUCINATION> coat with wide lapels and a visible button closure. Underneath the coat, a beige or tan knitted garment with a <HALLUCINATION>row of dark buttons</HALLUCINATION> running vertically down the center is visible. Beneath that layer, he wears a teal-green collared shirt, the points of which rest against the beige garment.\n\nTo the <HALLUCINATION>right</HALLUCINATION> of the frame, a tall, dark wooden plant stand with a <HALLUCINATION>smooth, square-edged</HALLUCINATION> column design supports a green ceramic pot with vertical ridges. A lush green plant with broad leaves grows from the pot, catching highlights from the light source. The background consists of a wall painted in a muted, <HALLUCINATION>greyish-blue</HALLUCINATION> tone. Directly behind the boy is a dark, rectangular object, possibly a framed picture or wooden panel, which is slightly out of focus. To the far right, a small section of a wooden table or surface is visible, holding an indistinct red object. The lighting in the scene is soft and directional, appearing to originate from the <HALLUCINATION>right</HALLUCINATION>, casting shadows on the left side of the boy's face and the wall behind him. The depth of field is shallow, keeping the boy in sharp focus while blurring the background and extreme foreground elements.",
+        "description_tag": "This image displays a medium shot of a young boy standing indoors, framed centrally between two dark, out-of-focus vertical elements that suggest a doorway or narrow opening. The boy has a fair complexion and short, curly blonde hair that is partially covered by a black peaked cap. The cap features a strap across the front, secured by a small silver buckle or button in the front. His facial expression is nervous, with his mouth slightly ajar and his gaze directed forward.\n\nThe boy is dressed in layered clothing suitable for cooler weather. He wears a heavy, dark olive-drab or charcoal wool coat with wide lapels and a visible button closure. Underneath the coat, a beige or tan knitted garment with a <HALLUCINATION>row of dark buttons</HALLUCINATION> running vertically down the center is visible. Beneath that layer, he wears a teal-green collared shirt, the points of which rest against the beige garment.\n\nTo the <HALLUCINATION>right</HALLUCINATION> of the frame, a tall, dark wooden plant stand with a <HALLUCINATION>smooth, square-edged</HALLUCINATION> column design supports a green ceramic pot with vertical ridges. A lush green plant with broad leaves grows from the pot, catching highlights from the light source. The background consists of a wall painted in a muted, <HALLUCINATION>greyish-blue</HALLUCINATION> tone. Directly behind the boy is a dark, rectangular object, possibly a framed picture or wooden panel, which is slightly out of focus. To the far right, a small section of a wooden table or surface is visible, holding an indistinct red object. The lighting in the scene is soft and directional, appearing to originate from the <HALLUCINATION>right</HALLUCINATION>, casting shadows on the left side of the boy's face and the wall behind him. The depth of field is shallow, keeping the boy in sharp focus while blurring the background and extreme foreground elements.",
+        "matched_spans": [
+          "wide shot",
+          "wooden beams",
+          "dark navy",
+          "brass",
+          "corduroy"
+        ],
+        "unmatched_spans": [
+          "row of dark buttons",
+          "right",
+          "smooth, square-edged",
+          "greyish-blue",
+          "right"
+        ],
+        "stats": {
+          "num_injected": 10,
+          "num_detected": 5,
+          "detection_rate": 0.5
+        }
+      },
+      {
+        "round": 3,
+        "description_tag_nodetect": "This image displays a medium shot of a young boy standing indoors, framed centrally between two dark, out-of-focus vertical elements that suggest a doorway or narrow opening. The boy has a fair complexion and short, curly blonde hair that is partially covered by a <HALLUCINATION>dark brown</HALLUCINATION> peaked cap. The cap features a strap across the front, secured by a small <HALLUCINATION>dark plastic button</HALLUCINATION> in the front. His facial expression is nervous, with his mouth slightly ajar and his gaze directed forward.\n\nThe boy is dressed in layered clothing suitable for cooler weather. He wears a heavy, dark olive-drab or charcoal <HALLUCINATION>cotton</HALLUCINATION> coat with wide lapels and a visible button closure. Underneath the coat, a beige or tan knitted garment with a <HALLUCINATION>row of dark buttons</HALLUCINATION> running vertically down the center is visible. Beneath that layer, he wears a <HALLUCINATION>light grey</HALLUCINATION> collared shirt, the points of which rest against the beige garment.\n\nTo the <HALLUCINATION>right</HALLUCINATION> of the frame, a tall, dark wooden plant stand with a <HALLUCINATION>smooth, straight</HALLUCINATION> column design supports a green ceramic pot with vertical ridges. A lush green plant with broad leaves grows from the pot, catching highlights from the light source. The background consists of a wall painted in a muted, <HALLUCINATION>light blue</HALLUCINATION> tone. Directly behind the boy is a dark, rectangular object, possibly a framed picture or wooden panel, which is slightly out of focus. To the far right, a small section of a wooden table or surface is visible, holding an indistinct red object. The lighting in the scene is soft and directional, appearing to originate from the <HALLUCINATION>right</HALLUCINATION>, casting shadows on the <HALLUCINATION>right</HALLUCINATION> side of the boy's face and the wall behind him. The depth of field is shallow, keeping the boy in sharp focus while blurring the background and extreme foreground elements.",
+        "description_tag": "This image displays a medium shot of a young boy standing indoors, framed centrally between two dark, out-of-focus vertical elements that suggest a doorway or narrow opening. The boy has a fair complexion and short, curly blonde hair that is partially covered by a black peaked cap. The cap features a strap across the front, secured by a small silver buckle or button in the front. His facial expression is nervous, with his mouth slightly ajar and his gaze directed forward.\n\nThe boy is dressed in layered clothing suitable for cooler weather. He wears a heavy, dark olive-drab or charcoal <HALLUCINATION>cotton</HALLUCINATION> coat with wide lapels and a visible button closure. Underneath the coat, a beige or tan knitted garment with a <HALLUCINATION>row of dark buttons</HALLUCINATION> running vertically down the center is visible. Beneath that layer, he wears a <HALLUCINATION>light grey</HALLUCINATION> collared shirt, the points of which rest against the beige garment.\n\nTo the left of the frame, a tall, dark wooden plant stand with a <HALLUCINATION>smooth, straight</HALLUCINATION> column design supports a green ceramic pot with vertical ridges. A lush green plant with broad leaves grows from the pot, catching highlights from the light source. The background consists of a wall painted in a muted, yellowish-ochre tone. Directly behind the boy is a dark, rectangular object, possibly a framed picture or wooden panel, which is slightly out of focus. To the far right, a small section of a wooden table or surface is visible, holding an indistinct red object. The lighting in the scene is soft and directional, appearing to originate from the left, casting shadows on the left side of the boy's face and the wall behind him. The depth of field is shallow, keeping the boy in sharp focus while blurring the background and extreme foreground elements.",
+        "matched_spans": [
+          "dark brown",
+          "dark plastic button",
+          "light blue",
+          "right"
+        ],
+        "unmatched_spans": [
+          "cotton",
+          "row of dark buttons",
+          "light grey",
+          "right",
+          "smooth, straight",
+          "right"
+        ],
+        "stats": {
+          "num_injected": 10,
+          "num_detected": 4,
+          "detection_rate": 0.4
+        }
+      }
+    ]
+  },
+  {
+    "filename": "DMYH6YIZ.jpg",
+    "category": "Movie",
+    "image": "data/examples/images/Movie/DMYH6YIZ.jpg",
+    "iterations": [
+      {
+        "round": 1,
+        "description_tag_nodetect": "This image presents a <HALLUCINATION>high-angle bird's-eye view</HALLUCINATION> of an interior scene, framed through a dark, rectangular doorway or opening that obscures the far left and right edges of the composition. The view focuses on two individuals seated across from one another at a small, <HALLUCINATION>round</HALLUCINATION> dining table.\n\nOn the left side of the table, a man sits facing slightly toward his left. He has pale skin and short, dark brown hair that is combed neatly to the side. He is dressed in a formal dark suit jacket, a light blue button-down shirt, and a <HALLUCINATION>yellow</HALLUCINATION> tie adorned with small white polka dots. His hands are resting in his lap, below the level of the table. His gaze flicks toward the viewer.\n\nOn the right side of the table, a woman is seated with her back to the camera, obscuring her face entirely. She has shoulder-length, <HALLUCINATION>jet black</HALLUCINATION> hair styled in a bob. She wears a dark brown or maroon jacket. The back of her <HALLUCINATION>plastic</HALLUCINATION> chair, featuring vertical slats, is visible.\n\nBetween them, the table is covered with a beige tablecloth featuring a subtle, intricate lace or floral pattern. <HALLUCINATION>Two wine glasses</HALLUCINATION> sit on the table near the center. Behind the figures, a large window is covered by sheer, cream-colored curtains that diffuse the natural daylight entering the room, creating a soft backlight. Heavier, greyish-brown drapes hang at the sides of the window. To the <HALLUCINATION>left</HALLUCINATION> of the window, in the background, a floor lamp with a beige shade stands in the corner.\n\nThe foreground is dominated by the dark, shadowed frames of the doorway through which the scene is viewed. On the far right edge of the foreground, a section of wall is visible, covered in wallpaper with a geometric pattern of small reddish-brown <HALLUCINATION>stars</HALLUCINATION> on a light background. The lighting is natural and soft, emanating from the window, which leaves the foreground elements in silhouette while illuminating the profiles of the figures at the table.",
+        "description_tag": "This image presents a medium shot of an interior scene, framed through a dark, rectangular doorway or opening that obscures the far left and right edges of the composition. The view focuses on two individuals seated across from one another at a small, <HALLUCINATION>round</HALLUCINATION> dining table.\n\nOn the left side of the table, a man sits facing slightly toward his left. He has pale skin and short, dark brown hair that is combed neatly to the side. He is dressed in a formal dark suit jacket, a light blue button-down shirt, and a red tie adorned with small white polka dots. His hands are resting in his lap, below the level of the table. His gaze flicks toward the viewer.\n\nOn the right side of the table, a woman is seated with her back to the camera, obscuring her face entirely. She has shoulder-length, <HALLUCINATION>jet black</HALLUCINATION> hair styled in a bob. She wears a dark brown or maroon jacket. The back of her wooden chair, featuring vertical slats, is visible.\n\nBetween them, the table is covered with a beige tablecloth featuring a subtle, intricate lace or floral pattern. A single teacup and saucer sit on the table near the center. Behind the figures, a large window is covered by sheer, cream-colored curtains that diffuse the natural daylight entering the room, creating a soft backlight. Heavier, greyish-brown drapes hang at the sides of the window. To the <HALLUCINATION>left</HALLUCINATION> of the window, in the background, a floor lamp with a beige shade stands in the corner.\n\nThe foreground is dominated by the dark, shadowed frames of the doorway through which the scene is viewed. On the far right edge of the foreground, a section of wall is visible, covered in wallpaper with a geometric pattern of small reddish-brown diamonds on a light background. The lighting is natural and soft, emanating from the window, which leaves the foreground elements in silhouette while illuminating the profiles of the figures at the table.",
+        "matched_spans": [
+          "high-angle bird's-eye view",
+          "yellow",
+          "plastic",
+          "Two wine glasses",
+          "stars"
+        ],
+        "unmatched_spans": [
+          "round",
+          "jet black",
+          "left"
+        ],
+        "stats": {
+          "num_injected": 8,
+          "num_detected": 5,
+          "detection_rate": 0.625
+        }
+      },
+      {
+        "round": 2,
+        "description_tag_nodetect": "This image presents a <HALLUCINATION>long shot</HALLUCINATION> of an interior scene, framed through a dark, rectangular doorway or opening that obscures the far left and right edges of the composition. The view focuses on two individuals seated across from one another at a small, <HALLUCINATION>round</HALLUCINATION> dining table.\n\nOn the left side of the table, a man sits facing slightly toward his left. He has pale skin and short, dark brown hair that is combed neatly to the side. He is dressed in a formal dark suit jacket, a light blue button-down shirt, and a <HALLUCINATION>solid blue tie</HALLUCINATION>. His hands are resting in his lap, below the level of the table. His gaze flicks toward the viewer.\n\nOn the right side of the table, a woman is seated with her back to the camera, obscuring her face entirely. She has shoulder-length, <HALLUCINATION>black</HALLUCINATION> hair styled in a bob. She wears a <HALLUCINATION>light grey jacket</HALLUCINATION>. The back of her <HALLUCINATION>metal</HALLUCINATION> chair, featuring vertical slats, is visible.\n\nBetween them, the table is covered with a beige tablecloth featuring a subtle, intricate lace or floral pattern. A <HALLUCINATION>glass of water sits</HALLUCINATION> on the table near the center. Behind the figures, a large window is covered by sheer, cream-colored curtains that diffuse the natural daylight entering the room, creating a soft backlight. Heavier, greyish-brown drapes hang at the sides of the window. To the <HALLUCINATION>left</HALLUCINATION> of the window, in the background, a floor lamp with a beige shade stands in the corner.\n\nThe foreground is dominated by the dark, shadowed frames of the doorway through which the scene is viewed. On the far right edge of the foreground, a section of wall is visible, covered in wallpaper with a geometric pattern of small reddish-brown <HALLUCINATION>squares</HALLUCINATION> on a light background. The lighting is natural and soft, emanating from the window, which leaves the foreground elements in silhouette while illuminating the profiles of the figures at the table.",
+        "description_tag": "This image presents a medium shot of an interior scene, framed through a dark, rectangular doorway or opening that obscures the far left and right edges of the composition. The view focuses on two individuals seated across from one another at a small, <HALLUCINATION>round</HALLUCINATION> dining table.\n\nOn the left side of the table, a man sits facing slightly toward his left. He has pale skin and short, dark brown hair that is combed neatly to the side. He is dressed in a formal dark suit jacket, a light blue button-down shirt, and a red tie adorned with small white polka dots. His hands are resting in his lap, below the level of the table. His gaze flicks toward the viewer.\n\nOn the right side of the table, a woman is seated with her back to the camera, obscuring her face entirely. She has shoulder-length, <HALLUCINATION>black</HALLUCINATION> hair styled in a bob. She wears a <HALLUCINATION>light grey jacket</HALLUCINATION>. The back of her wooden chair, featuring vertical slats, is visible.\n\nBetween them, the table is covered with a beige tablecloth featuring a subtle, intricate lace or floral pattern. A <HALLUCINATION>glass of water sits</HALLUCINATION> on the table near the center. Behind the figures, a large window is covered by sheer, cream-colored curtains that diffuse the natural daylight entering the room, creating a soft backlight. Heavier, greyish-brown drapes hang at the sides of the window. To the <HALLUCINATION>left</HALLUCINATION> of the window, in the background, a floor lamp with a beige shade stands in the corner.\n\nThe foreground is dominated by the dark, shadowed frames of the doorway through which the scene is viewed. On the far right edge of the foreground, a section of wall is visible, covered in wallpaper with a geometric pattern of small reddish-brown diamonds on a light background. The lighting is natural and soft, emanating from the window, which leaves the foreground elements in silhouette while illuminating the profiles of the figures at the table.",
+        "matched_spans": [
+          "long shot",
+          "solid blue tie",
+          "metal",
+          "squares"
+        ],
+        "unmatched_spans": [
+          "round",
+          "black",
+          "light grey jacket",
+          "glass of water sits",
+          "left"
+        ],
+        "stats": {
+          "num_injected": 9,
+          "num_detected": 4,
+          "detection_rate": 0.4444444444444444
+        }
+      },
+      {
+        "round": 3,
+        "description_tag_nodetect": "This image presents a medium shot of an interior scene, framed through a dark, <HALLUCINATION>arched</HALLUCINATION> doorway or opening that obscures the far left and right edges of the composition. The view focuses on two individuals seated across from one another at a small, <HALLUCINATION>circular</HALLUCINATION> dining table.\n\nOn the left side of the table, a man sits facing slightly toward his left. He has pale skin and short, dark brown hair that is combed neatly to the side. He is dressed in a formal dark suit jacket, a light blue button-down shirt, and a <HALLUCINATION>solid emerald green tie</HALLUCINATION>. His hands are resting in his lap, below the level of the table. His gaze flicks toward the viewer.\n\nOn the right side of the table, a woman is seated with her back to the camera, obscuring her face entirely. She has shoulder-length, <HALLUCINATION>jet-black</HALLUCINATION> hair styled in a bob. She wears a dark brown or maroon jacket. The back of her <HALLUCINATION>wicker armchair</HALLUCINATION> is visible.\n\nBetween them, the table is covered with a beige tablecloth featuring a subtle, intricate lace or floral pattern. A <HALLUCINATION>pair of silver candlesticks</HALLUCINATION> sit on the table near the center. Behind the figures, a large window is covered by sheer, cream-colored curtains that diffuse the natural daylight entering the room, creating a soft backlight. Heavier, greyish-brown drapes hang at the sides of the window. To the <HALLUCINATION>left</HALLUCINATION> of the window, in the background, a floor lamp with a <HALLUCINATION>frosted glass</HALLUCINATION> shade stands in the corner.\n\nThe foreground is dominated by the dark, shadowed frames of the doorway through which the scene is viewed. On the far right edge of the foreground, a section of wall is visible, covered in wallpaper with a geometric pattern of small reddish-brown <HALLUCINATION>vertical stripes</HALLUCINATION> on a light background. The lighting is natural and soft, emanating from the window, which leaves the foreground elements in silhouette while illuminating the profiles of the figures at the table.",
+        "description_tag": "This image presents a medium shot of an interior scene, framed through a dark, <HALLUCINATION>arched</HALLUCINATION> doorway or opening that obscures the far left and right edges of the composition. The view focuses on two individuals seated across from one another at a small, <HALLUCINATION>circular</HALLUCINATION> dining table.\n\nOn the left side of the table, a man sits facing slightly toward his left. He has pale skin and short, dark brown hair that is combed neatly to the side. He is dressed in a formal dark suit jacket, a light blue button-down shirt, and a red tie adorned with small white polka dots. His hands are resting in his lap, below the level of the table. His gaze flicks toward the viewer.\n\nOn the right side of the table, a woman is seated with her back to the camera, obscuring her face entirely. She has shoulder-length, blonde hair styled in a bob. She wears a dark brown or maroon jacket. The back of her wooden chair, featuring vertical slats, is visible.\n\nBetween them, the table is covered with a beige tablecloth featuring a subtle, intricate lace or floral pattern. A single teacup and saucer sit on the table near the center. Behind the figures, a large window is covered by sheer, cream-colored curtains that diffuse the natural daylight entering the room, creating a soft backlight. Heavier, greyish-brown drapes hang at the sides of the window. To the <HALLUCINATION>left</HALLUCINATION> of the window, in the background, a floor lamp with a beige shade stands in the corner.\n\nThe foreground is dominated by the dark, shadowed frames of the doorway through which the scene is viewed. On the far right edge of the foreground, a section of wall is visible, covered in wallpaper with a geometric pattern of small reddish-brown diamonds on a light background. The lighting is natural and soft, emanating from the window, which leaves the foreground elements in silhouette while illuminating the profiles of the figures at the table.",
+        "matched_spans": [
+          "solid emerald green tie",
+          "jet-black",
+          "wicker armchair",
+          "pair of silver candlesticks",
+          "frosted glass",
+          "vertical stripes"
+        ],
+        "unmatched_spans": [
+          "arched",
+          "circular",
+          "left"
+        ],
+        "stats": {
+          "num_injected": 9,
+          "num_detected": 6,
+          "detection_rate": 0.6666666666666666
+        }
+      }
+    ]
+  },
+  {
+    "filename": "MV5BMjIyOTM5OTIzNV5BMl5BanBnXkFtZTgwMDkzODE2NjE@._V1_.jpg",
+    "category": "Poster",
+    "image": "data/examples/images/Poster/MV5BMjIyOTM5OTIzNV5BMl5BanBnXkFtZTgwMDkzODE2NjE@._V1_.jpg",
+    "iterations": [
+      {
+        "round": 1,
+        "description_tag_nodetect": "",
+        "description_tag": "",
+        "matched_spans": [],
+        "unmatched_spans": [],
+        "stats": {
+          "num_injected": 0,
+          "num_detected": 0,
+          "detection_rate": 0.0
+        }
+      }
+    ]
+  },
+  {
+    "filename": "MV5BNjVmMTlkNGYtYTM2OC00Yjc2LWIyYmQtMDY4ZmU1MWRlMjA3XkEyXkFqcGc@._V1_.jpg",
+    "category": "Poster",
+    "image": "data/examples/images/Poster/MV5BNjVmMTlkNGYtYTM2OC00Yjc2LWIyYmQtMDY4ZmU1MWRlMjA3XkEyXkFqcGc@._V1_.jpg",
+    "iterations": [
+      {
+        "round": 1,
+        "description_tag_nodetect": "This movie poster features a textured <HALLUCINATION>blue</HALLUCINATION> background resembling a watercolor wash on white paper. At the top left, small red text reads \"<HALLUCINATION>universal studios presents</HALLUCINATION>,\" followed by \"aamir khan productions'\" below. The title \"tAAre zameeN Par\" dominates the upper center in a large, uneven, hand-written black font with mixed capitalization. Surrounding the title are small, childlike drawings, including a <HALLUCINATION>black cat</HALLUCINATION> perched on the letter \"r,\" a pencil sketch of an airplane, stars, a purple octopus, and a red fish. To the <HALLUCINATION>top right</HALLUCINATION> of the title, the tagline \"EVERY CHILD IS SPECIAL\" is written in blue hand-drawn capital letters. Below the title, red text states \"produced & directed by <HALLUCINATION>shah rukh khan</HALLUCINATION>.\" The lower half of the poster depicts a young boy and an adult man leaning on <HALLUCINATION>three</HALLUCINATION> wooden desks. On the <HALLUCINATION>right</HALLUCINATION>, the boy has short dark hair and wears a <HALLUCINATION>neon green</HALLUCINATION> shirt, resting his crossed arms on the wood while looking slightly to his left with a faint smile. On the <HALLUCINATION>left</HALLUCINATION>, the man has short dark hair and wears a brown t-shirt, resting his chin on his crossed arms and looking at the boy; a <HALLUCINATION>gold</HALLUCINATION> watch is visible on his wrist. White text printed on the wooden surface lists credits, including \"writer & creative director amole gupte,\" \"concept, research & editing deepa bhatia,\" \"lyrics prasoon joshi,\" \"music shankar ehsaan loy,\" and \"co-producers ajay bijli & sanjeev k. bijli.\" The bottom edge displays the Aamir Khan Productions logo on the left, the website \"www.taarezameenpar.com\" in the center beneath small colorful icons, and the T-Series and PVR Pictures logos on the right.",
+        "description_tag": "This movie poster features a textured <HALLUCINATION>blue</HALLUCINATION> background resembling a watercolor wash on white paper. At the top left, small red text reads \"pvr pictures presents,\" followed by \"aamir khan productions'\" below. The title \"tAAre zameeN Par\" dominates the upper center in a large, uneven, hand-written black font with mixed capitalization. Surrounding the title are small, childlike drawings, including a green bird perched on the letter \"r,\" a pencil sketch of an airplane, stars, a purple octopus, and a red fish. To the <HALLUCINATION>top right</HALLUCINATION> of the title, the tagline \"EVERY CHILD IS SPECIAL\" is written in blue hand-drawn capital letters. Below the title, red text states \"produced & directed by aamir khan.\" The lower half of the poster depicts a young boy and an adult man leaning on <HALLUCINATION>three</HALLUCINATION> wooden desks. On the <HALLUCINATION>right</HALLUCINATION>, the boy has short dark hair and wears a grey shirt, resting his crossed arms on the wood while looking slightly to his left with a faint smile. On the <HALLUCINATION>left</HALLUCINATION>, the man has short dark hair and wears a brown t-shirt, resting his chin on his crossed arms and looking at the boy; a silver watch is visible on his wrist. White text printed on the wooden surface lists credits, including \"writer & creative director amole gupte,\" \"concept, research & editing deepa bhatia,\" \"lyrics prasoon joshi,\" \"music shankar ehsaan loy,\" and \"co-producers ajay bijli & sanjeev k. bijli.\" The bottom edge displays the Aamir Khan Productions logo on the left, the website \"www.taarezameenpar.com\" in the center beneath small colorful icons, and the T-Series and PVR Pictures logos on the right.",
+        "matched_spans": [
+          "universal studios presents",
+          "black cat",
+          "shah rukh khan",
+          "neon green",
+          "gold"
+        ],
+        "unmatched_spans": [
+          "blue",
+          "top right",
+          "three",
+          "right",
+          "left"
+        ],
+        "stats": {
+          "num_injected": 10,
+          "num_detected": 5,
+          "detection_rate": 0.5
+        }
+      },
+      {
+        "round": 2,
+        "description_tag_nodetect": "This movie poster features a textured <HALLUCINATION>pale blue</HALLUCINATION> background resembling a watercolor wash on white paper. At the top left, small red text reads \"<HALLUCINATION>reliance entertainment presents</HALLUCINATION>,\" followed by \"aamir khan productions'\" below. The title \"tAAre zameeN Par\" dominates the upper center in a large, uneven, hand-written black font with mixed capitalization. Surrounding the title are small, childlike drawings, including a <HALLUCINATION>blue butterfly</HALLUCINATION> perched on the letter \"r,\" a pencil sketch of an airplane, stars, a purple octopus, and a <HALLUCINATION>yellow kite</HALLUCINATION>. To the <HALLUCINATION>upper right</HALLUCINATION> of the title, the tagline \"EVERY CHILD IS SPECIAL\" is written in blue hand-drawn capital letters. Below the title, red text states \"produced & directed by aamir khan.\" The lower half of the poster depicts a young boy and an adult man leaning on <HALLUCINATION>three</HALLUCINATION> wooden desks. On the <HALLUCINATION>right</HALLUCINATION>, the boy has short dark hair and wears a <HALLUCINATION>white</HALLUCINATION> shirt, resting his crossed arms on the wood while looking slightly to his left with a faint smile. On the <HALLUCINATION>left</HALLUCINATION>, the man has short dark hair and wears a brown t-shirt, resting his chin on his crossed arms and looking at the boy; a <HALLUCINATION>black</HALLUCINATION> watch is visible on his wrist. White text printed on the wooden surface lists credits, including \"writer & creative director amole gupte,\" \"concept, research & editing deepa bhatia,\" \"lyrics prasoon joshi,\" \"music shankar ehsaan loy,\" and \"co-producers ajay bijli & sanjeev k. bijli.\" The bottom edge displays the Aamir Khan Productions logo on the left, the website \"www.taarezameenpar.com\" in the center beneath small colorful icons, and the T-Series and PVR Pictures logos on the right.",
+        "description_tag": "This movie poster features a textured <HALLUCINATION>pale blue</HALLUCINATION> background resembling a watercolor wash on white paper. At the top left, small red text reads \"<HALLUCINATION>reliance entertainment presents</HALLUCINATION>,\" followed by \"aamir khan productions'\" below. The title \"tAAre zameeN Par\" dominates the upper center in a large, uneven, hand-written black font with mixed capitalization. Surrounding the title are small, childlike drawings, including a <HALLUCINATION>blue butterfly</HALLUCINATION> perched on the letter \"r,\" a pencil sketch of an airplane, stars, a purple octopus, and a red fish. To the <HALLUCINATION>upper right</HALLUCINATION> of the title, the tagline \"EVERY CHILD IS SPECIAL\" is written in blue hand-drawn capital letters. Below the title, red text states \"produced & directed by aamir khan.\" The lower half of the poster depicts a young boy and an adult man leaning on two wooden desks. On the <HALLUCINATION>right</HALLUCINATION>, the boy has short dark hair and wears a <HALLUCINATION>white</HALLUCINATION> shirt, resting his crossed arms on the wood while looking slightly to his left with a faint smile. On the <HALLUCINATION>left</HALLUCINATION>, the man has short dark hair and wears a brown t-shirt, resting his chin on his crossed arms and looking at the boy; a silver watch is visible on his wrist. White text printed on the wooden surface lists credits, including \"writer & creative director amole gupte,\" \"concept, research & editing deepa bhatia,\" \"lyrics prasoon joshi,\" \"music shankar ehsaan loy,\" and \"co-producers ajay bijli & sanjeev k. bijli.\" The bottom edge displays the Aamir Khan Productions logo on the left, the website \"www.taarezameenpar.com\" in the center beneath small colorful icons, and the T-Series and PVR Pictures logos on the right.",
+        "matched_spans": [
+          "yellow kite",
+          "three",
+          "black"
+        ],
+        "unmatched_spans": [
+          "pale blue",
+          "reliance entertainment presents",
+          "blue butterfly",
+          "upper right",
+          "right",
+          "white",
+          "left"
+        ],
+        "stats": {
+          "num_injected": 10,
+          "num_detected": 3,
+          "detection_rate": 0.3
+        }
+      },
+      {
+        "round": 3,
+        "description_tag_nodetect": "This movie poster features a textured <HALLUCINATION>green</HALLUCINATION> background resembling a watercolor wash on white paper. At the <HALLUCINATION>top right</HALLUCINATION>, small red text reads \"<HALLUCINATION>reliance entertainment presents</HALLUCINATION>,\" followed by \"aamir khan productions'\" below. The title \"tAAre zameeN Par\" dominates the upper center in a large, uneven, hand-written black font with mixed capitalization. Surrounding the title are small, childlike drawings, including a green <HALLUCINATION>grasshopper</HALLUCINATION> perched on the letter \"r,\" a pencil sketch of an airplane, stars, a purple octopus, and a red <HALLUCINATION>ladybug</HALLUCINATION>. To the <HALLUCINATION>lower left</HALLUCINATION> of the title, the tagline \"EVERY CHILD IS SPECIAL\" is written in blue hand-drawn capital letters. Below the title, red text states \"produced & directed by aamir khan.\" The lower half of the poster depicts a young boy and an adult man leaning on <HALLUCINATION>a single wooden desk</HALLUCINATION>. On the left, the boy has short dark hair and wears a <HALLUCINATION>yellow</HALLUCINATION> shirt, resting his crossed arms on the wood while looking slightly to his <HALLUCINATION>right</HALLUCINATION> with a faint smile. On the right, the man has short dark hair and wears a brown t-shirt, resting his chin on his crossed arms and looking at the boy; a silver watch is visible on his wrist. White text printed on the wooden surface lists credits, including \"writer & creative director amole gupte,\" \"concept, research & editing deepa bhatia,\" \"lyrics prasoon joshi,\" \"music shankar ehsaan loy,\" and \"co-producers ajay bijli & sanjeev k. bijli.\" The bottom edge displays the Aamir Khan Productions logo on the left, the website \"www.taarezameenpar.com\" in the center beneath small colorful icons, and the T-Series and PVR Pictures logos on the right.",
+        "description_tag": "This movie poster features a textured <HALLUCINATION>green</HALLUCINATION> background resembling a watercolor wash on white paper. At the <HALLUCINATION>top right</HALLUCINATION>, small red text reads \"pvr pictures presents,\" followed by \"aamir khan productions'\" below. The title \"tAAre zameeN Par\" dominates the upper center in a large, uneven, hand-written black font with mixed capitalization. Surrounding the title are small, childlike drawings, including a green bird perched on the letter \"r,\" a pencil sketch of an airplane, stars, a purple octopus, and a red <HALLUCINATION>ladybug</HALLUCINATION>. To the <HALLUCINATION>lower left</HALLUCINATION> of the title, the tagline \"EVERY CHILD IS SPECIAL\" is written in blue hand-drawn capital letters. Below the title, red text states \"produced & directed by aamir khan.\" The lower half of the poster depicts a young boy and an adult man leaning on <HALLUCINATION>a single wooden desk</HALLUCINATION>. On the left, the boy has short dark hair and wears a <HALLUCINATION>yellow</HALLUCINATION> shirt, resting his crossed arms on the wood while looking slightly to his <HALLUCINATION>right</HALLUCINATION> with a faint smile. On the right, the man has short dark hair and wears a brown t-shirt, resting his chin on his crossed arms and looking at the boy; a silver watch is visible on his wrist. White text printed on the wooden surface lists credits, including \"writer & creative director amole gupte,\" \"concept, research & editing deepa bhatia,\" \"lyrics prasoon joshi,\" \"music shankar ehsaan loy,\" and \"co-producers ajay bijli & sanjeev k. bijli.\" The bottom edge displays the Aamir Khan Productions logo on the left, the website \"www.taarezameenpar.com\" in the center beneath small colorful icons, and the T-Series and PVR Pictures logos on the right.",
+        "matched_spans": [
+          "reliance entertainment presents",
+          "grasshopper"
+        ],
+        "unmatched_spans": [
+          "green",
+          "top right",
+          "ladybug",
+          "lower left",
+          "a single wooden desk",
+          "yellow",
+          "right"
+        ],
+        "stats": {
+          "num_injected": 9,
+          "num_detected": 2,
+          "detection_rate": 0.2222222222222222
+        }
+      }
+    ]
+  },
+  {
+    "filename": "bar1_1.png",
+    "category": "Chart",
+    "image": "data/examples/images/Chart/bar1_1.png",
+    "iterations": [
+      {
+        "round": 1,
+        "description_tag_nodetect": "This <HALLUCINATION>horizontal</HALLUCINATION> clustered bar chart, titled \"E-commerce Shopping Cart Abandonment Rate\" with the subtitle \"Simulated Weekly Funnel Signals,\" displays data across a timeline labeled <HALLUCINATION>\"Jan\" through \"Dec\"</HALLUCINATION> on the x-axis. The y-axis measures percentages ranging from 0% to 100%. The chart compares <HALLUCINATION>three</HALLUCINATION> metrics: \"Abandonment Rate,\" represented by <HALLUCINATION>yellow</HALLUCINATION> bars, and \"Checkout Conversion Rate,\" represented by <HALLUCINATION>green</HALLUCINATION> bars.\n\nThe Abandonment Rate is consistently <HALLUCINATION>lower</HALLUCINATION> than the conversion rate for every week shown. A <HALLUCINATION>solid</HALLUCINATION> blue horizontal line runs across the chart, indicating an average Abandonment Rate of 67.21%. Specific values are annotated on the bars, with <HALLUCINATION>triangular</HALLUCINATION> markers highlighting the maximum value of 73.2% in Week 03 and the minimum value of 61.3% in Week 12.\n\nConversely, the Checkout Conversion Rate is represented by shorter <HALLUCINATION>green</HALLUCINATION> bars. A dashed purple horizontal line marks the average Checkout Conversion Rate at 32.79%. This metric shows an inverse trend to the abandonment rate, reaching its lowest point of 26.8% in Week 03 and peaking at 38.7% in Week 12, both of which are also highlighted with <HALLUCINATION>square</HALLUCINATION> markers. The sum of the two values for any given week equals 100%.",
+        "description_tag": "This vertical clustered bar chart, titled \"E-commerce Shopping Cart Abandonment Rate\" with the subtitle \"Simulated Weekly Funnel Signals,\" displays data across a timeline labeled \"Wk 01\" through \"Wk 12\" on the x-axis. The y-axis measures percentages ranging from 0% to 100%. The chart compares two metrics: \"Abandonment Rate,\" represented by <HALLUCINATION>yellow</HALLUCINATION> bars, and \"Checkout Conversion Rate,\" represented by purple bars.\n\nThe Abandonment Rate is consistently higher than the conversion rate for every week shown. A <HALLUCINATION>solid</HALLUCINATION> blue horizontal line runs across the chart, indicating an average Abandonment Rate of 67.21%. Specific values are annotated on the bars, with <HALLUCINATION>triangular</HALLUCINATION> markers highlighting the maximum value of 73.2% in Week 03 and the minimum value of 61.3% in Week 12.\n\nConversely, the Checkout Conversion Rate is represented by shorter purple bars. A dashed purple horizontal line marks the average Checkout Conversion Rate at 32.79%. This metric shows an inverse trend to the abandonment rate, reaching its lowest point of 26.8% in Week 03 and peaking at 38.7% in Week 12, both of which are also highlighted with <HALLUCINATION>square</HALLUCINATION> markers. The sum of the two values for any given week equals 100%.",
+        "matched_spans": [
+          "horizontal",
+          "\"Jan\" through \"Dec\"",
+          "three",
+          "lower",
+          "green"
+        ],
+        "unmatched_spans": [
+          "yellow",
+          "green",
+          "solid",
+          "triangular",
+          "square"
+        ],
+        "stats": {
+          "num_injected": 10,
+          "num_detected": 5,
+          "detection_rate": 0.5
+        }
+      },
+      {
+        "round": 2,
+        "description_tag_nodetect": "This vertical clustered bar chart, titled \"<HALLUCINATION>Global User Engagement and Exit Trends</HALLUCINATION>\" with the subtitle \"Simulated Weekly Funnel Signals,\" displays data across a timeline labeled \"Wk 01\" through \"Wk 12\" on the x-axis. The y-axis measures percentages ranging from 0% to 100%. The chart compares two metrics: \"Abandonment Rate,\" represented by <HALLUCINATION>green</HALLUCINATION> bars, and \"Checkout Conversion Rate,\" represented by <HALLUCINATION>red</HALLUCINATION> bars.\n\nThe Abandonment Rate is consistently higher than the conversion rate for every week shown. A <HALLUCINATION>solid green</HALLUCINATION> horizontal line runs across the chart, indicating an average Abandonment Rate of 67.21%. Specific values are annotated <HALLUCINATION>directly above</HALLUCINATION> the bars, with <HALLUCINATION>square</HALLUCINATION> markers highlighting the maximum value of 73.2% in Week 03 and the minimum value of 61.3% in Week 12.\n\nConversely, the Checkout Conversion Rate is represented by shorter <HALLUCINATION>red</HALLUCINATION> bars. A <HALLUCINATION>dotted red</HALLUCINATION> horizontal line marks the average Checkout Conversion Rate at 32.79%. This metric shows an inverse trend to the abandonment rate, reaching its lowest point of 26.8% in Week 03 and peaking at 38.7% in Week 12, both of which are also highlighted with <HALLUCINATION>triangular</HALLUCINATION> markers. The sum of the two values for any given week equals 100%.",
+        "description_tag": "This vertical clustered bar chart, titled \"E-commerce Shopping Cart Abandonment Rate\" with the subtitle \"Simulated Weekly Funnel Signals,\" displays data across a timeline labeled \"Wk 01\" through \"Wk 12\" on the x-axis. The y-axis measures percentages ranging from 0% to 100%. The chart compares two metrics: \"Abandonment Rate,\" represented by blue bars, and \"Checkout Conversion Rate,\" represented by purple bars.\n\nThe Abandonment Rate is consistently higher than the conversion rate for every week shown. A dotted blue horizontal line runs across the chart, indicating an average Abandonment Rate of 67.21%. Specific values are annotated <HALLUCINATION>directly above</HALLUCINATION> the bars, with circular markers highlighting the maximum value of 73.2% in Week 03 and the minimum value of 61.3% in Week 12.\n\nConversely, the Checkout Conversion Rate is represented by shorter purple bars. A dashed purple horizontal line marks the average Checkout Conversion Rate at 32.79%. This metric shows an inverse trend to the abandonment rate, reaching its lowest point of 26.8% in Week 03 and peaking at 38.7% in Week 12, both of which are also highlighted with diamond markers. The sum of the two values for any given week equals 100%.",
+        "matched_spans": [
+          "Global User Engagement and Exit Trends",
+          "green",
+          "red",
+          "square",
+          "triangular"
+        ],
+        "unmatched_spans": [
+          "solid green",
+          "directly above",
+          "red",
+          "dotted red"
+        ],
+        "stats": {
+          "num_injected": 9,
+          "num_detected": 5,
+          "detection_rate": 0.5555555556
+        }
+      },
+      {
+        "round": 3,
+        "description_tag_nodetect": "This <HALLUCINATION>vertical stacked bar chart</HALLUCINATION>, titled \"<HALLUCINATION>User Session Outcome and Transaction Analysis</HALLUCINATION>\" with the subtitle \"Simulated Weekly Funnel Signals,\" displays data across a timeline labeled \"Wk 01\" through \"Wk 12\" on the x-axis. The y-axis measures percentages ranging from 0% to 100%. The chart compares two metrics: \"Abandonment Rate,\" represented by <HALLUCINATION>orange bars</HALLUCINATION>, and \"Checkout Conversion Rate,\" represented by <HALLUCINATION>navy bars</HALLUCINATION>.\n\nThe Abandonment Rate is consistently higher than the conversion rate for every week shown. A <HALLUCINATION>solid orange horizontal line</HALLUCINATION> runs across the chart, indicating an average Abandonment Rate of 67.21%. Specific values are annotated <HALLUCINATION>at the base of the bars</HALLUCINATION>, with <HALLUCINATION>square markers</HALLUCINATION> highlighting the maximum value of 73.2% in Week 03 and the minimum value of 61.3% in Week 12.\n\nConversely, the Checkout Conversion Rate is represented by shorter <HALLUCINATION>navy</HALLUCINATION> bars. A <HALLUCINATION>dotted navy horizontal line</HALLUCINATION> marks the average Checkout Conversion Rate at 32.79%. This metric shows an inverse trend to the abandonment rate, reaching its lowest point of 26.8% in Week 03 and peaking at 38.7% in Week 12, both of which are also highlighted with <HALLUCINATION>triangular markers</HALLUCINATION>. The sum of the two values for any given week equals 100%.",
+        "description_tag": "This vertical clustered bar chart, titled \"E-commerce Shopping Cart Abandonment Rate\" with the subtitle \"Simulated Weekly Funnel Signals,\" displays data across a timeline labeled \"Wk 01\" through \"Wk 12\" on the x-axis. The y-axis measures percentages ranging from 0% to 100%. The chart compares two metrics: \"Abandonment Rate,\" represented by <HALLUCINATION>orange bars</HALLUCINATION>, and \"Checkout Conversion Rate,\" represented by <HALLUCINATION>navy bars</HALLUCINATION>.\n\nThe Abandonment Rate is consistently higher than the conversion rate for every week shown. A <HALLUCINATION>solid orange horizontal line</HALLUCINATION> runs across the chart, indicating an average Abandonment Rate of 67.21%. Specific values are annotated on the bars, with circular markers highlighting the maximum value of 73.2% in Week 03 and the minimum value of 61.3% in Week 12.\n\nConversely, the Checkout Conversion Rate is represented by shorter <HALLUCINATION>navy</HALLUCINATION> bars. A <HALLUCINATION>dotted navy horizontal line</HALLUCINATION> marks the average Checkout Conversion Rate at 32.79%. This metric shows an inverse trend to the abandonment rate, reaching its lowest point of 26.8% in Week 03 and peaking at 38.7% in Week 12, both of which are also highlighted with diamond markers. The sum of the two values for any given week equals 100%.",
+        "matched_spans": [
+          "vertical stacked bar chart",
+          "User Session Outcome and Transaction Analysis",
+          "at the base of the bars",
+          "square markers",
+          "triangular markers"
+        ],
+        "unmatched_spans": [
+          "orange bars",
+          "navy bars",
+          "solid orange horizontal line",
+          "navy",
+          "dotted navy horizontal line"
+        ],
+        "stats": {
+          "num_injected": 10,
+          "num_detected": 5,
+          "detection_rate": 0.5
+        }
+      }
+    ]
+  },
+  {
+    "filename": "geo-svg-lines_9.png",
+    "category": "Chart",
+    "image": "data/examples/images/Chart/geo-svg-lines_9.png",
+    "iterations": [
+      {
+        "round": 1,
+        "description_tag_nodetect": "This dual-axis combination chart, titled \"<HALLUCINATION>Quarterly Revenue Growth</HALLUCINATION>,\" displays data across <HALLUCINATION>eight</HALLUCINATION> product categories listed on the x-axis: Electronics, Apparel, Home & Kitchen, Beauty, Sports, Toys, Groceries, Books, Footwear, Furniture, Pet Supplies, and Automotive. The chart utilizes two vertical axes: the left axis measures \"Return Rate (%)\" from 0% to 20%, while the right axis measures \"Avg Days / Return Orders\" from 0 to 10,000. <HALLUCINATION>Bright Orange</HALLUCINATION> <HALLUCINATION>horizontal</HALLUCINATION> bars represent the volume of \"Return Orders,\" with specific values labeled inside each bar. Apparel has the highest order volume at 8,200, followed by Footwear at 6,300, while Books has the lowest at 900. A <HALLUCINATION>solid</HALLUCINATION> blue line with a <HALLUCINATION>neon pink</HALLUCINATION> shaded area underneath tracks the \"Return Rate,\" with percentage values labeled <HALLUCINATION>below</HALLUCINATION> each data point. Apparel records the highest return rate at 12.4%, followed by Footwear at 11.7% and Toys at 10.2%. Books shows the lowest return rate at 2.1%. Additionally, small black numbers with <HALLUCINATION>metallic gold</HALLUCINATION> outline appear at the base of each bar, corresponding to the \"Avg Days to Return\" legend item; these values range from a low of 9 for Groceries to a high of 21 for Furniture. The legend at the <HALLUCINATION>bottom left</HALLUCINATION> identifies the three data series: \"Return Rate\" (line), \"Avg Days to Return\" (<HALLUCINATION>green triangle</HALLUCINATION>), and \"Return Orders\" (cyan bar). Visually, categories with high return volumes, such as Apparel and Footwear, also exhibit the highest return rates.",
+        "description_tag": "This dual-axis combination chart, titled \"Product Return Rates by Category,\" displays data across twelve product categories listed on the x-axis: Electronics, Apparel, Home & Kitchen, Beauty, Sports, Toys, Groceries, Books, Footwear, Furniture, Pet Supplies, and Automotive. The chart utilizes two vertical axes: the left axis measures \"Return Rate (%)\" from 0% to 20%, while the right axis measures \"Avg Days / Return Orders\" from 0 to 10,000. Cyan vertical bars represent the volume of \"Return Orders,\" with specific values labeled inside each bar. Apparel has the highest order volume at 8,200, followed by Footwear at 6,300, while Books has the lowest at 900. A <HALLUCINATION>solid</HALLUCINATION> blue line with a <HALLUCINATION>neon pink</HALLUCINATION> shaded area underneath tracks the \"Return Rate,\" with percentage values labeled <HALLUCINATION>below</HALLUCINATION> each data point. Apparel records the highest return rate at 12.4%, followed by Footwear at 11.7% and Toys at 10.2%. Books shows the lowest return rate at 2.1%. Additionally, small black numbers with white outline appear at the base of each bar, corresponding to the \"Avg Days to Return\" legend item; these values range from a low of 9 for Groceries to a high of 21 for Furniture. The legend at the <HALLUCINATION>bottom left</HALLUCINATION> identifies the three data series: \"Return Rate\" (line), \"Avg Days to Return\" (purple dot), and \"Return Orders\" (cyan bar). Visually, categories with high return volumes, such as Apparel and Footwear, also exhibit the highest return rates.",
+        "matched_spans": [
+          "Quarterly Revenue Growth",
+          "eight",
+          "Bright Orange",
+          "horizontal",
+          "metallic gold",
+          "green triangle"
+        ],
+        "unmatched_spans": [
+          "solid",
+          "neon pink",
+          "below",
+          "bottom left"
+        ],
+        "stats": {
+          "num_injected": 10,
+          "num_detected": 6,
+          "detection_rate": 0.6
+        }
+      },
+      {
+        "round": 2,
+        "description_tag_nodetect": "This dual-axis combination chart, titled \"Product Return Rates by Category,\" displays data across <HALLUCINATION>ten</HALLUCINATION> product categories listed on the x-axis: Electronics, Apparel, Home & Kitchen, Beauty, Sports, Toys, Groceries, Books, Footwear, <HALLUCINATION>and Furniture</HALLUCINATION>. The chart utilizes two vertical axes: the left axis measures \"Return Rate (%)\" from 0% to 20%, while the right axis measures \"Avg Days / Return Orders\" from 0 to 10,000. <HALLUCINATION>Magenta</HALLUCINATION> vertical bars represent the volume of \"Return Orders,\" with specific values labeled <HALLUCINATION>above</HALLUCINATION> each bar. Apparel has the highest order volume at 8,200, followed by Footwear at 6,300, while Books has the lowest at 900. A <HALLUCINATION>dotted</HALLUCINATION> blue line with a light blue shaded area underneath tracks the \"Return Rate,\" with percentage values labeled <HALLUCINATION>below</HALLUCINATION> each data point. Apparel records the highest return rate at 12.4%, followed by Footwear at 11.7% and Toys at 10.2%. Books shows the lowest return rate at 2.1%. Additionally, small black numbers with <HALLUCINATION>yellow</HALLUCINATION> outline appear at the base of each bar, corresponding to the \"Avg Days to Return\" legend item; these values range from a low of 9 for Groceries to a high of 21 for Furniture. The legend at the <HALLUCINATION>top right</HALLUCINATION> identifies the three data series: \"Return Rate\" (line), \"Avg Days to Return\" (<HALLUCINATION>purple diamond</HALLUCINATION>), and \"Return Orders\" (<HALLUCINATION>magenta bar</HALLUCINATION>). Visually, categories with high return volumes, such as Apparel and Footwear, also exhibit the highest return rates.",
+        "description_tag": "This dual-axis combination chart, titled \"Product Return Rates by Category,\" displays data across <HALLUCINATION>ten</HALLUCINATION> product categories listed on the x-axis: Electronics, Apparel, Home & Kitchen, Beauty, Sports, Toys, Groceries, Books, Footwear, <HALLUCINATION>and Furniture</HALLUCINATION>. The chart utilizes two vertical axes: the left axis measures \"Return Rate (%)\" from 0% to 20%, while the right axis measures \"Avg Days / Return Orders\" from 0 to 10,000. Cyan vertical bars represent the volume of \"Return Orders,\" with specific values labeled <HALLUCINATION>above</HALLUCINATION> each bar. Apparel has the highest order volume at 8,200, followed by Footwear at 6,300, while Books has the lowest at 900. A dashed blue line with a light blue shaded area underneath tracks the \"Return Rate,\" with percentage values labeled above each data point. Apparel records the highest return rate at 12.4%, followed by Footwear at 11.7% and Toys at 10.2%. Books shows the lowest return rate at 2.1%. Additionally, small black numbers with white outline appear at the base of each bar, corresponding to the \"Avg Days to Return\" legend item; these values range from a low of 9 for Groceries to a high of 21 for Furniture. The legend at the top center identifies the three data series: \"Return Rate\" (line), \"Avg Days to Return\" (purple dot), and \"Return Orders\" (<HALLUCINATION>magenta bar</HALLUCINATION>). Visually, categories with high return volumes, such as Apparel and Footwear, also exhibit the highest return rates.",
+        "matched_spans": [
+          "Magenta",
+          "dotted",
+          "below",
+          "yellow",
+          "top right",
+          "purple diamond"
+        ],
+        "unmatched_spans": [
+          "ten",
+          "and Furniture",
+          "above",
+          "magenta bar"
+        ],
+        "stats": {
+          "num_injected": 10,
+          "num_detected": 6,
+          "detection_rate": 0.6
+        }
+      },
+      {
+        "round": 3,
+        "description_tag_nodetect": "This dual-axis combination chart, titled \"Product Return Rates by Category,\" displays data across twelve product categories listed on the x-axis: <HALLUCINATION>Office Supplies</HALLUCINATION>, Apparel, Home & Kitchen, Beauty, Sports, Toys, Groceries, Books, Footwear, Furniture, Pet Supplies, and Automotive. The chart utilizes two vertical axes: the <HALLUCINATION>right</HALLUCINATION> axis measures \"Return Rate (%)\" from 0% to 20%, while the <HALLUCINATION>left</HALLUCINATION> axis measures \"Avg Days / Return Orders\" from 0 to 10,000. <HALLUCINATION>Orange</HALLUCINATION> vertical bars represent the volume of \"Return Orders,\" with specific values labeled <HALLUCINATION>above</HALLUCINATION> each bar. Apparel has the highest order volume at 8,200, followed by Footwear at 6,300, while Books has the lowest at <HALLUCINATION>1,200</HALLUCINATION>. A <HALLUCINATION>solid</HALLUCINATION> blue line with a light blue shaded area underneath tracks the \"Return Rate,\" with percentage values labeled above each data point. Apparel records the highest return rate at 12.4%, followed by Footwear at 11.7% and Toys at 10.2%. Books shows the lowest return rate at 2.1%. Additionally, small black numbers with white outline appear at the base of each bar, corresponding to the \"Avg Days to Return\" legend item; these values range from a low of 9 for Groceries to a high of 21 for Furniture. The legend at the <HALLUCINATION>bottom right</HALLUCINATION> identifies the three data series: \"Return Rate\" (line), \"Avg Days to Return\" (<HALLUCINATION>red</HALLUCINATION> dot), and \"Return Orders\" (<HALLUCINATION>orange</HALLUCINATION> bar). Visually, categories with high return volumes, such as Apparel and Footwear, also exhibit the highest return rates.",
+        "description_tag": "This dual-axis combination chart, titled \"Product Return Rates by Category,\" displays data across twelve product categories listed on the x-axis: <HALLUCINATION>Office Supplies</HALLUCINATION>, Apparel, Home & Kitchen, Beauty, Sports, Toys, Groceries, Books, Footwear, Furniture, Pet Supplies, and Automotive. The chart utilizes two vertical axes: the left axis measures \"Return Rate (%)\" from 0% to 20%, while the <HALLUCINATION>left</HALLUCINATION> axis measures \"Avg Days / Return Orders\" from 0 to 10,000. <HALLUCINATION>Orange</HALLUCINATION> vertical bars represent the volume of \"Return Orders,\" with specific values labeled inside each bar. Apparel has the highest order volume at 8,200, followed by Footwear at 6,300, while Books has the lowest at <HALLUCINATION>1,200</HALLUCINATION>. A <HALLUCINATION>solid</HALLUCINATION> blue line with a light blue shaded area underneath tracks the \"Return Rate,\" with percentage values labeled above each data point. Apparel records the highest return rate at 12.4%, followed by Footwear at 11.7% and Toys at 10.2%. Books shows the lowest return rate at 2.1%. Additionally, small black numbers with white outline appear at the base of each bar, corresponding to the \"Avg Days to Return\" legend item; these values range from a low of 9 for Groceries to a high of 21 for Furniture. The legend at the top center identifies the three data series: \"Return Rate\" (line), \"Avg Days to Return\" (purple dot), and \"Return Orders\" (<HALLUCINATION>orange</HALLUCINATION> bar). Visually, categories with high return volumes, such as Apparel and Footwear, also exhibit the highest return rates.",
+        "matched_spans": [
+          "above",
+          "bottom right",
+          "red"
+        ],
+        "unmatched_spans": [
+          "Office Supplies",
+          "right",
+          "left",
+          "Orange",
+          "1,200",
+          "solid",
+          "orange"
+        ],
+        "stats": {
+          "num_injected": 10,
+          "num_detected": 3,
+          "detection_rate": 0.3
+        }
+      }
+    ]
+  },
+  {
+    "filename": "line-sections_15.png",
+    "category": "Chart",
+    "image": "data/examples/images/Chart/line-sections_15.png",
+    "iterations": [
+      {
+        "round": 1,
+        "description_tag_nodetect": "This image displays a line chart titled <HALLUCINATION>\"Social Media Engagement Trends\"</HALLUCINATION> with a subtitle reading \"Simulated session-to-purchase performance.\" The vertical axis represents percentages from 0% to 100% in <HALLUCINATION>25% increments</HALLUCINATION>, while the horizontal axis lists sequential stages: Landing View, Product View, Add to Cart, Checkout Start, Shipping Info, Payment Info, Order Review, and Purchase. A <HALLUCINATION>solid line</HALLUCINATION> connects data points indicating the retention rate at each stage. Starting at 100% for Landing View, the line drops to 62.8% at Product View and further to 18.9% at Add to Cart. The decline stabilizes somewhat as the line proceeds to 12.6% at Checkout Start, 10.2% at Shipping Info, 8.7% at Payment Info, 7.4% at Order Review, and finally <HALLUCINATION>15.5%</HALLUCINATION> at Purchase. The chart background is divided into shaded vertical sections. The area between Product View and Add to Cart is <HALLUCINATION>shaded bright blue</HALLUCINATION> and labeled <HALLUCINATION>\"Peak Activity\"</HALLUCINATION> at the top. The section from Checkout Start to Payment Info has the area <HALLUCINATION>below the line</HALLUCINATION> shaded orange and labeled \"Checkout Friction.\" The initial and final sections of the chart are shaded in <HALLUCINATION>dark purple</HALLUCINATION>.",
+        "description_tag": "This image displays a line chart titled \"Online Conversion Funnel Analysis\" with a subtitle reading \"Simulated session-to-purchase performance.\" The vertical axis represents percentages from 0% to 100% in <HALLUCINATION>25% increments</HALLUCINATION>, while the horizontal axis lists sequential stages: Landing View, Product View, Add to Cart, Checkout Start, Shipping Info, Payment Info, Order Review, and Purchase. A <HALLUCINATION>solid line</HALLUCINATION> connects data points indicating the retention rate at each stage. Starting at 100% for Landing View, the line drops to 62.8% at Product View and further to 18.9% at Add to Cart. The decline stabilizes somewhat as the line proceeds to 12.6% at Checkout Start, 10.2% at Shipping Info, 8.7% at Payment Info, 7.4% at Order Review, and finally 6.1% at Purchase. The chart background is divided into shaded vertical sections. The area between Product View and Add to Cart is <HALLUCINATION>shaded bright blue</HALLUCINATION> and labeled \"Biggest Drop-Off\" at the top. The section from Checkout Start to Payment Info has the area above the line shaded orange and labeled \"Checkout Friction.\" The initial and final sections of the chart are shaded in light green.",
+        "matched_spans": [
+          "Social Media Engagement Trends",
+          "15.5%",
+          "\"Peak Activity\"",
+          "below the line",
+          "dark purple"
+        ],
+        "unmatched_spans": [
+          "25% increments",
+          "solid line",
+          "shaded bright blue"
+        ],
+        "stats": {
+          "num_injected": 8,
+          "num_detected": 5,
+          "detection_rate": 0.625
+        }
+      },
+      {
+        "round": 2,
+        "description_tag_nodetect": "This image displays a line chart titled <HALLUCINATION>\"E-commerce Site Conversion Audit\"</HALLUCINATION> with a subtitle reading \"Simulated session-to-purchase performance.\" The vertical axis represents percentages from 0% to 100% in <HALLUCINATION>25% increments</HALLUCINATION>, while the horizontal axis lists sequential stages: Landing View, Product View, Add to Cart, Checkout Start, Shipping Info, Payment Info, Order Review, and Purchase. A <HALLUCINATION>dotted line</HALLUCINATION> connects data points indicating the retention rate at each stage. Starting at 100% for Landing View, the line drops to 62.8% at Product View and further to <HALLUCINATION>21.3%</HALLUCINATION> at Add to Cart. The decline stabilizes somewhat as the line proceeds to 12.6% at Checkout Start, 10.2% at Shipping Info, 8.7% at Payment Info, 7.4% at Order Review, and finally <HALLUCINATION>5.2%</HALLUCINATION> at Purchase. The chart background is divided into shaded vertical sections. The area between Product View and Add to Cart is <HALLUCINATION>shaded yellow</HALLUCINATION> and labeled <HALLUCINATION>\"Major Churn Stage\"</HALLUCINATION> at the top. The section from <HALLUCINATION>Checkout Start to Order Review</HALLUCINATION> has the area above the line shaded orange and labeled <HALLUCINATION>\"Process Friction\"</HALLUCINATION>. The initial and final sections of the chart are shaded in <HALLUCINATION>light blue</HALLUCINATION>.",
+        "description_tag": "This image displays a line chart titled \"Online Conversion Funnel Analysis\" with a subtitle reading \"Simulated session-to-purchase performance.\" The vertical axis represents percentages from 0% to 100% in 20% increments, while the horizontal axis lists sequential stages: Landing View, Product View, Add to Cart, Checkout Start, Shipping Info, Payment Info, Order Review, and Purchase. A <HALLUCINATION>dotted line</HALLUCINATION> connects data points indicating the retention rate at each stage. Starting at 100% for Landing View, the line drops to 62.8% at Product View and further to 18.9% at Add to Cart. The decline stabilizes somewhat as the line proceeds to 12.6% at Checkout Start, 10.2% at Shipping Info, 8.7% at Payment Info, 7.4% at Order Review, and finally 6.1% at Purchase. The chart background is divided into shaded vertical sections. The area between Product View and Add to Cart is <HALLUCINATION>shaded yellow</HALLUCINATION> and labeled <HALLUCINATION>\"Major Churn Stage\"</HALLUCINATION> at the top. The section from <HALLUCINATION>Checkout Start to Order Review</HALLUCINATION> has the area above the line shaded orange and labeled <HALLUCINATION>\"Process Friction\"</HALLUCINATION>. The initial and final sections of the chart are shaded in <HALLUCINATION>light blue</HALLUCINATION>.",
+        "matched_spans": [
+          "E-commerce Site Conversion Audit",
+          "25% increments",
+          "21.3%",
+          "5.2%"
+        ],
+        "unmatched_spans": [
+          "dotted line",
+          "shaded yellow",
+          "\"Major Churn Stage\"",
+          "Checkout Start to Order Review",
+          "\"Process Friction\"",
+          "light blue"
+        ],
+        "stats": {
+          "num_injected": 10,
+          "num_detected": 4,
+          "detection_rate": 0.4
+        }
+      },
+      {
+        "round": 3,
+        "description_tag_nodetect": "This image displays a line chart titled \"Online Conversion Funnel Analysis\" with a subtitle reading \"Simulated session-to-purchase performance.\" The vertical axis represents percentages from 0% to 100% in <HALLUCINATION>10% increments</HALLUCINATION>, while the horizontal axis lists sequential stages: Landing View, Product View, Add to Cart, Checkout Start, <HALLUCINATION>Account Setup</HALLUCINATION>, Payment Info, Order Review, and Purchase. A <HALLUCINATION>solid line</HALLUCINATION> connects data points indicating the retention rate at each stage. Starting at 100% for Landing View, the line drops to 62.8% at Product View and further to 18.9% at Add to Cart. The decline stabilizes somewhat as the line proceeds to 12.6% at Checkout Start, 10.2% at <HALLUCINATION>Account Setup</HALLUCINATION>, 8.7% at Payment Info, 7.4% at Order Review, and finally 6.1% at Purchase. The chart background is divided into shaded vertical sections. The area between Product View and Add to Cart is <HALLUCINATION>shaded blue</HALLUCINATION> and labeled \"Biggest Drop-Off\" <HALLUCINATION>at the bottom</HALLUCINATION>. The section from Checkout Start to Payment Info has the <HALLUCINATION>area below the line</HALLUCINATION> shaded orange and labeled <HALLUCINATION>\"Success Zone\"</HALLUCINATION>. The initial and final sections of the chart are shaded in <HALLUCINATION>light gray</HALLUCINATION>.",
+        "description_tag": "This image displays a line chart titled \"Online Conversion Funnel Analysis\" with a subtitle reading \"Simulated session-to-purchase performance.\" The vertical axis represents percentages from 0% to 100% in <HALLUCINATION>10% increments</HALLUCINATION>, while the horizontal axis lists sequential stages: Landing View, Product View, Add to Cart, Checkout Start, Shipping Info, Payment Info, Order Review, and Purchase. A <HALLUCINATION>solid line</HALLUCINATION> connects data points indicating the retention rate at each stage. Starting at 100% for Landing View, the line drops to 62.8% at Product View and further to 18.9% at Add to Cart. The decline stabilizes somewhat as the line proceeds to 12.6% at Checkout Start, 10.2% at Shipping Info, 8.7% at Payment Info, 7.4% at Order Review, and finally 6.1% at Purchase. The chart background is divided into shaded vertical sections. The area between Product View and Add to Cart is <HALLUCINATION>shaded blue</HALLUCINATION> and labeled \"Biggest Drop-Off\" <HALLUCINATION>at the bottom</HALLUCINATION>. The section from Checkout Start to Payment Info has the <HALLUCINATION>area below the line</HALLUCINATION> shaded orange and labeled \"Checkout Friction\". The initial and final sections of the chart are shaded in <HALLUCINATION>light gray</HALLUCINATION>.",
+        "matched_spans": [
+          "Account Setup",
+          "\"Success Zone\""
+        ],
+        "unmatched_spans": [
+          "10% increments",
+          "solid line",
+          "Account Setup",
+          "shaded blue",
+          "at the bottom",
+          "area below the line",
+          "light gray"
+        ],
+        "stats": {
+          "num_injected": 9,
+          "num_detected": 2,
+          "detection_rate": 0.2222222222
+        }
+      }
+    ]
+  },
+  {
+    "filename": "test_01784.jpg",
+    "category": "Nature",
+    "image": "data/examples/images/Nature/test_01784.jpg",
+    "iterations": [
+      {
+        "round": 1,
+        "description_tag_nodetect": "An outdoor, <HALLUCINATION>bird's-eye view</HALLUCINATION> of a fake, oversized cabinet sculpture, on top of a building, with a stormy sky behind. The cabinet is made with a childish look, shown with bright tan and blue colors, and painted marks of a cartoon fishbowl, with a red cartoon <HALLUCINATION>squirrel</HALLUCINATION> peeking out from behind on the <HALLUCINATION>left side</HALLUCINATION>. The cabinet has <HALLUCINATION>eight</HALLUCINATION> square, tan drawers with yellow handle knobs, arranged in a <HALLUCINATION>4 by 2</HALLUCINATION> order, with the one on the <HALLUCINATION>bottom right</HALLUCINATION> slightly open and from <HALLUCINATION>right to left</HALLUCINATION>, a blue book, a sculpted electronic object, and a drawn fishbowl are on top of the cabinet, partially visible. The building is a light green <HALLUCINATION>wood</HALLUCINATION> wall with a <HALLUCINATION>black</HALLUCINATION> roof, and a <HALLUCINATION>circular</HALLUCINATION> window to the middle-left of the wall, showing a green muntin in the center, arranged vertically, and dark glass panels with yellow words placed up from the inside, the words are reversed from this view. The background is a gray, cloudy sky, filled in the top frame behind the cabinet.",
+        "description_tag": "An outdoor, low-angle view of a fake, oversized cabinet sculpture, on top of a building, with a stormy sky behind. The cabinet is made with a childish look, shown with bright tan and blue colors, and painted marks of a cartoon fishbowl, with a red cartoon mouse peeking out from behind on the <HALLUCINATION>left side</HALLUCINATION>. The cabinet has <HALLUCINATION>eight</HALLUCINATION> square, tan drawers with yellow handle knobs, arranged in a 3 by 2 order, with the one on the <HALLUCINATION>bottom right</HALLUCINATION> slightly open and from <HALLUCINATION>right to left</HALLUCINATION>, a blue book, a sculpted electronic object, and a drawn fishbowl are on top of the cabinet, partially visible. The building is a light green <HALLUCINATION>wood</HALLUCINATION> wall with a <HALLUCINATION>black</HALLUCINATION> roof, and a <HALLUCINATION>circular</HALLUCINATION> window to the middle-left of the wall, showing a green muntin in the center, arranged vertically, and dark glass panels with yellow words placed up from the inside, the words are reversed from this view. The background is a gray, cloudy sky, filled in the top frame behind the cabinet.",
+        "matched_spans": [
+          "bird's-eye view",
+          "squirrel",
+          "4 by 2"
+        ],
+        "unmatched_spans": [
+          "left side",
+          "eight",
+          "bottom right",
+          "right to left",
+          "wood",
+          "black",
+          "circular"
+        ],
+        "stats": {
+          "num_injected": 10,
+          "num_detected": 3,
+          "detection_rate": 0.3
+        }
+      },
+      {
+        "round": 2,
+        "description_tag_nodetect": "An outdoor, <HALLUCINATION>eye-level</HALLUCINATION> view of a fake, oversized cabinet sculpture, on top of a building, with a stormy sky behind. The cabinet is made with a childish look, shown with bright tan and blue colors, and painted marks of a cartoon fishbowl, with a <HALLUCINATION>green</HALLUCINATION> cartoon mouse peeking out from behind on the <HALLUCINATION>left side</HALLUCINATION>. The cabinet has <HALLUCINATION>four</HALLUCINATION> square, tan drawers with yellow handle knobs, arranged in a <HALLUCINATION>2 by 2</HALLUCINATION> order, with the one on the <HALLUCINATION>bottom right</HALLUCINATION> slightly open and from left to right, a blue book, a sculpted electronic object, and a drawn fishbowl are on top of the cabinet, partially visible. The building is a light green <HALLUCINATION>concrete</HALLUCINATION> wall with a <HALLUCINATION>copper</HALLUCINATION> roof, and a <HALLUCINATION>circular</HALLUCINATION> window to the middle-left of the wall, showing a green muntin in the center, arranged <HALLUCINATION>horizontally</HALLUCINATION>, and dark glass panels with yellow words placed up from the inside, the words are reversed from this view. The background is a gray, cloudy sky, filled in the top frame behind the cabinet.",
+        "description_tag": "An outdoor, <HALLUCINATION>eye-level</HALLUCINATION> view of a fake, oversized cabinet sculpture, on top of a building, with a stormy sky behind. The cabinet is made with a childish look, shown with bright tan and blue colors, and painted marks of a cartoon fishbowl, with a red cartoon mouse peeking out from behind on the <HALLUCINATION>left side</HALLUCINATION>. The cabinet has <HALLUCINATION>four</HALLUCINATION> square, tan drawers with yellow handle knobs, arranged in a <HALLUCINATION>2 by 2</HALLUCINATION> order, with the one on the <HALLUCINATION>bottom right</HALLUCINATION> slightly open and from left to right, a blue book, a sculpted electronic object, and a drawn fishbowl are on top of the cabinet, partially visible. The building is a light green <HALLUCINATION>concrete</HALLUCINATION> wall with a silver roof, and a <HALLUCINATION>circular</HALLUCINATION> window to the middle-left of the wall, showing a green muntin in the center, arranged <HALLUCINATION>horizontally</HALLUCINATION>, and dark glass panels with yellow words placed up from the inside, the words are reversed from this view. The background is a gray, cloudy sky, filled in the top frame behind the cabinet.",
+        "matched_spans": [
+          "green",
+          "copper"
+        ],
+        "unmatched_spans": [
+          "eye-level",
+          "left side",
+          "four",
+          "2 by 2",
+          "bottom right",
+          "concrete",
+          "circular",
+          "horizontally"
+        ],
+        "stats": {
+          "num_injected": 10,
+          "num_detected": 2,
+          "detection_rate": 0.2
+        }
+      }
+    ]
+  },
+  {
+    "filename": "test_00883.jpg",
+    "category": "Nature",
+    "image": "data/examples/images/Nature/test_00883.jpg",
+    "iterations": [
+      {
+        "round": 1,
+        "description_tag_nodetect": "A <HALLUCINATION>sunny</HALLUCINATION>, <HALLUCINATION>low-angle</HALLUCINATION> shot of a <HALLUCINATION>plastic</HALLUCINATION> dock flush against a bank of land that inclines. The land is covered in grass from the bottom left corner diagonally across to mid-way up the right side, with a set of <HALLUCINATION>fourteen</HALLUCINATION> concrete stairs on the <HALLUCINATION>left side</HALLUCINATION> that leads down to the dock. Ten kayaks, one paddle board, paddles and a <HALLUCINATION>vending machine</HALLUCINATION> are visible on and around the dock. There is one <HALLUCINATION>solid purple</HALLUCINATION> kayak in the water on the left side, with the long side flush against the dock. The <HALLUCINATION>vending machine</HALLUCINATION> sits on the left bottom corner of the dock, and a paddle board lies in the <HALLUCINATION>bottom right corner</HALLUCINATION> of the dock, with paddles visible between them. Three kayaks float on the surface of the water, attached at the bows to the dock in the top left corner. Three kayaks lay on the dock in the top right corner, and three float on the surface attached to the right side of the dock. Dark water is in the background, with a <HALLUCINATION>brick</HALLUCINATION> wall edge and green foliage visible across the top of the shot. A bright light shines from the land over the dock and water. Reflections of the surroundings are visible on the water surface.",
+        "description_tag": "A <HALLUCINATION>sunny</HALLUCINATION>, <HALLUCINATION>low-angle</HALLUCINATION> shot of a wooden dock flush against a bank of land that inclines. The land is covered in grass from the bottom left corner diagonally across to mid-way up the right side, with a set of six concrete stairs on the <HALLUCINATION>left side</HALLUCINATION> that leads down to the dock. Ten kayaks, one paddle board, paddles and a picnic table are visible on and around the dock. There is one orange swirl kayak in the water on the left side, with the long side flush against the dock. The picnic table sits on the left bottom corner of the dock, and a paddle board lies in the top left corner of the dock, with paddles visible between them. Three kayaks float on the surface of the water, attached at the bows to the dock in the top left corner. Three kayaks lay on the dock in the top right corner, and three float on the surface attached to the right side of the dock. Dark water is in the background, with a rock wall edge and green foliage visible across the top of the shot. A bright light shines from the land over the dock and water. Reflections of the surroundings are visible on the water surface.",
+        "matched_spans": [
+          "plastic",
+          "fourteen",
+          "vending machine",
+          "solid purple",
+          "bottom right corner",
+          "brick"
+        ],
+        "unmatched_spans": [
+          "sunny",
+          "low-angle",
+          "left side",
+          "vending machine"
+        ],
+        "stats": {
+          "num_injected": 10,
+          "num_detected": 6,
+          "detection_rate": 0.6
+        }
+      },
+      {
+        "round": 2,
+        "description_tag_nodetect": "A <HALLUCINATION>daytime</HALLUCINATION>, <HALLUCINATION>ground-level shot</HALLUCINATION> of a <HALLUCINATION>metal</HALLUCINATION> dock flush against a bank of land that inclines. The land is covered in grass from the bottom left corner diagonally across to mid-way up the right side, with a set of <HALLUCINATION>four</HALLUCINATION> concrete stairs on the <HALLUCINATION>left side</HALLUCINATION> that leads down to the dock. Ten kayaks, one paddle board, paddles and a <HALLUCINATION>park bench</HALLUCINATION> are visible on and around the dock. There is one <HALLUCINATION>bright blue</HALLUCINATION> kayak in the water on the left side, with the long side flush against the dock. The <HALLUCINATION>park bench</HALLUCINATION> sits <HALLUCINATION>in the center</HALLUCINATION> of the dock, and a paddle board lies in the top left corner of the dock, with paddles visible between them. Three kayaks float on the surface of the water, attached at the bows to the dock in the top left corner. Three kayaks lay on the dock in the top right corner, and three float on the surface attached to the right side of the dock. Dark water is in the background, with a <HALLUCINATION>wooden fence</HALLUCINATION> edge and green foliage visible across the top of the shot. A bright light shines from the land over the dock and water. Reflections of the surroundings are visible on the water surface.",
+        "description_tag": "A <HALLUCINATION>daytime</HALLUCINATION>, high-angle shot of a wooden dock flush against a bank of land that inclines. The land is covered in grass from the bottom left corner diagonally across to mid-way up the right side, with a set of six concrete stairs on the <HALLUCINATION>left side</HALLUCINATION> that leads down to the dock. Ten kayaks, one paddle board, paddles and a picnic table are visible on and around the dock. There is one orange swirl kayak in the water on the left side, with the long side flush against the dock. The picnic table sits <HALLUCINATION>in the center</HALLUCINATION> of the dock, and a paddle board lies in the top left corner of the dock, with paddles visible between them. Three kayaks float on the surface of the water, attached at the bows to the dock in the top left corner. Three kayaks lay on the dock in the top right corner, and three float on the surface attached to the right side of the dock. Dark water is in the background, with a rock wall edge and green foliage visible across the top of the shot. A bright light shines from the land over the dock and water. Reflections of the surroundings are visible on the water surface.",
+        "matched_spans": [
+          "ground-level shot",
+          "metal",
+          "four",
+          "park bench",
+          "bright blue",
+          "wooden fence"
+        ],
+        "unmatched_spans": [
+          "daytime",
+          "left side",
+          "park bench",
+          "in the center"
+        ],
+        "stats": {
+          "num_injected": 10,
+          "num_detected": 6,
+          "detection_rate": 0.6
+        }
+      },
+      {
+        "round": 3,
+        "description_tag_nodetect": "A <HALLUCINATION>sunset</HALLUCINATION>, high-angle shot of a <HALLUCINATION>concrete</HALLUCINATION> dock flush against a bank of land that inclines. The land is covered in grass from the bottom left corner diagonally across to mid-way up the right side, with a set of six concrete stairs on the <HALLUCINATION>left side</HALLUCINATION> that leads down to the dock. <HALLUCINATION>Eleven</HALLUCINATION> kayaks, one paddle board, paddles and a <HALLUCINATION>kayak rack</HALLUCINATION> are visible on and around the dock. There is one <HALLUCINATION>bright yellow</HALLUCINATION> kayak in the water on the left side, with the long side flush against the dock. The <HALLUCINATION>kayak rack</HALLUCINATION> sits <HALLUCINATION>in the center</HALLUCINATION> of the dock, and a paddle board lies in the top left corner of the dock, with paddles visible between them. <HALLUCINATION>Four</HALLUCINATION> kayaks float on the surface of the water, attached at the bows to the dock in the top left corner. Three kayaks lay on the dock in the top right corner, and three float on the surface attached to the right side of the dock. Dark water is in the background, with a <HALLUCINATION>brick wall</HALLUCINATION> edge and green foliage visible across the top of the shot. A bright light shines from the land over the dock and water. Reflections of the surroundings are visible on the water surface.",
+        "description_tag": "A nighttime, high-angle shot of a <HALLUCINATION>concrete</HALLUCINATION> dock flush against a bank of land that inclines. The land is covered in grass from the bottom left corner diagonally across to mid-way up the right side, with a set of six concrete stairs on the <HALLUCINATION>left side</HALLUCINATION> that leads down to the dock. Ten kayaks, one paddle board, paddles and a picnic table are visible on and around the dock. There is one orange swirl kayak in the water on the left side, with the long side flush against the dock. The picnic table sits <HALLUCINATION>in the center</HALLUCINATION> of the dock, and a paddle board lies in the top left corner of the dock, with paddles visible between them. Three kayaks float on the surface of the water, attached at the bows to the dock in the top left corner. Three kayaks lay on the dock in the top right corner, and three float on the surface attached to the right side of the dock. Dark water is in the background, with a rock wall edge and green foliage visible across the top of the shot. A bright light shines from the land over the dock and water. Reflections of the surroundings are visible on the water surface.",
+        "matched_spans": [
+          "sunset",
+          "Eleven",
+          "kayak rack",
+          "bright yellow",
+          "Four",
+          "brick wall"
+        ],
+        "unmatched_spans": [
+          "concrete",
+          "left side",
+          "kayak rack",
+          "in the center"
+        ],
+        "stats": {
+          "num_injected": 10,
+          "num_detected": 6,
+          "detection_rate": 0.6
+        }
+      }
+    ]
+  },
+  {
+    "filename": "screenshot_2024-10-23_10-41-08.png",
+    "category": "UI",
+    "image": "data/examples/images/UI/screenshot_2024-10-23_10-41-08.png",
+    "iterations": [
+      {
+        "round": 1,
+        "description_tag_nodetect": "This screenshot displays a macOS desktop environment featuring a <HALLUCINATION>blue and orange</HALLUCINATION> abstract wallpaper. The top menu bar indicates \"<HALLUCINATION>Safari</HALLUCINATION>\" is the active application and shows the date as <HALLUCINATION>Friday, November 12</HALLUCINATION>. The <HALLUCINATION>left-side dock</HALLUCINATION> contains various icons including Finder, Feishu, and System Settings. Multiple overlapping windows cover the desktop. In the top left, a small window titled \"annotator – python annotation.py – 105x46\" shows log text. A central browser window displays ChatGPT consulting results for \"<HALLUCINATION>how to bake a chocolate cake</HALLUCINATION>\" with numbered steps. To the right, a document window presents Chinese text with headings such as \"结果提交\" and \"注意事项\". The bottom right corner features a Visual Studio Code window with a <HALLUCINATION>light theme</HALLUCINATION> displaying JSON data. On the bottom left, a System Settings window lists display resolutions like \"<HALLUCINATION>1920 x 1080</HALLUCINATION>\". A <HALLUCINATION>Terminal</HALLUCINATION> window in the center-left displays image thumbnails, and a file information window appears near the bottom center. A <HALLUCINATION>floating toolbar</HALLUCINATION> in the <HALLUCINATION>top right corner</HALLUCINATION> asks whether to replace a file named \"标注指南: 桌面使用自动化工具\", offering options to \"Keep Both\", \"Stop\", or \"Replace\".",
+        "description_tag": "This screenshot displays a macOS desktop environment featuring a green and purple abstract wallpaper. The top menu bar indicates \"<HALLUCINATION>Safari</HALLUCINATION>\" is the active application and shows the date as Wednesday, October 23. The <HALLUCINATION>left-side dock</HALLUCINATION> contains various icons including Finder, Feishu, and System Settings. Multiple overlapping windows cover the desktop. In the top left, a small window titled \"annotator – python annotation.py – 105x46\" shows log text. A central browser window displays ChatGPT consulting results for \"how to connect to ssh in vscode?\" with numbered steps. To the right, a document window presents Chinese text with headings such as \"结果提交\" and \"注意事项\". The bottom right corner features a Visual Studio Code window with a <HALLUCINATION>light theme</HALLUCINATION> displaying JSON data. On the bottom left, a System Settings window lists display resolutions like \"3456 x 2234\". A <HALLUCINATION>Terminal</HALLUCINATION> window in the center-left displays image thumbnails, and a file information window appears near the bottom center. A modal dialog box in the <HALLUCINATION>top right corner</HALLUCINATION> asks whether to replace a file named \"标注指南: 桌面使用自动化工具\", offering options to \"Keep Both\", \"Stop\", or \"Replace\".",
+        "matched_spans": [
+          "blue and orange",
+          "Friday, November 12",
+          "how to bake a chocolate cake",
+          "1920 x 1080",
+          "floating toolbar"
+        ],
+        "unmatched_spans": [
+          "Safari",
+          "left-side dock",
+          "light theme",
+          "Terminal",
+          "top right corner"
+        ],
+        "stats": {
+          "num_injected": 10,
+          "num_detected": 5,
+          "detection_rate": 0.5
+        }
+      },
+      {
+        "round": 2,
+        "description_tag_nodetect": "This screenshot displays a macOS desktop environment featuring a <HALLUCINATION>blue and gray</HALLUCINATION> abstract wallpaper. The top menu bar indicates <HALLUCINATION>\"Terminal\"</HALLUCINATION> is the active application and shows the date as <HALLUCINATION>Tuesday, October 22</HALLUCINATION>. The <HALLUCINATION>left</HALLUCINATION> dock contains various icons including Finder, Feishu, and System Settings. Multiple overlapping windows cover the desktop. In the top left, a small window titled \"annotator – python annotation.py – 105x46\" shows log text. A central browser window displays ChatGPT consulting results for <HALLUCINATION>\"how to debug python in vscode?\"</HALLUCINATION> with numbered steps. To the right, a document window presents Chinese text with headings such as \"结果提交\" and \"注意事项\". The bottom right corner features a Visual Studio Code window with a <HALLUCINATION>light theme</HALLUCINATION> displaying JSON data. On the bottom left, a System Settings window lists display resolutions like <HALLUCINATION>\"2880 x 1800\"</HALLUCINATION>. A <HALLUCINATION>Preview window</HALLUCINATION> in the center-left displays image thumbnails, and a file information window appears near the bottom center. A <HALLUCINATION>dropdown sheet</HALLUCINATION> in the <HALLUCINATION>top of the browser window</HALLUCINATION> asks whether to replace a file named \"标注指南: 桌面使用自动化工具\", offering options to \"Keep Both\", \"Stop\", or \"Replace\".",
+        "description_tag": "This screenshot displays a macOS desktop environment featuring a green and purple abstract wallpaper. The top menu bar indicates \"Python\" is the active application and shows the date as Wednesday, October 23. The <HALLUCINATION>left</HALLUCINATION> dock contains various icons including Finder, Feishu, and System Settings. Multiple overlapping windows cover the desktop. In the top left, a small window titled \"annotator – python annotation.py – 105x46\" shows log text. A central browser window displays ChatGPT consulting results for <HALLUCINATION>\"how to debug python in vscode?\"</HALLUCINATION> with numbered steps. To the right, a document window presents Chinese text with headings such as \"结果提交\" and \"注意事项\". The bottom right corner features a Visual Studio Code window with a dark theme displaying JSON data. On the bottom left, a System Settings window lists display resolutions like <HALLUCINATION>\"2880 x 1800\"</HALLUCINATION>. A <HALLUCINATION>Preview window</HALLUCINATION> in the center-left displays image thumbnails, and a file information window appears near the bottom center. A <HALLUCINATION>dropdown sheet</HALLUCINATION> in the <HALLUCINATION>top of the browser window</HALLUCINATION> asks whether to replace a file named \"标注指南: 桌面使用自动化工具\", offering options to \"Keep Both\", \"Stop\", or \"Replace\".",
+        "matched_spans": [
+          "blue and gray",
+          "\"Terminal\"",
+          "Tuesday, October 22",
+          "light theme"
+        ],
+        "unmatched_spans": [
+          "left",
+          "\"how to debug python in vscode?\"",
+          "\"2880 x 1800\"",
+          "Preview window",
+          "dropdown sheet",
+          "top of the browser window"
+        ],
+        "stats": {
+          "num_injected": 10,
+          "num_detected": 4,
+          "detection_rate": 0.4
+        }
+      },
+      {
+        "round": 3,
+        "description_tag_nodetect": "This screenshot displays a macOS desktop environment featuring a <HALLUCINATION>starry night sky</HALLUCINATION> wallpaper. The top menu bar indicates \"Python\" is the active application and shows the date as Wednesday, October 23. The <HALLUCINATION>left</HALLUCINATION> dock contains various icons including Finder, <HALLUCINATION>Slack</HALLUCINATION>, and System Settings. Multiple overlapping windows cover the desktop. In the top left, a small window titled \"annotator – python annotation.py – 105x46\" shows log text. A central browser window displays ChatGPT consulting results for \"<HALLUCINATION>how to reset a macbook password?</HALLINATION>\" with numbered steps. To the right, a document window presents <HALLUCINATION>English</HALLUCINATION> text with headings such as \"<HALLUCINATION>Submission</HALLUCINATION>\" and \"<HALLUCINATION>Notes</HALLUCINATION>\". The bottom right corner features a Visual Studio Code window with a dark theme displaying <HALLUCINATION>CSV</HALLUCINATION> data. On the bottom left, a System Settings window lists display resolutions like \"<HALLUCINATION>2560 x 1440</HALLUCINATION>\". A Finder window in the center-left displays <HALLUCINATION>folder icons</HALLUCINATION>, and a file information window appears near the bottom center. A modal dialog box in the center of the screen asks whether to replace a file named \"标注指南: 桌面使用自动化工具\", offering options to \"Keep Both\", \"Stop\", or \"Replace\".",
+        "description_tag": "This screenshot displays a macOS desktop environment featuring a <HALLUCINATION>starry night sky</HALLUCINATION> wallpaper. The top menu bar indicates \"Python\" is the active application and shows the date as Wednesday, October 23. The <HALLUCINATION>left</HALLUCINATION> dock contains various icons including Finder, <HALLUCINATION>Slack</HALLUCINATION>, and System Settings. Multiple overlapping windows cover the desktop. In the top left, a small window titled \"annotator – python annotation.py – 105x46\" shows log text. A central browser window displays ChatGPT consulting results for \"how to connect to ssh in vscode? text with headings such as \"<HALLUCINATION>Submission</HALLUCINATION>\" and \"<HALLUCINATION>Notes</HALLUCINATION>\". The bottom right corner features a Visual Studio Code window with a dark theme displaying <HALLUCINATION>CSV</HALLUCINATION> data. On the bottom left, a System Settings window lists display resolutions like \"3456 x 2234\". A Finder window in the center-left displays <HALLUCINATION>folder icons</HALLUCINATION>, and a file information window appears near the bottom center. A modal dialog box in the center of the screen asks whether to replace a file named \"标注指南: 桌面使用自动化工具\", offering options to \"Keep Both\", \"Stop\", or \"Replace\".",
+        "matched_spans": [
+          "English",
+          "2560 x 1440"
+        ],
+        "unmatched_spans": [
+          "starry night sky",
+          "left",
+          "Slack",
+          "Submission",
+          "Notes",
+          "CSV",
+          "folder icons"
+        ],
+        "stats": {
+          "num_injected": 9,
+          "num_detected": 2,
+          "detection_rate": 0.2222222222
+        }
+      }
+    ]
+  },
+  {
+    "filename": "screenshot_2024-12-10_13-01-55.png",
+    "category": "UI",
+    "image": "data/examples/images/UI/screenshot_2024-12-10_13-01-55.png",
+    "iterations": [
+      {
+        "round": 1,
+        "description_tag_nodetect": "The screenshot captures a Windows desktop interface populated with several overlapping windows against a <HALLUCINATION>vibrant yellow background</HALLUCINATION>. A vertical taskbar on the <HALLUCINATION>right edge</HALLUCINATION> holds various application icons, while a horizontal system tray sits at the <HALLUCINATION>top</HALLUCINATION>. In the lower left foreground, a File Explorer window in dark mode displays \"Quick access\" folders including Desktop, Downloads, and Documents, followed by a detailed list of recent files with names, dates, and paths.\n\nBehind the File Explorer, the Windows Settings \"Home\" screen is visible. It features a user profile for \"<HALLUCINATION>Alice Smith</HALLUCINATION>,\" a \"Recommended settings\" section listing Display and Language options, and a \"Cloud storage\" panel indicating <HALLUCINATION>500 MB</HALLUCINATION> usage. To the upper left, a web browser window shows the iCloud landing page with Chinese text reading \"iCloud 照片、文件、备忘录、邮件和更多内容的网页版之家\" and a login button.\n\nOn the right side, a large code editor window dominates, featuring a dark theme, a vertical minimap, and a status bar showing line numbers and \"<HALLUCINATION>Java</HALLUCINATION>.\" Partially obscured behind this editor at the top right is another application window displaying a <HALLUCINATION>honeycomb pattern</HALLUCINATION>. The overall visual theme is dark across the system and applications.",
+        "description_tag": "The screenshot captures a Windows desktop interface populated with several overlapping windows against a dark background. A vertical taskbar on the <HALLUCINATION>right edge</HALLUCINATION> holds various application icons, while a horizontal system tray sits at the bottom. In the lower left foreground, a File Explorer window in dark mode displays \"Quick access\" folders including Desktop, Downloads, and Documents, followed by a detailed list of recent files with names, dates, and paths.\n\nBehind the File Explorer, the Windows Settings \"Home\" screen is visible. It features a user profile for \"Charles Wang,\" a \"Recommended settings\" section listing Display and Language options, and a \"Cloud storage\" panel indicating 8.5 GB usage. To the upper left, a web browser window shows the iCloud landing page with Chinese text reading \"iCloud 照片、文件、备忘录、邮件和更多内容的网页版之家\" and a login button.\n\nOn the right side, a large code editor window dominates, featuring a dark theme, a vertical minimap, and a status bar showing line numbers and \"Python.\" Partially obscured behind this editor at the top right is another application window displaying a <HALLUCINATION>honeycomb pattern</HALLUCINATION>. The overall visual theme is dark across the system and applications.",
+        "matched_spans": [
+          "vibrant yellow background",
+          "top",
+          "Alice Smith",
+          "500 MB",
+          "Java"
+        ],
+        "unmatched_spans": [
+          "right edge",
+          "honeycomb pattern"
+        ],
+        "stats": {
+          "num_injected": 7,
+          "num_detected": 5,
+          "detection_rate": 0.7142857142857143
+        }
+      },
+      {
+        "round": 2,
+        "description_tag_nodetect": "The screenshot captures a Windows desktop interface populated with several overlapping windows against a <HALLUCINATION>blurred city skyline</HALLUCINATION>. A vertical taskbar on the <HALLUCINATION>right edge</HALLUCINATION> holds various application icons, while a horizontal system tray sits at the <HALLUCINATION>top</HALLUCINATION>. In the lower left foreground, a File Explorer window in dark mode displays \"Quick access\" folders including <HALLUCINATION>Pictures, Videos, and Music</HALLUCINATION>, followed by a detailed list of recent files with names, dates, and paths.\n\nBehind the File Explorer, the Windows Settings \"Home\" screen is visible. It features a user profile for \"<HALLUCINATION>Steven Zhang</HALLUCINATION>,\" a \"Recommended settings\" section listing <HALLUCINATION>Bluetooth and Personalization</HALLUCINATION> options, and a \"Cloud storage\" panel indicating <HALLUCINATION>142 GB</HALLUCINATION> usage. To the upper left, a web browser window shows the iCloud landing page with Chinese text reading \"iCloud 照片、文件、备忘录、邮件和更多内容的网页版之家\" and a login button.\n\nOn the right side, a large code editor window dominates, featuring a dark theme, a vertical minimap, and a status bar showing <HALLUCINATION>UTF-8 encoding</HALLUCINATION> and \"<HALLUCINATION>JavaScript</HALLUCINATION>.\" Partially obscured behind this editor at the top right is another application window displaying a <HALLUCINATION>world map</HALLUCINATION>. The overall visual theme is dark across the system and applications.",
+        "description_tag": "The screenshot captures a Windows desktop interface populated with several overlapping windows against a <HALLUCINATION>blurred city skyline</HALLUCINATION>. A vertical taskbar on the left edge holds various application icons, while a horizontal system tray sits at the bottom. In the lower left foreground, a File Explorer window in dark mode displays \"Quick access\" folders including <HALLUCINATION>Pictures, Videos, and Music</HALLUCINATION>, followed by a detailed list of recent files with names, dates, and paths.\n\nBehind the File Explorer, the Windows Settings \"Home\" screen is visible. It features a user profile for \"Charles Wang,\" a \"Recommended settings\" section listing Display and Language options, and a \"Cloud storage\" panel indicating 8.5 GB usage. To the upper left, a web browser window shows the iCloud landing page with Chinese text reading \"iCloud 照片、文件、备忘录、邮件和更多内容的网页版之家\" and a login button.\n\nOn the right side, a large code editor window dominates, featuring a dark theme, a vertical minimap, and a status bar showing <HALLUCINATION>UTF-8 encoding</HALLUCINATION> and \"<HALLUCINATION>JavaScript</HALLUCINATION>.\" Partially obscured behind this editor at the top right is another application window displaying a grid pattern. The overall visual theme is dark across the system and applications.",
+        "matched_spans": [
+          "right edge",
+          "top",
+          "Steven Zhang",
+          "Bluetooth and Personalization",
+          "142 GB",
+          "world map"
+        ],
+        "unmatched_spans": [
+          "blurred city skyline",
+          "Pictures, Videos, and Music",
+          "UTF-8 encoding",
+          "JavaScript"
+        ],
+        "stats": {
+          "num_injected": 10,
+          "num_detected": 6,
+          "detection_rate": 0.6
+        }
+      },
+      {
+        "round": 3,
+        "description_tag_nodetect": "The screenshot captures a Windows desktop interface populated with several overlapping windows against a <HALLUCINATION>solid blue background</HALLUCINATION>. A vertical taskbar on the left edge holds various application icons, while a horizontal system tray sits at the bottom. In the lower left foreground, a File Explorer window in <HALLUCINATION>light mode</HALLUCINATION> displays \"Quick access\" folders including <HALLUCINATION>Pictures, Music, and Videos</HALLUCINATION>, followed by a detailed list of recent files with names, dates, and paths.\n\nBehind the File Explorer, the Windows Settings \"Home\" screen is visible. It features a user profile for \"<HALLUCINATION>Administrator</HALLUCINATION>,\" a \"Recommended settings\" section listing Display and Language options, and a \"Cloud storage\" panel indicating <HALLUCINATION>15 GB</HALLUCINATION> usage. To the upper left, a web browser window shows the iCloud landing page with <HALLUCINATION>English</HALLUCINATION> text reading <HALLUCINATION>\"Sign in to iCloud to access your photos, files, and more\"</HALLUCINATION> and a login button.\n\nOn the right side, a large code editor window dominates, featuring a dark theme, a vertical minimap, and a status bar showing line numbers and \"<HALLUCINATION>Java</HALLUCINATION>.\" Partially obscured behind this editor at the top right is another application window displaying a <HALLUCINATION>pie chart</HALLUCINATION>. The overall visual theme is <HALLUCINATION>light</HALLUCINATION> across the system and applications.",
+        "description_tag": "The screenshot captures a Windows desktop interface populated with several overlapping windows against a <HALLUCINATION>solid blue background</HALLUCINATION>. A vertical taskbar on the left edge holds various application icons, while a horizontal system tray sits at the bottom. In the lower left foreground, a File Explorer window in dark mode displays \"Quick access\" folders including <HALLUCINATION>Pictures, Music, and Videos</HALLUCINATION>, followed by a detailed list of recent files with names, dates, and paths.\n\nBehind the File Explorer, the Windows Settings \"Home\" screen is visible. It features a user profile for \"Charles Wang,\" a \"Recommended settings\" section listing Display and Language options, and a \"Cloud storage\" panel indicating 8.5 GB usage. To the upper left, a web browser window shows the iCloud landing page with <HALLUCINATION>English</HALLUCINATION> text reading <HALLUCINATION>\"Sign in to iCloud to access your photos, files, and more\"</HALLUCINATION> and a login button.\n\nOn the right side, a large code editor window dominates, featuring a dark theme, a vertical minimap, and a status bar showing line numbers and \"Python.\" Partially obscured behind this editor at the top right is another application window displaying a grid pattern. The overall visual theme is dark across the system and applications.",
+        "matched_spans": [
+          "Administrator",
+          "15 GB",
+          "Java",
+          "pie chart",
+          "light"
+        ],
+        "unmatched_spans": [
+          "solid blue background",
+          "light mode",
+          "Pictures, Music, and Videos",
+          "English",
+          "\"Sign in to iCloud to access your photos, files, and more\""
+        ],
+        "stats": {
+          "num_injected": 10,
+          "num_detected": 5,
+          "detection_rate": 0.5
+        }
+      }
+    ]
+  }
+]

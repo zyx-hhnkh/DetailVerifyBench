@@ -271,6 +271,111 @@ tbody tr:hover td { background: #f8faff; }
   border-radius: 8px;
 }
 
+/* ===== Injection Demo ===== */
+.inj-controls {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.inj-round-tabs {
+  display: inline-flex;
+  background: #f1f5f9;
+  border-radius: 8px;
+  padding: 3px;
+  gap: 2px;
+}
+
+.inj-viewer-card {
+  display: flex;
+  height: 60vh;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+}
+
+.inj-panel {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.inj-panel + .inj-panel {
+  border-left: 1px solid #e2e8f0;
+}
+
+.inj-panel-img {
+  background: #f8faff;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.inj-panel-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.inj-panel-title {
+  padding: 10px 16px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #475569;
+  border-bottom: 1px solid #e2e8f0;
+  background: #f8fafc;
+  flex-shrink: 0;
+}
+
+.inj-panel-body {
+  padding: 14px 16px;
+  font-size: 0.85rem;
+  line-height: 1.8;
+  color: #374151;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.inj-stats {
+  display: flex;
+  gap: 24px;
+  margin-top: 12px;
+  padding: 10px 16px;
+  background: #f8fafc;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  font-size: 0.85rem;
+  color: #475569;
+}
+
+.inj-stat strong {
+  font-weight: 700;
+}
+
+.inj-stat-detected strong { color: #ca8a04; }
+.inj-stat-survived strong { color: #dc2626; }
+
+mark.hal-detected {
+  background: #fef9c3;
+  color: #92400e;
+  border-radius: 3px;
+  padding: 1px 2px;
+  font-style: normal;
+  cursor: help;
+}
+
+@media (max-width: 768px) {
+  .inj-viewer-card { flex-direction: column; height: auto; }
+  .inj-panel + .inj-panel { border-left: none; border-top: 1px solid #e2e8f0; }
+  .inj-panel-img { height: 200px; }
+}
+
 /* ===== Leaderboard ===== */
 .lb-controls {
   display: flex;

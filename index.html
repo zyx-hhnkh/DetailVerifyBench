@@ -197,6 +197,23 @@
   </div>
 </section>
 
+<!-- ===== Adversarial Injection Demo ===== -->
+<section id="injection-demo" class="section">
+  <div class="container">
+    <h2>Adversarial Injection Pipeline Demo</h2>
+    <div class="inj-controls">
+      <select id="inj-example-sel" class="ex-select" onchange="setInjExample(this.value)"></select>
+      <div class="inj-round-tabs">
+        <button class="pipe-tab active" onclick="setInjRound(0)">Round 1</button>
+        <button class="pipe-tab" onclick="setInjRound(1)">Round 2</button>
+        <button class="pipe-tab" onclick="setInjRound(2)">Round 3</button>
+      </div>
+    </div>
+    <div id="inj-viewer" class="inj-viewer-card"></div>
+    <div id="inj-stats" class="inj-stats"></div>
+  </div>
+</section>
+
 <!-- ===== Leaderboard ===== -->
 <section id="leaderboard" class="section">
   <div class="container">
@@ -526,6 +543,104 @@ function sortBy(colIdx) {
   window.addEventListener('resize', layout);
 })();
 
+// ─── Injection Demo ──────────────────────────────────────────────────────────
+let injData = [];
+let injCurrent = null;
+let injRound = 0;
+
+function renderInjAllMarked(text) {
+  return text
+    .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
+    .replace(/&lt;\/?HALLUCINATION&gt;/gi, m =>
+      m.toLowerCase().includes('/') ? '__HALEND__' : '__HALSTART__'
+    )
+    .replace(/__HALSTART__([\s\S]*?)__HALEND__/g, (_, inner) =>
+      '<mark class="hal">' + inner + '</mark>'
+    );
+}
+
+function renderInjDetected(text, matchedSpans, unmatchedSpans) {
+  // First HTML-escape, then convert tags to markers
+  let html = text
+    .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
+    .replace(/&lt;\/?HALLUCINATION&gt;/gi, m =>
+      m.toLowerCase().includes('/') ? '__HALEND__' : '__HALSTART__'
+    );
+
+  // Build lookup for matched spans (detected = yellow)
+  const matchedSet = new Set(matchedSpans.map(s => s.trim()));
+
+  html = html.replace(/__HALSTART__([\s\S]*?)__HALEND__/g, (_, inner) => {
+    const raw = inner.replace(/&amp;/g,'&').replace(/&lt;/g,'<').replace(/&gt;/g,'>').trim();
+    const cls = matchedSet.has(raw) ? 'hal-detected' : 'hal';
+    return '<mark class="' + cls + '">' + inner + '</mark>';
+  });
+
+  return html;
+}
+
+function renderInjViewer() {
+  const viewer = document.getElementById('inj-viewer');
+  const statsEl = document.getElementById('inj-stats');
+  if (!injCurrent) { viewer.innerHTML = ''; statsEl.innerHTML = ''; return; }
+
+  const maxRound = injCurrent.iterations.length;
+  const round = Math.min(injRound, maxRound - 1);
+  const it = injCurrent.iterations[round];
+
+  // Update round button states
+  document.querySelectorAll('.inj-round-tabs .pipe-tab').forEach((b, i) => {
+    b.classList.toggle('active', i === round);
+    b.disabled = i >= maxRound;
+    b.style.opacity = i >= maxRound ? '0.4' : '1';
+  });
+
+  const allMarked = renderInjAllMarked(it.description_tag_nodetect);
+  const afterDetect = renderInjDetected(it.description_tag_nodetect, it.matched_spans, it.unmatched_spans);
+
+  viewer.innerHTML =
+    '<div class="inj-panel inj-panel-img">'
+    + '<img src="' + injCurrent.image + '" alt="' + escHtml(injCurrent.filename) + '" loading="lazy">'
+    + '</div>'
+    + '<div class="inj-panel inj-panel-text">'
+    + '<div class="inj-panel-title">Injected Description (Round ' + (round+1) + ')</div>'
+    + '<div class="inj-panel-body">' + allMarked + '</div>'
+    + '</div>'
+    + '<div class="inj-panel inj-panel-text">'
+    + '<div class="inj-panel-title">Detection Result (Round ' + (round+1) + ')</div>'
+    + '<div class="inj-panel-body">' + afterDetect + '</div>'
+    + '</div>';
+
+  const s = it.stats;
+  const survived = s.num_injected - s.num_detected;
+  statsEl.innerHTML =
+    '<span class="inj-stat"><strong>' + s.num_injected + '</strong> injected</span>'
+    + '<span class="inj-stat inj-stat-detected"><strong>' + s.num_detected + '</strong> detected (' + Math.round(s.detection_rate * 100) + '%)</span>'
+    + '<span class="inj-stat inj-stat-survived"><strong>' + survived + '</strong> survived</span>';
+}
+
+function setInjRound(r) {
+  injRound = r;
+  renderInjViewer();
+}
+
+function setInjExample(filename) {
+  injCurrent = injData.find(e => e.filename === filename) || null;
+  injRound = 0;
+  renderInjViewer();
+}
+
+function initInjDemo(data) {
+  injData = data;
+  const sel = document.getElementById('inj-example-sel');
+  sel.innerHTML = data.map((e, i) =>
+    '<option value="' + e.filename + '">' + e.category + ' - Example ' + (i+1) + '</option>'
+  ).join('');
+  injCurrent = data[0] || null;
+  injRound = 0;
+  renderInjViewer();
+}
+
 // ─── Pipeline step slider ─────────────────────────────────────────────────────
 const pipeImages = ['data/images/Pipeline_step1.png','data/images/Pipeline_step2.png','data/images/Pipeline_step3.png'];
 function setPipeStep(i) {
@@ -734,6 +849,15 @@ fetch('./data/examples/examples.json')
     document.getElementById('ex-viewer').innerHTML =
       '<p style="color:#ef4444;padding:16px">Failed to load examples.</p>';
     console.error('Examples load error:', err);
+  });
+
+fetch('./data/examples/injection_demo.json')
+  .then(r => r.json())
+  .then(data => initInjDemo(data))
+  .catch(err => {
+    document.getElementById('inj-viewer').innerHTML =
+      '<p style="color:#ef4444;padding:16px">Failed to load injection demo data.</p>';
+    console.error('Injection demo load error:', err);
   });
 
 // ─── Floating tooltip for .hal marks ──────────────────────────────────────────
