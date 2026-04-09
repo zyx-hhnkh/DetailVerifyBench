@@ -61,7 +61,10 @@
       <p class="abstract-text">
         Accurately detecting and localizing hallucinations is a critical task to ensure the high accuracy of image captions. In the era of Multimodal Large Language Models (MLLMs), captions have evolved from brief sentences into comprehensive narratives, often exceeding hundreds of words. This shift exponentially increases the challenge: models must now pinpoint specific erroneous spans or words within extensive contexts, rather than merely flagging response-level inconsistencies. However, existing benchmarks lack the fine-grained granularity and domain diversity required to evaluate this capability. To bridge this gap, we introduce <strong>DetailVerifyBench</strong>, a rigorous benchmark comprising 1,000 high-quality images across five distinct domains. With an average caption length of over 200 words and dense, token-level annotations of multiple hallucination types, it stands as the most challenging benchmark for precise hallucination localization in the long image caption to date.
       </p>
-      <div class="wordcloud-wrap" id="wordcloud"></div>
+      <div class="wordcloud-container">
+        <div class="wordcloud-title">Hallucination Word Cloud</div>
+        <div class="wordcloud-wrap" id="wordcloud"></div>
+      </div>
     </div>
   </div>
 </section>
@@ -197,10 +200,12 @@
   </div>
 </section>
 
-<!-- ===== Adversarial Injection Demo ===== -->
+<!-- ===== Adversarial Injection Pipeline ===== -->
 <section id="injection-demo" class="section">
   <div class="container">
-    <h2>Adversarial Injection Pipeline Demo</h2>
+    <h2>Adversarial Injection Pipeline</h2>
+  </div>
+  <div class="inj-viewer-outer">
     <div class="inj-controls">
       <select id="inj-example-sel" class="ex-select" onchange="setInjExample(this.value)"></select>
       <div class="inj-round-tabs">
@@ -210,6 +215,10 @@
       </div>
     </div>
     <div id="inj-viewer" class="inj-viewer-card"></div>
+    <div class="inj-legend">
+      <span class="inj-legend-item"><mark class="hal">text</mark> Hallucination injected by the Injector</span>
+      <span class="inj-legend-item"><mark class="hal-detected">text</mark> Hallucination located by the Detector (not included in the final synthetic dataset)</span>
+    </div>
     <div id="inj-stats" class="inj-stats"></div>
   </div>
 </section>
@@ -631,11 +640,22 @@ function setInjExample(filename) {
 }
 
 function initInjDemo(data) {
+  // Remove the first Poster example (no data available)
+  let posterCount = 0;
+  data = data.filter(e => {
+    if (e.category === 'Poster') { posterCount++; return posterCount > 1; }
+    return true;
+  });
+
   injData = data;
   const sel = document.getElementById('inj-example-sel');
-  sel.innerHTML = data.map((e, i) =>
-    '<option value="' + e.filename + '">' + e.category + ' - Example ' + (i+1) + '</option>'
-  ).join('');
+  // Count per-category for fallback labels
+  const catCount = {};
+  sel.innerHTML = data.map(e => {
+    catCount[e.category] = (catCount[e.category] || 0) + 1;
+    const label = INJ_NAMES[e.filename] || (e.category + ' - Example ' + catCount[e.category]);
+    return '<option value="' + e.filename + '">' + label + '</option>';
+  }).join('');
   injCurrent = data[0] || null;
   injRound = 0;
   renderInjViewer();
@@ -658,6 +678,17 @@ function downloadTable() {
     link.click();
   });
 }
+
+// ─── Example display names (edit here to customize dropdown labels) ──────────
+// Map filename → display name; falls back to 'Example N' if not set
+const EX_NAMES = {
+  // e.g. 'movie_001.jpg': 'Aerial City Scene',
+};
+
+// Injection demo display names; falls back to 'Category - Example N'
+const INJ_NAMES = {
+  // e.g. 'poster_002.jpg': 'Movie Poster - Battle Scene',
+};
 
 // ─── Examples ────────────────────────────────────────────────────────────────
 let exData      = [];
@@ -836,7 +867,10 @@ function setExMode(mode) {
 function populateImageSelect(domain) {
   const filtered = exData.filter(e => e.category === domain);
   const sel = document.getElementById('ex-image-sel');
-  sel.innerHTML = filtered.map((e, i) => '<option value="' + e.filename + '">Example ' + (i + 1) + '</option>').join('');
+  sel.innerHTML = filtered.map((e, i) => {
+    const label = EX_NAMES[e.filename] || ('Example ' + (i + 1));
+    return '<option value="' + e.filename + '">' + label + '</option>';
+  }).join('');
   exCurrent = filtered[0] || null;
   exShowGT = false; exMethod = 'adversarial';
   renderViewer();
