@@ -215,11 +215,6 @@
       </div>
     </div>
     <div id="inj-viewer" class="inj-viewer-card"></div>
-    <div class="inj-legend">
-      <span class="inj-legend-item"><mark class="hal">text</mark>: Hallucination injected by the Injector</span>
-      <span class="inj-legend-item"><mark class="hal-detected">text</mark>: Hallucination located by the Detector (not included in the final synthetic dataset)</span>
-    </div>
-    <div id="inj-stats" class="inj-stats"></div>
   </div>
 </section>
 
@@ -622,8 +617,7 @@ function renderInjDetected(text, matchedSpans, unmatchedSpans) {
 
 function renderInjViewer() {
   const viewer = document.getElementById('inj-viewer');
-  const statsEl = document.getElementById('inj-stats');
-  if (!injCurrent) { viewer.innerHTML = ''; statsEl.innerHTML = ''; return; }
+  if (!injCurrent) { viewer.innerHTML = ''; return; }
 
   const maxRound = injCurrent.iterations.length;
   const round = Math.min(injRound, maxRound - 1);
@@ -636,28 +630,33 @@ function renderInjViewer() {
     b.style.opacity = i >= maxRound ? '0.4' : '1';
   });
 
-  const allMarked = renderInjAllMarked(it.description_tag_nodetect);
   const afterDetect = renderInjDetected(it.description_tag_nodetect, it.matched_spans, it.unmatched_spans);
+
+  const s = it.stats;
+  const survived = s.num_injected - s.num_detected;
+  const statsHtml =
+    '<div class="inj-stats-inline">'
+    + '<span class="inj-stat"><strong>' + s.num_injected + '</strong> injected</span>'
+    + '<span class="inj-stat inj-stat-detected"><strong>' + s.num_detected + '</strong> detected (' + Math.round(s.detection_rate * 100) + '%)</span>'
+    + '<span class="inj-stat inj-stat-survived"><strong>' + survived + '</strong> survived</span>'
+    + '</div>';
+
+  const legendHtml =
+    '<div class="inj-legend-inline">'
+    + '<span class="inj-legend-item"><mark class="hal">text</mark>: Injected hallucination</span>'
+    + '<span class="inj-legend-item"><mark class="hal-detected">text</mark>: Detected by Detector</span>'
+    + '</div>';
 
   viewer.innerHTML =
     '<div class="inj-panel inj-panel-img">'
     + '<img src="' + injCurrent.image + '" alt="' + escHtml(injCurrent.filename) + '" loading="lazy">'
     + '</div>'
     + '<div class="inj-panel inj-panel-text">'
-    + '<div class="inj-panel-title">Injected Description (Round ' + (round+1) + ')</div>'
-    + '<div class="inj-panel-body">' + allMarked + '</div>'
-    + '</div>'
-    + '<div class="inj-panel inj-panel-text">'
-    + '<div class="inj-panel-title">Detection Result (Round ' + (round+1) + ')</div>'
+    + '<div class="inj-panel-title">Round ' + (round+1) + ' Result</div>'
     + '<div class="inj-panel-body">' + afterDetect + '</div>'
+    + statsHtml
+    + legendHtml
     + '</div>';
-
-  const s = it.stats;
-  const survived = s.num_injected - s.num_detected;
-  statsEl.innerHTML =
-    '<span class="inj-stat"><strong>' + s.num_injected + '</strong> injected</span>'
-    + '<span class="inj-stat inj-stat-detected"><strong>' + s.num_detected + '</strong> detected (' + Math.round(s.detection_rate * 100) + '%)</span>'
-    + '<span class="inj-stat inj-stat-survived"><strong>' + survived + '</strong> survived</span>';
 
 }
 
@@ -847,24 +846,32 @@ function buildDetText(src) {
     annotations.push({start: gs.start, end: gs.end, type: 'gt', label: 'GT'});
   }
 
-  // Model spans — find each in plain text
+  // Model spans — find each in plain text (deduplicated per model)
   const checkedModels = [...detChecked];
   for (const m of checkedModels) {
     const spans = src.models[m] || [];
     const ci = DET_MODELS.indexOf(m);
     const color = DET_COLORS[ci] || '#888';
+    // Deduplicate spans (case-insensitive) and track used positions
+    const seen = new Set();
+    const usedPositions = new Set(); // "start,end" strings
     for (const span of spans) {
       if (!span) continue;
       const trimmed = span.trim();
       if (!trimmed) continue;
-      // Find all occurrences
+      const key = trimmed.toLowerCase();
+      if (seen.has(key)) continue;
+      seen.add(key);
       const lower = plain.toLowerCase();
-      const needle = trimmed.toLowerCase();
       let searchFrom = 0;
       while (true) {
-        const idx = lower.indexOf(needle, searchFrom);
+        const idx = lower.indexOf(key, searchFrom);
         if (idx < 0) break;
-        annotations.push({start: idx, end: idx + trimmed.length, type: 'model', label: m, color: color});
+        const posKey = idx + ',' + (idx + trimmed.length);
+        if (!usedPositions.has(posKey)) {
+          usedPositions.add(posKey);
+          annotations.push({start: idx, end: idx + trimmed.length, type: 'model', label: m, color: color});
+        }
         searchFrom = idx + 1;
       }
     }

@@ -288,11 +288,25 @@ tbody tr:hover td { background: #f8faff; }
 }
 
 /* ===== Injection Demo ===== */
-.inj-stats-row {
+/* Inline stats & legend inside card */
+.inj-stats-inline {
   display: flex;
-  align-items: center;
-  gap: 16px;
-  margin-top: 10px;
+  gap: 20px;
+  padding: 10px 16px;
+  background: #f8fafc;
+  border-top: 1px solid #e2e8f0;
+  font-size: 0.84rem;
+  color: #475569;
+  flex-shrink: 0;
+}
+
+.inj-legend-inline {
+  display: flex;
+  gap: 20px;
+  padding: 8px 16px;
+  font-size: 0.8rem;
+  color: #64748b;
+  flex-shrink: 0;
 }
 
 .inj-controls {
@@ -313,7 +327,7 @@ tbody tr:hover td { background: #f8faff; }
 
 .inj-viewer-card {
   display: flex;
-  height: 60vh;
+  height: 68vh;
   border: 1px solid #e2e8f0;
   border-radius: 12px;
   overflow: hidden;
@@ -333,7 +347,8 @@ tbody tr:hover td { background: #f8faff; }
 }
 
 .inj-panel-img {
-  flex: 2;
+  width: 50%;
+  flex-shrink: 0;
   background: #f8faff;
   align-items: center;
   justify-content: center;
@@ -366,16 +381,6 @@ tbody tr:hover td { background: #f8faff; }
   flex: 1;
 }
 
-.inj-legend {
-  display: flex;
-  gap: 28px;
-  margin-top: 12px;
-  font-size: 0.84rem;
-  color: #475569;
-  flex-wrap: wrap;
-  align-items: center;
-}
-
 .inj-legend-item {
   display: flex;
   align-items: center;
@@ -389,30 +394,12 @@ tbody tr:hover td { background: #f8faff; }
   font-weight: 500;
 }
 
-.inj-stats {
-  display: flex;
-  gap: 24px;
-  padding: 10px 16px;
-  background: #f8fafc;
-  border-radius: 8px;
-  border: 1px solid #e2e8f0;
-  font-size: 0.85rem;
-  color: #475569;
-  flex-shrink: 0;
-}
-
 .inj-stat strong {
   font-weight: 700;
 }
 
 .inj-stat-detected strong { color: #ca8a04; }
 .inj-stat-survived strong { color: #dc2626; }
-
-.inj-note {
-  font-size: 0.82rem;
-  color: #94a3b8;
-  font-style: italic;
-}
 
 mark.hal-detected {
   background: #fef9c3;
