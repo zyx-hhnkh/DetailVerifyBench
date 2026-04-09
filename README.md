@@ -1,4 +1,4 @@
-# Hallucination Detection Benchmark
+# DetailVerifyBench
 
 A comprehensive evaluation framework for detecting hallucinations in Vision-Language Models (VLMs). This benchmark measures how accurately models can identify false or incorrect descriptions in image captions at the token level.
 
@@ -27,29 +27,67 @@ nltk.download('punkt_tab')
 
 ## Data Preparation
 
-Download the dataset from ModelScope:
+Download the dataset from HuggingFace:
 
 ```bash
-pip install modelscope
-modelscope login --token <your_token>
-modelscope download --dataset 'TwinkleMoon/Hallucination-Benchmark' --include 'test/*' --local_dir ./ms_data
+huggingface-cli download zyxhhnkh/DetailVerifyBench \
+    --repo-type dataset \
+    --local-dir     ./data
 ```
-
-The dataset contains paired `.jpg` images and `.json` annotation files with hallucination labels across 4 categories: Counterfactual, OCR, Spatial Relation, and Other.
 
 ## Usage
 
-### Basic Evaluation
+### Real Hallucination (Local Model)
 
 ```bash
 python run_pipeline.py \
-    --mode offline \
-    --image_dir ./ms_data/test \
-    --input_json ./ms_data/test/test_gt_withtag.jsonl \
-    --model_select "Qwen3-VL-8B" \
-    --model_path "/path/to/model" \
-    --exp_name "my_experiment" \
-    --work_dir ./ \
+    --mode          offline \
+    --image_dir     PATH_TO_test_set \
+    --input_json    PATH_TO_real_jsonl \
+    --model_select  "model_name" \
+    --model_path    "PATH_TO_model_name" \
+    --exp_name      "my_experiment" \
+    --work_dir      ./ \
+    --use_think
+```
+
+### Real Hallucination (API-based)
+
+```bash
+python run_pipeline.py \
+    --mode          offline \
+    --image_dir     PATH_TO_test_set \
+    --input_json    PATH_TO_real_jsonl \
+    --model_path    "PATH_TO_model_name" \
+    --exp_name      "my_experiment" \
+    --work_dir      ./ \
+    --use_think
+```
+
+### Synthetic Hallucination (Local Model)
+
+```bash
+python run_pipeline.py \
+    --mode          advi \
+    --image_dir     PATH_TO_test_set \
+    --input_json    PATH_TO_synthetic_jsonl \
+    --model_select  "model_name" \
+    --model_path    "PATH_TO_model_name" \
+    --exp_name      "my_experiment" \
+    --work_dir      ./ \
+    --use_think
+```
+
+### Synthetic Hallucination (API-based)
+
+```bash
+python run_pipeline.py \
+    --mode          advi \
+    --image_dir     PATH_TO_test_set \
+    --input_json    PATH_TO_synthetic_jsonl \
+    --model_select  "model_name" \
+    --exp_name      "my_experiment" \
+    --work_dir      ./ \
     --use_think
 ```
 
@@ -117,7 +155,7 @@ bash scripts/vis_result.sh
 ├── tests/                       # Testing utilities
 │   └── test_api.py              # API connectivity tests
 │
-└── ms_data/                     # Dataset (download separately)
+└── data/                        # Dataset (download separately)
 ```
 
 ## Pipeline Overview
@@ -167,10 +205,10 @@ OPENROUTER_API_KEY=your_key
 If you use this benchmark in your research, please cite:
 
 ```bibtex
-@misc{hallucination-detection-benchmark,
-  title={Hallucination Detection Benchmark},
-  year={2025},
-  url={https://github.com/your-org/Hallucination-Detection-Benchmark}
+@misc{detailverifybench,
+  title={DetailVerifyBench},
+  year={2026},
+  url={https://github.com/zyx-hhnkh/DetailVerifyBench}
 }
 ```
 
