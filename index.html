@@ -57,9 +57,12 @@
 <section id="abstract" class="section">
   <div class="container">
     <h2>Abstract</h2>
-    <p class="abstract-text">
-      Accurately detecting and localizing hallucinations is a critical task to ensure the high accuracy of image captions. In the era of Multimodal Large Language Models (MLLMs), captions have evolved from brief sentences into comprehensive narratives, often exceeding hundreds of words. This shift exponentially increases the challenge: models must now pinpoint specific erroneous spans or words within extensive contexts, rather than merely flagging response-level inconsistencies. However, existing benchmarks lack the fine-grained granularity and domain diversity required to evaluate this capability. To bridge this gap, we introduce <strong>DetailVerifyBench</strong>, a rigorous benchmark comprising 1,000 high-quality images across five distinct domains. With an average caption length of over 200 words and dense, token-level annotations of multiple hallucination types, it stands as the most challenging benchmark for precise hallucination localization in the long image caption to date.
-    </p>
+    <div class="abstract-row">
+      <p class="abstract-text">
+        Accurately detecting and localizing hallucinations is a critical task to ensure the high accuracy of image captions. In the era of Multimodal Large Language Models (MLLMs), captions have evolved from brief sentences into comprehensive narratives, often exceeding hundreds of words. This shift exponentially increases the challenge: models must now pinpoint specific erroneous spans or words within extensive contexts, rather than merely flagging response-level inconsistencies. However, existing benchmarks lack the fine-grained granularity and domain diversity required to evaluate this capability. To bridge this gap, we introduce <strong>DetailVerifyBench</strong>, a rigorous benchmark comprising 1,000 high-quality images across five distinct domains. With an average caption length of over 200 words and dense, token-level annotations of multiple hallucination types, it stands as the most challenging benchmark for precise hallucination localization in the long image caption to date.
+      </p>
+      <div class="wordcloud-wrap" id="wordcloud"></div>
+    </div>
   </div>
 </section>
 
@@ -444,6 +447,84 @@ function sortBy(colIdx) {
   sortColIdx = colIdx;
   render();
 }
+
+// ─── Word Cloud ──────────────────────────────────────────────────────────────
+(function() {
+  const words = [
+    ["right",91],["left",81],["white",48],["blue",35],["black",23],["red",18],
+    ["pink",18],["serif",14],["two",12],["dark",12],["behind",11],["grey",10],
+    ["brown",10],["wooden",10],["three",9],["safari",9],["center",8],["orange",8],
+    ["four",7],["sans-serif",7],["circular",6],["vertical",6],["purple",6],
+    ["fair",6],["gold",6],["below",6],["green",6],["shoulder-length",6],
+    ["yellow",6],["centered",6],["light blue",5],["neutral",5],["beige",4],
+    ["bottom",4],["metal",4],["wall",4],["forward",4],["five",3],["next to",3],
+    ["downward",3],["leather",3],["horizontal",3],["clear",3],["chest",3],
+    ["right side",3],["to the left",3],["red line",2],["silver",2],["bold",2],
+    ["maroon",2],["curly",2],["diagonal",2],["above",2],["stone",2]
+  ];
+
+  const palette = ['#2563eb','#7c3aed','#0ea5e9','#ec4899','#f97316','#22c55e','#ef4444','#6366f1','#14b8a6','#e11d48'];
+  const container = document.getElementById('wordcloud');
+  if (!container) return;
+
+  const maxCount = words[0][1];
+  const placed = [];
+
+  function overlap(x, y, w, h) {
+    for (const r of placed) {
+      if (x < r.x + r.w + 6 && x + w + 6 > r.x && y < r.y + r.h + 4 && y + h + 4 > r.y) return true;
+    }
+    return false;
+  }
+
+  function layout() {
+    container.innerHTML = '';
+    placed.length = 0;
+    const cw = container.offsetWidth, ch = container.offsetHeight;
+    if (!cw || !ch) return;
+
+    words.forEach(([text, count], idx) => {
+      const ratio = count / maxCount;
+      const size = Math.round(12 + ratio * 26);
+      const el = document.createElement('span');
+      el.className = 'wc-word';
+      el.textContent = text;
+      el.style.fontSize = size + 'px';
+      el.style.color = palette[idx % palette.length];
+      el.style.animationName = 'wcFloat';
+      el.style.animationDuration = (2.5 + Math.random() * 2) + 's';
+      el.style.animationTimingFunction = 'ease-in-out';
+      el.style.animationIterationCount = 'infinite';
+      el.style.animationDelay = (Math.random() * -4) + 's';
+      container.appendChild(el);
+
+      const ew = el.offsetWidth, eh = el.offsetHeight;
+      let px, py, ok = false;
+      // spiral placement from center
+      const cx = cw / 2 - ew / 2, cy = ch / 2 - eh / 2;
+      for (let r = 0; r < Math.max(cw, ch); r += 4) {
+        for (let a = 0; a < 6.28; a += 0.4) {
+          px = Math.round(cx + r * Math.cos(a));
+          py = Math.round(cy + r * Math.sin(a));
+          if (px >= 4 && py >= 4 && px + ew <= cw - 4 && py + eh <= ch - 4 && !overlap(px, py, ew, eh)) {
+            ok = true; break;
+          }
+        }
+        if (ok) break;
+      }
+      if (ok) {
+        el.style.left = px + 'px';
+        el.style.top = py + 'px';
+        placed.push({x: px, y: py, w: ew, h: eh});
+      } else {
+        el.remove();
+      }
+    });
+  }
+
+  layout();
+  window.addEventListener('resize', layout);
+})();
 
 // ─── Pipeline step slider ─────────────────────────────────────────────────────
 const pipeImages = ['data/images/Pipeline_step1.png','data/images/Pipeline_step2.png','data/images/Pipeline_step3.png'];
