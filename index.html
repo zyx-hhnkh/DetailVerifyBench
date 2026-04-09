@@ -167,7 +167,7 @@
         <select id="ex-domain-sel" class="ex-select" onchange="setExDomain(this.value)">
           <option value="Movie">Movie</option>
           <option value="Poster">Poster</option>
-          <option value="Nature">Nature</option>
+          <option value="Nature">Real</option>
           <option value="Chart">Chart</option>
           <option value="UI">GUI</option>
         </select>
@@ -204,6 +204,8 @@
 <section id="injection-demo" class="section">
   <div class="container">
     <h2>Adversarial Injection Pipeline</h2>
+  </div>
+  <div class="ex-viewer-outer">
     <div class="inj-controls">
       <select id="inj-example-sel" class="ex-select" onchange="setInjExample(this.value)"></select>
       <div class="inj-round-tabs">
@@ -224,19 +226,21 @@
   </div>
 </section>
 
-<!-- ===== Detection Visualization ===== -->
+<!-- ===== Model Localization Result ===== -->
 <section id="detection-vis" class="section section-alt">
   <div class="container">
     <h2>Model Localization Result</h2>
+  </div>
+  <div class="ex-viewer-outer">
     <div class="det-controls">
-      <div class="det-mode-toggle">
+      <div class="ex-mode-toggle">
         <button class="ex-mode active" id="det-btn-real" onclick="setDetMode('real')">Real</button>
         <button class="ex-mode" id="det-btn-synth" onclick="setDetMode('synthetic')">Synthetic</button>
       </div>
       <select id="det-domain-sel" class="ex-select" onchange="setDetDomain(this.value)">
         <option value="Movie">Movie</option>
         <option value="Poster">Poster</option>
-        <option value="Nature">Nature</option>
+        <option value="Nature">Real</option>
         <option value="Chart">Chart</option>
         <option value="UI">GUI</option>
       </select>
@@ -575,6 +579,9 @@ function sortBy(colIdx) {
 
   layout();
   window.addEventListener('resize', layout);
+  // Re-layout after fonts/images load in case initial dimensions were 0
+  window.addEventListener('load', layout);
+  if (document.fonts) document.fonts.ready.then(layout);
 })();
 
 // ─── Injection Demo ──────────────────────────────────────────────────────────
@@ -1009,7 +1016,7 @@ function renderViewer() {
   if (!exCurrent) { viewer.innerHTML = ''; return; }
   const src = getExSrc();
   const dc = domainColors[exCurrent.category] || '#6b7280';
-  const domainLabel = exCurrent.category === 'UI' ? 'GUI' : exCurrent.category;
+  const domainLabel = exCurrent.category === 'UI' ? 'GUI' : exCurrent.category === 'Nature' ? 'Real' : exCurrent.category;
   viewer.innerHTML =
     '<div class="ex-viewer-card">'
     + '<div class="ex-viewer-img">'
