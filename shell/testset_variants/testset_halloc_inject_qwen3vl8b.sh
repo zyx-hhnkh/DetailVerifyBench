@@ -1,8 +1,8 @@
 cd "$(dirname "$0")/../.."
 
-JSONL_DIR=/mnt/sdc/zhangyuxuan/halloc_inject/halloc_inject_results.jsonl
-IMAGE_DIR=./ms_data/test
-MODEL_DIR=/mnt/sdc/model_zoo/Qwen3-VL-8B-Thinking
+JSONL_DIR=PATH_TO_HALLOC_INJECT_JSONL  # path to halloc inject jsonl
+IMAGE_DIR=PATH_TO_IMAGE_DIR        # path to test image directory
+MODEL_DIR=PATH_TO_MODEL          # path to local model directory
 
 CUDA_VISIBLE_DEVICES=1 python run_pipeline.py \
     --mode offline \

@@ -1,6 +1,7 @@
 cd "$(dirname "$0")/../.."
 
-
+# path to experiment output directory
+# path to test image directory
 python visualization/visualize_results.py \
-    --exp_dir /mnt/sdc/zhangyuxuan/Hallucination-Detection-Benchmark/processing_data_zyx_260317 \
-    --image_root_dir ./ms_data/test
+    --exp_dir PATH_TO_EXP_DIR \
+    --image_root_dir PATH_TO_IMAGE_DIR

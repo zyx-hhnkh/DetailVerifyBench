@@ -1,7 +1,7 @@
 cd "$(dirname "$0")/../.."
 
-JSONL_DIR=/mnt/sdc/Hallucination_DATA/Hallucination_Bench/testset_geminiflash_vs_gpt52_n2.jsonl
-IMAGE_DIR=./ms_data/test
+JSONL_DIR=PATH_TO_SYNTHETIC_JSONL  # path to synthetic hallucination test jsonl
+IMAGE_DIR=PATH_TO_IMAGE_DIR        # path to test image directory
 
 CUDA_VISIBLE_DEVICES=1 python run_pipeline.py \
     --mode advi \

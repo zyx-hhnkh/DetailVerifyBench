@@ -1,8 +1,8 @@
 cd "$(dirname "$0")/../.."
 
-MODEL_DIR=/mnt/sdc/model_zoo/Qwen3-VL-8B-Thinking
-JSONL_DIR=./ms_data/test/test_gt_withtag.jsonl
-IMAGE_DIR=./ms_data/test
+MODEL_DIR=PATH_TO_MODEL          # path to local model directory
+JSONL_DIR=PATH_TO_REAL_JSONL       # path to real hallucination test jsonl
+IMAGE_DIR=PATH_TO_IMAGE_DIR        # path to test image directory
 
 CUDA_VISIBLE_DEVICES=0 python run_pipeline.py \
     --mode offline \

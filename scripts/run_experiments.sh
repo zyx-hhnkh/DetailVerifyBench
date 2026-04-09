@@ -10,7 +10,7 @@ EXP_SUFFIX="$4"  # 例如 "think-20250113"
 set -e # 报错即停
 
 # 数据根目录
-DATA_ROOT="/mnt/sdc/zhangyuxuan/Constructive-Decoding/results-V2"
+DATA_ROOT=PATH_TO_DATA_ROOT  # root directory for experiment result jsonl files
 # 基础实验名: Qwen3-VL-8B-think-20250113
 BASE_EXP_NAME="${MODEL_NAME}-${EXP_SUFFIX}"
 
@@ -24,8 +24,8 @@ echo ">> 开始执行实验序列... Exp Name Prefix: ${BASE_EXP_NAME}"
 # 实验 0: Ours
 echo "Running Exp 0: Ours..."
 CUDA_VISIBLE_DEVICES=1 python run_pipeline.py \
-    --image_dir "./ms_data/test" \
-    --input_json "./ms_data/test" \
+    --image_dir PATH_TO_IMAGE_DIR \
+    --input_json PATH_TO_REAL_JSONL \
     --exp_name "${BASE_EXP_NAME}-Ours" \
     ${COMMON_ARGS}
 
@@ -33,7 +33,7 @@ CUDA_VISIBLE_DEVICES=1 python run_pipeline.py \
 echo "Running Exp 1: Baseline..."
 CUDA_VISIBLE_DEVICES=1 python run_pipeline.py \
     --online \
-    --image_dir "./ms_data/test" \
+    --image_dir PATH_TO_IMAGE_DIR \
     --input_json \
         "${DATA_ROOT}/ChartX_test300/no_pos_inject_temp0_2.jsonl" \
         "${DATA_ROOT}/DOCCI_test300/no_pos_inject_temp0_2.jsonl" \
@@ -44,7 +44,7 @@ CUDA_VISIBLE_DEVICES=1 python run_pipeline.py \
 echo "Running Exp 2: PI (Original)..."
 CUDA_VISIBLE_DEVICES=1 python run_pipeline.py \
     --online \
-    --image_dir "./ms_data/test" \
+    --image_dir PATH_TO_IMAGE_DIR \
     --input_json \
         "${DATA_ROOT}/ChartX_test300/ORIGINAL-clause_threshold5_0_top6_temp0_2.jsonl" \
         "${DATA_ROOT}/DOCCI_test300/ORIGINAL-clause_threshold5_0_top6_temp0_2.jsonl" \
@@ -55,7 +55,7 @@ CUDA_VISIBLE_DEVICES=1 python run_pipeline.py \
 echo "Running Exp 3: Halsum..."
 CUDA_VISIBLE_DEVICES=1 python run_pipeline.py \
     --online \
-    --image_dir "./ms_data/test" \
+    --image_dir PATH_TO_IMAGE_DIR \
     --input_json \
         "${DATA_ROOT}/ChartX_test300/clause_threshold5_0_halsum450_temp0_2.jsonl" \
         "${DATA_ROOT}/DOCCI_test300/clause_threshold5_0_halsum532_temp0_2.jsonl" \

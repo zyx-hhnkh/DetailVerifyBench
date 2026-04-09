@@ -6,13 +6,13 @@
 export PYTORCH_ALLOC_CONF=expandable_segments:True
 export CUDA_VISIBLE_DEVICES=0
 
-MODEL_PATH="/mnt/sdc/model_zoo/Qwen3-VL-8B-Instruct"
+MODEL_PATH=PATH_TO_MODEL          # path to local model directory
 MODEL_SELECT="Qwen3-VL-8B-Instruct"
-IMAGE_DIR="./ms_data/test"
+IMAGE_DIR=PATH_TO_IMAGE_DIR        # path to test image directory
 
 # ============ 幻觉检测可视化 (Normal Mode) ============
-INPUT_FILE="./processing_data_zyx_260317/testset_gpt54_think_0326/inference_results/tested_model_output_seed_42_filtered.json"
-OUTPUT_DIR="./processing_data_zyx_260317/testset_gpt54_think_0326/visualizations_perlayer"
+INPUT_FILE=PATH_TO_INFERENCE_RESULT_JSON  # path to filtered inference result json
+OUTPUT_DIR=PATH_TO_OUTPUT_DIR              # path to output visualization directory
 
 python visualization/visualize_attention.py \
     --model_path ${MODEL_PATH} \

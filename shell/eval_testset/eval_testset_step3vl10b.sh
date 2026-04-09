@@ -1,8 +1,8 @@
 cd "$(dirname "$0")/../.."
 
-MODEL_DIR=/mnt/sdc/model_zoo/Step3-VL-10B
-JSONL_DIR=./ms_data/test/test_gt_withtag.jsonl
-IMAGE_DIR=./ms_data/test
+MODEL_DIR=PATH_TO_MODEL          # path to local model directory
+JSONL_DIR=PATH_TO_REAL_JSONL       # path to real hallucination test jsonl
+IMAGE_DIR=PATH_TO_IMAGE_DIR        # path to test image directory
 
 CUDA_VISIBLE_DEVICES=1 python run_pipeline.py \
     --mode offline \
@@ -10,6 +10,6 @@ CUDA_VISIBLE_DEVICES=1 python run_pipeline.py \
     --image_dir $IMAGE_DIR \
     --input_json $JSONL_DIR \
     --model_select Step3-VL-10B \
-    --exp_name testset_Step3-VL-10B_think_0317 \
+    --exp_name testset_Step3-VL-10B_think \
     --use_think \
     --work_dir ./

@@ -18,7 +18,7 @@ fi
 
 # ================= 路径配置 =================
 # 请确保这里的模型根目录是正确的
-MODEL_BASE_DIR="/mnt/sdc/model_zoo"
+MODEL_BASE_DIR=PATH_TO_MODEL_ZOO  # base directory containing all model directories
 FULL_MODEL_PATH="${MODEL_BASE_DIR}/${INPUT_MODEL_NAME}"
 
 if [ ! -d "$FULL_MODEL_PATH" ]; then
@@ -39,7 +39,7 @@ if [ "$IS_THINK" == "true" ]; then
     MODE_TAG="think"
 else
     # 关闭模式: 参数留空，标记为 nothink
-    CMD_ARG="" 
+    CMD_ARG=""
     MODE_TAG="nothink"
 fi
 

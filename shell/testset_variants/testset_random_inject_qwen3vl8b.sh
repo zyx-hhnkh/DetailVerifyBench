@@ -1,8 +1,8 @@
 cd "$(dirname "$0")/../.."
 
-JSONL_DIR=/mnt/sdc/zhangyuxuan/random_inject/test_gt_withtag_end_injected.jsonl
-IMAGE_DIR=./ms_data/test
-MODEL_DIR=/mnt/sdc/model_zoo/Qwen3-VL-8B-Thinking
+JSONL_DIR=PATH_TO_RANDOM_INJECT_JSONL  # path to random inject jsonl
+IMAGE_DIR=PATH_TO_IMAGE_DIR        # path to test image directory
+MODEL_DIR=PATH_TO_MODEL          # path to local model directory
 
 CUDA_VISIBLE_DEVICES=1 python run_pipeline.py \
     --mode offline \
