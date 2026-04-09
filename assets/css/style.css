@@ -369,9 +369,10 @@ tbody tr:hover td { background: #f8faff; }
 }
 
 .inj-panel-img {
+  flex: none;
   width: 40%;
-  flex-shrink: 0;
   background: #f8faff;
+  display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
