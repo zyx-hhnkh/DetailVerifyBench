@@ -654,13 +654,17 @@ function renderInjViewer() {
     '<div class="inj-panel inj-panel-img">'
     + '<img src="' + injCurrent.image + '" alt="' + escHtml(injCurrent.filename) + '" loading="lazy">'
     + '</div>'
-    + '<div class="inj-panel inj-panel-text">'
-    + '<div class="inj-panel-title">Injected Description (Round ' + (round+1) + ')</div>'
-    + '<div class="inj-panel-body">' + allMarked + '</div>'
+    + '<div class="inj-right">'
+    + '<div class="inj-texts">'
+    +   '<div class="inj-panel inj-panel-text">'
+    +   '<div class="inj-panel-title">Injected Description (Round ' + (round+1) + ')</div>'
+    +   '<div class="inj-panel-body">' + allMarked + '</div>'
+    +   '</div>'
+    +   '<div class="inj-panel inj-panel-text">'
+    +   '<div class="inj-panel-title">Detection Result (Round ' + (round+1) + ')</div>'
+    +   '<div class="inj-panel-body">' + afterDetect + '</div>'
+    +   '</div>'
     + '</div>'
-    + '<div class="inj-panel inj-panel-text">'
-    + '<div class="inj-panel-title">Detection Result (Round ' + (round+1) + ')</div>'
-    + '<div class="inj-panel-body">' + afterDetect + '</div>'
     + statsHtml
     + legendHtml
     + '</div>';
