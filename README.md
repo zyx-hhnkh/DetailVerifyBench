@@ -1,5 +1,9 @@
 # DetailVerifyBench
 
+[![Project Page](https://img.shields.io/badge/Project-Page-blue)](https://zyx-hhnkh.github.io/DetailVerifyBench)
+[![Paper](https://img.shields.io/badge/Paper-arXiv-red)](https://arxiv.org/abs/2604.05623)
+[![Dataset](https://img.shields.io/badge/Dataset-HuggingFace-yellow)](https://huggingface.co/datasets/zyxhhnkh/DetailVerifyBench)
+
 A comprehensive evaluation framework for detecting hallucinations in Vision-Language Models (VLMs). This benchmark measures how accurately models can identify false or incorrect descriptions in image captions at the token level.
 
 ## Features
