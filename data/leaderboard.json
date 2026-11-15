@@ -1,12 +1,13 @@
 {
-  "_comment": "Real: revised word-level real-test results (all rates in percent). Synthetic: public v1 token-level results (rates in [0, 1]).",
+  "_comment": "Leaderboard data for DetailVerifyBench. Sources: table3.txt (main results) and table_domain.txt (domain-level results). Domain columns store F1 scores. Dimension columns store token-level recall. Real hallucinations have 8 dimension types (no Scene/Camera). Synthetic hallucinations have 10 dimension types.",
   "models": [
     {
       "model": "GLM-4.6V-Flash",
       "type": "open",
       "real": {
-        "p": 4.55, "r": 0.40, "f1": 0.74, "fpr": 13.14, "zor": 67.74,
-        "dim": { "num": 0.00, "clr": 0.00, "cat": 1.21, "shp": 0.54, "mat": 0.00, "spat": 0.00, "ocr": 0.56, "other": 0.73 }
+        "p": 0.01, "r": 0.01, "f1": 0.01,
+        "dim": { "num": 0.00, "clr": 0.00, "cat": 0.01, "shp": 0.01, "mat": 0.00, "spat": 0.00, "ocr": 0.01, "other": 0.01 },
+        "domain": { "chart": 0.00, "movie": 0.00, "nature": 0.01, "poster": 0.00, "gui": 0.02 }
       },
       "synthetic": {
         "p": 0.41, "r": 0.22, "f1": 0.26,
@@ -18,8 +19,9 @@
       "model": "Step3-VL-10B",
       "type": "open",
       "real": {
-        "p": 4.81, "r": 3.92, "f1": 4.32, "fpr": 29.58, "zor": 35.11,
-        "dim": { "num": 2.69, "clr": 2.92, "cat": 11.74, "shp": 4.30, "mat": 11.86, "spat": 2.14, "ocr": 5.32, "other": 3.11 }
+        "p": 0.03, "r": 0.04, "f1": 0.03,
+        "dim": { "num": 0.03, "clr": 0.04, "cat": 0.13, "shp": 0.07, "mat": 0.13, "spat": 0.04, "ocr": 0.15, "other": 0.04 },
+        "domain": { "chart": 0.02, "movie": 0.03, "nature": 0.01, "poster": 0.02, "gui": 0.06 }
       },
       "synthetic": {
         "p": 0.36, "r": 0.48, "f1": 0.35,
@@ -28,19 +30,12 @@
       }
     },
     {
-      "model": "Qwen3-VL-8B-Instruct",
-      "type": "open",
-      "real": {
-        "p": 13.79, "r": 0.81, "f1": 1.52, "fpr": 8.13, "zor": 38.89,
-        "dim": { "num": 0.00, "clr": 0.00, "cat": 1.62, "shp": 0.00, "mat": 0.00, "spat": 0.00, "ocr": 6.72, "other": 0.00 }
-      }
-    },
-    {
       "model": "Qwen3-VL-8B-Thinking",
       "type": "open",
       "real": {
-        "p": 4.41, "r": 2.77, "f1": 3.40, "fpr": 37.23, "zor": 62.99,
-        "dim": { "num": 1.35, "clr": 2.92, "cat": 2.02, "shp": 9.14, "mat": 1.69, "spat": 1.18, "ocr": 3.92, "other": 2.93 }
+        "p": 0.04, "r": 0.03, "f1": 0.03,
+        "dim": { "num": 0.02, "clr": 0.04, "cat": 0.03, "shp": 0.15, "mat": 0.02, "spat": 0.01, "ocr": 0.10, "other": 0.03 },
+        "domain": { "chart": 0.02, "movie": 0.02, "nature": 0.02, "poster": 0.04, "gui": 0.06 }
       },
       "synthetic": {
         "p": 0.45, "r": 0.47, "f1": 0.39,
@@ -52,8 +47,9 @@
       "model": "Qwen3.5-9B",
       "type": "open",
       "real": {
-        "p": 16.15, "r": 6.92, "f1": 9.69, "fpr": 26.90, "zor": 31.06,
-        "dim": { "num": 6.73, "clr": 7.87, "cat": 10.12, "shp": 9.14, "mat": 20.34, "spat": 3.00, "ocr": 9.80, "other": 7.60 }
+        "p": 0.10, "r": 0.09, "f1": 0.08,
+        "dim": { "num": 0.16, "clr": 0.10, "cat": 0.11, "shp": 0.12, "mat": 0.28, "spat": 0.05, "ocr": 0.24, "other": 0.11 },
+        "domain": { "chart": 0.07, "movie": 0.04, "nature": 0.06, "poster": 0.07, "gui": 0.14 }
       },
       "synthetic": {
         "p": 0.66, "r": 0.60, "f1": 0.58,
@@ -65,8 +61,9 @@
       "model": "Qwen3.5-35B-A3B",
       "type": "open",
       "real": {
-        "p": 9.79, "r": 1.50, "f1": 2.60, "fpr": 12.44, "zor": 50.00,
-        "dim": { "num": 1.35, "clr": 1.80, "cat": 0.81, "shp": 0.54, "mat": 1.69, "spat": 0.75, "ocr": 3.08, "other": 1.74 }
+        "p": 0.12, "r": 0.11, "f1": 0.10,
+        "dim": { "num": 0.18, "clr": 0.16, "cat": 0.12, "shp": 0.12, "mat": 0.26, "spat": 0.09, "ocr": 0.34, "other": 0.13 },
+        "domain": { "chart": 0.08, "movie": 0.06, "nature": 0.07, "poster": 0.11, "gui": 0.18 }
       },
       "synthetic": {
         "p": 0.55, "r": 0.64, "f1": 0.52,
@@ -78,8 +75,9 @@
       "model": "Qwen3.5-397B-A17B",
       "type": "open",
       "real": {
-        "p": 16.04, "r": 19.16, "f1": 17.47, "fpr": 48.38, "zor": 29.89,
-        "dim": { "num": 22.87, "clr": 20.00, "cat": 19.03, "shp": 23.12, "mat": 37.29, "spat": 13.72, "ocr": 26.05, "other": 19.51 }
+        "p": 0.15, "r": 0.16, "f1": 0.13,
+        "dim": { "num": 0.26, "clr": 0.22, "cat": 0.22, "shp": 0.21, "mat": 0.37, "spat": 0.14, "ocr": 0.38, "other": 0.21 },
+        "domain": { "chart": 0.09, "movie": 0.12, "nature": 0.08, "poster": 0.16, "gui": 0.21 }
       },
       "synthetic": {
         "p": 0.62, "r": 0.70, "f1": 0.61,
@@ -88,11 +86,12 @@
       }
     },
     {
-      "model": "Kimi-K2.5",
+      "model": "KIMI-K2.5",
       "type": "open",
       "real": {
-        "p": 18.92, "r": 8.07, "f1": 11.31, "fpr": 44.82, "zor": 47.22,
-        "dim": { "num": 4.48, "clr": 7.64, "cat": 8.50, "shp": 14.52, "mat": 10.17, "spat": 5.47, "ocr": 15.69, "other": 8.61 }
+        "p": 0.11, "r": 0.08, "f1": 0.08,
+        "dim": { "num": 0.05, "clr": 0.09, "cat": 0.09, "shp": 0.11, "mat": 0.10, "spat": 0.07, "ocr": 0.28, "other": 0.09 },
+        "domain": { "chart": 0.08, "movie": 0.05, "nature": 0.04, "poster": 0.10, "gui": 0.14 }
       },
       "synthetic": {
         "p": 0.69, "r": 0.57, "f1": 0.58,
@@ -101,11 +100,26 @@
       }
     },
     {
-      "model": "Seed2.0-pro",
+      "model": "Qwen3-VL-8B+VCD",
+      "type": "open",
+      "real": {
+        "p": 0.02, "r": 0.02, "f1": 0.02,
+        "dim": { "num": 0.02, "clr": 0.04, "cat": 0.05, "shp": 0.01, "mat": 0.03, "spat": 0.01, "ocr": 0.01, "other": 0.03 },
+        "domain": { "chart": 0.00, "movie": 0.03, "nature": 0.00, "poster": 0.02, "gui": 0.01 }
+      },
+      "synthetic": {
+        "p": 0.25, "r": 0.09, "f1": 0.12,
+        "dim": { "num": 0.03, "clr": 0.13, "cat": 0.07, "shp": 0.10, "mat": 0.17, "spat": 0.03, "ocr": 0.04, "scene": 0.14, "cam": 0.07, "other": 0.10 },
+        "domain": { "chart": 0.04, "movie": 0.25, "nature": 0.10, "poster": 0.09, "gui": 0.10 }
+      }
+    },
+    {
+      "model": "Seed2.0-Pro",
       "type": "closed",
       "real": {
-        "p": 18.12, "r": 18.90, "f1": 18.50, "fpr": 41.22, "zor": 29.58,
-        "dim": { "num": 21.52, "clr": 13.26, "cat": 20.65, "shp": 14.52, "mat": 45.76, "spat": 16.51, "ocr": 26.61, "other": 20.88 }
+        "p": 0.13, "r": 0.12, "f1": 0.11,
+        "dim": { "num": 0.21, "clr": 0.14, "cat": 0.23, "shp": 0.10, "mat": 0.46, "spat": 0.16, "ocr": 0.35, "other": 0.20 },
+        "domain": { "chart": 0.06, "movie": 0.12, "nature": 0.06, "poster": 0.13, "gui": 0.17 }
       },
       "synthetic": {
         "p": 0.59, "r": 0.68, "f1": 0.57,
@@ -114,11 +128,12 @@
       }
     },
     {
-      "model": "MiMo-V2-Pro",
+      "model": "Mimo-v2-Pro",
       "type": "closed",
       "real": {
-        "p": 2.10, "r": 0.84, "f1": 1.19, "fpr": 18.87, "zor": 86.41,
-        "dim": { "num": 2.69, "clr": 0.67, "cat": 0.00, "shp": 0.54, "mat": 0.00, "spat": 1.29, "ocr": 0.84, "other": 0.37 }
+        "p": 0.01, "r": 0.01, "f1": 0.01,
+        "dim": { "num": 0.03, "clr": 0.01, "cat": 0.00, "shp": 0.01, "mat": 0.00, "spat": 0.01, "ocr": 0.01, "other": 0.00 },
+        "domain": { "chart": 0.01, "movie": 0.00, "nature": 0.00, "poster": 0.01, "gui": 0.00 }
       },
       "synthetic": {
         "p": 0.06, "r": 0.03, "f1": 0.03,
@@ -130,8 +145,9 @@
       "model": "GPT-5.2",
       "type": "closed",
       "real": {
-        "p": 5.66, "r": 10.69, "f1": 7.41, "fpr": 42.90, "zor": 58.21,
-        "dim": { "num": 9.42, "clr": 7.87, "cat": 10.12, "shp": 6.99, "mat": 18.64, "spat": 9.00, "ocr": 18.77, "other": 11.36 }
+        "p": 0.06, "r": 0.08, "f1": 0.05,
+        "dim": { "num": 0.09, "clr": 0.07, "cat": 0.10, "shp": 0.07, "mat": 0.19, "spat": 0.09, "ocr": 0.27, "other": 0.12 },
+        "domain": { "chart": 0.04, "movie": 0.05, "nature": 0.03, "poster": 0.05, "gui": 0.10 }
       },
       "synthetic": {
         "p": 0.46, "r": 0.53, "f1": 0.43,
@@ -143,8 +159,9 @@
       "model": "GPT-5.4",
       "type": "closed",
       "real": {
-        "p": 7.11, "r": 11.47, "f1": 8.78, "fpr": 44.30, "zor": 55.44,
-        "dim": { "num": 10.31, "clr": 6.07, "cat": 10.12, "shp": 8.60, "mat": 8.47, "spat": 10.93, "ocr": 19.33, "other": 12.09 }
+        "p": 0.07, "r": 0.09, "f1": 0.07,
+        "dim": { "num": 0.13, "clr": 0.07, "cat": 0.11, "shp": 0.11, "mat": 0.09, "spat": 0.12, "ocr": 0.26, "other": 0.12 },
+        "domain": { "chart": 0.05, "movie": 0.06, "nature": 0.02, "poster": 0.08, "gui": 0.12 }
       },
       "synthetic": {
         "p": 0.43, "r": 0.61, "f1": 0.45,
@@ -153,11 +170,12 @@
       }
     },
     {
-      "model": "Gemini-3-Pro-Preview",
+      "model": "Gemini3-Pro-Preview",
       "type": "closed",
       "real": {
-        "p": 16.78, "r": 10.26, "f1": 12.73, "fpr": 41.67, "zor": 30.13,
-        "dim": { "num": 12.11, "clr": 7.19, "cat": 9.72, "shp": 11.83, "mat": 15.25, "spat": 7.72, "ocr": 26.05, "other": 7.60 }
+        "p": 0.13, "r": 0.10, "f1": 0.10,
+        "dim": { "num": 0.12, "clr": 0.10, "cat": 0.13, "shp": 0.13, "mat": 0.17, "spat": 0.09, "ocr": 0.40, "other": 0.10 },
+        "domain": { "chart": 0.10, "movie": 0.06, "nature": 0.07, "poster": 0.07, "gui": 0.19 }
       },
       "synthetic": {
         "p": 0.70, "r": 0.66, "f1": 0.64,
@@ -169,8 +187,9 @@
       "model": "Gemini-3.1-Pro-Preview",
       "type": "closed",
       "real": {
-        "p": 19.66, "r": 15.91, "f1": 17.59, "fpr": 45.84, "zor": 35.33,
-        "dim": { "num": 17.04, "clr": 10.34, "cat": 17.00, "shp": 22.04, "mat": 22.03, "spat": 12.65, "ocr": 28.29, "other": 14.56 }
+        "p": 0.16, "r": 0.12, "f1": 0.12,
+        "dim": { "num": 0.17, "clr": 0.11, "cat": 0.17, "shp": 0.21, "mat": 0.22, "spat": 0.13, "ocr": 0.37, "other": 0.15 },
+        "domain": { "chart": 0.10, "movie": 0.08, "nature": 0.07, "poster": 0.15, "gui": 0.18 }
       },
       "synthetic": {
         "p": 0.76, "r": 0.66, "f1": 0.66,
@@ -182,22 +201,14 @@
       "model": "Claude-Opus-4.6",
       "type": "closed",
       "real": {
-        "p": 13.94, "r": 7.72, "f1": 9.94, "fpr": 42.86, "zor": 59.48,
-        "dim": { "num": 5.83, "clr": 6.07, "cat": 9.72, "shp": 4.84, "mat": 3.39, "spat": 5.14, "ocr": 22.41, "other": 6.41 }
+        "p": 0.09, "r": 0.07, "f1": 0.07,
+        "dim": { "num": 0.06, "clr": 0.08, "cat": 0.12, "shp": 0.06, "mat": 0.03, "spat": 0.06, "ocr": 0.30, "other": 0.08 },
+        "domain": { "chart": 0.07, "movie": 0.05, "nature": 0.03, "poster": 0.07, "gui": 0.13 }
       },
       "synthetic": {
         "p": 0.22, "r": 0.07, "f1": 0.09,
         "dim": { "num": 0.09, "clr": 0.06, "cat": 0.07, "shp": 0.07, "mat": 0.05, "spat": 0.06, "ocr": 0.10, "scene": 0.05, "cam": 0.05, "other": 0.10 },
         "domain": { "chart": 0.07, "movie": 0.12, "nature": 0.03, "poster": 0.11, "gui": 0.13 }
-      }
-    },
-    {
-      "model": "Qwen3-VL-8B+VCD",
-      "type": "open",
-      "synthetic": {
-        "p": 0.25, "r": 0.09, "f1": 0.12,
-        "dim": { "num": 0.03, "clr": 0.13, "cat": 0.07, "shp": 0.10, "mat": 0.17, "spat": 0.03, "ocr": 0.04, "scene": 0.14, "cam": 0.07, "other": 0.10 },
-        "domain": { "chart": 0.04, "movie": 0.25, "nature": 0.10, "poster": 0.09, "gui": 0.10 }
       }
     }
   ]

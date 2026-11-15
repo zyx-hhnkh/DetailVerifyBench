@@ -1,52 +1,44 @@
 {
-  "split": "real",
-  "total": {
-    "images": 1000,
-    "avg_tokens": 205.8,
-    "hallucination_spans": 1818,
-    "hallucinated_caption_rate_percent": 62.3,
-    "hallucination_categories": 8
-  },
   "domains": [
     {
       "name": "GUI",
-      "source": "ScreenSpot-Pro",
+      "source": "Screenspot Pro",
       "images": 200,
-      "avg_tokens": 197.0,
-      "hallucination_spans": 299,
-      "hallucinated_caption_rate_percent": 67.0
+      "avg_length": 196,
+      "hallucination_words": 425,
+      "hallucination_rate": "68%"
     },
     {
       "name": "Nature",
       "source": "DOCCI",
       "images": 200,
-      "avg_tokens": 162.5,
-      "hallucination_spans": 71,
-      "hallucinated_caption_rate_percent": 26.5
+      "avg_length": 148,
+      "hallucination_words": 173,
+      "hallucination_rate": "26%"
     },
     {
       "name": "Chart",
-      "source": "Apache ECharts examples",
+      "source": "Echarts Examples",
       "images": 200,
-      "avg_tokens": 198.1,
-      "hallucination_spans": 207,
-      "hallucinated_caption_rate_percent": 40.5
+      "avg_length": 197,
+      "hallucination_words": 322,
+      "hallucination_rate": "41%"
     },
     {
       "name": "Movie",
-      "source": "CineTechBench, ShotBench",
+      "source": "CineTechBench + ShotBench",
       "images": 200,
-      "avg_tokens": 214.3,
-      "hallucination_spans": 622,
-      "hallucinated_caption_rate_percent": 87.0
+      "avg_length": 214,
+      "hallucination_words": 1094,
+      "hallucination_rate": "88%"
     },
     {
       "name": "Poster",
-      "source": "IMDb, Movie Poster 100k",
+      "source": "IMDB + Movie Poster 100k",
       "images": 200,
-      "avg_tokens": 257.0,
-      "hallucination_spans": 619,
-      "hallucinated_caption_rate_percent": 90.5
+      "avg_length": 257,
+      "hallucination_words": 1235,
+      "hallucination_rate": "90%"
     }
   ]
 }

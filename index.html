@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DetailVerifyBench</title>
-  <link rel="stylesheet" href="assets/css/style.css?v=word-localization">
+  <link rel="stylesheet" href="assets/css/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
@@ -33,9 +33,9 @@
       <span><sup>*</sup> Corresponding author</span>
     </div>
     <div class="hero-buttons">
-      <a href="https://arxiv.org/abs/2604.05623v1" target="_blank" rel="noopener" class="btn">
+      <a href="https://arxiv.org/abs/2604.05623" target="_blank" rel="noopener" class="btn">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-        arXiv v1
+        Paper
       </a>
       <a href="https://huggingface.co/datasets/zyxhhnkh/DetailVerifyBench" target="_blank" rel="noopener" class="btn">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
@@ -49,7 +49,6 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
         Leaderboard
       </a>
-      <a href="#trainable-baseline" class="btn">Training Baseline</a>
     </div>
   </div>
 </header>
@@ -60,16 +59,12 @@
     <h2>Abstract</h2>
     <div class="abstract-row">
       <p class="abstract-text">
-        <strong>DetailVerifyBench</strong> measures whether multimodal models can pinpoint the words in a long caption that conflict with the image. It includes 1,000 image–caption pairs across five visual domains. Captions average over 200 words and human annotators mark naturally occurring errors in eight categories. We evaluate 15 general-purpose models and train a Qwen3-VL-4B baseline using synthetic examples refined with feedback from a text-only verifier.
+        Accurately detecting and localizing hallucinations is a critical task to ensure the high accuracy of image captions. In the era of Multimodal Large Language Models (MLLMs), captions have evolved from brief sentences into comprehensive narratives, often exceeding hundreds of words. This shift exponentially increases the challenge: models must now pinpoint specific erroneous spans or words within extensive contexts, rather than merely flagging response-level inconsistencies. However, existing benchmarks lack the fine-grained granularity and domain diversity required to evaluate this capability. To bridge this gap, we introduce <strong>DetailVerifyBench</strong>, a rigorous benchmark comprising 1,000 high-quality images across five distinct domains. With an average caption length of over 200 words and dense, token-level annotations of multiple hallucination types, it stands as the most challenging benchmark for precise hallucination localization in the long image caption to date.
       </p>
-      <aside class="research-card task-example" aria-label="Word-level localization example">
-        <h3>From detection to localization</h3>
-        <p>A chart caption puts the monthly low in September. The chart places it in October.</p>
-        <dl>
-          <dt>Detection</dt><dd>The caption contains an error.</dd>
-          <dt>Localization</dt><dd>“… a low of 9 in <mark>September</mark>.”</dd>
-        </dl>
-      </aside>
+      <div class="wordcloud-container">
+        <div class="wordcloud-wrap" id="wordcloud"></div>
+        <p class="wordcloud-note">*Word cloud of hallucinated tokens across all 1,000 captions, sized by frequency.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -80,19 +75,19 @@
     <div class="stats-grid">
       <div class="stat-card">
         <div class="stat-number">1,000</div>
-        <div class="stat-label">Image–caption pairs</div>
+        <div class="stat-label">Images</div>
       </div>
       <div class="stat-card">
-        <div class="stat-number">1,818</div>
-        <div class="stat-label">Hallucinated spans</div>
+        <div class="stat-number">5</div>
+        <div class="stat-label">Domains</div>
       </div>
       <div class="stat-card">
         <div class="stat-number">200+</div>
-        <div class="stat-label">Words per caption on average</div>
+        <div class="stat-label">Caption Avg. Words</div>
       </div>
       <div class="stat-card">
-        <div class="stat-number">8</div>
-        <div class="stat-label">Real error categories</div>
+        <div class="stat-number">10</div>
+        <div class="stat-label">Hallucination Types</div>
       </div>
     </div>
   </div>
@@ -102,92 +97,68 @@
 <section id="dataset" class="section">
   <div class="container">
     <h2>Benchmark Overview</h2>
-    <div class="table-wrapper" tabindex="0" role="region" aria-label="Real benchmark statistics">
+    <div class="table-wrapper">
       <table>
         <thead>
           <tr>
             <th>Domain</th>
             <th>Source</th>
-            <th>Images</th>
-            <th>Avg. tokens</th>
-            <th>Hallucinated spans</th>
-            <th>Captions with errors</th>
+            <th>#Img</th>
+            <th>Avg. Len</th>
+            <th>#Hallu. Locations</th>
+            <th>Hallu. Rate</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <td><strong>GUI</strong></td>
-            <td>ScreenSpot-Pro</td>
+            <td>Screenspot Pro</td>
             <td>200</td>
-            <td>197.0</td>
-            <td>299</td>
-            <td>67.0%</td>
+            <td>196</td>
+            <td>274</td>
+            <td>68%</td>
           </tr>
           <tr>
             <td><strong>Nature</strong></td>
             <td>DOCCI</td>
             <td>200</td>
-            <td>162.5</td>
-            <td>71</td>
-            <td>26.5%</td>
+            <td>148</td>
+            <td>69</td>
+            <td>26%</td>
           </tr>
           <tr>
             <td><strong>Chart</strong></td>
-            <td>Apache ECharts examples</td>
+            <td>Echarts Examples</td>
             <td>200</td>
-            <td>198.1</td>
-            <td>207</td>
-            <td>40.5%</td>
+            <td>197</td>
+            <td>192</td>
+            <td>41%</td>
           </tr>
           <tr>
-            <td><strong>Movie</strong></td>
-            <td>CineTechBench, ShotBench</td>
-            <td>200</td>
-            <td>214.3</td>
-            <td>622</td>
-            <td>87.0%</td>
+            <td rowspan="2"><strong>Movie</strong></td>
+            <td>CineTechBench</td>
+            <td rowspan="2">200</td>
+            <td rowspan="2">214</td>
+            <td rowspan="2">613</td>
+            <td rowspan="2">88%</td>
           </tr>
           <tr>
-            <td><strong>Poster</strong></td>
-            <td>IMDb, Movie Poster 100k</td>
-            <td>200</td>
-            <td>257.0</td>
-            <td>619</td>
-            <td>90.5%</td>
+            <td>ShotBench</td>
           </tr>
           <tr>
-            <td><strong>All domains</strong></td>
-            <td></td>
-            <td>1,000</td>
-            <td>205.8</td>
-            <td>1,818</td>
-            <td>62.3%</td>
+            <td rowspan="2"><strong>Poster</strong></td>
+            <td>IMDB</td>
+            <td rowspan="2">200</td>
+            <td rowspan="2">257</td>
+            <td rowspan="2">576</td>
+            <td rowspan="2">90%</td>
+          </tr>
+          <tr>
+            <td>Movie Poster 100k</td>
           </tr>
         </tbody>
       </table>
     </div>
-    <p class="research-note">These statistics describe the revised real test. The Dataset link and interactive examples use the public v1 release.</p>
-    <details class="research-details">
-      <summary>Compare hallucination localization benchmarks</summary>
-      <div class="table-wrapper" tabindex="0" role="region" aria-label="Benchmark comparison">
-        <table class="research-table">
-          <thead>
-            <tr><th scope="col">Benchmark</th><th scope="col">Granularity</th><th scope="col">Reference caption</th><th scope="col">Pairs</th><th scope="col">Avg. words</th><th scope="col">Error types</th><th scope="col">Domains</th><th scope="col">Errors</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>HaELM</td><td>Response</td><td>Yes</td><td>5,000</td><td>~50</td><td>—</td><td>1</td><td>Real</td></tr>
-            <tr><td>ALOHa</td><td>Span</td><td>Yes</td><td>490</td><td>~14</td><td>1</td><td>1</td><td>Real</td></tr>
-            <tr><td>M-HalDet</td><td>Segment</td><td>No</td><td>16,000</td><td>~80</td><td>3</td><td>1</td><td>Real</td></tr>
-            <tr><td>HalLoc</td><td>Token</td><td>No</td><td>155,953</td><td>~50</td><td>4</td><td>1</td><td>Synthetic</td></tr>
-            <tr><td>TLDR</td><td>Token</td><td>No</td><td>—</td><td>—</td><td>8</td><td>1</td><td>Synthetic</td></tr>
-            <tr><td>HLVC</td><td>Span</td><td>No</td><td>1,167</td><td>~60</td><td>2</td><td>1</td><td>Real</td></tr>
-            <tr><td>VisionHall</td><td>Span</td><td>Yes</td><td>6,854</td><td>~170</td><td>6</td><td>1</td><td>Real</td></tr>
-            <tr class="research-highlight"><td>DetailVerifyBench</td><td>Word</td><td>No</td><td>1,000</td><td>&gt;200</td><td>8</td><td>5</td><td>Real</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <p class="research-note">Pair counts follow the source split for each benchmark. HaELM reports a count per model and prompt.</p>
-    </details>
   </div>
   <!-- Examples Viewer — full width -->
   <div class="ex-viewer-outer">
@@ -218,14 +189,13 @@
 <section id="pipeline" class="section section-alt">
   <div class="container">
     <h2>Benchmark Construction Pipeline</h2>
-    <p class="research-intro">Gemini-3-Pro drafts captions from selected images. Annotators correct individual visual facts and cross-check the edits. A text diff gives the word boundaries of the original errors.</p>
     <div class="pipe-slider">
       <div class="pipe-tabs">
-        <button class="pipe-tab active" onclick="setPipeStep(0)">Caption Drafts</button>
-        <button class="pipe-tab" onclick="setPipeStep(1)">Human Annotation</button>
-        <button class="pipe-tab" onclick="setPipeStep(2)">Synthetic Injection</button>
+        <button class="pipe-tab active" onclick="setPipeStep(0)">Step 1: Dataset Initialization</button>
+        <button class="pipe-tab" onclick="setPipeStep(1)">Step 2: Hallucination Annotation</button>
+        <button class="pipe-tab" onclick="setPipeStep(2)">Step 3: Hallucination Injection</button>
       </div>
-      <img id="pipe-img" src="data/images/Pipeline_step1.png" alt="Caption Drafts" class="pipe-img">
+      <img id="pipe-img" src="data/images/Pipeline_step1.png" alt="Pipeline Step 1" class="pipe-img">
     </div>
   </div>
 </section>
@@ -234,7 +204,6 @@
 <section id="injection-demo" class="section">
   <div class="container">
     <h2>Adversarial Hallucination Injection Pipeline</h2>
-    <p class="research-intro">Gemini-3-Flash introduces errors into clean captions. GPT-5.2 sees only the resulting text and tries to identify the altered spans. Spans it detects are filtered out, and its feedback guides the next injection round. The interactive demo uses published v1 examples.</p>
   </div>
   <div class="ex-viewer-outer">
     <div class="inj-controls">
@@ -253,7 +222,6 @@
 <section id="detection-vis" class="section section-alt">
   <div class="container">
     <h2>Model Localization Results</h2>
-    <p class="research-intro">Explore individual predictions from the published v1 demos. The leaderboard below reports the revised real-test evaluation.</p>
   </div>
   <div class="ex-viewer-outer">
     <div class="det-controls">
@@ -279,14 +247,14 @@
     <div class="lb-controls">
       <div class="lb-left">
         <div class="lb-tabs">
-          <button class="lb-tab active" aria-pressed="true" onclick="switchTab('real')">Real test</button>
-          <button class="lb-tab" aria-pressed="false" onclick="switchTab('synthetic')">Synthetic (v1)</button>
+          <button class="lb-tab active" onclick="switchTab('real')">Real Hallucinations</button>
+          <button class="lb-tab" onclick="switchTab('synthetic')">Synthetic Hallucinations</button>
         </div>
         <div class="lb-filter">
           <span class="lb-filter-label">Type:</span>
-          <button class="filter-btn active" aria-pressed="true" data-filter="all" onclick="setFilter('all')">All</button>
-          <button class="filter-btn" aria-pressed="false" data-filter="open" onclick="setFilter('open')">Open-weight</button>
-          <button class="filter-btn" aria-pressed="false" data-filter="closed" onclick="setFilter('closed')">Commercial APIs</button>
+          <button class="filter-btn active" onclick="setFilter('all')">All</button>
+          <button class="filter-btn" onclick="setFilter('open')">Open-source</button>
+          <button class="filter-btn" onclick="setFilter('closed')">Closed-source</button>
         </div>
       </div>
       <button class="download-btn" onclick="downloadTable()">
@@ -295,123 +263,13 @@
       </button>
     </div>
 
-    <div id="lb-container" class="lb-table-wrap" tabindex="0" role="region" aria-label="Model leaderboard">
+    <div id="lb-container" class="lb-table-wrap">
       <table id="lb-table">
         <thead id="lb-thead"></thead>
         <tbody id="lb-tbody"></tbody>
       </table>
     </div>
-    <p id="lb-note" class="lb-note">Word-level scores and diagnostic rates on 1,000 real examples, in percent. Select a column heading to sort.</p>
-    <details id="evaluation-protocol" class="research-details">
-      <summary>Evaluation protocol and metric definitions</summary>
-      <dl class="metric-list">
-        <dt>Output format</dt>
-        <dd>Given a candidate caption and its image, mark erroneous whole words with <code>&lt;HALLUCINATION&gt;</code> tags while preserving the original text. Return <code>NO HALLUCINATION</code> for a verified clean caption.</dd>
-        <dt>Word precision, recall and F1</dt>
-        <dd>Match predicted and annotated word positions, pooling counts across the test set. Outputs that edit the caption, use malformed tags, or split words count as predicting zero words.</dd>
-        <dt>False positive rate (FPR ↓)</dt>
-        <dd>Share of valid outputs on clean captions that mark at least one word.</dd>
-        <dt>Zero-overlap rate (ZOR ↓)</dt>
-        <dd>Share of valid, nonempty predictions on captions with hallucinations that overlap none of the annotated error words.</dd>
-        <dt>Recall by error type</dt>
-        <dd>Recall on annotated words in each category: Number, Color, Category, Shape, Material, Spatial Relation, OCR, and Other.</dd>
-      </dl>
-    </details>
-  </div>
-</section>
-
-<section id="failure-analysis" class="section section-alt">
-  <div class="container">
-    <h2>Where Models Miss</h2>
-    <div class="research-grid">
-      <article class="research-card">
-        <h3>Tags on the wrong words</h3>
-        <p>GPT-5.4 tags at least one word in 386 erroneous captions with valid outputs. In <strong>214 of those 386</strong>, none of its tags overlap an annotated error.</p>
-      </article>
-      <article class="research-card">
-        <h3>Shared blind spots</h3>
-        <p>Seed2.0-pro, Gemini-3.1-Pro-Preview, and Qwen3.5-397B-A17B all miss <strong>1,165 of 1,710 spans (68.1%)</strong> on captions where all three outputs are valid. They jointly miss 128 of 196 directional spans and 167 of 232 single-word color spans.</p>
-      </article>
-      <article class="research-card">
-        <h3>Incomplete audits</h3>
-        <p>Of the 405 multi-error captions for which Seed2.0-pro returns a valid output, it misses every span in 233, finds some spans in 159, and touches every span in <strong>13</strong>. It covers every erroneous word in 11.</p>
-      </article>
-      <article class="research-card">
-        <h3>Reasoning overrides the image</h3>
-        <p>Qwen3-VL-8B-Thinking reads September as 14 and October as 9 in the chart example. It then accepts the caption’s arithmetic for September and returns <code>NO HALLUCINATION</code>.</p>
-      </article>
-    </div>
-    <div class="research-block">
-      <h3>Results by visual domain</h3>
-      <ul class="domain-findings">
-        <li><strong>GUI</strong><span>Gemini-3.1-Pro-Preview reaches 24.48% Word F1.</span></li>
-        <li><strong>Poster</strong><span>Seed2.0-pro reaches 23.85% Word F1.</span></li>
-        <li><strong>Chart</strong><span>Qwen3.5-397B-A17B reaches 22.31% Word F1.</span></li>
-        <li><strong>Movie</strong><span>The top three jointly miss 472 of 608 spans (77.6%) where all three outputs are valid.</span></li>
-        <li><strong>Nature</strong><span>Word F1 ranges from 1.92% to 7.60% for the six models in the domain comparison. Most captions (73.5%) are clean, so false alarms push precision down.</span></li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<section id="trainable-baseline" class="section">
-  <div class="container">
-    <h2>Trainable Localization Baseline</h2>
-    <p class="research-intro">We fine-tune Qwen3-VL-4B-Instruct on 1,345 synthetic training images with 150 validation examples. Both sets are disjoint from the real test set. Each setting uses 40 supervised fine-tuning (SFT) steps and 100 Group Relative Policy Optimization (GRPO) updates.</p>
-    <ol class="baseline-steps">
-      <li><strong>Refine the injected errors</strong><span>Use up to <i>K</i> feedback rounds to remove errors the detector can find from text alone. <i>K</i> = 0 is the unfiltered initial injection.</span></li>
-      <li><strong>Teach the tagging format</strong><span>SFT trains the model to return the original caption with tags on erroneous words, or an explicit clean result.</span></li>
-      <li><strong>Optimize word overlap</strong><span>GRPO assigns zero to invalid outputs, one to correct clean outputs, and word-position intersection over union to other valid outputs.</span></li>
-    </ol>
-    <div class="research-block">
-      <h3>Training results on the 1,000 real test examples</h3>
-      <div class="table-wrapper" tabindex="0" role="region" aria-label="Training results">
-        <table class="research-table">
-          <thead>
-            <tr><th scope="col">Max. rounds</th><th scope="col">Training</th><th scope="col">Word precision</th><th scope="col">Word recall</th><th scope="col">Word F1</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>—</td><td>Base 4B</td><td>0.00%</td><td>0.00%</td><td>0.00%</td></tr>
-            <tr><td>—</td><td>Base 8B</td><td>14.83%</td><td>0.90%</td><td>1.69%</td></tr>
-            <tr><td>0</td><td>SFT</td><td>6.73%</td><td>3.21%</td><td>4.35%</td></tr>
-            <tr><td>0</td><td>SFT + GRPO</td><td>17.42%</td><td>0.78%</td><td>1.49%</td></tr>
-            <tr><td>1</td><td>SFT</td><td>13.28%</td><td>3.15%</td><td>5.09%</td></tr>
-            <tr><td>1</td><td>SFT + GRPO</td><td>10.56%</td><td>2.17%</td><td>3.60%</td></tr>
-            <tr><td>2</td><td>SFT</td><td>11.35%</td><td>3.96%</td><td>5.87%</td></tr>
-            <tr class="research-highlight"><td>2</td><td>SFT + GRPO</td><td>12.16%</td><td>6.30%</td><td>8.30%</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <p class="research-note">All rows in this table use the training experiment’s strict <code>&lt;result&gt;</code> format. At <i>K</i> = 2, GRPO increases the number of captions with at least one correctly located error word from 98 to 125. Training reward rises at all three settings, but real-test F1 drops after GRPO at <i>K</i> = 0 and <i>K</i> = 1.</p>
-    </div>
-    <div class="research-block">
-      <h3>Adversarial injection ablations</h3>
-      <p class="research-intro">Lower detector scores indicate errors that are harder to infer from the caption alone. At <i>K</i> = 2, detector recall drops to 53% for GPT-5.2 and 47% for Qwen3-VL-8B-Thinking, compared with 75% and 71% before filtering. A third round changes recall to 52% and 47%.</p>
-      <div class="research-grid">
-        <div class="table-wrapper" tabindex="0" role="region" aria-label="Detector F1 by injection method">
-          <table class="research-table">
-            <caption>Detector F1 by injection method</caption>
-            <thead><tr><th scope="col">Injection</th><th scope="col">Qwen3-VL-8B-Thinking</th><th scope="col">GPT-5.2</th></tr></thead>
-            <tbody>
-              <tr><td>HalLoc</td><td>47%</td><td>52%</td></tr>
-              <tr><td>TLDR</td><td>45%</td><td>52%</td></tr>
-              <tr class="research-highlight"><td>Adversarial</td><td>39%</td><td>43%</td></tr>
-            </tbody>
-          </table>
-        </div>
-        <div class="table-wrapper" tabindex="0" role="region" aria-label="Training supervision by refinement rounds">
-          <table class="research-table">
-            <caption>Supervision on 1,345 shared training images</caption>
-            <thead><tr><th scope="col">Max. rounds</th><th scope="col">With errors</th><th scope="col">Clean</th><th scope="col">Spans</th><th scope="col">Words</th></tr></thead>
-            <tbody>
-              <tr><td>0</td><td>1,067 (79.33%)</td><td>278</td><td>10,730</td><td>23,133</td></tr>
-              <tr><td>1</td><td>1,065 (79.18%)</td><td>280</td><td>4,387</td><td>9,188</td></tr>
-              <tr><td>2</td><td>1,067 (79.33%)</td><td>278</td><td>5,612</td><td>11,143</td></tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
+    <p class="lb-note">Click any column header to sort. Domain scores show token-level F1 per domain.</p>
   </div>
 </section>
 
@@ -419,7 +277,6 @@
 <section id="citation" class="section section-alt">
   <div class="container">
     <h2>Citation</h2>
-    <p class="research-intro">BibTeX for the public arXiv preprint.</p>
     <div class="citation-block">
       <pre>@misc{wang2026detailverifybenchbenchmarkdensehallucination,
       title={DetailVerifyBench: A Benchmark for Dense Hallucination Localization in Long Image Captions},
@@ -446,19 +303,22 @@
 // ─── Column definitions ───────────────────────────────────────────────────────
 // Real: 8 dimension types (no Scene/Camera)
 const REAL_COLS = [
-  {key:'p',     label:'Precision', group:'Word localization (%)', sep:true, src:'overall'},
-  {key:'r',     label:'Recall',    group:'Word localization (%)',           src:'overall'},
-  {key:'f1',    label:'F1',        group:'Word localization (%)',           src:'overall'},
-  {key:'fpr',   label:'FPR ↓',     group:'Diagnostics (%)',       sep:true, src:'overall', lowerIsBetter:true},
-  {key:'zor',   label:'ZOR ↓',     group:'Diagnostics (%)',                 src:'overall', lowerIsBetter:true},
-  {key:'num',   label:'Number',    group:'Word recall by error type (%)', sep:true, src:'dim'},
-  {key:'clr',   label:'Color',     group:'Word recall by error type (%)',           src:'dim'},
-  {key:'cat',   label:'Category',  group:'Word recall by error type (%)',           src:'dim'},
-  {key:'shp',   label:'Shape',     group:'Word recall by error type (%)',           src:'dim'},
-  {key:'mat',   label:'Material',  group:'Word recall by error type (%)',           src:'dim'},
-  {key:'spat',  label:'Relation',  group:'Word recall by error type (%)',           src:'dim'},
-  {key:'ocr',   label:'OCR',       group:'Word recall by error type (%)',           src:'dim'},
-  {key:'other', label:'Other',     group:'Word recall by error type (%)',           src:'dim'},
+  {key:'p',     label:'P<sub>tok</sub>',  group:'Overall', sep:true,  src:'overall'},
+  {key:'r',     label:'R<sub>tok</sub>',  group:'Overall',            src:'overall'},
+  {key:'f1',    label:'F1<sub>tok</sub>', group:'Overall',            src:'overall'},
+  {key:'num',   label:'Num',   group:'Dimension R<sub>tok</sub>', sep:true, src:'dim'},
+  {key:'clr',   label:'Clr',   group:'Dimension R<sub>tok</sub>',           src:'dim'},
+  {key:'cat',   label:'Cat',   group:'Dimension R<sub>tok</sub>',           src:'dim'},
+  {key:'shp',   label:'Shp',   group:'Dimension R<sub>tok</sub>',           src:'dim'},
+  {key:'mat',   label:'Mat',   group:'Dimension R<sub>tok</sub>',           src:'dim'},
+  {key:'spat',  label:'Spat',  group:'Dimension R<sub>tok</sub>',           src:'dim'},
+  {key:'ocr',   label:'OCR',   group:'Dimension R<sub>tok</sub>',           src:'dim'},
+  {key:'other', label:'Other', group:'Dimension R<sub>tok</sub>',           src:'dim'},
+  {key:'chart',  label:'Chart',  group:'Domain F1', sep:true, src:'domain'},
+  {key:'movie',  label:'Movie',  group:'Domain F1',           src:'domain'},
+  {key:'nature', label:'Nature', group:'Domain F1',           src:'domain'},
+  {key:'poster', label:'Poster', group:'Domain F1',           src:'domain'},
+  {key:'gui',    label:'GUI',    group:'Domain F1',           src:'domain'},
 ];
 
 // Synthetic: 10 dimension types (+ Scene, Camera)
@@ -487,7 +347,7 @@ const SYNTH_COLS = [
 let lbModels   = [];   // raw data from leaderboard.json
 let currentTab    = 'real';
 let currentFilter = 'all';
-let sortColIdx    = REAL_COLS.findIndex(col => col.key === 'f1');
+let sortColIdx    = null;
 let sortDir       = 'desc';
 
 // ─── Helpers ─────────────────────────────────────────────────────────────────
@@ -497,15 +357,24 @@ function fmt(v) {
 }
 
 function getVal(model, col) {
-  const metrics = model[currentTab];
-  return (col.src === 'overall' ? metrics[col.key] : metrics[col.src]?.[col.key]) ?? null;
+  const src = currentTab === 'real' ? model.real : model.synthetic;
+  if (col.src === 'overall') return src[col.key];
+  if (col.src === 'dim')     return src.dim[col.key] ?? null;
+  if (col.src === 'domain')  return src.domain[col.key] ?? null;
+  return null;
 }
 
 function getBestValues(rows, cols) {
-  return cols.map(col => {
-    const values = rows.map(model => getVal(model, col)).filter(value => value !== null);
-    return col.lowerIsBetter ? Math.min(...values) : Math.max(...values);
+  const best = {};
+  cols.forEach((col, i) => {
+    let max = -Infinity;
+    rows.forEach(m => {
+      const v = getVal(m, col);
+      if (v !== null && v !== undefined && v > max) max = v;
+    });
+    best[i] = max;
   });
+  return best;
 }
 
 // ─── Render ──────────────────────────────────────────────────────────────────
@@ -513,16 +382,27 @@ function render() {
   if (!lbModels.length) return;
   const cols = currentTab === 'real' ? REAL_COLS : SYNTH_COLS;
 
-  const rows = lbModels.filter(model =>
-    model[currentTab] && (currentFilter === 'all' || model.type === currentFilter)
-  );
-  const sortCol = cols[sortColIdx];
-  rows.sort((a, b) => {
-    const va = getVal(a, sortCol);
-    const vb = getVal(b, sortCol);
-    if (va === null || vb === null) return Number(va === null) - Number(vb === null);
-    return sortDir === 'desc' ? vb - va : va - vb;
-  });
+  // Filter
+  let rows = lbModels;
+  if (currentFilter === 'open')   rows = lbModels.filter(m => m.type === 'open');
+  if (currentFilter === 'closed') rows = lbModels.filter(m => m.type === 'closed');
+
+  // Sort
+  if (sortColIdx !== null) {
+    const col = cols[sortColIdx];
+    rows = [...rows].sort((a, b) => {
+      const va = getVal(a, col) ?? -Infinity;
+      const vb = getVal(b, col) ?? -Infinity;
+      return sortDir === 'desc' ? vb - va : va - vb;
+    });
+  } else {
+    rows = [...rows].sort((a, b) => {
+      const src = currentTab === 'real';
+      const fa = (src ? a.real : a.synthetic).f1 ?? -Infinity;
+      const fb = (src ? b.real : b.synthetic).f1 ?? -Infinity;
+      return fb - fa;
+    });
+  }
 
   const best = getBestValues(rows, cols);
 
@@ -539,7 +419,7 @@ function render() {
 
   let row1 = `<th class="sticky-1" rowspan="2">Rank</th>`;
   row1 += `<th class="sticky-2" rowspan="2">Model</th>`;
-  row1 += `<th rowspan="2">Type</th>`;
+  row1 += `<th class="sticky-3" rowspan="2">Type</th>`;
   groups.forEach(g => {
     row1 += `<th colspan="${g.count}"${g.sep ? ' class="col-sep"' : ''}>${g.label}</th>`;
   });
@@ -551,8 +431,7 @@ function render() {
       isSorted ? (sortDir === 'desc' ? 'sort-desc' : 'sort-asc') : '',
       col.sep ? 'col-sep' : ''
     ].filter(Boolean).join(' ');
-    const ariaSort = isSorted ? ` aria-sort="${sortDir === 'desc' ? 'descending' : 'ascending'}"` : '';
-    row2 += `<th scope="col"${cls ? ` class="${cls}"` : ''}${ariaSort}><button type="button" id="lb-sort-${i}" onclick="sortBy(${i})">${col.label}</button></th>`;
+    row2 += `<th${cls ? ` class="${cls}"` : ''} onclick="sortBy(${i})">${col.label}</th>`;
   });
 
   document.getElementById('lb-thead').innerHTML = `<tr>${row1}</tr><tr>${row2}</tr>`;
@@ -561,16 +440,18 @@ function render() {
   let tbody = '';
   rows.forEach((model, ri) => {
     const rank = ri + 1;
+    const rankClass = rank <= 3 ? `rank-${rank}` : '';
+    const medal = rank === 1 ? '🥇' : rank === 2 ? '🥈' : rank === 3 ? '🥉' : rank;
     const badgeClass = model.type === 'open' ? 'badge-open' : 'badge-closed';
-    const badgeLabel = model.type === 'open' ? 'Open' : 'API';
+    const badgeLabel = model.type === 'open' ? 'Open' : 'Closed';
 
-    let cells = `<td class="sticky-1">${rank}</td>`;
-    cells += `<td class="sticky-2 align-left">${escHtml(model.model)}</td>`;
-    cells += `<td><span class="badge ${badgeClass}">${badgeLabel}</span></td>`;
+    let cells = `<td class="sticky-1 rank-medal ${rankClass}">${medal}</td>`;
+    cells += `<td class="sticky-2 align-left">${model.model}</td>`;
+    cells += `<td class="sticky-3"><span class="badge ${badgeClass}">${badgeLabel}</span></td>`;
 
     cols.forEach((col, i) => {
       const v = getVal(model, col);
-      const isBest = v === best[i];
+      const isBest = v !== null && v !== undefined && v === best[i] && v > 0;
       const sepClass = col.sep ? 'col-sep-body' : '';
       const bestClass = isBest ? 'best' : '';
       const cls = [sepClass, bestClass].filter(Boolean).join(' ');
@@ -586,42 +467,117 @@ function render() {
 // ─── Controls ────────────────────────────────────────────────────────────────
 function switchTab(tab) {
   currentTab = tab;
-  const cols = tab === 'real' ? REAL_COLS : SYNTH_COLS;
-  sortColIdx = cols.findIndex(col => col.key === 'f1');
-  sortDir = 'desc';
+  sortColIdx = null;
   document.querySelectorAll('.lb-tab').forEach((el, i) => {
-    const active = i === (tab === 'real' ? 0 : 1);
-    el.classList.toggle('active', active);
-    el.setAttribute('aria-pressed', active);
+    el.classList.toggle('active', (i === 0 && tab === 'real') || (i === 1 && tab === 'synthetic'));
   });
-  document.getElementById('lb-note').textContent = tab === 'real'
-    ? 'Word-level scores and diagnostic rates on 1,000 real examples, in percent. Select a column heading to sort.'
-    : 'Public arXiv v1 synthetic results. Scores range from 0 to 1 and use the v1 token-level protocol.';
-  document.getElementById('evaluation-protocol').hidden = tab !== 'real';
   render();
 }
 
 function setFilter(f) {
   currentFilter = f;
   document.querySelectorAll('.filter-btn').forEach(el => {
-    const active = el.dataset.filter === f;
-    el.classList.toggle('active', active);
-    el.setAttribute('aria-pressed', active);
+    el.classList.toggle('active', el.textContent.trim().toLowerCase().startsWith(
+      f === 'all' ? 'all' : f === 'open' ? 'open' : 'closed'
+    ));
   });
   render();
 }
 
 function sortBy(colIdx) {
-  const cols = currentTab === 'real' ? REAL_COLS : SYNTH_COLS;
-  if (sortColIdx === colIdx) {
-    sortDir = sortDir === 'desc' ? 'asc' : 'desc';
-  } else {
-    sortDir = cols[colIdx].lowerIsBetter ? 'asc' : 'desc';
-  }
+  sortDir = sortColIdx === colIdx ? (sortDir === 'desc' ? 'asc' : 'desc') : 'desc';
   sortColIdx = colIdx;
   render();
-  document.getElementById(`lb-sort-${colIdx}`).focus({ preventScroll: true });
 }
+
+// ─── Word Cloud ──────────────────────────────────────────────────────────────
+(function() {
+  const words = [
+    ["right",91],["left",81],["white",48],["blue",35],["black",23],["red",18],
+    ["pink",18],["serif",14],["two",12],["dark",12],["behind",11],["grey",10],
+    ["brown",10],["wooden",10],["three",9],["safari",9],["center",8],["orange",8],
+    ["four",7],["sans-serif",7],["circular",6],["vertical",6],["purple",6],
+    ["fair",6],["gold",6],["below",6],["green",6],["shoulder-length",6],
+    ["yellow",6],["centered",6],["light blue",5],["neutral",5],["beige",4],
+    ["bottom",4],["metal",4],["wall",4],["forward",4],["five",3],["next to",3],
+    ["downward",3],["leather",3],["horizontal",3],["clear",3],["chest",3],
+    ["right side",3],["to the left",3],["red line",2],["silver",2],["bold",2],
+    ["maroon",2],["curly",2],["diagonal",2],["above",2],["stone",2]
+  ];
+
+  const palette = ['#2563eb','#7c3aed','#0ea5e9','#ec4899','#f97316','#22c55e','#ef4444','#6366f1','#14b8a6','#e11d48'];
+  const container = document.getElementById('wordcloud');
+  if (!container) return;
+
+  const maxCount = words[0][1];
+  const placed = [];
+
+  function overlap(x, y, w, h) {
+    for (const r of placed) {
+      if (x < r.x + r.w + 6 && x + w + 6 > r.x && y < r.y + r.h + 4 && y + h + 4 > r.y) return true;
+    }
+    return false;
+  }
+
+  function layout() {
+    container.innerHTML = '';
+    placed.length = 0;
+    const cw = container.offsetWidth, ch = container.offsetHeight;
+    if (!cw || !ch) return;
+
+    words.forEach(([text, count], idx) => {
+      const ratio = count / maxCount;
+      const size = Math.round(12 + ratio * 26);
+      const el = document.createElement('span');
+      el.className = 'wc-word';
+      el.textContent = text;
+      el.style.fontSize = size + 'px';
+      el.style.color = palette[idx % palette.length];
+      el.style.animationName = 'wcFloat';
+      el.style.animationDuration = (2.5 + Math.random() * 2) + 's';
+      el.style.animationTimingFunction = 'ease-in-out';
+      el.style.animationIterationCount = 'infinite';
+      el.style.animationDelay = (Math.random() * -4) + 's';
+      container.appendChild(el);
+
+      const ew = el.offsetWidth, eh = el.offsetHeight;
+      let px, py, ok = false;
+      // spiral placement from center
+      const cx = cw / 2 - ew / 2, cy = ch / 2 - eh / 2;
+      for (let r = 0; r < Math.max(cw, ch); r += 4) {
+        for (let a = 0; a < 6.28; a += 0.4) {
+          px = Math.round(cx + r * Math.cos(a));
+          py = Math.round(cy + r * Math.sin(a));
+          if (px >= 4 && py >= 4 && px + ew <= cw - 4 && py + eh <= ch - 4 && !overlap(px, py, ew, eh)) {
+            ok = true; break;
+          }
+        }
+        if (ok) break;
+      }
+      if (ok) {
+        el.style.left = px + 'px';
+        el.style.top = py + 'px';
+        placed.push({x: px, y: py, w: ew, h: eh});
+      } else {
+        el.remove();
+      }
+    });
+  }
+
+  // Ensure layout runs after the browser has computed dimensions
+  function tryLayout() {
+    const cw = container.offsetWidth, ch = container.offsetHeight;
+    if (cw > 0 && ch > 0) { layout(); return true; }
+    return false;
+  }
+  // Try immediately, then retry with various fallbacks
+  if (!tryLayout()) {
+    requestAnimationFrame(() => { if (!tryLayout()) setTimeout(tryLayout, 200); });
+  }
+  window.addEventListener('resize', layout);
+  window.addEventListener('load', layout);
+  if (document.fonts) document.fonts.ready.then(layout);
+})();
 
 // ─── Injection Demo ──────────────────────────────────────────────────────────
 let injData = [];
@@ -969,29 +925,14 @@ function buildDetText(src) {
 // ─── Pipeline step slider ─────────────────────────────────────────────────────
 const pipeImages = ['data/images/Pipeline_step1.png','data/images/Pipeline_step2.png','data/images/Pipeline_step3.png'];
 function setPipeStep(i) {
-  const image = document.getElementById('pipe-img');
-  image.src = pipeImages[i];
-  document.querySelectorAll('.pipe-tabs .pipe-tab').forEach((button, index) => {
-    button.classList.toggle('active', index === i);
-    if (index === i) image.alt = button.textContent;
-  });
+  document.getElementById('pipe-img').src = pipeImages[i];
+  document.querySelectorAll('.pipe-tab').forEach((b, j) => b.classList.toggle('active', j === i));
 }
 
 // ─── Download ────────────────────────────────────────────────────────────────
 function downloadTable() {
   const el = document.getElementById('lb-container');
-  const width = el.scrollWidth + 2;
-  html2canvas(el, {
-    scale: 2,
-    backgroundColor: '#ffffff',
-    windowWidth: Math.max(window.innerWidth, width + 56),
-    onclone: doc => {
-      const wrapper = doc.getElementById('lb-container');
-      wrapper.style.width = `${width}px`;
-      wrapper.style.overflow = 'visible';
-      wrapper.scrollLeft = 0;
-    }
-  }).then(canvas => {
+  html2canvas(el, { scale: 2, useCORS: true, backgroundColor: '#ffffff' }).then(canvas => {
     const link = document.createElement('a');
     link.download = `DetailVerifyBench_leaderboard_${currentTab}.png`;
     link.href = canvas.toDataURL('image/png');
@@ -1255,11 +1196,8 @@ document.addEventListener('mouseout', e => {
 });
 
 // ─── Init: load data from JSON ────────────────────────────────────────────────
-fetch('./data/leaderboard.json?v=word-localization')
-  .then(r => {
-    if (!r.ok) throw new Error(`Leaderboard request failed (${r.status})`);
-    return r.json();
-  })
+fetch('./data/leaderboard.json')
+  .then(r => r.json())
   .then(data => {
     lbModels = data.models;
     render();
