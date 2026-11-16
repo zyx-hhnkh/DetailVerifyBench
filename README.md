@@ -27,7 +27,7 @@ nltk.download('punkt_tab')
 
 ## Data Preparation
 
-The dataset download link is unavailable during anonymous review. The usage examples below assume the dataset is available under `ms_data/`.
+Download the dataset using the Dataset button on the project page. The usage examples below assume the dataset is available under `ms_data/`.
 
 The dataset contains paired `.jpg` images and `.json` annotation files with hallucination labels across 4 categories: Counterfactual, OCR, Spatial Relation, and Other.
 
