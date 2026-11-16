@@ -8,7 +8,6 @@ vis_att_test/
 gradio_cache/
 .gradio/
 torchinductor_*/
-wangxinran/
 __pycache__/
 *.pyc
 *.log

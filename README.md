@@ -1,9 +1,5 @@
 # DetailVerifyBench
 
-[![Project Page](https://img.shields.io/badge/Project-Page-blue)](https://zyx-hhnkh.github.io/DetailVerifyBench)
-[![Paper](https://img.shields.io/badge/Paper-arXiv-red)](https://arxiv.org/abs/2604.05623)
-[![Dataset](https://img.shields.io/badge/Dataset-HuggingFace-yellow)](https://huggingface.co/datasets/zyxhhnkh/DetailVerifyBench)
-
 A comprehensive evaluation framework for detecting hallucinations in Vision-Language Models (VLMs). This benchmark measures how accurately models can identify false or incorrect descriptions in image captions at the token level.
 
 ## Features
@@ -31,13 +27,7 @@ nltk.download('punkt_tab')
 
 ## Data Preparation
 
-Download the dataset from ModelScope:
-
-```bash
-pip install modelscope
-modelscope login --token <your_token>
-modelscope download --dataset 'TwinkleMoon/Hallucination-Benchmark' --include 'test/*' --local_dir ./ms_data
-```
+The dataset download link is unavailable during anonymous review. The usage examples below assume the dataset is available under `ms_data/`.
 
 The dataset contains paired `.jpg` images and `.json` annotation files with hallucination labels across 4 categories: Counterfactual, OCR, Spatial Relation, and Other.
 
@@ -171,10 +161,9 @@ OPENROUTER_API_KEY=your_key
 If you use this benchmark in your research, please cite:
 
 ```bibtex
-@misc{detailverifybench,
-  title={DetailVerifyBench},
-  year={2025},
-  url={https://github.com/zyx-hhnkh/DetailVerifyBench}
+@misc{anonymous-detailverifybench,
+  title={DetailVerifyBench: A Benchmark for Dense Hallucination Localization in Long Image Captions},
+  author={Anonymous}
 }
 ```
 

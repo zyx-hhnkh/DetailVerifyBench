@@ -46,33 +46,6 @@ body {
   margin: 0 auto 24px;
 }
 
-.authors {
-  font-size: 1.0rem;
-  color: #374151;
-  margin-bottom: 6px;
-  line-height: 1.8;
-}
-
-.authors span { white-space: nowrap; }
-.authors sup { color: #2563eb; font-weight: 600; font-size: 0.7em; }
-
-.affiliation {
-  font-size: 0.9rem;
-  color: #6b7280;
-  margin-bottom: 6px;
-}
-
-.author-notes {
-  font-size: 0.82rem;
-  color: #9ca3af;
-  margin-bottom: 28px;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-}
-
-.author-notes sup { color: #2563eb; font-weight: 600; font-size: 0.7em; }
-
 /* Hero Buttons */
 .hero-buttons {
   display: flex;
@@ -98,9 +71,21 @@ body {
   font-family: inherit;
 }
 
-.btn:hover {
+.btn:not(:disabled):hover {
   background: #2563eb;
   color: #fff;
+}
+
+.btn:disabled {
+  border-color: #94a3b8;
+  color: #475569;
+  cursor: default;
+}
+
+.hero-link-note {
+  margin-top: 12px;
+  color: #475569;
+  font-size: 0.85rem;
 }
 
 .btn svg { width: 16px; height: 16px; flex-shrink: 0; }
@@ -1061,9 +1046,6 @@ footer {
   padding: 28px;
   font-size: 0.85rem;
 }
-
-footer a { color: #60a5fa; text-decoration: none; }
-footer a:hover { text-decoration: underline; }
 
 /* ===== Responsive ===== */
 @media (max-width: 768px) {
