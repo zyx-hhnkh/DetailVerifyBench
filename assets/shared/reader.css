@@ -67,9 +67,8 @@
 
 .reader-edition .overview-grid>*,.reader-edition .training-grid>*,.reader-edition .ablation-grid>*{min-width:0}
 
-/* Keep the complete leaderboard after the result analyses. */
-.reader-edition .leaderboard-block{margin-top:56px}
-.reader-edition .leaderboard-block>h3{margin:0 0 24px}
+/* The complete leaderboard is the final content section. */
+.reader-edition .leaderboard-block{margin-top:0}
 .reader-edition .leaderboard-block>.leader-controls{margin-top:0}
 .reader-edition .reading-navigation a[aria-current="location"]{color:var(--ink);text-decoration:underline;text-decoration-color:var(--accent);text-underline-offset:6px;text-decoration-thickness:2px}
 @media(max-width:800px){
@@ -77,5 +76,5 @@
   .reader-edition.proof-edition>header.reading-navigation{padding:12px 5vw}
   .reader-edition .reading-navigation .nav-links,.reader-edition .reading-navigation nav{display:flex;flex-wrap:wrap;gap:8px 18px;width:100%;min-width:0}
   .reader-edition .reading-navigation .nav-links a,.reader-edition .reading-navigation nav a{display:inline-flex;font-size:11px;white-space:nowrap}
-  .reader-edition .leaderboard-block{margin-top:40px}
+  .reader-edition .leaderboard-block{margin-top:0}
 }
