@@ -1,0 +1,159 @@
+.failure-analysis {
+  --failure-accent: var(--accent);
+  margin-top: 44px;
+  padding-top: 30px;
+  border-top: 1px solid var(--line);
+  color: var(--ink);
+  scroll-margin-top: 90px;
+}
+.failure-analysis > h3 {
+  margin: 0 0 22px;
+  font-size: 28px;
+  line-height: 1.2;
+  font-weight: 500;
+}
+.failure-case {
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius, 0);
+  background: var(--surface, var(--paper));
+}
+.failure-case-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  margin-bottom: 22px;
+}
+.failure-case-heading h4 {
+  margin: 0;
+  font-size: 21px;
+  line-height: 1.2;
+  font-weight: 500;
+}
+.failure-case-heading > span {
+  color: var(--muted);
+  font: 10px/1.5 var(--mono);
+}
+.failure-case-grid {
+  display: grid;
+  grid-template-columns: minmax(0, .8fr) minmax(0, 1.6fr);
+  align-items: start;
+  gap: 28px;
+}
+.failure-chart { margin: 0; min-width: 0; }
+.failure-chart img {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: #fff;
+  border: 1px solid var(--line);
+}
+.failure-chart figcaption {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding-top: 12px;
+  color: var(--muted);
+  font: 10px/1.5 var(--mono);
+}
+.failure-chart figcaption b {
+  display: block;
+  color: var(--ink);
+  font-weight: 500;
+  font-size: 13px;
+}
+.failure-evidence { min-width: 0; }
+.failure-evidence h5 {
+  margin: 0 0 10px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.4;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+.failure-caption p {
+  margin: 0;
+  color: var(--ink);
+  font-size: 15px;
+  line-height: 1.75;
+}
+.failure-caption mark {
+  color: var(--failure-accent);
+  background: transparent;
+  border-bottom: 1px solid currentColor;
+  padding: 0;
+  font-weight: 600;
+}
+.failure-judgments {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+  margin-top: 22px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+}
+.failure-analysis .failure-judgments blockquote {
+  margin: 0;
+  padding: 0 0 0 12px;
+  border: 0;
+  border-left: 2px solid var(--line);
+  color: var(--ink);
+  font-family: inherit;
+  font-size: 13px;
+  line-height: 1.75;
+  letter-spacing: 0;
+  font-style: normal;
+  font-weight: 400;
+}
+.failure-judgments > div:last-child blockquote { border-color: var(--failure-accent); }
+.failure-outcome {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 14px;
+  margin-top: 22px;
+  padding-top: 15px;
+  border-top: 1px solid var(--line);
+  font: 10px/1.5 var(--mono);
+}
+.failure-outcome > span { color: var(--muted); }
+.failure-outcome code { color: var(--ink); font-size: 12px; }
+.failure-outcome b { color: var(--failure-accent); font-weight: 500; }
+.failure-source { margin-top: 22px; border-top: 1px solid var(--line); }
+.failure-source summary {
+  padding: 14px 0 0;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.5;
+  cursor: pointer;
+}
+.failure-source summary:hover { color: var(--ink); }
+.failure-source img { display: block; width: 100%; height: auto; margin-top: 20px; }
+.failure-source a { display: inline-block; margin-top: 15px; color: var(--failure-accent); font-size: 11px; }
+[data-theme="editorial"] .failure-analysis > h3,
+[data-theme="editorial"] .failure-case-heading h4,
+.locus-edition .failure-analysis > h3,
+.locus-edition .failure-case-heading h4 {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-weight: 400;
+}
+[data-theme="editorial"] .failure-analysis > h3,
+.locus-edition .failure-analysis > h3 { font-size: 34px; }
+[data-theme="editorial"] .failure-case-heading h4,
+.locus-edition .failure-case-heading h4 { font-size: 27px; }
+.locus-edition .failure-analysis { --failure-accent: var(--deep); }
+@media (max-width: 760px) {
+  .failure-analysis { margin-top: 32px; padding-top: 24px; }
+  .failure-case { padding: 20px; }
+  .failure-case-grid { grid-template-columns: 1fr; gap: 22px; }
+  .failure-chart { width: 100%; max-width: 340px; margin: 0 auto; }
+  .failure-judgments { gap: 18px; }
+}
+@media (max-width: 480px) {
+  .failure-case { padding: 18px; }
+  .failure-judgments { grid-template-columns: 1fr; }
+  .failure-caption p { font-size: 14px; }
+}
