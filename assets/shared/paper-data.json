@@ -1,0 +1,416 @@
+{
+  "title": "DetailVerifyBench: A Benchmark for Dense Hallucination Localization in Long Image Captions",
+  "abstract": "Long image captions describe objects, attributes, spatial relations, and visual text in detail, but even a small number of hallucinated spans can undermine their reliability. Can multimodal large language models (MLLMs) accurately pinpoint these hallucinated details in long captions? In order to evaluate this ability, we introduce DetailVerifyBench, a benchmark that requires multimodal large language models to identify the specific words or phrases that do not match the image. It contains 1,000 images from graphical user interfaces, natural scenes, charts, movie frames, and posters, paired with captions averaging over 200 words and human annotations of advanced multimodal large language model hallucinations. Captions from different domains can contain several subtle errors, such as misread interface text or chart values, incorrect object attributes, and wrong spatial relations. Finding these errors requires models to check a wide range of visual details carefully. We evaluate a range of open-source and proprietary advanced MLLMs. The evaluation results show that even advanced MLLMs struggle to locate subtle hallucinations in long captions. We also provide a simple reinforcement-learning baseline using Qwen3-VL-4B, with training data synthesized through multiple rounds of adversarial hallucination injection.",
+  "models": [
+    {
+      "model": "GLM-4.6V-Flash",
+      "type": "open",
+      "p": 4.55,
+      "r": 0.4,
+      "f1": 0.74,
+      "fpr": 13.14,
+      "zor": 67.74,
+      "num": 0.0,
+      "clr": 0.0,
+      "cat": 1.21,
+      "shp": 0.54,
+      "mat": 0.0,
+      "spat": 0.0,
+      "ocr": 0.56,
+      "other": 0.73
+    },
+    {
+      "model": "Step3-VL-10B",
+      "type": "open",
+      "p": 4.81,
+      "r": 3.92,
+      "f1": 4.32,
+      "fpr": 29.58,
+      "zor": 35.11,
+      "num": 2.69,
+      "clr": 2.92,
+      "cat": 11.74,
+      "shp": 4.3,
+      "mat": 11.86,
+      "spat": 2.14,
+      "ocr": 5.32,
+      "other": 3.11
+    },
+    {
+      "model": "Qwen3-VL-8B-Instruct",
+      "type": "open",
+      "p": 13.79,
+      "r": 0.81,
+      "f1": 1.52,
+      "fpr": 8.13,
+      "zor": 38.89,
+      "num": 0.0,
+      "clr": 0.0,
+      "cat": 1.62,
+      "shp": 0.0,
+      "mat": 0.0,
+      "spat": 0.0,
+      "ocr": 6.72,
+      "other": 0.0
+    },
+    {
+      "model": "Qwen3-VL-8B-Thinking",
+      "type": "open",
+      "p": 4.41,
+      "r": 2.77,
+      "f1": 3.4,
+      "fpr": 37.23,
+      "zor": 62.99,
+      "num": 1.35,
+      "clr": 2.92,
+      "cat": 2.02,
+      "shp": 9.14,
+      "mat": 1.69,
+      "spat": 1.18,
+      "ocr": 3.92,
+      "other": 2.93
+    },
+    {
+      "model": "Qwen3.5-9B",
+      "type": "open",
+      "p": 16.15,
+      "r": 6.92,
+      "f1": 9.69,
+      "fpr": 26.9,
+      "zor": 31.06,
+      "num": 6.73,
+      "clr": 7.87,
+      "cat": 10.12,
+      "shp": 9.14,
+      "mat": 20.34,
+      "spat": 3.0,
+      "ocr": 9.8,
+      "other": 7.6
+    },
+    {
+      "model": "Qwen3.5-35B-A3B",
+      "type": "open",
+      "p": 9.79,
+      "r": 1.5,
+      "f1": 2.6,
+      "fpr": 12.44,
+      "zor": 50.0,
+      "num": 1.35,
+      "clr": 1.8,
+      "cat": 0.81,
+      "shp": 0.54,
+      "mat": 1.69,
+      "spat": 0.75,
+      "ocr": 3.08,
+      "other": 1.74
+    },
+    {
+      "model": "Qwen3.5-397B-A17B",
+      "type": "open",
+      "p": 16.04,
+      "r": 19.16,
+      "f1": 17.47,
+      "fpr": 48.38,
+      "zor": 29.89,
+      "num": 22.87,
+      "clr": 20.0,
+      "cat": 19.03,
+      "shp": 23.12,
+      "mat": 37.29,
+      "spat": 13.72,
+      "ocr": 26.05,
+      "other": 19.51
+    },
+    {
+      "model": "Kimi-K2.5",
+      "type": "open",
+      "p": 18.92,
+      "r": 8.07,
+      "f1": 11.31,
+      "fpr": 44.82,
+      "zor": 47.22,
+      "num": 4.48,
+      "clr": 7.64,
+      "cat": 8.5,
+      "shp": 14.52,
+      "mat": 10.17,
+      "spat": 5.47,
+      "ocr": 15.69,
+      "other": 8.61
+    },
+    {
+      "model": "Seed2.0-pro",
+      "type": "closed",
+      "p": 18.12,
+      "r": 18.9,
+      "f1": 18.5,
+      "fpr": 41.22,
+      "zor": 29.58,
+      "num": 21.52,
+      "clr": 13.26,
+      "cat": 20.65,
+      "shp": 14.52,
+      "mat": 45.76,
+      "spat": 16.51,
+      "ocr": 26.61,
+      "other": 20.88
+    },
+    {
+      "model": "MiMo-V2-Pro",
+      "type": "closed",
+      "p": 2.1,
+      "r": 0.84,
+      "f1": 1.19,
+      "fpr": 18.87,
+      "zor": 86.41,
+      "num": 2.69,
+      "clr": 0.67,
+      "cat": 0.0,
+      "shp": 0.54,
+      "mat": 0.0,
+      "spat": 1.29,
+      "ocr": 0.84,
+      "other": 0.37
+    },
+    {
+      "model": "GPT-5.2",
+      "type": "closed",
+      "p": 5.66,
+      "r": 10.69,
+      "f1": 7.41,
+      "fpr": 42.9,
+      "zor": 58.21,
+      "num": 9.42,
+      "clr": 7.87,
+      "cat": 10.12,
+      "shp": 6.99,
+      "mat": 18.64,
+      "spat": 9.0,
+      "ocr": 18.77,
+      "other": 11.36
+    },
+    {
+      "model": "GPT-5.4",
+      "type": "closed",
+      "p": 7.11,
+      "r": 11.47,
+      "f1": 8.78,
+      "fpr": 44.3,
+      "zor": 55.44,
+      "num": 10.31,
+      "clr": 6.07,
+      "cat": 10.12,
+      "shp": 8.6,
+      "mat": 8.47,
+      "spat": 10.93,
+      "ocr": 19.33,
+      "other": 12.09
+    },
+    {
+      "model": "Gemini-3-Pro-Preview",
+      "type": "closed",
+      "p": 16.78,
+      "r": 10.26,
+      "f1": 12.73,
+      "fpr": 41.67,
+      "zor": 30.13,
+      "num": 12.11,
+      "clr": 7.19,
+      "cat": 9.72,
+      "shp": 11.83,
+      "mat": 15.25,
+      "spat": 7.72,
+      "ocr": 26.05,
+      "other": 7.6
+    },
+    {
+      "model": "Gemini-3.1-Pro-Preview",
+      "type": "closed",
+      "p": 19.66,
+      "r": 15.91,
+      "f1": 17.59,
+      "fpr": 45.84,
+      "zor": 35.33,
+      "num": 17.04,
+      "clr": 10.34,
+      "cat": 17.0,
+      "shp": 22.04,
+      "mat": 22.03,
+      "spat": 12.65,
+      "ocr": 28.29,
+      "other": 14.56
+    },
+    {
+      "model": "Claude-Opus-4.6",
+      "type": "closed",
+      "p": 13.94,
+      "r": 7.72,
+      "f1": 9.94,
+      "fpr": 42.86,
+      "zor": 59.48,
+      "num": 5.83,
+      "clr": 6.07,
+      "cat": 9.72,
+      "shp": 4.84,
+      "mat": 3.39,
+      "spat": 5.14,
+      "ocr": 22.41,
+      "other": 6.41
+    }
+  ],
+  "domains": [
+    {
+      "name": "GUI",
+      "images": 200,
+      "avg": 197.0,
+      "positive": 67.0,
+      "spans": 299
+    },
+    {
+      "name": "Nature",
+      "images": 200,
+      "avg": 162.5,
+      "positive": 26.5,
+      "spans": 71
+    },
+    {
+      "name": "Chart",
+      "images": 200,
+      "avg": 198.1,
+      "positive": 40.5,
+      "spans": 207
+    },
+    {
+      "name": "Movie",
+      "images": 200,
+      "avg": 214.3,
+      "positive": 87.0,
+      "spans": 622
+    },
+    {
+      "name": "Poster",
+      "images": 200,
+      "avg": 257.0,
+      "positive": 90.5,
+      "spans": 619
+    }
+  ],
+  "errorTypes": [
+    {
+      "name": "Number",
+      "spans": 157,
+      "share": 8.57
+    },
+    {
+      "name": "Color",
+      "spans": 312,
+      "share": 17.02
+    },
+    {
+      "name": "Category",
+      "spans": 128,
+      "share": 6.98
+    },
+    {
+      "name": "Shape",
+      "spans": 86,
+      "share": 4.69
+    },
+    {
+      "name": "Material",
+      "spans": 33,
+      "share": 1.8
+    },
+    {
+      "name": "Spatial relation",
+      "spans": 495,
+      "share": 27.0
+    },
+    {
+      "name": "OCR",
+      "spans": 209,
+      "share": 11.4
+    },
+    {
+      "name": "Other",
+      "spans": 413,
+      "share": 22.53
+    }
+  ],
+  "training": [
+    {
+      "round": "Base 4B",
+      "training": "Base",
+      "p": 0,
+      "r": 0,
+      "f1": 0
+    },
+    {
+      "round": "Base 8B",
+      "training": "Base",
+      "p": 14.83,
+      "r": 0.9,
+      "f1": 1.69
+    },
+    {
+      "round": "K = 0",
+      "training": "SFT",
+      "p": 6.73,
+      "r": 3.21,
+      "f1": 4.35
+    },
+    {
+      "round": "K = 0",
+      "training": "SFT + GRPO",
+      "p": 17.42,
+      "r": 0.78,
+      "f1": 1.49
+    },
+    {
+      "round": "K = 1",
+      "training": "SFT",
+      "p": 13.28,
+      "r": 3.15,
+      "f1": 5.09
+    },
+    {
+      "round": "K = 1",
+      "training": "SFT + GRPO",
+      "p": 10.56,
+      "r": 2.17,
+      "f1": 3.6
+    },
+    {
+      "round": "K = 2",
+      "training": "SFT",
+      "p": 11.35,
+      "r": 3.96,
+      "f1": 5.87
+    },
+    {
+      "round": "K = 2",
+      "training": "SFT + GRPO",
+      "p": 12.16,
+      "r": 6.3,
+      "f1": 8.3
+    }
+  ],
+  "validOutputs": [
+    940,
+    838,
+    985,
+    834,
+    796,
+    520,
+    976,
+    924,
+    992,
+    973,
+    986,
+    994,
+    937,
+    985,
+    957
+  ],
+  "source": "Supplied manuscript ZIP, 2026-11-16"
+}
